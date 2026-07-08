@@ -5,6 +5,7 @@ import CategorySection from "@/components/home/CategorySection";
 import ProductGrid from "@/components/products/ProductGrid";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import CartDrawer from "@/components/cart/CartDrawer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProductGrid />
       <Footer />
       <WhatsAppButton />
+      <CartDrawer />
     </>
   );
 }
