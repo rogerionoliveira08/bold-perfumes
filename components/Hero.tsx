@@ -1,4 +1,5 @@
 import Image from "next/image";
+ import { FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -22,9 +23,15 @@ export default function Hero() {
               Ver Produtos
             </button>
 
-            <button className="border border-yellow-400 text-yellow-400 px-8 py-4 rounded-xl font-bold hover:bg-yellow-400 hover:text-black transition">
-              Falar no WhatsApp
-            </button>
+            <a
+  href="https://wa.me/5522998771598?text=Olá! Vim pelo site da Bold Parfam e gostaria de saber mais sobre os perfumes."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-green-500 text-green-400 px-8 py-4 rounded-xl font-bold hover:bg-green-500 hover:text-white transition flex items-center justify-center gap-3"
+>
+  <FaWhatsapp size={24} />
+  Falar no WhatsApp
+</a>
           </div>
         </div>
 

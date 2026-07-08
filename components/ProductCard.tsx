@@ -12,27 +12,37 @@ export default function ProductCard({
   imagem,
 }: ProductCardProps) {
   return (
-    <div className="bg-zinc-900 rounded-2xl p-5 border border-zinc-800 hover:border-yellow-400 transition">
+    <div className="group bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 hover:border-yellow-400 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
 
-      <Image
-        src={imagem}
-        alt={nome}
-        width={250}
-        height={320}
-        className="mx-auto rounded-xl"
-      />
+      <div className="overflow-hidden">
+        <Image
+          src={imagem}
+          alt={nome}
+          width={400}
+          height={500}
+          className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+      </div>
 
-      <h3 className="text-white text-xl font-bold mt-4">
-        {nome}
-      </h3>
+      <div className="p-5">
 
-      <p className="text-yellow-400 text-2xl font-bold mt-2">
-        {preco}
-      </p>
+        <h3 className="text-white text-xl font-bold">
+          {nome}
+        </h3>
 
-      <button className="w-full mt-5 bg-yellow-400 text-black font-bold py-3 rounded-xl hover:bg-yellow-300 transition">
-        Comprar
-      </button>
+        <p className="text-yellow-400 text-3xl font-bold mt-2">
+          {preco}
+        </p>
+
+        <div className="flex items-center gap-1 mt-3 text-yellow-400">
+          ★★★★★
+        </div>
+
+        <button className="w-full mt-6 bg-yellow-400 text-black py-3 rounded-xl font-bold hover:bg-yellow-300 transition">
+          Adicionar ao Carrinho
+        </button>
+
+      </div>
 
     </div>
   );

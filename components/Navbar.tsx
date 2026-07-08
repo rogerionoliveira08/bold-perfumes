@@ -1,36 +1,71 @@
+"use client";
+
+import { FaShoppingCart, FaHeart, FaSearch, FaSprayCan } from "react-icons/fa";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+
 export default function Navbar() {
   return (
     <header className="bg-black border-b border-yellow-500 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+      <div className="max-w-7xl mx-auto px-5 py-4">
+        <div className="flex items-center justify-between gap-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-yellow-400 whitespace-nowrap">
+            Bold Parfam
+          </h1>
 
-        <h1 className="text-3xl font-bold text-yellow-400">
-          Bold Perfumes
-        </h1>
+          <div className="hidden md:flex flex-1 max-w-md mx-8 relative">
+            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" />
 
-        <nav className="flex items-center gap-8 text-white font-medium">
+            <input
+              type="text"
+              placeholder="Pesquisar perfume..."
+              className="w-full bg-zinc-900 border border-zinc-700 text-white rounded-xl pl-11 pr-4 py-3 outline-none focus:border-yellow-400 transition"
+            />
+          </div>
 
-          <a href="#" className="hover:text-yellow-400 transition">
-            Início
-          </a>
+          <nav className="hidden md:flex items-center gap-7 text-white">
+            <div className="flex items-center gap-2 text-white font-medium whitespace-nowrap cursor-pointer hover:text-yellow-400 transition duration-300">
+              <FaSprayCan size={15} />
+              <span>Sua assinatura olfativa</span>
+            </div>
 
-          <a href="#" className="hover:text-yellow-400 transition">
-            Produtos
-          </a>
+            <a href="#" className="hover:text-yellow-400 transition">
+              Produtos
+            </a>
 
-          <a href="#" className="hover:text-yellow-400 transition">
-            Categorias
-          </a>
+            <a href="#" className="hover:text-yellow-400 transition">
+              Categorias
+            </a>
 
-          <a href="#" className="hover:text-yellow-400 transition">
-            Contato
-          </a>
+            <a href="#" className="hover:text-yellow-400 transition">
+              Contato
+            </a>
 
-          <button className="bg-yellow-400 text-black px-5 py-2 rounded-lg font-bold hover:bg-yellow-300 transition">
-            Carrinho
-          </button>
+            <FaHeart
+              size={22}
+              className="cursor-pointer hover:text-red-500 transition"
+            />
 
-        </nav>
+            <FaShoppingCart
+              size={22}
+              className="cursor-pointer hover:text-yellow-400 transition"
+            />
+          </nav>
 
+          <div className="md:hidden flex items-center gap-5">
+            <FaShoppingCart size={22} className="text-white" />
+            <HiOutlineMenuAlt3 size={30} className="text-yellow-400" />
+          </div>
+        </div>
+
+        <div className="md:hidden mt-4 relative">
+          <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" />
+
+          <input
+            type="text"
+            placeholder="Pesquisar perfume..."
+            className="w-full bg-zinc-900 border border-zinc-700 text-white rounded-xl pl-11 pr-4 py-3 outline-none focus:border-yellow-400 transition"
+          />
+        </div>
       </div>
     </header>
   );
