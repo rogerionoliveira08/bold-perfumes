@@ -2,7 +2,7 @@ import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import CategorySection from "@/components/home/CategorySection";
-import ProductGrid from "@/components/products/ProductGrid";
+import ProductSearch from "@/components/products/ProductSearch";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 
@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <CategorySection />
-      <ProductGrid />
+      <ProductSearch />
       <Footer />
       <WhatsAppButton />
       
