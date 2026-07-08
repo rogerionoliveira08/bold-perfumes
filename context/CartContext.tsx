@@ -14,6 +14,8 @@ type CartContextType = {
   fecharCarrinho: () => void;
   adicionarAoCarrinho: (produto: Product) => void;
   removerDoCarrinho: (id: number) => void;
+  aumentarQuantidade: (id: number) => void;
+  diminuirQuantidade: (id: number) => void;
   limparCarrinho: () => void;
 };
 
@@ -70,6 +72,24 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setCarrinho((atual) => atual.filter((item) => item.id !== id));
   }
 
+  function aumentarQuantidade(id: number) {
+    setCarrinho((atual) =>
+      atual.map((item) =>
+        item.id === id ? { ...item, quantidade: item.quantidade + 1 } : item
+      )
+    );
+  }
+
+  function diminuirQuantidade(id: number) {
+    setCarrinho((atual) =>
+      atual
+        .map((item) =>
+          item.id === id ? { ...item, quantidade: item.quantidade - 1 } : item
+        )
+        .filter((item) => item.quantidade > 0)
+    );
+  }
+
   function limparCarrinho() {
     setCarrinho([]);
   }
@@ -83,6 +103,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         fecharCarrinho,
         adicionarAoCarrinho,
         removerDoCarrinho,
+        aumentarQuantidade,
+        diminuirQuantidade,
         limparCarrinho,
       }}
     >

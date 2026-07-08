@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { useCart } from "@/context/CartContext";
 
 type ProductCardProps = {
   id: number;
+  slug: string;
   nome: string;
   marca: string;
   preco: number;
@@ -18,6 +20,7 @@ type ProductCardProps = {
 
 export default function ProductCard({
   id,
+  slug,
   nome,
   marca,
   preco,
@@ -28,7 +31,6 @@ export default function ProductCard({
   avaliacoes,
 }: ProductCardProps) {
   const { adicionarAoCarrinho } = useCart();
-
   const parcela = preco / 6;
 
   return (
@@ -43,15 +45,17 @@ export default function ProductCard({
         <FaHeart size={16} />
       </button>
 
-      <div className="relative flex h-72 items-center justify-center overflow-hidden bg-gradient-to-b from-zinc-900 to-black">
-        <Image
-          src={imagem}
-          alt={nome}
-          width={420}
-          height={420}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-      </div>
+      <Link href={`/produto/${slug}`}>
+        <div className="relative flex h-72 items-center justify-center overflow-hidden bg-gradient-to-b from-zinc-900 to-black">
+          <Image
+            src={imagem}
+            alt={nome}
+            width={420}
+            height={420}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+      </Link>
 
       <div className="space-y-3 p-5">
         <div className="flex items-center justify-between gap-3">
@@ -62,7 +66,11 @@ export default function ProductCard({
           </span>
         </div>
 
-        <h3 className="text-xl font-bold text-white">{nome}</h3>
+        <Link href={`/produto/${slug}`}>
+          <h3 className="text-xl font-bold text-white hover:text-yellow-400 transition">
+            {nome}
+          </h3>
+        </Link>
 
         <div className="flex items-center gap-2 text-sm">
           <div className="flex items-center gap-1 text-yellow-400">
@@ -87,6 +95,7 @@ export default function ProductCard({
           onClick={() =>
             adicionarAoCarrinho({
               id,
+              slug,
               nome,
               marca,
               preco,
