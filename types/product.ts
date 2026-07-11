@@ -16,7 +16,6 @@ export interface Product {
   avaliacoes: number;
 
   descricao: string;
-
   familiaOlfativa: string;
 
   notasTopo: string[];

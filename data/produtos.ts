@@ -1,20 +1,4 @@
-import { Product } from "@/types/product";
-
-const infoPadrao = {
-  descricao:
-    "Perfume sofisticado com excelente fixação, ideal para quem busca presença e elegância.",
-  familiaOlfativa: "Amadeirado Aromático",
-  notasTopo: ["Maçã", "Bergamota", "Gengibre"],
-  notasCoracao: ["Lavanda", "Sálvia", "Zimbro"],
-  notasBase: ["Cedro", "Âmbar", "Vetiver"],
-  fixacao: 5,
-  projecao: 5,
-  ocasioes: ["Trabalho", "Noite", "Encontro"],
-  volume: "100ml",
-  concentracao: "Eau de Parfum",
-  genero: "Unissex",
-  origem: "Emirados Árabes Unidos",
-};
+import type { Product } from "@/types/product";
 
 export const produtos: Product[] = [
   {
@@ -24,12 +8,27 @@ export const produtos: Product[] = [
     marca: "Lattafa",
     preco: 300,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Masculino",
     selo: "Mais vendido",
     avaliacao: 4.9,
     avaliacoes: 128,
-    ...infoPadrao,
+    descricao:
+      "Asad é uma fragrância masculina intensa, elegante e marcante. Sua combinação de especiarias, madeiras e notas adocicadas cria um perfume poderoso, ideal para quem gosta de presença e personalidade.",
+    familiaOlfativa: "Âmbar Especiado",
+    notasTopo: ["Pimenta-preta", "Tabaco", "Abacaxi"],
+    notasCoracao: ["Café", "Patchouli", "Íris"],
+    notasBase: ["Baunilha", "Âmbar", "Madeiras secas"],
+    fixacao: 5,
+    projecao: 5,
+    ocasioes: ["Noite", "Encontros", "Eventos", "Clima frio"],
+    volume: "100ml",
+    concentracao: "Eau de Parfum",
+    genero: "Masculino",
+    origem: "Emirados Árabes Unidos",
+    inspiradoEm: "Dior Sauvage Elixir",
   },
+
   {
     id: 2,
     slug: "asad-bourbon",
@@ -37,12 +36,26 @@ export const produtos: Product[] = [
     marca: "Lattafa",
     preco: 400,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Masculino",
     selo: "Novo",
     avaliacao: 4.8,
     avaliacoes: 74,
-    ...infoPadrao,
+    descricao:
+      "Asad Bourbon apresenta uma fragrância envolvente, cremosa e sofisticada. É uma excelente escolha para quem procura um perfume moderno, adocicado na medida certa e com personalidade marcante.",
+    familiaOlfativa: "Oriental Amadeirado",
+    notasTopo: ["Pimenta-rosa", "Lavanda", "Bergamota"],
+    notasCoracao: ["Cacau", "Noz-moscada", "Davana"],
+    notasBase: ["Baunilha", "Âmbar", "Vetiver"],
+    fixacao: 5,
+    projecao: 4,
+    ocasioes: ["Noite", "Encontros", "Festas", "Eventos especiais"],
+    volume: "100ml",
+    concentracao: "Eau de Parfum",
+    genero: "Masculino",
+    origem: "Emirados Árabes Unidos",
   },
+
   {
     id: 3,
     slug: "fakhar-black",
@@ -56,20 +69,21 @@ export const produtos: Product[] = [
     avaliacao: 4.9,
     avaliacoes: 196,
     descricao:
-      "Fakhar Black é um perfume sofisticado da Lattafa inspirado no estilo dos grandes perfumes de luxo. Possui excelente projeção, alta fixação e um aroma elegante para qualquer ocasião.",
+      "Fakhar Black é uma fragrância aromática e sofisticada, com abertura fresca e um fundo amadeirado elegante. É versátil, moderno e indicado para homens que buscam uma assinatura olfativa refinada.",
     familiaOlfativa: "Aromático Amadeirado",
     notasTopo: ["Bergamota", "Maçã", "Gengibre"],
-    notasCoracao: ["Lavanda", "Sálvia", "Bagas de Zimbro", "Gerânio"],
-    notasBase: ["Cedro", "Vetiver", "Fava Tonka", "Âmbar"],
+    notasCoracao: ["Lavanda", "Sálvia", "Bagas de zimbro", "Gerânio"],
+    notasBase: ["Cedro", "Vetiver", "Fava-tonka", "Âmbar"],
     fixacao: 5,
     projecao: 5,
-    ocasioes: ["Trabalho", "Noite", "Encontro", "Eventos"],
+    ocasioes: ["Trabalho", "Noite", "Encontros", "Eventos"],
     volume: "100ml",
     concentracao: "Eau de Parfum",
     genero: "Masculino",
     origem: "Emirados Árabes Unidos",
-    inspiradoEm: "YSL Y Eau de Parfum",
+    inspiradoEm: "Yves Saint Laurent Y Eau de Parfum",
   },
+
   {
     id: 4,
     slug: "fakhar-gold",
@@ -77,13 +91,26 @@ export const produtos: Product[] = [
     marca: "Lattafa",
     preco: 350,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Feminino",
     selo: "Destaque",
     avaliacao: 4.8,
     avaliacoes: 82,
-    ...infoPadrao,
+    descricao:
+      "Fakhar Gold combina elegância, doçura e sofisticação. Sua fragrância envolvente é indicada para mulheres que desejam um perfume marcante, refinado e perfeito para momentos especiais.",
+    familiaOlfativa: "Floral Oriental",
+    notasTopo: ["Frutas", "Bergamota", "Notas cítricas"],
+    notasCoracao: ["Flores brancas", "Jasmim", "Rosa"],
+    notasBase: ["Baunilha", "Âmbar", "Almíscar"],
+    fixacao: 4,
+    projecao: 4,
+    ocasioes: ["Encontros", "Festas", "Noite", "Eventos especiais"],
+    volume: "100ml",
+    concentracao: "Eau de Parfum",
     genero: "Feminino",
+    origem: "Emirados Árabes Unidos",
   },
+
   {
     id: 5,
     slug: "club-de-nuit",
@@ -91,13 +118,27 @@ export const produtos: Product[] = [
     marca: "Armaf",
     preco: 400,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Masculino",
     selo: "Premium",
     avaliacao: 4.9,
     avaliacoes: 141,
-    ...infoPadrao,
+    descricao:
+      "Club de Nuit é uma fragrância masculina intensa, elegante e muito versátil. Sua abertura fresca evolui para um fundo amadeirado marcante, ideal para homens confiantes e sofisticados.",
+    familiaOlfativa: "Amadeirado Frutado",
+    notasTopo: ["Limão", "Abacaxi", "Bergamota", "Maçã"],
+    notasCoracao: ["Rosa", "Jasmim", "Bétula"],
+    notasBase: ["Almíscar", "Âmbar-cinzento", "Patchouli", "Baunilha"],
+    fixacao: 5,
+    projecao: 5,
+    ocasioes: ["Trabalho", "Eventos", "Noite", "Encontros"],
+    volume: "105ml",
+    concentracao: "Eau de Toilette",
     genero: "Masculino",
+    origem: "Emirados Árabes Unidos",
+    inspiradoEm: "Creed Aventus",
   },
+
   {
     id: 6,
     slug: "maahir",
@@ -105,12 +146,26 @@ export const produtos: Product[] = [
     marca: "Lattafa",
     preco: 500,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Premium",
     selo: "Luxo",
-    avaliacao: 5.0,
+    avaliacao: 5,
     avaliacoes: 55,
-    ...infoPadrao,
+    descricao:
+      "Maahir é uma fragrância luxuosa, sofisticada e envolvente. Seu aroma combina frescor, especiarias e madeiras, criando uma assinatura olfativa elegante para ocasiões importantes.",
+    familiaOlfativa: "Oriental Amadeirado",
+    notasTopo: ["Bergamota", "Frutas vermelhas", "Pêssego"],
+    notasCoracao: ["Jasmim", "Peônia", "Lírio-vermelho"],
+    notasBase: ["Sândalo", "Baunilha", "Almíscar"],
+    fixacao: 5,
+    projecao: 4,
+    ocasioes: ["Eventos", "Noite", "Encontros", "Ocasiões especiais"],
+    volume: "100ml",
+    concentracao: "Eau de Parfum",
+    genero: "Unissex",
+    origem: "Emirados Árabes Unidos",
   },
+
   {
     id: 7,
     slug: "salvo",
@@ -118,13 +173,27 @@ export const produtos: Product[] = [
     marca: "Maison Alhambra",
     preco: 300,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Masculino",
     selo: "Oferta",
     avaliacao: 4.7,
     avaliacoes: 63,
-    ...infoPadrao,
+    descricao:
+      "Salvo é uma fragrância masculina fresca, aromática e marcante. Sua combinação de notas cítricas, especiadas e amadeiradas oferece versatilidade para o uso diário e noturno.",
+    familiaOlfativa: "Aromático Especiado",
+    notasTopo: ["Bergamota", "Pimenta", "Notas cítricas"],
+    notasCoracao: ["Lavanda", "Pimenta-rosa", "Patchouli"],
+    notasBase: ["Ambroxan", "Cedro", "Ládano"],
+    fixacao: 4,
+    projecao: 4,
+    ocasioes: ["Dia a dia", "Trabalho", "Noite", "Encontros"],
+    volume: "100ml",
+    concentracao: "Eau de Parfum",
     genero: "Masculino",
+    origem: "Emirados Árabes Unidos",
+    inspiradoEm: "Dior Sauvage",
   },
+
   {
     id: 8,
     slug: "al-noble-wazeer",
@@ -132,10 +201,49 @@ export const produtos: Product[] = [
     marca: "Lattafa",
     preco: 450,
     imagem: "/perfume.jpeg",
+    imagens: ["/perfume.jpeg", "/perfume.jpeg", "/perfume.jpeg"],
     categoria: "Árabe",
     selo: "Exclusivo",
     avaliacao: 4.9,
     avaliacoes: 88,
-    ...infoPadrao,
+    descricao:
+      "Al Noble Wazeer é uma fragrância árabe elegante, intensa e sofisticada. Possui uma construção olfativa envolvente, ideal para quem aprecia perfumes exclusivos e cheios de personalidade.",
+    familiaOlfativa: "Amadeirado Oriental",
+    notasTopo: ["Hortelã", "Laranja", "Bergamota"],
+    notasCoracao: ["Chocolate", "Caramelo", "Pera"],
+    notasBase: ["Baunilha", "Âmbar", "Sândalo", "Almíscar"],
+    fixacao: 5,
+    projecao: 5,
+    ocasioes: ["Noite", "Festas", "Eventos", "Clima frio"],
+    volume: "100ml",
+    concentracao: "Eau de Parfum",
+    genero: "Unissex",
+    origem: "Emirados Árabes Unidos",
   },
 ];
+
+export function buscarProdutoPorSlug(slug: string) {
+  return produtos.find((produto) => produto.slug === slug);
+}
+
+export function buscarProdutosRelacionados(
+  produtoAtual: Product,
+  limite = 4,
+) {
+  const relacionadosDaCategoria = produtos.filter(
+    (produto) =>
+      produto.id !== produtoAtual.id &&
+      (produto.categoria === produtoAtual.categoria ||
+        produto.marca === produtoAtual.marca),
+  );
+
+  const outrosProdutos = produtos.filter(
+    (produto) =>
+      produto.id !== produtoAtual.id &&
+      !relacionadosDaCategoria.some(
+        (relacionado) => relacionado.id === produto.id,
+      ),
+  );
+
+  return [...relacionadosDaCategoria, ...outrosProdutos].slice(0, limite);
+}
