@@ -31,87 +31,123 @@ export default function ProductCard({
   avaliacoes,
 }: ProductCardProps) {
   const { adicionarAoCarrinho } = useCart();
+
   const parcela = preco / 6;
 
+  const precoFormatado = preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
+  const parcelaFormatada = parcela.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
+  function adicionarProduto() {
+    adicionarAoCarrinho({
+      id,
+      slug,
+      nome,
+      marca,
+      preco,
+      imagem,
+      categoria,
+      selo,
+      avaliacao,
+      avaliacoes,
+    });
+  }
+
   return (
-    <div className="group relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950 transition-all duration-300 hover:-translate-y-2 hover:border-yellow-400 hover:shadow-2xl hover:shadow-yellow-500/10">
-      {selo && (
-        <span className="absolute left-4 top-4 z-10 rounded-full bg-yellow-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-black">
-          {selo}
-        </span>
-      )}
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/80 hover:shadow-xl hover:shadow-yellow-500/10">
+      <div className="relative">
+        {selo && (
+          <span className="absolute left-3 top-3 z-10 rounded-full bg-yellow-400 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wide text-black">
+            {selo}
+          </span>
+        )}
 
-      <button className="absolute right-4 top-4 z-10 rounded-full bg-black/70 p-3 text-white backdrop-blur transition hover:text-red-500">
-        <FaHeart size={16} />
-      </button>
+        <button
+          type="button"
+          aria-label={`Adicionar ${nome} aos favoritos`}
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/75 text-white backdrop-blur transition hover:bg-red-500 hover:text-white"
+        >
+          <FaHeart size={14} />
+        </button>
 
-      <Link href={`/produto/${slug}`}>
-        <div className="relative flex h-72 items-center justify-center overflow-hidden bg-gradient-to-b from-zinc-900 to-black">
-          <Image
-            src={imagem}
-            alt={nome}
-            width={420}
-            height={420}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-        </div>
-      </Link>
+        <Link
+          href={`/produto/${slug}`}
+          aria-label={`Ver detalhes do perfume ${nome}`}
+        >
+          <div className="relative h-56 overflow-hidden bg-gradient-to-b from-zinc-900 to-black sm:h-60">
+            <Image
+              src={imagem}
+              alt={`Perfume ${nome} da marca ${marca}`}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+        </Link>
+      </div>
 
-      <div className="space-y-3 p-5">
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-sm font-medium text-zinc-400">{marca}</p>
+      <div className="flex flex-1 flex-col p-4">
+        <div className="mb-2 flex items-center justify-between gap-2">
+          <p className="truncate text-xs font-medium uppercase tracking-wide text-zinc-400">
+            {marca}
+          </p>
 
-          <span className="rounded-full border border-yellow-400/40 px-3 py-1 text-xs text-yellow-400">
+          <span className="shrink-0 rounded-full border border-yellow-400/30 px-2 py-1 text-[10px] font-medium text-yellow-400">
             {categoria}
           </span>
         </div>
 
         <Link href={`/produto/${slug}`}>
-          <h3 className="text-xl font-bold text-white hover:text-yellow-400 transition">
+          <h3 className="line-clamp-2 min-h-12 text-lg font-bold text-white transition hover:text-yellow-400">
             {nome}
           </h3>
         </Link>
 
-        <div className="flex items-center gap-2 text-sm">
+        <div className="mt-2 flex items-center gap-2 text-xs">
           <div className="flex items-center gap-1 text-yellow-400">
-            <FaStar />
+            <FaStar size={13} />
             <span className="font-bold">{avaliacao}</span>
           </div>
 
-          <span className="text-zinc-500">({avaliacoes} avaliações)</span>
+          <span className="text-zinc-500">
+            ({avaliacoes} avaliações)
+          </span>
         </div>
 
-        <div>
-          <p className="text-3xl font-bold text-yellow-400">
-            R$ {preco.toFixed(2).replace(".", ",")}
+        <div className="mt-4">
+          <p className="text-2xl font-extrabold text-yellow-400">
+            {precoFormatado}
           </p>
 
-          <p className="text-sm text-zinc-400">
-            ou 6x de R$ {parcela.toFixed(2).replace(".", ",")}
+          <p className="mt-1 text-xs text-zinc-400">
+            ou 6x de {parcelaFormatada} sem juros
           </p>
         </div>
 
-        <button
-          onClick={() =>
-            adicionarAoCarrinho({
-              id,
-              slug,
-              nome,
-              marca,
-              preco,
-              imagem,
-              categoria,
-              selo,
-              avaliacao,
-              avaliacoes,
-            })
-          }
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 py-3 font-bold text-black transition hover:bg-yellow-300"
-        >
-          <FaShoppingCart />
-          Adicionar ao Carrinho
-        </button>
+        <div className="mt-auto pt-4">
+          <button
+            type="button"
+            onClick={adicionarProduto}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-3 py-3 text-sm font-bold text-black transition hover:bg-yellow-300 active:scale-[0.98]"
+          >
+            <FaShoppingCart size={14} />
+            Adicionar ao carrinho
+          </button>
+
+          <Link
+            href={`/produto/${slug}`}
+            className="mt-3 block text-center text-xs font-semibold text-zinc-400 transition hover:text-yellow-400"
+          >
+            Ver detalhes do produto
+          </Link>
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

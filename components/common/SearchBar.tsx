@@ -1,86 +1,59 @@
 "use client";
 
-import { FaShoppingCart, FaHeart, FaSprayCan } from "react-icons/fa";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { useCart } from "@/context/CartContext";
-import SearchBar from "@/components/common/SearchBar";
+import { useState } from "react";
+import Link from "next/link";
+import { FaSearch } from "react-icons/fa";
+import { produtos } from "@/data/produtos";
 
-export default function Navbar() {
-  const { carrinho, abrirCarrinho } = useCart();
+export default function SearchBar() {
+  const [busca, setBusca] = useState("");
 
-  const totalItens = carrinho.reduce(
-    (total, item) => total + item.quantidade,
-    0
-  );
+  const termo = busca.toLowerCase().trim();
+
+  const resultados =
+    termo.length > 0
+      ? produtos.filter(
+          (produto) =>
+            produto.nome.toLowerCase().includes(termo) ||
+            produto.marca.toLowerCase().includes(termo) ||
+            produto.categoria.toLowerCase().includes(termo) ||
+            (produto.familiaOlfativa ?? "")
+              .toLowerCase()
+              .includes(termo)
+        )
+      : [];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-yellow-500 bg-black">
-      <div className="mx-auto max-w-7xl px-5 py-4">
-        <div className="flex items-center justify-between gap-4">
-          <h1 className="whitespace-nowrap text-2xl font-bold text-yellow-400 md:text-3xl">
-            Bold Parfam
-          </h1>
+    <div className="relative w-full">
+      <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" />
 
-          <div className="hidden max-w-md flex-1 md:flex">
-            <SearchBar />
-          </div>
+      <input
+        type="text"
+        placeholder="Pesquisar perfume..."
+        value={busca}
+        onChange={(e) => setBusca(e.target.value)}
+        className="w-full rounded-xl border border-zinc-700 bg-zinc-900 py-3 pl-11 pr-4 text-white outline-none transition focus:border-yellow-400"
+      />
 
-          <nav className="hidden items-center gap-7 text-white md:flex">
-            <div className="flex cursor-pointer items-center gap-2 whitespace-nowrap font-medium transition duration-300 hover:text-yellow-400">
-              <FaSprayCan size={15} />
-              <span>Sua assinatura olfativa</span>
-            </div>
-
-            <a href="#" className="transition hover:text-yellow-400">
-              Produtos
-            </a>
-
-            <a href="#" className="transition hover:text-yellow-400">
-              Categorias
-            </a>
-
-            <a href="#" className="transition hover:text-yellow-400">
-              Contato
-            </a>
-
-            <FaHeart
-              size={22}
-              className="cursor-pointer transition hover:text-red-500"
-            />
-
-            <button
-              onClick={abrirCarrinho}
-              className="relative transition hover:text-yellow-400"
+      {resultados.length > 0 && (
+        <div className="absolute left-0 top-14 z-50 w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 shadow-2xl">
+          {resultados.slice(0, 5).map((produto) => (
+            <Link
+              key={produto.id}
+              href={`/produto/${produto.slug}`}
+              onClick={() => setBusca("")}
+              className="block border-b border-zinc-800 px-4 py-3 transition hover:bg-zinc-900"
             >
-              <FaShoppingCart size={22} />
+              <p className="font-bold text-white">{produto.nome}</p>
 
-              {totalItens > 0 && (
-                <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-black">
-                  {totalItens}
-                </span>
-              )}
-            </button>
-          </nav>
-
-          <div className="flex items-center gap-5 md:hidden">
-            <button onClick={abrirCarrinho} className="relative text-white">
-              <FaShoppingCart size={22} />
-
-              {totalItens > 0 && (
-                <span className="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400 text-xs font-bold text-black">
-                  {totalItens}
-                </span>
-              )}
-            </button>
-
-            <HiOutlineMenuAlt3 size={30} className="text-yellow-400" />
-          </div>
+              <p className="text-sm text-zinc-400">
+                {produto.marca} • R${" "}
+                {produto.preco.toFixed(2).replace(".", ",")}
+              </p>
+            </Link>
+          ))}
         </div>
-
-        <div className="mt-4 md:hidden">
-          <SearchBar />
-        </div>
-      </div>
-    </header>
+      )}
+    </div>
   );
 }

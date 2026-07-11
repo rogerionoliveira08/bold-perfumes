@@ -3,16 +3,29 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { Product } from "@/types/product";
 
-type CartItem = Product & {
+type CartProduct = Pick<
+  Product,
+  | "id"
+  | "slug"
+  | "nome"
+  | "marca"
+  | "preco"
+  | "imagem"
+  | "categoria"
+  | "selo"
+  | "avaliacao"
+  | "avaliacoes"
+>;
+
+type CartItem = CartProduct & {
   quantidade: number;
 };
-
 type CartContextType = {
   carrinho: CartItem[];
   carrinhoAberto: boolean;
   abrirCarrinho: () => void;
   fecharCarrinho: () => void;
-  adicionarAoCarrinho: (produto: Product) => void;
+  adicionarAoCarrinho: (produto: CartProduct) => void;
   removerDoCarrinho: (id: number) => void;
   aumentarQuantidade: (id: number) => void;
   diminuirQuantidade: (id: number) => void;
@@ -50,7 +63,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setCarrinhoAberto(false);
   }
 
-  function adicionarAoCarrinho(produto: Product) {
+  function adicionarAoCarrinho(produto: CartProduct) {
     setCarrinho((atual) => {
       const produtoExiste = atual.find((item) => item.id === produto.id);
 

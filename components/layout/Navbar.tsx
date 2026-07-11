@@ -3,7 +3,7 @@
 import { FaShoppingCart, FaHeart, FaSprayCan } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useCart } from "@/context/CartContext";
-import SearchBar from "../common/SearchBar";
+import SearchBar from "@/components/common/SearchBar";
 
 export default function Navbar() {
   const { carrinho, abrirCarrinho } = useCart();

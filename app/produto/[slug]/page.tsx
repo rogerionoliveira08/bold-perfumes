@@ -3,9 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { produtos } from "@/data/produtos";
-
-import ProductGallery from "@/components/products/ProductGallery";
 import ProductActions from "@/components/products/ProductActions";
+import ProductGallery from "@/components/products/ProductGallery";
 
 type Props = {
   params: Promise<{
