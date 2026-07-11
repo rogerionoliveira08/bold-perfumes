@@ -6,6 +6,10 @@ import CategorySection from "@/components/home/CategorySection";
 import ProductGrid from "@/components/products/ProductGrid";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import BestSellers from "@/components/home/BestSellers";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import Testimonials from "@/components/home/Testimonials";
+import FAQ from "@/components/home/FAQ";
 
 export default function HomePage() {
   return (
@@ -14,10 +18,14 @@ export default function HomePage() {
       <Navbar />
 
       <main className="min-h-screen bg-black text-white">
-        <Hero />
-        <BenefitsSection />
-        <CategorySection />
-        <ProductGrid />
+       <Hero />
+<BenefitsSection />
+<BestSellers />
+<WhyChooseUs />
+<CategorySection />
+<ProductGrid />
+<Testimonials />
+<FAQ />
       </main>
 
       <Footer />

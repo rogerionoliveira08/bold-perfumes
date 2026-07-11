@@ -30,7 +30,7 @@ export default async function ProductPage({ params }: Props) {
     .slice(0, 4);
 
   const mensagemWhatsApp = encodeURIComponent(
-    `Olá! Tenho interesse no perfume ${produto.nome} da Bold Parfam.\n\nValor: R$ ${produto.preco.toFixed(
+    `Olá! Tenho interesse no perfume ${produto.nome} da Bold Parfum.\n\nValor: R$ ${produto.preco.toFixed(
       2
     )}\n\nGostaria de mais informações.`
   );

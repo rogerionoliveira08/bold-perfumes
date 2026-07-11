@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bold Parfam",
+  title: "Bold Parfum",
   description: "Perfumes árabes e importados selecionados.",
 };
 

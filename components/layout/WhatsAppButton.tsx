@@ -1,6 +1,6 @@
 export default function WhatsAppButton() {
   const phone = "5522998771598";
-  const message = "Olá! Vim pelo site da Bold Parfam e gostaria de saber mais sobre os perfumes.";
+  const message = "Olá! Vim pelo site da Bold Parfum e gostaria de saber mais sobre os perfumes.";
 
   const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 

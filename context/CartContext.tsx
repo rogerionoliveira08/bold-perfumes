@@ -40,7 +40,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [carregouCarrinho, setCarregouCarrinho] = useState(false);
 
   useEffect(() => {
-    const carrinhoSalvo = localStorage.getItem("boldparfam-cart");
+    const carrinhoSalvo = localStorage.getItem("boldparfum-cart");
 
     if (carrinhoSalvo) {
       setCarrinho(JSON.parse(carrinhoSalvo));
@@ -51,7 +51,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (carregouCarrinho) {
-      localStorage.setItem("boldparfam-cart", JSON.stringify(carrinho));
+      localStorage.setItem("boldparfum-cart", JSON.stringify(carrinho));
     }
   }, [carrinho, carregouCarrinho]);
 

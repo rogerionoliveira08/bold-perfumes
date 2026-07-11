@@ -71,7 +71,7 @@ export default function ProductCard({
         <button
           type="button"
           aria-label={`Adicionar ${nome} aos favoritos`}
-          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/75 text-white backdrop-blur transition hover:bg-red-500 hover:text-white"
+          className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/75 text-white backdrop-blur transition hover:bg-red-500"
         >
           <FaHeart size={14} />
         </button>
@@ -80,13 +80,13 @@ export default function ProductCard({
           href={`/produto/${slug}`}
           aria-label={`Ver detalhes do perfume ${nome}`}
         >
-          <div className="relative h-56 overflow-hidden bg-gradient-to-b from-zinc-900 to-black sm:h-60">
+          <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-zinc-900 to-black">
             <Image
               src={imagem}
               alt={`Perfume ${nome} da marca ${marca}`}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-contain p-2 transition-transform duration-500 group-hover:scale-[1.03] sm:p-3"
             />
           </div>
         </Link>
