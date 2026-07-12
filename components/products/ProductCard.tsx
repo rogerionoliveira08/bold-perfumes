@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaHeart,
-  FaShoppingCart,
-  FaStar,
-} from "react-icons/fa";
+import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { useCart } from "@/context/CartContext";
 
 type ProductCardProps = {
@@ -86,13 +82,13 @@ export default function ProductCard({
           aria-label={`Ver detalhes do perfume ${nome}`}
           className="block"
         >
-          <div className="relative aspect-square overflow-hidden bg-gradient-to-b from-zinc-900 to-black">
+          <div className="relative aspect-square w-full overflow-hidden bg-black">
             <Image
               src={imagem}
               alt={`Perfume ${nome} da marca ${marca}`}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-contain p-1.5 transition-transform duration-500 group-hover:scale-[1.04] sm:p-3"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
             />
           </div>
         </Link>
@@ -121,9 +117,7 @@ export default function ProductCard({
             <span className="font-bold">{avaliacao}</span>
           </div>
 
-          <span className="truncate text-zinc-600">
-            ({avaliacoes})
-          </span>
+          <span className="truncate text-zinc-600">({avaliacoes})</span>
         </div>
 
         {inspiradoEm ? (
@@ -165,7 +159,9 @@ export default function ProductCard({
             className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-yellow-400 px-2 py-2.5 text-[10px] font-extrabold text-black transition hover:bg-yellow-300 active:scale-[0.98] sm:gap-2 sm:px-3 sm:py-3 sm:text-sm"
           >
             <FaShoppingCart size={12} />
+
             <span className="sm:hidden">Adicionar</span>
+
             <span className="hidden sm:inline">
               Adicionar ao carrinho
             </span>

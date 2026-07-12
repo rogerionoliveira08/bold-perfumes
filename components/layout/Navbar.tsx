@@ -1,13 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { FaHeart, FaShoppingCart, FaSprayCan } from "react-icons/fa";
+import {
+  FaHeart,
+  FaShoppingCart,
+  FaSprayCan,
+} from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useCart } from "@/context/CartContext";
+import { useFavorites } from "@/context/FavoritesContext";
 import SearchBar from "@/components/common/SearchBar";
 
 export default function Navbar() {
   const { carrinho, abrirCarrinho } = useCart();
+  const { totalFavoritos } = useFavorites();
 
   const totalItens = carrinho.reduce(
     (total, item) => total + item.quantidade,
@@ -56,13 +62,7 @@ export default function Navbar() {
               Contato
             </Link>
 
-            <button
-              type="button"
-              aria-label="Favoritos"
-              className="transition hover:text-red-500"
-            >
-              <FaHeart size={21} />
-            </button>
+            <FavoriteLink totalFavoritos={totalFavoritos} />
 
             <CartButton
               totalItens={totalItens}
@@ -71,6 +71,8 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4 md:hidden">
+            <FavoriteLink totalFavoritos={totalFavoritos} />
+
             <CartButton
               totalItens={totalItens}
               abrirCarrinho={abrirCarrinho}
@@ -91,6 +93,28 @@ export default function Navbar() {
         </div>
       </div>
     </header>
+  );
+}
+
+function FavoriteLink({
+  totalFavoritos,
+}: {
+  totalFavoritos: number;
+}) {
+  return (
+    <Link
+      href="/favoritos"
+      aria-label={`Abrir favoritos com ${totalFavoritos} produtos`}
+      className="relative text-white transition hover:text-red-500"
+    >
+      <FaHeart size={21} />
+
+      {totalFavoritos > 0 && (
+        <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
+          {totalFavoritos > 99 ? "99+" : totalFavoritos}
+        </span>
+      )}
+    </Link>
   );
 }
 

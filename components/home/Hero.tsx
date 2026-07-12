@@ -1,3 +1,4 @@
+ 
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -78,7 +79,7 @@ export default function Hero() {
           <div className="relative overflow-hidden rounded-[2rem] border border-yellow-400/30 bg-gradient-to-b from-zinc-900 to-black p-5 shadow-2xl shadow-yellow-500/10 sm:p-7">
             <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black">
               <Image
-                src="/perfume.jpeg"
+                src="/Perfumes/perfume.jpeg"
                 alt="Perfume premium da Bold Parfum"
                 width={700}
                 height={820}
