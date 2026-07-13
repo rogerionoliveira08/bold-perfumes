@@ -2,7 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { FaSearch, FaTimes } from "react-icons/fa";
+import {
+  FaFilter,
+  FaSearch,
+  FaTimes,
+} from "react-icons/fa";
 import ProductCard from "@/components/products/ProductCard";
 import Filters from "@/components/catalog/Filters";
 import { produtos } from "@/data/produtos";
@@ -56,8 +60,13 @@ export default function CatalogClient() {
   const [busca, setBusca] = useState(buscaInicial);
   const [marca, setMarca] = useState("");
   const [categoria, setCategoria] = useState("");
+  const [genero, setGenero] = useState("");
+  const [familia, setFamilia] = useState("");
   const [precoMaximo, setPrecoMaximo] = useState("");
-  const [ordenacao, setOrdenacao] = useState<Ordenacao>("relevancia");
+  const [ordenacao, setOrdenacao] =
+    useState<Ordenacao>("relevancia");
+  const [filtrosMobileAbertos, setFiltrosMobileAbertos] =
+    useState(false);
 
   useEffect(() => {
     setBusca(buscaInicial);
@@ -68,19 +77,33 @@ export default function CatalogClient() {
 
     const filtrados = produtos.filter((produto) => {
       const buscaOk =
-        termo === "" || criarTextoPesquisa(produto).includes(termo);
+        termo === "" ||
+        criarTextoPesquisa(produto).includes(termo);
 
-      const marcaOk = marca === "" || produto.marca === marca;
+      const marcaOk =
+        marca === "" || produto.marca === marca;
 
       const categoriaOk =
-        categoria === "" ||
-        produto.categoria === categoria ||
-        produto.genero === categoria;
+        categoria === "" || produto.categoria === categoria;
+
+      const generoOk =
+        genero === "" || produto.genero === genero;
+
+      const familiaOk =
+        familia === "" || produto.familiaOlfativa === familia;
 
       const precoOk =
-        precoMaximo === "" || produto.preco <= Number(precoMaximo);
+        precoMaximo === "" ||
+        produto.preco <= Number(precoMaximo);
 
-      return buscaOk && marcaOk && categoriaOk && precoOk;
+      return (
+        buscaOk &&
+        marcaOk &&
+        categoriaOk &&
+        generoOk &&
+        familiaOk &&
+        precoOk
+      );
     });
 
     return [...filtrados].sort((a, b) => {
@@ -102,7 +125,9 @@ export default function CatalogClient() {
 
         case "relevancia":
         default: {
-          if (!termo) return 0;
+          if (!termo) {
+            return b.avaliacoes - a.avaliacoes;
+          }
 
           const nomeA = normalizarTexto(a.nome);
           const nomeB = normalizarTexto(b.nome);
@@ -110,43 +135,74 @@ export default function CatalogClient() {
           const aComecaComTermo = nomeA.startsWith(termo);
           const bComecaComTermo = nomeB.startsWith(termo);
 
-          if (aComecaComTermo && !bComecaComTermo) return -1;
-          if (!aComecaComTermo && bComecaComTermo) return 1;
+          if (aComecaComTermo && !bComecaComTermo) {
+            return -1;
+          }
+
+          if (!aComecaComTermo && bComecaComTermo) {
+            return 1;
+          }
 
           return b.avaliacoes - a.avaliacoes;
         }
       }
     });
-  }, [busca, marca, categoria, precoMaximo, ordenacao]);
+  }, [
+    busca,
+    marca,
+    categoria,
+    genero,
+    familia,
+    precoMaximo,
+    ordenacao,
+  ]);
 
   const filtrosAtivos =
     busca !== "" ||
     marca !== "" ||
     categoria !== "" ||
+    genero !== "" ||
+    familia !== "" ||
     precoMaximo !== "";
+
+  const quantidadeFiltrosAtivos = [
+    marca,
+    categoria,
+    genero,
+    familia,
+    precoMaximo,
+  ].filter(Boolean).length;
 
   function limparFiltros() {
     setBusca("");
     setMarca("");
     setCategoria("");
+    setGenero("");
+    setFamilia("");
     setPrecoMaximo("");
     setOrdenacao("relevancia");
   }
 
   return (
-    <div className="grid items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
+    <div className="grid items-start gap-7 lg:grid-cols-[260px_minmax(0,1fr)]">
       <Filters
         marca={marca}
         categoria={categoria}
+        genero={genero}
+        familia={familia}
         precoMaximo={precoMaximo}
+        abertoMobile={filtrosMobileAbertos}
         setMarca={setMarca}
         setCategoria={setCategoria}
+        setGenero={setGenero}
+        setFamilia={setFamilia}
         setPrecoMaximo={setPrecoMaximo}
+        fecharMobile={() => setFiltrosMobileAbertos(false)}
         limparFiltros={limparFiltros}
       />
 
       <section className="min-w-0">
-        <div className="mb-6 rounded-2xl border border-zinc-800 bg-zinc-950 p-4 sm:p-5">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-4 sm:p-5">
           <div className="relative">
             <FaSearch className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
 
@@ -154,7 +210,7 @@ export default function CatalogClient() {
               type="search"
               value={busca}
               onChange={(evento) => setBusca(evento.target.value)}
-              placeholder="Pesquise por nome, marca, inspiração, família olfativa..."
+              placeholder="Pesquise por perfume, marca ou inspiração..."
               className="w-full rounded-xl border border-zinc-700 bg-black py-3.5 pl-11 pr-12 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-yellow-400"
             />
 
@@ -171,18 +227,18 @@ export default function CatalogClient() {
           </div>
 
           <p className="mt-3 text-xs leading-5 text-zinc-500">
-            Você pode pesquisar por perfume, marca, gênero, inspiração, notas,
-            ocasião de uso ou família olfativa.
+            Pesquise por nome, marca, gênero, inspiração, notas ou
+            família olfativa.
           </p>
         </div>
 
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="my-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-yellow-400">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-yellow-400">
               Nossa seleção
             </p>
 
-            <h2 className="mt-1 text-2xl font-bold sm:text-3xl">
+            <h2 className="mt-1 text-2xl font-black text-white sm:text-3xl">
               Catálogo de Perfumes
             </h2>
 
@@ -194,76 +250,111 @@ export default function CatalogClient() {
             </p>
           </div>
 
-          <div className="w-full sm:w-auto">
-            <label
-              htmlFor="ordenacao"
-              className="mb-1.5 block text-xs font-semibold text-zinc-500"
+          <div className="flex w-full gap-2 sm:w-auto">
+            <button
+              type="button"
+              onClick={() => setFiltrosMobileAbertos(true)}
+              className="relative flex flex-1 items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm font-bold text-white transition hover:border-yellow-400 hover:text-yellow-400 lg:hidden"
             >
-              Ordenar por
-            </label>
+              <FaFilter size={13} />
+              Filtros
 
-            <select
-              id="ordenacao"
-              value={ordenacao}
-              onChange={(evento) =>
-                setOrdenacao(evento.target.value as Ordenacao)
-              }
-              className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-400 sm:min-w-[210px]"
-            >
-              <option value="relevancia">Relevância</option>
-              <option value="mais-vendidos">Mais vendidos</option>
-              <option value="menor-preco">Menor preço</option>
-              <option value="maior-preco">Maior preço</option>
-              <option value="melhor-avaliacao">Melhor avaliação</option>
-              <option value="nome">Nome: A–Z</option>
-            </select>
+              {quantidadeFiltrosAtivos > 0 && (
+                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-[10px] font-black text-black">
+                  {quantidadeFiltrosAtivos}
+                </span>
+              )}
+            </button>
+
+            <div className="flex-1 sm:flex-none">
+              <label
+                htmlFor="ordenacao"
+                className="sr-only"
+              >
+                Ordenar por
+              </label>
+
+              <select
+                id="ordenacao"
+                value={ordenacao}
+                onChange={(evento) =>
+                  setOrdenacao(
+                    evento.target.value as Ordenacao,
+                  )
+                }
+                className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-400 sm:min-w-[210px]"
+              >
+                <option value="relevancia">
+                  Relevância
+                </option>
+
+                <option value="mais-vendidos">
+                  Mais vendidos
+                </option>
+
+                <option value="menor-preco">
+                  Menor preço
+                </option>
+
+                <option value="maior-preco">
+                  Maior preço
+                </option>
+
+                <option value="melhor-avaliacao">
+                  Melhor avaliação
+                </option>
+
+                <option value="nome">
+                  Nome: A–Z
+                </option>
+              </select>
+            </div>
           </div>
         </div>
 
         {filtrosAtivos && (
           <div className="mb-5 flex flex-wrap items-center gap-2">
             {busca && (
-              <button
-                type="button"
-                onClick={() => setBusca("")}
-                className="flex items-center gap-2 rounded-full border border-yellow-400/30 bg-yellow-400/5 px-3 py-2 text-xs font-semibold text-yellow-400"
-              >
-                Pesquisa: {busca}
-                <FaTimes size={9} />
-              </button>
+              <FilterChip
+                label={`Pesquisa: ${busca}`}
+                onRemove={() => setBusca("")}
+                destaque
+              />
             )}
 
             {marca && (
-              <button
-                type="button"
-                onClick={() => setMarca("")}
-                className="flex items-center gap-2 rounded-full border border-zinc-700 px-3 py-2 text-xs text-zinc-300"
-              >
-                Marca: {marca}
-                <FaTimes size={9} />
-              </button>
+              <FilterChip
+                label={`Marca: ${marca}`}
+                onRemove={() => setMarca("")}
+              />
+            )}
+
+            {genero && (
+              <FilterChip
+                label={`Gênero: ${genero}`}
+                onRemove={() => setGenero("")}
+              />
             )}
 
             {categoria && (
-              <button
-                type="button"
-                onClick={() => setCategoria("")}
-                className="flex items-center gap-2 rounded-full border border-zinc-700 px-3 py-2 text-xs text-zinc-300"
-              >
-                Categoria: {categoria}
-                <FaTimes size={9} />
-              </button>
+              <FilterChip
+                label={`Categoria: ${categoria}`}
+                onRemove={() => setCategoria("")}
+              />
+            )}
+
+            {familia && (
+              <FilterChip
+                label={`Família: ${familia}`}
+                onRemove={() => setFamilia("")}
+              />
             )}
 
             {precoMaximo && (
-              <button
-                type="button"
-                onClick={() => setPrecoMaximo("")}
-                className="flex items-center gap-2 rounded-full border border-zinc-700 px-3 py-2 text-xs text-zinc-300"
-              >
-                Até R$ {precoMaximo}
-                <FaTimes size={9} />
-              </button>
+              <FilterChip
+                label={`Até R$ ${precoMaximo}`}
+                onRemove={() => setPrecoMaximo("")}
+              />
             )}
 
             <button
@@ -296,7 +387,7 @@ export default function CatalogClient() {
             ))}
           </div>
         ) : (
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-950 px-6 py-16 text-center">
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-950 px-6 py-16 text-center">
             <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 text-yellow-400">
               <FaSearch size={20} />
             </div>
@@ -306,14 +397,14 @@ export default function CatalogClient() {
             </h3>
 
             <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-zinc-400">
-              Tente pesquisar por outro nome, marca, inspiração ou alterar os
+              Tente pesquisar outro nome ou remover alguns
               filtros selecionados.
             </p>
 
             <button
               type="button"
               onClick={limparFiltros}
-              className="mt-6 rounded-full bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
+              className="mt-6 rounded-xl bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
             >
               Limpar pesquisa e filtros
             </button>
@@ -321,5 +412,30 @@ export default function CatalogClient() {
         )}
       </section>
     </div>
+  );
+}
+
+function FilterChip({
+  label,
+  onRemove,
+  destaque = false,
+}: {
+  label: string;
+  onRemove: () => void;
+  destaque?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onRemove}
+      className={`flex max-w-full items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition ${
+        destaque
+          ? "border-yellow-400/30 bg-yellow-400/5 text-yellow-400"
+          : "border-zinc-700 text-zinc-300 hover:border-zinc-500"
+      }`}
+    >
+      <span className="max-w-[220px] truncate">{label}</span>
+      <FaTimes size={9} />
+    </button>
   );
 }
