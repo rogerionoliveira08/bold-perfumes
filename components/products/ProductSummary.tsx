@@ -1,4 +1,4 @@
-import { FaStar, FaTag } from "react-icons/fa";
+ import { FaStar, FaTag } from "react-icons/fa";
 import { Product } from "@/types/product";
 import ProductActions from "@/components/products/ProductActions";
 import ProductFavorite from "@/components/products/ProductFavorite";

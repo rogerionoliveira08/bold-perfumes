@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+ import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
 const depoimentos = [
   {
@@ -45,7 +45,7 @@ const cidadesAtendidas = [
   "São Pedro da Aldeia",
   "Cabo Frio",
   "Arraial do Cabo",
-  "Armação dos Búzios", 
+  "Armação dos Búzios",
   "Rio das Ostras",
 ];
 
@@ -101,6 +101,7 @@ export default function Testimonials() {
         <div className="mt-10 rounded-3xl border border-yellow-400/20 bg-yellow-400/5 px-5 py-6 text-center sm:px-8">
           <div className="flex items-center justify-center gap-2 text-yellow-400">
             <FaMapMarkerAlt />
+
             <p className="font-bold uppercase tracking-widest">
               Atendemos toda a Região dos Lagos
             </p>

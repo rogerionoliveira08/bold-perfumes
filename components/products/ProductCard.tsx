@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -87,10 +87,10 @@ export default function ProductCard({
   }
 
   return (
-    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-zinc-800/90 bg-gradient-to-b from-zinc-950 to-black transition duration-300 hover:-translate-y-1 hover:border-yellow-400/60 hover:shadow-[0_18px_45px_rgba(250,204,21,0.10)] sm:rounded-3xl">
+    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-[0_14px_35px_rgba(250,204,21,0.08)]">
       <div className="relative overflow-hidden">
         {selo && (
-          <span className="absolute left-2.5 top-2.5 z-20 max-w-[68%] truncate rounded-full border border-yellow-300/40 bg-yellow-400 px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.1em] text-black shadow-lg sm:left-3.5 sm:top-3.5 sm:px-3 sm:py-1.5 sm:text-[10px]">
+          <span className="absolute left-2 top-2 z-20 max-w-[65%] truncate rounded-full bg-yellow-400 px-2 py-1 text-[8px] font-black uppercase tracking-[0.08em] text-black shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px]">
             {selo}
           </span>
         )}
@@ -108,16 +108,16 @@ export default function ProductCard({
               ? "Remover dos favoritos"
               : "Adicionar aos favoritos"
           }
-          className={`absolute right-2.5 top-2.5 z-20 flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur-md transition duration-200 active:scale-90 sm:right-3.5 sm:top-3.5 sm:h-9 sm:w-9 ${
+          className={`absolute right-2 top-2 z-20 flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 sm:right-3 sm:top-3 ${
             favoritado
-              ? "border-red-500 bg-red-500 text-white shadow-lg shadow-red-500/20"
-              : "border-white/15 bg-black/70 text-white hover:border-red-500 hover:bg-red-500 hover:text-white"
+              ? "border-red-500 bg-red-500 text-white"
+              : "border-white/15 bg-black/70 text-white hover:border-red-500 hover:bg-red-500"
           }`}
         >
           {favoritado ? (
-            <FaHeart size={13} />
+            <FaHeart size={12} />
           ) : (
-            <FaRegHeart size={13} />
+            <FaRegHeart size={12} />
           )}
         </button>
 
@@ -126,43 +126,43 @@ export default function ProductCard({
           aria-label={`Ver detalhes do perfume ${nome}`}
           className="block"
         >
-          <div className="relative aspect-square w-full overflow-hidden bg-black">
+          <div className="relative aspect-[1/0.92] w-full overflow-hidden bg-black sm:aspect-square">
             <Image
               src={imagem}
               alt={`Perfume ${nome} da marca ${marca}`}
               fill
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-              className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.045]"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.035]"
             />
 
-            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/45 to-transparent" />
           </div>
         </Link>
       </div>
 
-      <div className="flex flex-1 flex-col p-3 sm:p-4">
+      <div className="flex flex-1 flex-col p-2.5 sm:p-3.5">
         <div className="flex min-w-0 items-center justify-between gap-2">
-          <p className="truncate text-[9px] font-bold uppercase tracking-[0.15em] text-zinc-500 sm:text-[11px]">
+          <p className="truncate text-[8px] font-bold uppercase tracking-[0.14em] text-zinc-500 sm:text-[10px]">
             {marca}
           </p>
 
-          <span className="hidden shrink-0 rounded-full border border-zinc-700 bg-black/50 px-2 py-1 text-[9px] font-semibold text-zinc-400 sm:block">
+          <span className="hidden shrink-0 rounded-full border border-zinc-800 bg-black/40 px-2 py-0.5 text-[8px] font-semibold text-zinc-500 sm:block">
             {categoria}
           </span>
         </div>
 
         <Link
           href={`/produto/${slug}`}
-          className="mt-1.5 block min-w-0"
+          className="mt-1 block min-w-0"
         >
-          <h3 className="line-clamp-2 min-h-10 text-sm font-black leading-5 text-white transition hover:text-yellow-400 sm:min-h-12 sm:text-lg sm:leading-6">
+          <h3 className="line-clamp-2 min-h-9 text-[13px] font-black leading-[18px] text-white transition hover:text-yellow-400 sm:min-h-10 sm:text-base sm:leading-5">
             {nome}
           </h3>
         </Link>
 
-        <div className="mt-2 flex min-w-0 items-center gap-1.5 text-[10px] sm:text-xs">
+        <div className="mt-1.5 flex min-w-0 items-center gap-1 text-[9px] sm:text-[11px]">
           <div className="flex shrink-0 items-center gap-1 text-yellow-400">
-            <FaStar size={10} />
+            <FaStar size={9} />
             <span className="font-bold">{avaliacao}</span>
           </div>
 
@@ -174,44 +174,44 @@ export default function ProductCard({
         </div>
 
         {inspiradoEm ? (
-          <div className="mt-3 min-h-[44px] rounded-xl border border-yellow-400/15 bg-yellow-400/[0.04] px-2.5 py-2 sm:min-h-[50px] sm:px-3">
-            <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-600 sm:text-[9px]">
+          <div className="mt-2 rounded-lg border border-yellow-400/15 bg-yellow-400/[0.04] px-2 py-1.5 sm:px-2.5">
+            <p className="text-[7px] font-bold uppercase tracking-[0.1em] text-zinc-600 sm:text-[8px]">
               Inspirado em
             </p>
 
-            <p className="mt-1 line-clamp-1 text-[10px] font-bold text-yellow-400 sm:text-xs">
+            <p className="mt-0.5 truncate text-[9px] font-bold text-yellow-400 sm:text-[11px]">
               {inspiradoEm}
             </p>
           </div>
         ) : (
-          <div className="mt-3 min-h-[44px] rounded-xl border border-zinc-800 bg-black/40 px-2.5 py-2 sm:min-h-[50px] sm:px-3">
-            <p className="text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-600 sm:text-[9px]">
+          <div className="mt-2 rounded-lg border border-zinc-800 bg-black/30 px-2 py-1.5 sm:px-2.5">
+            <p className="text-[7px] font-bold uppercase tracking-[0.1em] text-zinc-600 sm:text-[8px]">
               Seleção premium
             </p>
 
-            <p className="mt-1 truncate text-[10px] font-semibold text-zinc-400 sm:text-xs">
+            <p className="mt-0.5 truncate text-[9px] font-semibold text-zinc-400 sm:text-[11px]">
               Perfume árabe original
             </p>
           </div>
         )}
 
-        <div className="mt-3 border-t border-zinc-800/80 pt-3">
-          <p className="truncate text-lg font-black tracking-tight text-yellow-400 sm:text-xl">
+        <div className="mt-2.5 border-t border-zinc-800 pt-2.5">
+          <p className="truncate text-base font-black tracking-tight text-yellow-400 sm:text-lg">
             {precoFormatado}
           </p>
 
-          <p className="mt-0.5 line-clamp-1 text-[9px] text-zinc-500 sm:text-[11px]">
+          <p className="mt-0.5 truncate text-[8px] text-zinc-500 sm:text-[10px]">
             6x de {parcelaFormatada} sem juros
           </p>
         </div>
 
-        <div className="mt-auto pt-3 sm:pt-4">
+        <div className="mt-auto pt-2.5">
           <button
             type="button"
             onClick={adicionarProduto}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-2 py-2.5 text-[10px] font-black text-black transition duration-200 hover:bg-yellow-300 active:scale-[0.98] sm:px-3 sm:py-3 sm:text-sm"
+            className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-yellow-400 px-2 py-2 text-[9px] font-black text-black transition hover:bg-yellow-300 active:scale-[0.98] sm:rounded-xl sm:py-2.5 sm:text-xs"
           >
-            <FaShoppingCart size={12} />
+            <FaShoppingCart size={11} />
 
             <span className="sm:hidden">Adicionar</span>
 
@@ -222,7 +222,7 @@ export default function ProductCard({
 
           <Link
             href={`/produto/${slug}`}
-            className="mt-2.5 block text-center text-[9px] font-semibold text-zinc-500 transition hover:text-yellow-400 sm:text-xs"
+            className="mt-1.5 block text-center text-[8px] font-semibold text-zinc-600 transition hover:text-yellow-400 sm:text-[10px]"
           >
             Ver detalhes
           </Link>

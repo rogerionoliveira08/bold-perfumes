@@ -1,8 +1,9 @@
-import Link from "next/link";
+ import Link from "next/link";
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import BenefitsSection from "@/components/home/BenefitsSection";
+import ProductCarousel from "@/components/home/ProductCarousel";
 import CategorySection from "@/components/home/CategorySection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
@@ -21,7 +22,7 @@ export default function HomePage() {
         produto.selo === "Destaque" ||
         produto.selo === "Original",
     )
-    .slice(0, 4);
+    .slice(0, 10);
 
   const maisVendidos = [...produtos]
     .sort((a, b) => b.avaliacoes - a.avaliacoes)
@@ -41,7 +42,7 @@ export default function HomePage() {
         produto.origem
           .toLowerCase()
           .includes("emirados árabes unidos") ||
-        produto.categoria === "Árabe",
+        produto.categoria.toLowerCase() === "árabe",
     )
     .slice(0, 4);
 
@@ -55,7 +56,7 @@ export default function HomePage() {
 
         <BenefitsSection />
 
-        <ProductSection
+        <ProductCarousel
           eyebrow="Novidades da Bold Parfum"
           title="Lançamentos"
           description="Descubra fragrâncias modernas, sofisticadas e recém-chegadas à nossa seleção."
