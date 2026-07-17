@@ -87,10 +87,10 @@ export default function ProductCard({
   }
 
   return (
-    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-[0_14px_35px_rgba(250,204,21,0.08)]">
+    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-[0_14px_35px_rgba(250,204,21,0.08)] sm:rounded-2xl">
       <div className="relative overflow-hidden">
         {selo && (
-          <span className="absolute left-2 top-2 z-20 max-w-[65%] truncate rounded-full bg-yellow-400 px-2 py-1 text-[8px] font-black uppercase tracking-[0.08em] text-black shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px]">
+          <span className="absolute left-2 top-2 z-20 max-w-[66%] truncate rounded-full bg-yellow-400 px-2 py-1 text-[7px] font-black uppercase tracking-[0.08em] text-black shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px]">
             {selo}
           </span>
         )}
@@ -108,16 +108,16 @@ export default function ProductCard({
               ? "Remover dos favoritos"
               : "Adicionar aos favoritos"
           }
-          className={`absolute right-2 top-2 z-20 flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 sm:right-3 sm:top-3 ${
+          className={`absolute right-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 sm:right-3 sm:top-3 sm:h-8 sm:w-8 ${
             favoritado
               ? "border-red-500 bg-red-500 text-white"
               : "border-white/15 bg-black/70 text-white hover:border-red-500 hover:bg-red-500"
           }`}
         >
           {favoritado ? (
-            <FaHeart size={12} />
+            <FaHeart size={10} />
           ) : (
-            <FaRegHeart size={12} />
+            <FaRegHeart size={10} />
           )}
         </button>
 
@@ -126,7 +126,7 @@ export default function ProductCard({
           aria-label={`Ver detalhes do perfume ${nome}`}
           className="block"
         >
-          <div className="relative aspect-[1/0.92] w-full overflow-hidden bg-black sm:aspect-square">
+          <div className="relative aspect-[1/0.82] w-full overflow-hidden bg-black sm:aspect-square">
             <Image
               src={imagem}
               alt={`Perfume ${nome} da marca ${marca}`}
@@ -135,14 +135,14 @@ export default function ProductCard({
               className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.035]"
             />
 
-            <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/45 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/50 to-transparent sm:h-12" />
           </div>
         </Link>
       </div>
 
-      <div className="flex flex-1 flex-col p-2.5 sm:p-3.5">
+      <div className="flex flex-1 flex-col p-2 sm:p-3.5">
         <div className="flex min-w-0 items-center justify-between gap-2">
-          <p className="truncate text-[8px] font-bold uppercase tracking-[0.14em] text-zinc-500 sm:text-[10px]">
+          <p className="truncate text-[7px] font-bold uppercase tracking-[0.12em] text-zinc-500 sm:text-[10px] sm:tracking-[0.14em]">
             {marca}
           </p>
 
@@ -151,18 +151,15 @@ export default function ProductCard({
           </span>
         </div>
 
-        <Link
-          href={`/produto/${slug}`}
-          className="mt-1 block min-w-0"
-        >
-          <h3 className="line-clamp-2 min-h-9 text-[13px] font-black leading-[18px] text-white transition hover:text-yellow-400 sm:min-h-10 sm:text-base sm:leading-5">
+        <Link href={`/produto/${slug}`} className="mt-1 block min-w-0">
+          <h3 className="line-clamp-2 min-h-8 text-[12px] font-black leading-4 text-white transition hover:text-yellow-400 sm:min-h-10 sm:text-base sm:leading-5">
             {nome}
           </h3>
         </Link>
 
-        <div className="mt-1.5 flex min-w-0 items-center gap-1 text-[9px] sm:text-[11px]">
+        <div className="mt-1 flex min-w-0 items-center gap-1 text-[8px] sm:mt-1.5 sm:text-[11px]">
           <div className="flex shrink-0 items-center gap-1 text-yellow-400">
-            <FaStar size={9} />
+            <FaStar size={8} />
             <span className="font-bold">{avaliacao}</span>
           </div>
 
@@ -174,44 +171,44 @@ export default function ProductCard({
         </div>
 
         {inspiradoEm ? (
-          <div className="mt-2 rounded-lg border border-yellow-400/15 bg-yellow-400/[0.04] px-2 py-1.5 sm:px-2.5">
-            <p className="text-[7px] font-bold uppercase tracking-[0.1em] text-zinc-600 sm:text-[8px]">
+          <div className="mt-1.5 rounded-md border border-yellow-400/15 bg-yellow-400/[0.04] px-2 py-1.5 sm:mt-2 sm:rounded-lg sm:px-2.5">
+            <p className="text-[6px] font-bold uppercase tracking-[0.1em] text-zinc-600 sm:text-[8px]">
               Inspirado em
             </p>
 
-            <p className="mt-0.5 truncate text-[9px] font-bold text-yellow-400 sm:text-[11px]">
+            <p className="mt-0.5 truncate text-[8px] font-bold text-yellow-400 sm:text-[11px]">
               {inspiradoEm}
             </p>
           </div>
         ) : (
-          <div className="mt-2 rounded-lg border border-zinc-800 bg-black/30 px-2 py-1.5 sm:px-2.5">
-            <p className="text-[7px] font-bold uppercase tracking-[0.1em] text-zinc-600 sm:text-[8px]">
+          <div className="mt-1.5 rounded-md border border-zinc-800 bg-black/30 px-2 py-1.5 sm:mt-2 sm:rounded-lg sm:px-2.5">
+            <p className="text-[6px] font-bold uppercase tracking-[0.1em] text-zinc-600 sm:text-[8px]">
               Seleção premium
             </p>
 
-            <p className="mt-0.5 truncate text-[9px] font-semibold text-zinc-400 sm:text-[11px]">
+            <p className="mt-0.5 truncate text-[8px] font-semibold text-zinc-400 sm:text-[11px]">
               Perfume árabe original
             </p>
           </div>
         )}
 
-        <div className="mt-2.5 border-t border-zinc-800 pt-2.5">
-          <p className="truncate text-base font-black tracking-tight text-yellow-400 sm:text-lg">
+        <div className="mt-2 border-t border-zinc-800 pt-2 sm:mt-2.5 sm:pt-2.5">
+          <p className="truncate text-[15px] font-black tracking-tight text-yellow-400 sm:text-lg">
             {precoFormatado}
           </p>
 
-          <p className="mt-0.5 truncate text-[8px] text-zinc-500 sm:text-[10px]">
+          <p className="mt-0.5 truncate text-[7px] text-zinc-500 sm:text-[10px]">
             6x de {parcelaFormatada} sem juros
           </p>
         </div>
 
-        <div className="mt-auto pt-2.5">
+        <div className="mt-auto pt-2 sm:pt-2.5">
           <button
             type="button"
             onClick={adicionarProduto}
-            className="flex w-full items-center justify-center gap-1.5 rounded-lg bg-yellow-400 px-2 py-2 text-[9px] font-black text-black transition hover:bg-yellow-300 active:scale-[0.98] sm:rounded-xl sm:py-2.5 sm:text-xs"
+            className="flex w-full items-center justify-center gap-1 rounded-lg bg-yellow-400 px-2 py-1.5 text-[8px] font-black text-black transition hover:bg-yellow-300 active:scale-[0.98] sm:gap-1.5 sm:rounded-xl sm:py-2.5 sm:text-xs"
           >
-            <FaShoppingCart size={11} />
+            <FaShoppingCart size={10} />
 
             <span className="sm:hidden">Adicionar</span>
 
@@ -222,7 +219,7 @@ export default function ProductCard({
 
           <Link
             href={`/produto/${slug}`}
-            className="mt-1.5 block text-center text-[8px] font-semibold text-zinc-600 transition hover:text-yellow-400 sm:text-[10px]"
+            className="mt-1 block text-center text-[7px] font-semibold text-zinc-600 transition hover:text-yellow-400 sm:mt-1.5 sm:text-[10px]"
           >
             Ver detalhes
           </Link>

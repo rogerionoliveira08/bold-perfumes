@@ -1,12 +1,16 @@
- import Link from "next/link";
+import Link from "next/link";
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import BenefitsSection from "@/components/home/BenefitsSection";
+import BrandsSection from "@/components/home/BrandsSection";
 import ProductCarousel from "@/components/home/ProductCarousel";
+import WeeklyOffer from "@/components/home/WeeklyOffer";
+import InspiredSection from "@/components/home/InspiredSection";
 import CategorySection from "@/components/home/CategorySection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
+import InstagramSection from "@/components/home/InstagramSection";
 import FAQ from "@/components/home/FAQ";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
@@ -20,7 +24,8 @@ export default function HomePage() {
       (produto) =>
         produto.selo === "Novo" ||
         produto.selo === "Destaque" ||
-        produto.selo === "Original",
+        produto.selo === "Original" ||
+        produto.selo === "Lançamento",
     )
     .slice(0, 10);
 
@@ -39,10 +44,8 @@ export default function HomePage() {
   const arabes = produtos
     .filter(
       (produto) =>
-        produto.origem
-          .toLowerCase()
-          .includes("emirados árabes unidos") ||
-        produto.categoria.toLowerCase() === "árabe",
+        produto.origem.toLowerCase().includes("emirados") ||
+        produto.categoria.toLowerCase().includes("árabe"),
     )
     .slice(0, 4);
 
@@ -56,12 +59,16 @@ export default function HomePage() {
 
         <BenefitsSection />
 
+        <BrandsSection />
+
         <ProductCarousel
           eyebrow="Novidades da Bold Parfum"
           title="Lançamentos"
           description="Descubra fragrâncias modernas, sofisticadas e recém-chegadas à nossa seleção."
           produtos={lancamentos}
         />
+
+        <WeeklyOffer />
 
         <ProductSection
           eyebrow="Os favoritos dos clientes"
@@ -70,6 +77,8 @@ export default function HomePage() {
           produtos={maisVendidos}
           dark
         />
+
+        <InspiredSection />
 
         {femininos.length > 0 && (
           <ProductSection
@@ -93,6 +102,8 @@ export default function HomePage() {
         <CategorySection />
 
         <Testimonials />
+
+        <InstagramSection />
 
         <FAQ />
       </main>
@@ -124,22 +135,22 @@ function ProductSection({
 
   return (
     <section
-      className={`border-y border-zinc-900 py-12 sm:py-16 ${
+      className={`border-y border-zinc-900 py-10 sm:py-14 ${
         dark ? "bg-zinc-950/70" : "bg-black"
       }`}
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-        <div className="mb-7 flex flex-col gap-5 sm:mb-9 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-yellow-400">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-yellow-400 sm:text-xs">
               {eyebrow}
             </p>
 
-            <h2 className="mt-2 text-3xl font-black text-white sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-black text-white sm:text-4xl">
               {title}
             </h2>
 
-            <p className="mt-3 text-sm leading-6 text-zinc-400 sm:text-base">
+            <p className="mt-2 text-xs leading-5 text-zinc-400 sm:mt-3 sm:text-base sm:leading-6">
               {description}
             </p>
           </div>
@@ -173,7 +184,7 @@ function ProductSection({
 
         <Link
           href="/produtos"
-          className="mt-7 flex w-full items-center justify-center rounded-xl border border-yellow-400 px-4 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black sm:hidden"
+          className="mt-6 flex w-full items-center justify-center rounded-xl border border-yellow-400 px-4 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black sm:hidden"
         >
           Ver todos os perfumes
         </Link>
