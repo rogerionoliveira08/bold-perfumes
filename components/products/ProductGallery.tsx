@@ -1,7 +1,8 @@
-"use client";
+ "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { FaExpand, FaTimes } from "react-icons/fa";
 
 type ProductGalleryProps = {
@@ -13,11 +14,19 @@ export default function ProductGallery({
   nome,
   imagens,
 }: ProductGalleryProps) {
-  const imagensValidas =
-    imagens.length > 0 ? imagens : ["/Perfumes/perfume.jpeg"];
+  const imagensValidas = useMemo(() => {
+    return imagens.length > 0
+      ? imagens
+      : ["/Perfumes/perfume.jpeg"];
+  }, [imagens]);
 
   const [imagemAtual, setImagemAtual] = useState(imagensValidas[0]);
   const [lightboxAberto, setLightboxAberto] = useState(false);
+  const [montado, setMontado] = useState(false);
+
+  useEffect(() => {
+    setMontado(true);
+  }, []);
 
   useEffect(() => {
     setImagemAtual(imagensValidas[0]);
@@ -45,6 +54,14 @@ export default function ProductGallery({
     setImagemAtual(imagem);
   }
 
+  function abrirLightbox() {
+    setLightboxAberto(true);
+  }
+
+  function fecharLightbox() {
+    setLightboxAberto(false);
+  }
+
   return (
     <>
       <div className="mx-auto w-full max-w-[410px] lg:mx-0">
@@ -69,7 +86,7 @@ export default function ProductGallery({
                     alt={`${nome} - imagem ${index + 1}`}
                     fill
                     sizes="64px"
-                    className="object-contain p-1.5"
+                    className="object-cover object-center"
                   />
                 </button>
               ))}
@@ -79,9 +96,9 @@ export default function ProductGallery({
           <div className="min-w-0 flex-1">
             <button
               type="button"
-              onClick={() => setLightboxAberto(true)}
+              onClick={abrirLightbox}
               aria-label={`Ampliar imagem de ${nome}`}
-              className="group relative block aspect-square w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950"
+              className="group relative block aspect-square w-full cursor-zoom-in overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950"
             >
               <Image
                 src={imagemAtual}
@@ -89,12 +106,12 @@ export default function ProductGallery({
                 fill
                 priority
                 sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 410px, 410px"
-                className="object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04] sm:p-5"
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
               />
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
-              <span className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/70 text-white backdrop-blur transition hover:border-yellow-400 hover:text-yellow-400 sm:h-10 sm:w-10 sm:opacity-0 sm:group-hover:opacity-100">
+              <span className="pointer-events-none absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/70 text-white backdrop-blur transition sm:h-10 sm:w-10 sm:opacity-0 sm:group-hover:opacity-100">
                 <FaExpand size={14} />
               </span>
             </button>
@@ -119,7 +136,7 @@ export default function ProductGallery({
                       alt={`${nome} - imagem ${index + 1}`}
                       fill
                       sizes="25vw"
-                      className="object-contain p-1"
+                      className="object-cover object-center"
                     />
                   </button>
                 ))}
@@ -129,38 +146,38 @@ export default function ProductGallery({
         </div>
       </div>
 
-      {lightboxAberto && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`Imagem ampliada de ${nome}`}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-3 backdrop-blur-sm sm:p-6"
-          onClick={() => setLightboxAberto(false)}
-        >
-          <button
-            type="button"
-            onClick={() => setLightboxAberto(false)}
-            aria-label="Fechar imagem ampliada"
-            className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 bg-black text-white transition hover:border-yellow-400 hover:text-yellow-400 sm:right-6 sm:top-6 sm:h-11 sm:w-11"
-          >
-            <FaTimes size={16} />
-          </button>
-
+      {montado &&
+        lightboxAberto &&
+        createPortal(
           <div
-            className="relative h-[82vh] w-full max-w-5xl"
-            onClick={(event) => event.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Imagem ampliada de ${nome}`}
+            onClick={fecharLightbox}
+            className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/90 p-4"
           >
-            <Image
-              src={imagemAtual}
-              alt={`${nome} ampliado`}
-              fill
-              sizes="100vw"
-              className="object-contain"
-              priority
-            />
-          </div>
-        </div>
-      )}
+            <button
+              type="button"
+              onClick={fecharLightbox}
+              aria-label="Fechar imagem ampliada"
+              className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-zinc-600 bg-black/80 text-white transition hover:border-yellow-400 hover:text-yellow-400 sm:right-6 sm:top-6"
+            >
+              <FaTimes size={18} />
+            </button>
+
+            <div
+              className="relative flex h-full w-full items-center justify-center"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={imagemAtual}
+                alt={`${nome} ampliado`}
+                className="block max-h-[88vh] max-w-[92vw] rounded-xl object-contain shadow-2xl"
+              />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
