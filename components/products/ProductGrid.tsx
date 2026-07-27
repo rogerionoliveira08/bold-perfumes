@@ -20,7 +20,7 @@ export default function ProductGrid() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
           {produtos.map((produto) => (
             <ProductCard
               key={produto.id}
@@ -30,10 +30,12 @@ export default function ProductGrid() {
               marca={produto.marca}
               preco={produto.preco}
               imagem={produto.imagem}
+              imagemZoom={produto.imagemZoom}
               categoria={produto.categoria}
               selo={produto.selo}
               avaliacao={produto.avaliacao}
               avaliacoes={produto.avaliacoes}
+              inspiradoEm={produto.inspiradoEm}
             />
           ))}
         </div>

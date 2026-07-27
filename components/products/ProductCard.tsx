@@ -18,6 +18,7 @@ type ProductCardProps = {
   marca: string;
   preco: number;
   imagem: string;
+  imagemZoom?: number;
   categoria: string;
   selo?: string;
   avaliacao: number;
@@ -90,7 +91,7 @@ export default function ProductCard({
     <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-[0_14px_35px_rgba(250,204,21,0.08)] sm:rounded-2xl">
       <div className="relative overflow-hidden">
         {selo && (
-          <span className="absolute left-2 top-2 z-20 max-w-[66%] truncate rounded-full bg-yellow-400 px-2 py-1 text-[7px] font-black uppercase tracking-[0.08em] text-black shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px]">
+          <span className="absolute left-2 top-2 z-30 max-w-[66%] truncate rounded-full bg-yellow-400 px-2 py-1 text-[7px] font-black uppercase tracking-[0.08em] text-black shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px]">
             {selo}
           </span>
         )}
@@ -108,7 +109,7 @@ export default function ProductCard({
               ? "Remover dos favoritos"
               : "Adicionar aos favoritos"
           }
-          className={`absolute right-2 top-2 z-20 flex h-7 w-7 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 sm:right-3 sm:top-3 sm:h-8 sm:w-8 ${
+          className={`absolute right-2 top-2 z-30 flex h-7 w-7 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 sm:right-3 sm:top-3 sm:h-8 sm:w-8 ${
             favoritado
               ? "border-red-500 bg-red-500 text-white"
               : "border-white/15 bg-black/70 text-white hover:border-red-500 hover:bg-red-500"
@@ -126,23 +127,24 @@ export default function ProductCard({
           aria-label={`Ver detalhes do perfume ${nome}`}
           className="block"
         >
-          <div className="relative aspect-[1/0.82] w-full overflow-hidden bg-black sm:aspect-square">
+          <div className="relative aspect-[4/5] w-full overflow-hidden bg-black">
             <Image
               src={imagem}
               alt={`Perfume ${nome} da marca ${marca}`}
               fill
+              priority={false}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.035]"
+              className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             />
 
-            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/50 to-transparent sm:h-12" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-12 bg-gradient-to-t from-black/35 to-transparent" />
           </div>
         </Link>
       </div>
 
-      <div className="flex flex-1 flex-col p-2 sm:p-3.5">
+      <div className="flex flex-1 flex-col p-2.5 sm:p-3.5">
         <div className="flex min-w-0 items-center justify-between gap-2">
-          <p className="truncate text-[7px] font-bold uppercase tracking-[0.12em] text-zinc-500 sm:text-[10px] sm:tracking-[0.14em]">
+          <p className="truncate text-[8px] font-bold uppercase tracking-[0.12em] text-zinc-500 sm:text-[10px] sm:tracking-[0.14em]">
             {marca}
           </p>
 

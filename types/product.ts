@@ -9,6 +9,17 @@ export interface Product {
   imagem: string;
   imagens?: string[];
 
+  /**
+   * Ajuste individual do tamanho da imagem nos cards.
+   *
+   * Exemplos:
+   * 1 = tamanho normal
+   * 1.05 = aumento leve
+   * 1.1 = aumento médio
+   * 1.15 = aumento maior
+   */
+  imagemZoom?: number;
+
   categoria: string;
   selo?: string;
 

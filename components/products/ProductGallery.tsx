@@ -50,32 +50,20 @@ export default function ProductGallery({
     };
   }, [lightboxAberto]);
 
-  function selecionarImagem(imagem: string) {
-    setImagemAtual(imagem);
-  }
-
-  function abrirLightbox() {
-    setLightboxAberto(true);
-  }
-
-  function fecharLightbox() {
-    setLightboxAberto(false);
-  }
-
   return (
     <>
-      <div className="mx-auto w-full max-w-[410px] lg:mx-0">
+      <div className="mx-auto w-full max-w-[520px] lg:mx-0">
         <div className="flex items-start gap-3">
           {imagensValidas.length > 1 && (
-            <div className="hidden w-[64px] shrink-0 flex-col gap-2 sm:flex">
+            <div className="hidden w-[72px] shrink-0 flex-col gap-2 sm:flex">
               {imagensValidas.map((imagem, index) => (
                 <button
                   key={`${imagem}-${index}`}
                   type="button"
-                  onClick={() => selecionarImagem(imagem)}
+                  onClick={() => setImagemAtual(imagem)}
                   aria-label={`Selecionar imagem ${index + 1} de ${nome}`}
                   aria-pressed={imagemAtual === imagem}
-                  className={`relative aspect-square overflow-hidden rounded-lg border bg-zinc-950 transition ${
+                  className={`relative aspect-[4/5] overflow-hidden rounded-lg border bg-black transition ${
                     imagemAtual === imagem
                       ? "border-yellow-400"
                       : "border-zinc-800 hover:border-zinc-600"
@@ -85,7 +73,7 @@ export default function ProductGallery({
                     src={imagem}
                     alt={`${nome} - imagem ${index + 1}`}
                     fill
-                    sizes="64px"
+                    sizes="72px"
                     className="object-cover object-center"
                   />
                 </button>
@@ -96,16 +84,25 @@ export default function ProductGallery({
           <div className="min-w-0 flex-1">
             <button
               type="button"
-              onClick={abrirLightbox}
+              onClick={() => setLightboxAberto(true)}
               aria-label={`Ampliar imagem de ${nome}`}
-              className="group relative block aspect-square w-full cursor-zoom-in overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950"
+              className="group relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden rounded-2xl border border-zinc-800 bg-black"
             >
+              <Image
+                src={imagemAtual}
+                alt=""
+                fill
+                aria-hidden="true"
+                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 520px, 520px"
+                className="scale-125 object-cover object-center opacity-30 blur-xl"
+              />
+
               <Image
                 src={imagemAtual}
                 alt={nome}
                 fill
                 priority
-                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 410px, 410px"
+                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) 520px, 520px"
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
               />
 
@@ -122,10 +119,10 @@ export default function ProductGallery({
                   <button
                     key={`${imagem}-${index}`}
                     type="button"
-                    onClick={() => selecionarImagem(imagem)}
+                    onClick={() => setImagemAtual(imagem)}
                     aria-label={`Selecionar imagem ${index + 1} de ${nome}`}
                     aria-pressed={imagemAtual === imagem}
-                    className={`relative aspect-square overflow-hidden rounded-lg border bg-zinc-950 transition ${
+                    className={`relative aspect-[4/5] overflow-hidden rounded-lg border bg-black transition ${
                       imagemAtual === imagem
                         ? "border-yellow-400"
                         : "border-zinc-800"
@@ -153,12 +150,12 @@ export default function ProductGallery({
             role="dialog"
             aria-modal="true"
             aria-label={`Imagem ampliada de ${nome}`}
-            onClick={fecharLightbox}
-            className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/90 p-4"
+            onClick={() => setLightboxAberto(false)}
+            className="fixed inset-0 z-[999999] flex items-center justify-center bg-black/95 p-4"
           >
             <button
               type="button"
-              onClick={fecharLightbox}
+              onClick={() => setLightboxAberto(false)}
               aria-label="Fechar imagem ampliada"
               className="absolute right-4 top-4 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-zinc-600 bg-black/80 text-white transition hover:border-yellow-400 hover:text-yellow-400 sm:right-6 sm:top-6"
             >
@@ -172,7 +169,7 @@ export default function ProductGallery({
               <img
                 src={imagemAtual}
                 alt={`${nome} ampliado`}
-                className="block max-h-[88vh] max-w-[92vw] rounded-xl object-contain shadow-2xl"
+                className="block max-h-[92vh] max-w-[94vw] rounded-xl object-contain shadow-2xl"
               />
             </div>
           </div>,
