@@ -35,7 +35,83 @@ function criarProduto(
   };
 }
 
-export const produtos: Product[] = [
+
+type CadastroRapido = {
+  id: number;
+  slug: string;
+  nome: string;
+  marca: string;
+  preco: number;
+  categoria: string;
+  genero: string;
+  extensaoImagem?: "jpg" | "jpeg" | "png" | "webp";
+  selo?: string;
+  familiaOlfativa?: string;
+  inspiradoEm?: string;
+  descricao?: string;
+  notasTopo?: string[];
+  notasCoracao?: string[];
+  notasBase?: string[];
+  fixacao?: number;
+  projecao?: number;
+  ocasioes?: string[];
+  volume?: string;
+  concentracao?: string;
+  origem?: string;
+  avaliacao?: number;
+  avaliacoes?: number;
+  imagemZoom?: number;
+};
+
+function criarProdutoRapido(produto: CadastroRapido): Product {
+  const {
+    extensaoImagem = "jpg",
+    slug,
+    selo = "Novo",
+    ...dados
+  } = produto;
+
+  return criarProduto({
+    ...dados,
+    slug,
+    selo,
+    imagem: `/Perfumes/${slug}.${extensaoImagem}`,
+  });
+}
+
+/*
+  CADASTRO RÁPIDO
+
+  Para adicionar um perfume novo:
+  1. Coloque a foto em public/Perfumes.
+  2. Use o mesmo nome do slug na imagem.
+     Exemplo: maahir-legacy.jpg
+  3. Copie um bloco abaixo e altere os dados.
+  4. Salve com Ctrl + S.
+
+  A imagem e o selo "Novo" são preenchidos automaticamente.
+*/
+const novosPerfumes: CadastroRapido[] = [
+  {
+    id: 35,
+    slug: "maahir-legacy",
+    nome: "Maahir Legacy",
+    marca: "Lattafa",
+    preco: 350,
+    categoria: "Masculino",
+    genero: "Masculino",
+    familiaOlfativa: "Cítrico Aromático",
+    inspiradoEm: "Parfums de Marly Sedley",
+    notasTopo: ["Toranja", "Limão", "Hortelã", "Lavanda"],
+    notasCoracao: ["Alecrim", "Sálvia Esclaréia", "Gerânio"],
+    notasBase: ["Vetiver", "Cedro", "Âmbar", "Almíscar"],
+    fixacao: 5,
+    projecao: 4,
+    ocasioes: ["Dia a dia", "Trabalho", "Encontros", "Eventos"],
+  },
+];
+
+const catalogoBase: Product[] = [
   criarProduto({
     id: 1,
     slug: "asad",
@@ -156,7 +232,7 @@ export const produtos: Product[] = [
     slug: "maahir",
     nome: "Maahir",
     marca: "Lattafa",
-    preco: 350,
+    preco: 300,
     imagem: "/Perfumes/maahir.jpeg",
     categoria: "Árabe",
     genero: "Unissex",
@@ -186,7 +262,7 @@ export const produtos: Product[] = [
   notasCoracao: ["Lavanda", "Pimenta-rosa", "Patchouli"],
   notasBase: ["Ambroxan", "Cedro", "Ládano"],
   inspiradoEm: "Dior Sauvage",
-}),
+  }),
 
   criarProduto({
     id: 8,
@@ -261,7 +337,7 @@ imagem: "/Perfumes/aatheeri.jpeg",
     slug: "attar-al-wesal",
     nome: "Attar Al Wesal",
     marca: "Al Wataniah",
-    preco: 250,
+    preco: 270,
     imagem: "/Perfumes/attaralwesal.jpeg",
     categoria: "Árabe",
     genero: "Unissex",
@@ -558,66 +634,11 @@ imagem: "/Perfumes/L'intrude.jpeg",
     origem: "Emirados Árabes Unidos",
     inspiradoEm: "Dior Sauvage Elixir",
   }),
+];
 
-    criarProduto({
-    id: 35,
-    slug: "maahir-legacy",
-    nome: "Maahir Legacy",
-    marca: "Lattafa",
-    preco: 350,
-    imagem: "/Perfumes/maahir-legacy.jpg",
-    categoria: "Masculino",
-    genero: "Masculino",
-    selo: "Novo",
-    avaliacao: 4.9,
-    avaliacoes: 0,
-    descricao:
-      "Maahir Legacy é uma fragrância sofisticada que combina frescor cítrico, notas aromáticas e um elegante fundo amadeirado. Versátil e refinado, é ideal para quem procura presença marcante sem perder a leveza.",
-    familiaOlfativa: "Cítrico Aromático",
-    notasTopo: ["Toranja", "Limão", "Hortelã", "Lavanda"],
-    notasCoracao: ["Alecrim", "Sálvia Esclaréia", "Gerânio"],
-    notasBase: ["Vetiver", "Cedro", "Âmbar", "Almíscar"],
-    fixacao: 5,
-    projecao: 4,
-    ocasioes: ["Dia a dia", "Trabalho", "Encontros", "Eventos"],
-    volume: "100ml",
-    concentracao: "Eau de Parfum",
-    origem: "Emirados Árabes Unidos",
-    inspiradoEm: "Parfums de Marly Sedley",
-  }),
-
-  criarProduto({
-  id: 36,
-  slug: "salvo",
-  nome: "Salvo",
-  marca: "Maison Alhambra",
-  preco: 260,
-  imagem: "/Perfumes/salvo.jpg",
-  categoria: "Masculino",
-  genero: "Masculino",
-  selo: "Novo",
-  avaliacao: 4.9,
-  avaliacoes: 0,
-  descricao:
-    "Salvo é uma fragrância masculina elegante, fresca e extremamente versátil. Inspirado no icônico Dior Sauvage Eau de Parfum, combina notas cítricas, aromáticas e amadeiradas para criar um perfume moderno, marcante e perfeito para qualquer ocasião.",
-  familiaOlfativa: "Aromático Especiado",
-  notasTopo: ["Bergamota", "Pimenta", "Notas Cítricas"],
-  notasCoracao: ["Lavanda", "Gerânio", "Elemi"],
-  notasBase: ["Ambroxan", "Cedro", "Ládano"],
-  fixacao: 5,
-  projecao: 4,
-  ocasioes: [
-    "Dia a dia",
-    "Trabalho",
-    "Encontros",
-    "Eventos",
-    "Noite",
-  ],
-  volume: "100ml",
-  concentracao: "Eau de Parfum",
-  origem: "Emirados Árabes Unidos",
-  inspiradoEm: "Dior Sauvage Eau de Parfum",
-}),
+export const produtos: Product[] = [
+  ...catalogoBase,
+  ...novosPerfumes.map(criarProdutoRapido),
 ];
 
 export function buscarProdutoPorSlug(slug: string) {
