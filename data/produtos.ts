@@ -12,25 +12,87 @@ type ProdutoObrigatorio = Pick<
   | "genero"
 >;
 
-function criarProduto(
+ function criarProduto(
   produto: ProdutoObrigatorio & Partial<Product>,
 ): Product {
   return {
     selo: "Original",
     avaliacao: 4.8,
     avaliacoes: 0,
+
     descricao: `${produto.nome} é uma fragrância sofisticada e marcante, selecionada para quem busca personalidade, elegância e excelente presença olfativa.`,
+
     familiaOlfativa: "Oriental Amadeirado",
-    notasTopo: ["Notas cítricas", "Especiarias"],
-    notasCoracao: ["Notas aromáticas", "Flores"],
-    notasBase: ["Âmbar", "Madeiras", "Almíscar"],
+
+    notasTopo: [
+      "Notas cítricas",
+      "Especiarias",
+    ],
+
+    notasCoracao: [
+      "Notas aromáticas",
+      "Flores",
+    ],
+
+    notasBase: [
+      "Âmbar",
+      "Madeiras",
+      "Almíscar",
+    ],
+
     fixacao: 4,
     projecao: 4,
-    ocasioes: ["Dia a dia", "Encontros", "Eventos"],
+    duracao: "6 a 8 horas",
+    rastro: "Moderado a marcante",
+
+    ocasioes: [
+      "Dia a dia",
+      "Encontros",
+      "Eventos",
+    ],
+
     volume: "100ml",
     concentracao: "Eau de Parfum",
     origem: "Emirados Árabes Unidos",
+
+    performance: {
+      intensidade: 4,
+      versatilidade: 4,
+      elegancia: 4,
+      frescor: 3,
+      docura: 3,
+    },
+
+    usoIdeal: {
+      estacoes: [
+        "Primavera",
+        "Outono",
+        "Inverno",
+      ],
+      periodos: [
+        "Dia",
+        "Noite",
+      ],
+      climas: [
+        "Ameno",
+        "Fresco",
+      ],
+    },
+
+    perfil: {
+      estilos: [
+        "Elegante",
+        "Moderno",
+        "Marcante",
+      ],
+      publico:
+        "Indicado para quem procura uma fragrância elegante, marcante e versátil.",
+      impressao:
+        "Uma fragrância sofisticada, envolvente e com excelente presença.",
+    },
+
     imagens: [produto.imagem],
+
     ...produto,
   };
 }
@@ -617,6 +679,108 @@ imagem: "/Perfumes/L'intrude.jpeg",
   concentracao: "Eau de Parfum",
   origem: "Emirados Árabes Unidos",
   inspiradoEm: "Dior Sauvage Eau de Parfum",
+}),
+
+criarProduto({
+  id: 37,
+  slug: "bad-homme",
+  nome: "B.A.D Homme",
+  marca: "Maison Alhambra",
+  preco: 260,
+  imagem: "/Perfumes/bad-homme.jpg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Novidade",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "B.A.D Homme, da Maison Alhambra, é uma fragrância masculina intensa, moderna e sedutora. Sua abertura combina o frescor do limão com o toque picante das pimentas branca e rosa. No coração, o cedro e a sálvia acrescentam elegância aromática e profundidade. A base de cacau e fava-tonka entrega um acabamento quente, levemente adocicado e envolvente. É uma excelente opção para homens que procuram presença, sofisticação e personalidade, especialmente em encontros, eventos e ocasiões noturnas.",
+
+  familiaOlfativa: "Aromático Especiado",
+
+  notasTopo: [
+    "Limão",
+    "Pimenta Branca",
+    "Pimenta Rosa",
+  ],
+
+  notasCoracao: [
+    "Cedro",
+    "Sálvia",
+  ],
+
+  notasBase: [
+    "Cacau",
+    "Fava-Tonka",
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+  duracao: "6 a 8 horas",
+rastro: "Moderado a marcante",
+
+performance: {
+  intensidade: 4,
+  versatilidade: 4,
+  elegancia: 4,
+  frescor: 2,
+  docura: 4,
+},
+
+usoIdeal: {
+  estacoes: [
+    "Outono",
+    "Inverno",
+    "Primavera",
+  ],
+  periodos: [
+    "Noite",
+    "Fim de tarde",
+  ],
+  climas: [
+    "Frio",
+    "Ameno",
+    "Ambientes climatizados",
+  ],
+},
+
+perfil: {
+  estilos: [
+    "Sedutor",
+    "Moderno",
+    "Elegante",
+    "Quente",
+    "Marcante",
+  ],
+  publico:
+    "Indicado para homens que gostam de fragrâncias especiadas, quentes, modernas e com presença.",
+  impressao:
+    "Uma abertura picante e vibrante que evolui para um fundo quente, adocicado e envolvente.",
+},
+
+nossaAvaliacao:
+  "O B.A.D Homme entrega uma combinação muito agradável entre especiarias, madeiras, cacau e fava-tonka. É uma ótima escolha para encontros, festas e ocasiões noturnas, oferecendo um perfil moderno e sedutor com excelente custo-benefício.",
+
+semelhantes: [
+  "Carolina Herrera Bad Boy",
+  "Carolina Herrera Bad Boy Cobalt",
+  "Azzaro The Most Wanted",
+],
+
+  ocasioes: [
+    "Encontros",
+    "Eventos",
+    "Festas",
+    "Jantares",
+    "Noite",
+    "Ocasiões especiais",
+  ],
+
+  volume: "100ml",
+  concentracao: "Eau de Parfum",
+  origem: "Emirados Árabes Unidos",
+  inspiradoEm: "Bad Boy, de Carolina Herrera",
 }),
 ];
 

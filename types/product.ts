@@ -1,3 +1,23 @@
+ export interface ProductPerformance {
+  intensidade: number;
+  versatilidade: number;
+  elegancia: number;
+  frescor: number;
+  docura: number;
+}
+
+export interface ProductUsoIdeal {
+  estacoes: string[];
+  periodos: string[];
+  climas?: string[];
+}
+
+export interface ProductPerfil {
+  estilos: string[];
+  publico: string;
+  impressao?: string;
+}
+
 export interface Product {
   id: number;
   slug: string;
@@ -33,8 +53,21 @@ export interface Product {
   notasCoracao: string[];
   notasBase: string[];
 
+  /**
+   * Avaliação de 1 a 5.
+   */
   fixacao: number;
   projecao: number;
+
+  /**
+   * Exemplo: "6 a 8 horas".
+   */
+  duracao?: string;
+
+  /**
+   * Exemplo: "Moderado a marcante".
+   */
+  rastro?: string;
 
   ocasioes: string[];
 
@@ -44,4 +77,29 @@ export interface Product {
   origem: string;
 
   inspiradoEm?: string;
+
+  /**
+   * Barras visuais de 1 a 5.
+   */
+  performance?: ProductPerformance;
+
+  /**
+   * Estações, horários e climas recomendados.
+   */
+  usoIdeal?: ProductUsoIdeal;
+
+  /**
+   * Estilo e público da fragrância.
+   */
+  perfil?: ProductPerfil;
+
+  /**
+   * Texto editorial exclusivo da Bold Parfum.
+   */
+  nossaAvaliacao?: string;
+
+  /**
+   * Perfumes conhecidos com perfil semelhante.
+   */
+  semelhantes?: string[];
 }
