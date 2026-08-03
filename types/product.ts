@@ -1,4 +1,4 @@
- export interface ProductPerformance {
+export interface ProductPerformance {
   intensidade: number;
   versatilidade: number;
   elegancia: number;
@@ -71,12 +71,27 @@ export interface Product {
 
   ocasioes: string[];
 
+  /**
+   * Estações indicadas para utilização da fragrância.
+   */
+  estacoes?: string[];
+
   volume: string;
   concentracao: string;
   genero: string;
   origem: string;
 
   inspiradoEm?: string;
+
+  /**
+   * Resumo textual da fixação, projeção e duração.
+   */
+  desempenho?: string;
+
+  /**
+   * Principais qualidades e diferenciais do perfume.
+   */
+  caracteristicas?: string[];
 
   /**
    * Barras visuais de 1 a 5.
