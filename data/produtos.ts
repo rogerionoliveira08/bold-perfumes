@@ -1564,7 +1564,7 @@ export const produtos: Product[] = [
   nome: "L'Intrude",
   marca: "Maison Alhambra",
   preco: 250,
-  imagem: "/Perfumes/L'intrude.jpeg",
+  imagem: "/Perfumes/intrude.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Destaque",
