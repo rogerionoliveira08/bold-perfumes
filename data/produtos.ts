@@ -3121,8 +3121,140 @@ criarProduto({
     "Yara Branco",
     "Sabah Al Ward"
   ]
-}),];
+}),
+criarProduto({
+  id: 39,
+  slug: "afeef",
+  nome: "Afeef",
+  marca: "Lattafa",
+  preco: 500,
+  imagem: "/Perfumes/afeef.jpeg",
+  categoria: "Feminino",
+  genero: "Unissex",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
 
+  descricao:
+    "Afeef, da Lattafa, é uma fragrância luxuosa, elegante e envolvente, apresentada em um dos frascos mais sofisticados da perfumaria árabe. Sua abertura combina o dulçor suculento do pêssego com a vivacidade da bergamota e o toque levemente picante da pimenta-rosa. No coração, tuberosa, flor de laranjeira e jasmim formam um buquê floral branco intenso e sofisticado. A base de pralinê, âmbar, sândalo e patchouli proporciona um acabamento cremoso, adocicado, quente e marcante. Embora seja unissex, possui um perfil que tende ao feminino.",
+
+  familiaOlfativa: "Floral Frutado Gourmand",
+
+  notasTopo: [
+    "Pêssego",
+    "Pimenta-rosa",
+    "Bergamota"
+  ],
+
+  notasCoracao: [
+    "Tuberosa",
+    "Flor de laranjeira",
+    "Jasmim"
+  ],
+
+  notasBase: [
+    "Pralinê",
+    "Âmbar",
+    "Sândalo",
+    "Patchouli"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Encontros",
+    "Eventos",
+    "Festas",
+    "Jantares",
+    "Ocasiões especiais",
+    "Uso diário elegante"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Outono",
+    "Inverno"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele e desempenho ainda maior nas roupas. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro floral, adocicado e elegante. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Fragrância unissex com tendência feminina",
+    "Perfil floral, frutado e adocicado",
+    "Abertura suculenta de pêssego",
+    "Coração intenso de flores brancas",
+    "Base cremosa e envolvente",
+    "Boa fixação",
+    "Projeção marcante nas primeiras horas",
+    "Frasco luxuoso com pavões dourados",
+    "Ideal para ocasiões especiais"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 4,
+    elegancia: 5,
+    frescor: 3,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Outono",
+      "Inverno"
+    ],
+
+    periodos: [
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Ameno",
+      "Frio",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Luxuoso",
+      "Elegante",
+      "Romântico",
+      "Sofisticado",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para quem gosta de fragrâncias florais brancas, frutadas, adocicadas e sofisticadas. Embora seja classificado como unissex, seu perfil tende ao feminino.",
+
+    impressao:
+      "Uma abertura frutada, suculenta e levemente picante que evolui para flores brancas intensas, finalizando com uma base cremosa, quente e adocicada."
+  },
+
+  nossaAvaliacao:
+    "O Afeef se destaca tanto pelo aroma sofisticado quanto pelo frasco luxuoso com pavões dourados. A combinação de pêssego, flores brancas, pralinê e sândalo entrega uma fragrância elegante, envolvente e marcante, ideal para quem deseja presença e exclusividade.",
+
+  semelhantes: [
+    "Atheeri",
+    "Fakhar Rose",
+    "Yara Elixir"
+  ]
+}),
+];
 export function buscarProdutoPorSlug(slug: string) {
   return produtos.find((produto) => produto.slug === slug);
 }
