@@ -2991,7 +2991,137 @@ criarProduto({
     "Azzaro Wanted by Night"
   ]
 }),
-];
+
+criarProduto({
+  id: 38,
+  slug: "ameerat-al-arab",
+  nome: "Ameerat Al Arab",
+  marca: "Asdaaf",
+  preco: 260,
+  imagem: "/Perfumes/ameeratalarab.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Ameerat Al Arab, da Asdaaf, é uma fragrância feminina fresca, elegante e sofisticada. Sua abertura cítrica combina bergamota e notas cítricas, criando uma sensação luminosa e agradável. No coração, o almíscar branco e a aloe vera proporcionam um aroma limpo, delicado e confortável. A base reúne jasmim, almíscar, notas amadeiradas e oud, entregando profundidade e elegância sem perder a leveza. É uma excelente escolha para mulheres que procuram uma fragrância versátil, feminina e marcante na medida certa.",
+
+  familiaOlfativa: "Floral",
+
+  notasTopo: [
+    "Notas cítricas",
+    "Bergamota"
+  ],
+
+  notasCoracao: [
+    "Almíscar branco",
+    "Aloe vera"
+  ],
+
+  notasBase: [
+    "Jasmim",
+    "Almíscar",
+    "Notas amadeiradas",
+    "Oud"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Passeios",
+    "Encontros",
+    "Eventos durante o dia"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele. Sua projeção é moderada nas primeiras horas e depois evolui para um rastro confortável, limpo e elegante. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Fragrância feminina fresca e elegante",
+    "Abertura cítrica e luminosa",
+    "Coração limpo e almiscarado",
+    "Fundo floral e amadeirado",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Versátil para diferentes ocasiões",
+    "Excelente para dias quentes",
+    "Ótimo custo-benefício"
+  ],
+
+  performance: {
+    intensidade: 3,
+    versatilidade: 5,
+    elegancia: 4,
+    frescor: 4,
+    docura: 2
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Elegante",
+      "Fresco",
+      "Delicado",
+      "Sofisticado"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias frescas, florais, almiscaradas e elegantes, com boa versatilidade para o uso diário.",
+
+    impressao:
+      "Uma abertura cítrica e luminosa que evolui para um aroma limpo, floral e almiscarado, finalizando com madeiras e oud de forma elegante."
+  },
+
+  nossaAvaliacao:
+    "O Ameerat Al Arab é uma excelente opção para quem procura uma fragrância feminina agradável, fresca e versátil. Sua combinação de cítricos, almíscar branco, flores e madeiras cria um perfume elegante e fácil de usar, especialmente durante o dia e em temperaturas mais altas.",
+
+  semelhantes: [
+    "Fakhar Rose",
+    "Yara Branco",
+    "Sabah Al Ward"
+  ]
+}),];
 
 export function buscarProdutoPorSlug(slug: string) {
   return produtos.find((produto) => produto.slug === slug);
