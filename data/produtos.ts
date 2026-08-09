@@ -3254,6 +3254,139 @@ criarProduto({
     "Yara Elixir"
   ]
 }),
+criarProduto({
+  id: 40,
+  slug: "the-kingdom-feminino",
+  nome: "The Kingdom Feminino",
+  marca: "Lattafa",
+  preco: 350,
+  imagem: "/Perfumes/the-kingdom-feminino.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "The Kingdom Feminino, da Lattafa, é uma fragrância elegante, sofisticada e envolvente, criada para mulheres que gostam de perfumes doces e marcantes. Sua abertura combina pera, groselha-preta e peônia, entregando um início frutado, fresco e delicadamente floral. No coração, o jasmim se une ao pralinê e à fava-tonka, formando um acorde cremoso, adocicado e sensual. A base de baunilha, sândalo, âmbar e almíscar proporciona um acabamento quente, confortável e luxuoso.",
+
+  familiaOlfativa: "Floral Frutado Gourmand",
+
+  notasTopo: [
+    "Pera",
+    "Groselha-preta",
+    "Peônia"
+  ],
+
+  notasCoracao: [
+    "Jasmim",
+    "Pralinê",
+    "Fava-tonka"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Sândalo",
+    "Âmbar",
+    "Almíscar"
+  ],
+
+  fixacao: 5,
+  projecao: 4,
+
+  duracao: "8 a 10 horas",
+
+  rastro: "Marcante",
+
+  ocasioes: [
+    "Encontros",
+    "Eventos",
+    "Festas",
+    "Jantares",
+    "Noite",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Outono",
+    "Inverno",
+    "Primavera"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta excelente fixação, com duração aproximada entre 8 e 10 horas na pele e desempenho ainda maior nas roupas. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro doce, cremoso e elegante. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Fragrância feminina doce e sofisticada",
+    "Perfil floral, frutado e gourmand",
+    "Abertura frutada de pera e groselha-preta",
+    "Coração cremoso de pralinê e fava-tonka",
+    "Base quente de baunilha e sândalo",
+    "Excelente fixação",
+    "Projeção marcante",
+    "Ideal para encontros e eventos",
+    "Frasco elegante e luxuoso"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 4,
+    elegancia: 5,
+    frescor: 2,
+    docura: 5
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Outono",
+      "Inverno",
+      "Primavera"
+    ],
+
+    periodos: [
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Frio",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Elegante",
+      "Romântico",
+      "Doce",
+      "Sofisticado",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias doces, cremosas, frutadas e florais, com presença marcante e acabamento sofisticado.",
+
+    impressao:
+      "Uma abertura frutada e delicadamente floral que evolui para um coração cremoso e adocicado, finalizando com baunilha, âmbar, almíscar e madeiras."
+  },
+
+  nossaAvaliacao:
+    "O The Kingdom Feminino é uma excelente escolha para quem procura uma fragrância doce, luxuosa e marcante. A combinação de pera, pralinê, fava-tonka e baunilha entrega um aroma envolvente, feminino e sofisticado, com ótimo desempenho.",
+
+  semelhantes: [
+    "Yara Elixir",
+    "Fakhar Rose",
+    "Khamrah Qahwa"
+  ]
+}),
 ];
 export function buscarProdutoPorSlug(slug: string) {
   return produtos.find((produto) => produto.slug === slug);
