@@ -3387,7 +3387,2448 @@ criarProduto({
     "Khamrah Qahwa"
   ]
 }),
+criarProduto({
+  id: 41,
+  slug: "panther-pour-homme",
+  nome: "Panther Pour Homme",
+  marca: "Maison Alhambra",
+  preco: 270,
+  imagem: "/Perfumes/panther-pour-homme.jpeg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Panther Pour Homme, da Maison Alhambra, é uma fragrância masculina moderna, aromática e envolvente, inspirada no Phantom, de Paco Rabanne. Sua abertura combina raspas de limão, limão de Amalfi e lavanda, criando uma sensação cítrica, fresca e energizante. No coração, maçã, patchouli, fumaça e notas terrosas acrescentam profundidade e personalidade. A base de baunilha, lavanda e vetiver proporciona um acabamento cremoso, amadeirado e levemente adocicado.",
+
+  inspiradoEm: "Paco Rabanne Phantom",
+
+  familiaOlfativa: "Aromático Amadeirado",
+
+  notasTopo: [
+    "Raspas de limão",
+    "Lavanda",
+    "Limão de Amalfi"
+  ],
+
+  notasCoracao: [
+    "Lavanda",
+    "Maçã",
+    "Patchouli",
+    "Fumaça",
+    "Notas terrosas"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Lavanda",
+    "Vetiver"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "7 a 9 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Passeios",
+    "Encontros",
+    "Festas",
+    "Eventos casuais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Outono",
+    "Inverno"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 7 e 9 horas na pele. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro moderado, aromático e confortável. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Inspirado no Paco Rabanne Phantom",
+    "Fragrância masculina moderna",
+    "Abertura cítrica e aromática",
+    "Lavanda presente em toda a evolução",
+    "Coração frutado, terroso e levemente defumado",
+    "Base cremosa de baunilha e vetiver",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Excelente custo-benefício"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 4,
+    frescor: 4,
+    docura: 3
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Outono",
+      "Inverno"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Ameno",
+      "Frio",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Moderno",
+      "Jovem",
+      "Aromático",
+      "Sedutor",
+      "Versátil"
+    ],
+
+    publico:
+      "Indicado para homens que gostam de fragrâncias cítricas, aromáticas e levemente adocicadas, com perfil moderno, versátil e fácil de agradar.",
+
+    impressao:
+      "Uma abertura cítrica e vibrante que evolui para lavanda, maçã e nuances defumadas, finalizando com baunilha cremosa e vetiver amadeirado."
+  },
+
+  nossaAvaliacao:
+    "O Panther Pour Homme oferece uma combinação moderna e agradável de limão, lavanda, maçã, baunilha e vetiver. É uma excelente escolha para quem procura uma fragrância masculina versátil, elogiável e com ótimo custo-benefício.",
+
+  semelhantes: [
+    "Salvo",
+    "Fakhar Black",
+    "Maahir Legacy"
+  ]
+}),
+criarProduto({
+  id: 42,
+  slug: "maahir-black",
+  nome: "Maahir Black Edition",
+  marca: "Lattafa",
+  preco: 300,
+  imagem: "/Perfumes/maahirblack.jpeg",
+  categoria: "Unissex",
+  genero: "Unissex",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Maahir Black Edition, da Lattafa, é uma fragrância unissex intensa, escura e misteriosa, criada para quem aprecia perfumes defumados, resinosos e marcantes. Sua abertura combina pimenta-preta, pimenta-rosa e açafrão, entregando um início quente e especiado. No coração, óleo de cade, ládano, bálsamo de gurjum e ruibarbo criam um acorde profundo, resinoso e esfumaçado. A base de couro, cedro, patchouli, madeira guaiac, almíscar e musgo proporciona um acabamento terroso, amadeirado e poderoso.",
+
+  inspiradoEm: "Terroni, de Orto Parisi",
+
+  familiaOlfativa: "Âmbar Amadeirado Especiado",
+
+  notasTopo: [
+    "Pimenta-preta",
+    "Pimenta-rosa",
+    "Açafrão"
+  ],
+
+  notasCoracao: [
+    "Óleo de cade",
+    "Ládano",
+    "Bálsamo de gurjum",
+    "Ruibarbo"
+  ],
+
+  notasBase: [
+    "Couro",
+    "Cedro",
+    "Patchouli",
+    "Madeira guaiac",
+    "Almíscar",
+    "Musgo"
+  ],
+
+  fixacao: 5,
+  projecao: 5,
+
+  duracao: "7 a 9 horas",
+
+  rastro: "Intenso e marcante",
+
+  ocasioes: [
+    "Noite",
+    "Eventos",
+    "Jantares",
+    "Festas",
+    "Ocasiões especiais",
+    "Encontros"
+  ],
+
+  estacoes: [
+    "Outono",
+    "Inverno"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta excelente fixação, com duração aproximada entre 7 e 9 horas na pele e desempenho ainda maior nas roupas. Sua projeção é intensa nas primeiras horas, formando um rastro defumado, especiado e amadeirado. Recomenda-se aplicar com moderação devido à sua força e presença.",
+
+  caracteristicas: [
+    "Frequentemente comparado ao Terroni, da Orto Parisi",
+    "Fragrância unissex intensa",
+    "Perfil escuro e misterioso",
+    "Abertura quente e especiada",
+    "Coração resinoso e defumado",
+    "Base de couro e madeiras",
+    "Excelente fixação",
+    "Projeção intensa",
+    "Ideal para noites e climas frios"
+  ],
+
+  performance: {
+    intensidade: 5,
+    versatilidade: 2,
+    elegancia: 4,
+    frescor: 1,
+    docura: 2
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Outono",
+      "Inverno"
+    ],
+
+    periodos: [
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Frio",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Intenso",
+      "Misterioso",
+      "Defumado",
+      "Amadeirado",
+      "Ousado",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para homens e mulheres que gostam de fragrâncias intensas, especiadas, defumadas, resinosas e amadeiradas. É uma opção para quem procura personalidade e não deseja um perfume discreto.",
+
+    impressao:
+      "Uma abertura quente e picante que evolui para resinas densas e fumaça, finalizando com couro, madeiras, patchouli, almíscar e musgo."
+  },
+
+  nossaAvaliacao:
+    "O Maahir Black Edition é uma fragrância forte, escura e diferenciada. Sua combinação de especiarias, fumaça, resinas, couro e madeiras cria uma presença poderosa, ideal para noites frias e ocasiões em que se deseja deixar uma impressão marcante.",
+
+  semelhantes: [
+    "Bade'e Al Oud Oud for Glory",
+    "Musamam",
+    "Maahir"
+  ]
+}),
+criarProduto({
+  id: 43,
+  slug: "attar-al-wesal-gold",
+  nome: "Attar Al Wesal Gold",
+  marca: "Al Wataniah",
+  preco: 300,
+  imagem: "/Perfumes/attar-al-wesal-gold.jpeg",
+  categoria: "Masculino",
+  genero: "Unissex",
+  selo: "Lançamento",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Attar Al Wesal Gold, da Al Wataniah, é uma fragrância oriental especiada, fresca e envolvente. Sua abertura reúne grapefruit, bergamota, lavanda, pera e hortelã, criando um início cítrico, frutado e aromático. No coração, canela e cominho acrescentam calor, intensidade e personalidade. A base de patchouli, baunilha, cedro e âmbar proporciona um acabamento adocicado, amadeirado e sensual. Embora seja uma fragrância unissex, seu perfil tende ao masculino.",
+
+  inspiradoEm: "Jean Paul Gaultier Ultra Male",
+
+  familiaOlfativa: "Oriental Especiado",
+
+  notasTopo: [
+    "Grapefruit",
+    "Bergamota",
+    "Lavanda",
+    "Pera",
+    "Hortelã"
+  ],
+
+  notasCoracao: [
+    "Canela",
+    "Cominho"
+  ],
+
+  notasBase: [
+    "Patchouli",
+    "Baunilha",
+    "Cedro",
+    "Âmbar"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "7 a 9 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Encontros",
+    "Festas",
+    "Eventos",
+    "Jantares",
+    "Noite",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Outono",
+    "Inverno"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 7 e 9 horas na pele. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro doce, aromático e amadeirado. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Inspirado no Jean Paul Gaultier Ultra Male",
+    "Fragrância unissex com tendência masculina",
+    "Abertura cítrica, frutada e aromática",
+    "Pera e hortelã refrescantes",
+    "Coração quente e especiado",
+    "Base adocicada de baunilha e âmbar",
+    "Boa fixação",
+    "Projeção marcante nas primeiras horas",
+    "Ideal para festas, encontros e noites"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 4,
+    elegancia: 4,
+    frescor: 3,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Outono",
+      "Inverno"
+    ],
+
+    periodos: [
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Ameno",
+      "Frio",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Jovem",
+      "Sedutor",
+      "Doce",
+      "Moderno",
+      "Marcante",
+      "Baladeiro"
+    ],
+
+    publico:
+      "Indicado para quem gosta de fragrâncias frutadas, aromáticas, especiadas e adocicadas. Embora seja classificado como unissex, possui um perfil que tende ao masculino.",
+
+    impressao:
+      "Uma abertura fresca de pera, cítricos, lavanda e hortelã que evolui para especiarias quentes, finalizando com baunilha, âmbar, cedro e patchouli."
+  },
+
+  nossaAvaliacao:
+    "O Attar Al Wesal Gold combina frescor frutado e aromático com uma base doce, quente e amadeirada. É uma excelente escolha para encontros, festas e eventos noturnos, oferecendo presença, sensualidade e ótimo custo-benefício.",
+
+  semelhantes: [
+    "Attar Al Wesal",
+    "The Kingdom",
+    "Panther Pour Homme"
+  ]
+}),
+criarProduto({
+  id: 44,
+  slug: "victorioso",
+  nome: "Victorioso",
+  marca: "Maison Alhambra",
+  preco: 280,
+  imagem: "/Perfumes/victorioso.jpeg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Victorioso, da Maison Alhambra, é uma fragrância masculina fresca, aquática e amadeirada, inspirada no Invictus, de Paco Rabanne. Sua abertura combina notas marinhas e bergamota, criando uma sensação limpa, cítrica e revigorante. No coração, folha de louro e jasmim entregam um perfil aromático, herbal e elegante. A base de âmbar cinzento, musgo de carvalho, madeira guaiac e patchouli proporciona profundidade, masculinidade e um acabamento sofisticado.",
+
+  inspiradoEm: "Paco Rabanne Invictus",
+
+  familiaOlfativa: "Amadeirado Aquático",
+
+  notasTopo: [
+    "Notas marinhas",
+    "Bergamota"
+  ],
+
+  notasCoracao: [
+    "Folha de louro",
+    "Jasmim"
+  ],
+
+  notasBase: [
+    "Âmbar cinzento",
+    "Musgo de carvalho",
+    "Madeira guaiac",
+    "Patchouli"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Academia",
+    "Passeios",
+    "Encontros",
+    "Eventos casuais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro fresco, aquático e confortável. É uma excelente escolha para o clima brasileiro e pode ser utilizado durante grande parte do ano.",
+
+  caracteristicas: [
+    "Inspirado no Paco Rabanne Invictus",
+    "Fragrância masculina fresca e moderna",
+    "Abertura aquática e cítrica",
+    "Coração aromático e herbal",
+    "Base amadeirada e sofisticada",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Excelente para dias quentes",
+    "Muito versátil para o uso diário"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 4,
+    frescor: 5,
+    docura: 2
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Esportivo",
+      "Moderno",
+      "Fresco",
+      "Confiante",
+      "Versátil"
+    ],
+
+    publico:
+      "Indicado para homens que gostam de fragrâncias frescas, aquáticas, aromáticas e amadeiradas, com perfil moderno, esportivo e fácil de agradar.",
+
+    impressao:
+      "Uma abertura marinha e cítrica que evolui para folhas aromáticas e jasmim, finalizando com âmbar cinzento, musgo, patchouli e madeira guaiac."
+  },
+
+  nossaAvaliacao:
+    "O Victorioso é uma excelente escolha para quem procura uma fragrância masculina fresca, versátil e agradável. Sua combinação de notas marinhas, bergamota, louro e madeiras funciona muito bem no dia a dia e em climas quentes, oferecendo ótimo custo-benefício.",
+
+  semelhantes: [
+    "Panther Pour Homme",
+    "Maahir Legacy",
+    "Salvo"
+  ]
+}),
+criarProduto({
+  id: 45,
+  slug: "souvenir-floral-bouquet",
+  nome: "Souvenir Floral Bouquet",
+  marca: "Afnan",
+  preco: 400,
+  imagem: "/Perfumes/souvenirfloral.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Premium",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Souvenir Floral Bouquet, da Afnan, é uma fragrância feminina sofisticada, romântica e envolvente. Sua abertura combina lichia, ruibarbo e bergamota, criando um início frutado, fresco e levemente ácido. No coração, rosa, lírio-do-vale, peônia e baunilha formam um buquê floral elegante, delicado e cremoso. A base de almíscar, madeira de cashmere e âmbar proporciona um acabamento macio, confortável e sensual.",
+
+  inspiradoEm: "Parfums de Marly Delina",
+
+  familiaOlfativa: "Floral Frutado",
+
+  notasTopo: [
+    "Lichia",
+    "Ruibarbo",
+    "Bergamota"
+  ],
+
+  notasCoracao: [
+    "Rosa",
+    "Lírio-do-vale",
+    "Peônia",
+    "Baunilha"
+  ],
+
+  notasBase: [
+    "Almíscar",
+    "Madeira de cashmere",
+    "Âmbar"
+  ],
+
+  fixacao: 5,
+  projecao: 4,
+
+  duracao: "8 a 10 horas",
+
+  rastro: "Marcante e elegante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Festas",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta excelente fixação, com duração aproximada entre 8 e 10 horas na pele e desempenho ainda maior nas roupas. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro floral, almiscarado e elegante. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Frequentemente comparado ao Parfums de Marly Delina",
+    "Fragrância feminina sofisticada",
+    "Perfil floral, frutado e almiscarado",
+    "Abertura fresca de lichia e ruibarbo",
+    "Coração elegante de rosas e peônia",
+    "Base macia e confortável",
+    "Excelente fixação",
+    "Projeção marcante",
+    "Ideal para encontros e ocasiões especiais"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 4,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Romântico",
+      "Elegante",
+      "Delicado",
+      "Sofisticado"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias florais, frutadas, almiscaradas e elegantes, com presença marcante e acabamento delicado.",
+
+    impressao:
+      "Uma abertura frutada, fresca e levemente ácida que evolui para um buquê de rosas, peônia e lírio-do-vale, finalizando com almíscar, âmbar e madeira de cashmere."
+  },
+
+  nossaAvaliacao:
+    "O Souvenir Floral Bouquet é uma fragrância feminina sofisticada e muito elegante. Sua combinação de lichia, ruibarbo, rosas, peônia e almíscar cria um perfume romântico, marcante e refinado, ideal para mulheres que buscam presença sem perder a delicadeza.",
+
+  semelhantes: [
+    "Fakhar Rose",
+    "Atheeri",
+    "Yara Elixir"
+  ]
+}),
+criarProduto({
+  id: 46,
+  slug: "so-candid-pour-homme",
+  nome: "So Candid Pour Homme",
+  marca: "Maison Alhambra",
+  preco: 300,
+  imagem: "/Perfumes/socandid.jpeg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "So Candid Pour Homme, da Maison Alhambra, é uma fragrância masculina doce, moderna e sedutora, inspirada no Scandal Pour Homme, de Jean Paul Gaultier. Sua abertura combina mandarina e sálvia-esclaréia, criando um início cítrico, fresco e aromático. No coração, caramelo e fava-tonka entregam uma doçura cremosa, quente e envolvente. A base de vetiver acrescenta um acabamento amadeirado, terroso e masculino, equilibrando o lado gourmand da composição.",
+
+  inspiradoEm: "Jean Paul Gaultier Scandal Pour Homme",
+
+  familiaOlfativa: "Oriental Fougère",
+
+  notasTopo: [
+    "Mandarina",
+    "Sálvia-esclaréia"
+  ],
+
+  notasCoracao: [
+    "Caramelo",
+    "Fava-tonka"
+  ],
+
+  notasBase: [
+    "Vetiver"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Encontros",
+    "Festas",
+    "Jantares",
+    "Eventos",
+    "Noite",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Outono",
+    "Inverno",
+    "Primavera"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro doce, cremoso e amadeirado. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Inspirado no Jean Paul Gaultier Scandal Pour Homme",
+    "Fragrância masculina doce e sedutora",
+    "Abertura cítrica e aromática",
+    "Coração gourmand de caramelo",
+    "Fava-tonka cremosa e envolvente",
+    "Fundo amadeirado de vetiver",
+    "Boa fixação",
+    "Projeção marcante nas primeiras horas",
+    "Ideal para encontros e festas"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 4,
+    elegancia: 4,
+    frescor: 2,
+    docura: 5
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Outono",
+      "Inverno",
+      "Primavera"
+    ],
+
+    periodos: [
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Frio",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Sedutor",
+      "Doce",
+      "Moderno",
+      "Jovem",
+      "Gourmand",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para homens que gostam de fragrâncias doces, cremosas, aromáticas e amadeiradas, com perfil moderno, jovem e sedutor.",
+
+    impressao:
+      "Uma abertura cítrica e aromática que evolui rapidamente para um coração doce de caramelo e fava-tonka, finalizando com vetiver seco e amadeirado."
+  },
+
+  nossaAvaliacao:
+    "O So Candid Pour Homme é uma excelente opção para quem gosta de perfumes masculinos doces e sedutores. A combinação de caramelo, fava-tonka e vetiver cria uma fragrância envolvente, moderna e muito agradável para encontros, festas e noites mais frescas.",
+
+  semelhantes: [
+    "The Kingdom",
+    "Attar Al Wesal Gold",
+    "Asad Bourbon"
+  ]
+}),
+criarProduto({
+  id: 47,
+  slug: "spectre-ghost",
+  nome: "Spectre Ghost",
+  marca: "French Avenue",
+  preco: 350,
+  imagem: "/Perfumes/spectreghost.jpeg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Premium",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Spectre Ghost, da French Avenue, é uma fragrância masculina sofisticada, especiada e envolvente, inspirada no Ani, da Nishane. Sua abertura combina gengibre, bergamota, pimenta-rosa e notas verdes, criando um início fresco, picante e vibrante. No coração, cardamomo, groselha-preta e rosa-turca acrescentam profundidade, elegância e um toque frutado. A base reúne baunilha, benjoim, sândalo, cedro, âmbar cinzento, patchouli e almíscar, proporcionando um acabamento cremoso, quente, amadeirado e sensual.",
+
+  inspiradoEm: "Nishane Ani",
+
+  familiaOlfativa: "Âmbar Floral Especiado",
+
+  notasTopo: [
+    "Gengibre",
+    "Bergamota",
+    "Pimenta-rosa",
+    "Notas verdes"
+  ],
+
+  notasCoracao: [
+    "Cardamomo",
+    "Groselha-preta",
+    "Rosa-turca"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Benjoim",
+    "Sândalo",
+    "Cedro",
+    "Âmbar cinzento",
+    "Patchouli",
+    "Almíscar"
+  ],
+
+  fixacao: 5,
+  projecao: 4,
+
+  duracao: "7 a 9 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Festas",
+    "Noite",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Outono",
+    "Inverno",
+    "Primavera"
+  ],
+
+  volume: "80 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta excelente fixação, com duração aproximada entre 7 e 9 horas na pele e desempenho ainda maior nas roupas. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro cremoso, especiado e abaunilhado. O desempenho pode variar conforme o lote, a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Inspirado no Nishane Ani",
+    "Fragrância masculina sofisticada",
+    "Abertura fresca e especiada",
+    "Gengibre e cardamomo marcantes",
+    "Baunilha cremosa e envolvente",
+    "Base quente e amadeirada",
+    "Excelente fixação",
+    "Projeção marcante nas primeiras horas",
+    "Ideal para encontros e noites frias"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 4,
+    elegancia: 5,
+    frescor: 2,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Outono",
+      "Inverno",
+      "Primavera"
+    ],
+
+    periodos: [
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Frio",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Sofisticado",
+      "Especiado",
+      "Elegante",
+      "Cremoso",
+      "Sedutor",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para homens que gostam de fragrâncias especiadas, abaunilhadas, cremosas e amadeiradas, com perfil sofisticado e presença marcante.",
+
+    impressao:
+      "Uma abertura fresca e picante de gengibre e bergamota que evolui para cardamomo, frutas escuras e rosa, finalizando com baunilha, resinas, madeiras e almíscar."
+  },
+
+  nossaAvaliacao:
+    "O Spectre Ghost entrega uma combinação sofisticada de especiarias, baunilha, resinas e madeiras. É uma fragrância envolvente e elegante, ideal para encontros, jantares e ocasiões noturnas, com excelente apresentação e ótimo custo-benefício.",
+
+  semelhantes: [
+    "Liquid Brun",
+    "Khamrah Qahwa",
+    "Maahir Black Edition"
+  ]
+}),
+criarProduto({
+  id: 48,
+  slug: "chants-tenderina",
+  nome: "Chants Tenderina",
+  marca: "Maison Alhambra",
+  preco: 280,
+  imagem: "/Perfumes/chants.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Chants Tenderina, da Maison Alhambra, é uma fragrância feminina fresca, floral e delicada, inspirada no Chanel Chance Eau Tendre. Sua abertura combina bergamota, flor de grapefruit e pêssego, criando um início cítrico, frutado e luminoso. No coração, rosa, jasmim e íris formam um buquê floral elegante e levemente atalcado. A base de almíscar branco, baunilha, vetiver e patchouli proporciona um acabamento limpo, macio e confortável.",
+
+  inspiradoEm: "Chanel Chance Eau Tendre",
+
+  familiaOlfativa: "Floral Frutado",
+
+  notasTopo: [
+    "Bergamota",
+    "Flor de grapefruit",
+    "Pêssego"
+  ],
+
+  notasCoracao: [
+    "Rosa",
+    "Jasmim",
+    "Íris"
+  ],
+
+  notasBase: [
+    "Almíscar branco",
+    "Baunilha",
+    "Vetiver",
+    "Patchouli"
+  ],
+
+  fixacao: 3,
+  projecao: 3,
+
+  duracao: "5 a 7 horas",
+
+  rastro: "Suave a moderado",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Passeios",
+    "Encontros",
+    "Almoços",
+    "Eventos durante o dia"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta fixação moderada, com duração aproximada entre 5 e 7 horas na pele e desempenho maior nas roupas. Sua projeção é delicada e confortável, formando um rastro floral, fresco e limpo. É uma fragrância indicada para quem prefere perfumes elegantes sem excesso de intensidade.",
+
+  caracteristicas: [
+    "Inspirado no Chanel Chance Eau Tendre",
+    "Fragrância feminina fresca e delicada",
+    "Abertura cítrica e frutada",
+    "Coração floral elegante",
+    "Toque levemente atalcado de íris",
+    "Base limpa e almiscarada",
+    "Projeção confortável",
+    "Excelente para o dia a dia",
+    "Ideal para dias quentes"
+  ],
+
+  performance: {
+    intensidade: 3,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 5,
+    docura: 2
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Delicado",
+      "Fresco",
+      "Romântico",
+      "Elegante",
+      "Discreto"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias florais, frutadas, frescas e delicadas, com aroma limpo e confortável para o uso diário.",
+
+    impressao:
+      "Uma abertura cítrica e frutada que evolui para flores delicadas e íris, finalizando com almíscar branco, baunilha, vetiver e patchouli."
+  },
+
+  nossaAvaliacao:
+    "O Chants Tenderina é uma excelente opção para quem procura uma fragrância feminina fresca, elegante e fácil de usar. Seu perfil floral e almiscarado funciona muito bem no trabalho, em passeios e durante dias mais quentes.",
+
+  semelhantes: [
+    "Souvenir Floral Bouquet",
+    "Fakhar Rose",
+    "Yara Branco"
+  ]
+}),
+criarProduto({
+  id: 49,
+  slug: "como-moiselle",
+  nome: "Como Moiselle",
+  marca: "Maison Alhambra",
+  preco: 300,
+  imagem: "/Perfumes/cocomoiselle.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Como Moiselle, da Maison Alhambra, é uma fragrância feminina sofisticada, elegante e atemporal, inspirada no Chanel Coco Mademoiselle. Sua abertura combina bergamota, laranja, mandarina e flor de laranjeira, criando um início cítrico, fresco e luminoso. No coração, rosa-turca, jasmim, mimosa e ylang-ylang formam um buquê floral refinado. A base de patchouli, vetiver, baunilha, almíscar branco, fava-tonka e opoponax proporciona profundidade, cremosidade e um acabamento marcante.",
+
+  inspiradoEm: "Chanel Coco Mademoiselle",
+
+  familiaOlfativa: "Oriental Floral",
+
+  notasTopo: [
+    "Bergamota",
+    "Laranja",
+    "Mandarina",
+    "Flor de laranjeira"
+  ],
+
+  notasCoracao: [
+    "Rosa-turca",
+    "Jasmim",
+    "Mimosa",
+    "Ylang-ylang"
+  ],
+
+  notasBase: [
+    "Patchouli",
+    "Vetiver",
+    "Baunilha",
+    "Almíscar branco",
+    "Fava-tonka",
+    "Opoponax"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Outono",
+    "Inverno"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele e desempenho ainda maior nas roupas. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro floral, amadeirado e elegante. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Inspirado no Chanel Coco Mademoiselle",
+    "Fragrância feminina elegante e sofisticada",
+    "Abertura cítrica e luminosa",
+    "Coração floral refinado",
+    "Patchouli marcante e elegante",
+    "Base cremosa e amadeirada",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Versátil para o dia e para a noite"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 4,
+    docura: 3
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Outono",
+      "Inverno"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Ameno",
+      "Frio",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Clássico",
+      "Elegante",
+      "Sofisticado",
+      "Confiante",
+      "Versátil"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias cítricas, florais e amadeiradas, com perfil clássico, elegante e sofisticado.",
+
+    impressao:
+      "Uma abertura cítrica e luminosa que evolui para flores sofisticadas, finalizando com patchouli, vetiver, baunilha, almíscar e resinas."
+  },
+
+  nossaAvaliacao:
+    "O Como Moiselle é uma fragrância feminina elegante, versátil e muito agradável. Sua combinação de cítricos, flores, patchouli e baunilha funciona bem no trabalho, em encontros e em eventos, oferecendo sofisticação com excelente custo-benefício.",
+
+  semelhantes: [
+    "Club de Nuit Woman",
+    "Chants Tenderina",
+    "Souvenir Floral Bouquet"
+  ]
+}),
+criarProduto({
+  id: 50,
+  slug: "yara-rosa",
+  nome: "Yara Rosa",
+  marca: "Lattafa",
+  preco: 300,
+  imagem: "/Perfumes/yara-rosa.jpeg",
+imagens: [
+  "/Perfumes/yara-rosa.jpeg"
+],
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Mais vendido",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Yara Rosa, da Lattafa, é uma fragrância feminina doce, cremosa e delicada, conhecida por seu perfil tropical e extremamente confortável. Sua abertura combina orquídea, heliotrópio e tangerina, criando um início floral, cítrico e levemente atalcado. No coração, frutas tropicais e um acorde gourmand entregam uma doçura envolvente e divertida. A base de baunilha, almíscar e sândalo proporciona um acabamento cremoso, macio e aconchegante.",
+
+  familiaOlfativa: "Oriental Baunilha",
+
+  notasTopo: [
+    "Orquídea",
+    "Heliotrópio",
+    "Tangerina"
+  ],
+
+  notasCoracao: [
+    "Acorde gourmand",
+    "Frutas tropicais"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Almíscar",
+    "Sândalo"
+  ],
+
+  fixacao: 4,
+  projecao: 3,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Passeios",
+    "Encontros",
+    "Almoços",
+    "Eventos casuais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele e desempenho ainda maior nas roupas. Sua projeção é moderada e confortável, criando um rastro doce, cremoso e delicado. O desempenho pode variar conforme a pele, o clima e a quantidade aplicada.",
+
+  caracteristicas: [
+    "Criação original da Lattafa",
+    "Fragrância feminina doce e cremosa",
+    "Perfil tropical e gourmand",
+    "Abertura floral e levemente cítrica",
+    "Toque atalcado de heliotrópio",
+    "Base confortável de baunilha e sândalo",
+    "Boa fixação",
+    "Projeção moderada",
+    "Excelente para o uso diário"
+  ],
+
+  performance: {
+    intensidade: 3,
+    versatilidade: 5,
+    elegancia: 4,
+    frescor: 3,
+    docura: 5
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Doce",
+      "Romântico",
+      "Delicado",
+      "Jovem",
+      "Aconchegante"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias doces, tropicais, cremosas e atalcadas, com perfil delicado, jovem e confortável.",
+
+    impressao:
+      "Uma abertura floral, cítrica e atalcada que evolui para frutas tropicais e um acorde gourmand, finalizando com baunilha, almíscar e sândalo."
+  },
+
+  nossaAvaliacao:
+    "O Yara Rosa é uma fragrância feminina agradável, cremosa e fácil de usar. Sua combinação de flores, frutas tropicais, baunilha e sândalo cria um aroma doce e confortável, perfeito para o dia a dia e para quem gosta de perfumes delicados.",
+
+  semelhantes: [
+    "Yara Branco",
+    "Yara Elixir",
+    "Fakhar Rose"
+  ]
+}),
+criarProduto({
+  id: 51,
+  slug: "hawas-black",
+  nome: "Hawas Black",
+  marca: "Rasasi",
+  preco: 400,
+  imagem: "/Perfumes/hawas-black.jpg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Premium",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Hawas Black, da Rasasi, é uma fragrância masculina intensa, moderna e sofisticada, frequentemente comparada ao Hacivat, da Nishane. Sua abertura combina bergamota, abacaxi e grapefruit, criando um início cítrico, frutado e vibrante. No coração, patchouli, cedro e jasmim acrescentam profundidade, elegância e um toque terroso. A base de musgo de carvalho, notas amadeiradas e âmbar proporciona um acabamento seco, poderoso e marcante.",
+
+  inspiradoEm: "Nishane Hacivat",
+
+  familiaOlfativa: "Aromático Frutado",
+
+  notasTopo: [
+    "Bergamota",
+    "Abacaxi",
+    "Grapefruit"
+  ],
+
+  notasCoracao: [
+    "Patchouli",
+    "Cedro",
+    "Jasmim"
+  ],
+
+  notasBase: [
+    "Musgo de carvalho",
+    "Notas amadeiradas",
+    "Âmbar"
+  ],
+
+  fixacao: 5,
+  projecao: 5,
+
+  duracao: "8 a 10 horas",
+
+  rastro: "Intenso e marcante",
+
+  ocasioes: [
+    "Trabalho",
+    "Reuniões",
+    "Encontros",
+    "Eventos",
+    "Festas",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Outono",
+    "Inverno"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta excelente fixação, com duração aproximada entre 8 e 10 horas na pele e desempenho ainda maior nas roupas. Sua projeção é intensa nas primeiras horas e depois evolui para um rastro cítrico, amadeirado e musgoso. Recomenda-se aplicar com moderação devido à sua força.",
+
+  caracteristicas: [
+    "Frequentemente comparado ao Nishane Hacivat",
+    "Fragrância masculina intensa",
+    "Abertura cítrica e frutada",
+    "Abacaxi e grapefruit vibrantes",
+    "Coração amadeirado e terroso",
+    "Musgo de carvalho marcante",
+    "Excelente fixação",
+    "Projeção intensa",
+    "Ideal para homens confiantes"
+  ],
+
+  performance: {
+    intensidade: 5,
+    versatilidade: 4,
+    elegancia: 5,
+    frescor: 4,
+    docura: 2
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Outono",
+      "Inverno"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Ameno",
+      "Frio",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Confiante",
+      "Elegante",
+      "Intenso",
+      "Moderno",
+      "Amadeirado",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para homens que gostam de fragrâncias cítricas, frutadas, amadeiradas e musgosas, com alta intensidade e presença marcante.",
+
+    impressao:
+      "Uma abertura vibrante de abacaxi, bergamota e grapefruit que evolui para patchouli, cedro e jasmim, finalizando com musgo, âmbar e madeiras."
+  },
+
+  nossaAvaliacao:
+    "O Hawas Black é uma fragrância poderosa, sofisticada e de excelente desempenho. Sua combinação de frutas cítricas, abacaxi, patchouli e musgo cria um aroma masculino elegante e marcante, ideal para quem deseja presença e longa duração.",
+
+  semelhantes: [
+    "Club de Nuit Intense",
+    "Maahir Legacy",
+    "Fakhar Black"
+  ]
+}),
+criarProduto({
+  id: 52,
+  slug: "hawas-kobra",
+  nome: "Hawas Kobra",
+  marca: "Rasasi",
+  preco: 450,
+  imagem: "/Perfumes/hawas-cobra.jpeg",
+  categoria: "Masculino",
+  genero: "Masculino",
+  selo: "Lançamento",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Hawas Kobra, da Rasasi, é uma fragrância masculina fresca, sofisticada e moderna, frequentemente comparada ao Louis Vuitton Imagination. Sua abertura combina gengibre, bergamota e tangerina, criando um início cítrico, vibrante e levemente picante. No coração, chá-verde, canela e néroli acrescentam elegância, frescor e personalidade. A base de almíscar, notas amadeiradas e âmbar proporciona um acabamento limpo, confortável e marcante.",
+
+  inspiradoEm: "Louis Vuitton Imagination",
+
+  familiaOlfativa: "Oriental Amadeirado",
+
+  notasTopo: [
+    "Gengibre",
+    "Bergamota",
+    "Tangerina"
+  ],
+
+  notasCoracao: [
+    "Chá-verde",
+    "Canela",
+    "Néroli"
+  ],
+
+  notasBase: [
+    "Almíscar",
+    "Notas amadeiradas",
+    "Âmbar"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "7 a 9 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Reuniões",
+    "Passeios",
+    "Encontros",
+    "Eventos"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 7 e 9 horas na pele e desempenho ainda maior nas roupas. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro cítrico, aromático e amadeirado. É uma fragrância versátil e adequada para o clima brasileiro.",
+
+  caracteristicas: [
+    "Frequentemente comparado ao Louis Vuitton Imagination",
+    "Fragrância masculina fresca e moderna",
+    "Abertura cítrica e picante",
+    "Chá-verde aromático e elegante",
+    "Néroli fresco e sofisticado",
+    "Base limpa e amadeirada",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Excelente para dias quentes"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 5,
+    docura: 2
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Manhã",
+      "Tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Moderno",
+      "Fresco",
+      "Elegante",
+      "Aromático",
+      "Versátil",
+      "Sofisticado"
+    ],
+
+    publico:
+      "Indicado para homens que gostam de fragrâncias cítricas, aromáticas e amadeiradas, com perfil fresco, moderno e sofisticado.",
+
+    impressao:
+      "Uma abertura cítrica e picante de gengibre, bergamota e tangerina que evolui para chá-verde, canela e néroli, finalizando com almíscar, âmbar e madeiras."
+  },
+
+  nossaAvaliacao:
+    "O Hawas Kobra é uma fragrância masculina fresca, elegante e muito versátil. A combinação de cítricos, gengibre, chá-verde, néroli e madeiras cria um aroma sofisticado, excelente para o trabalho, passeios e dias quentes.",
+
+  semelhantes: [
+    "Maahir Legacy",
+    "Victorioso",
+    "Hawas Black"
+  ]
+}),
+criarProduto({
+  id: 53,
+  slug: "delilah",
+  nome: "Delilah",
+  marca: "Maison Alhambra",
+  preco: 350,
+  imagem: "/Perfumes/delilah.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Delilah Pour Femme, da Maison Alhambra, é uma fragrância feminina delicada, romântica e sofisticada. Inspirada no Parfums de Marly Delina, apresenta uma abertura frutada e levemente ácida de lichia, ruibarbo e bergamota. O coração floral combina rosa-turca, peônia e lírio-do-vale, enquanto a base de baunilha, almíscar branco e cashmeran proporciona um acabamento cremoso, elegante e envolvente.",
+
+  inspiradoEm: "Parfums de Marly Delina",
+
+  familiaOlfativa: "Floral Frutado",
+
+  notasTopo: [
+    "Ruibarbo",
+    "Lichia",
+    "Bergamota"
+  ],
+
+  notasCoracao: [
+    "Rosa-turca",
+    "Peônia",
+    "Lírio-do-vale"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Almíscar branco",
+    "Cashmeran"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, permanecendo aproximadamente entre 6 e 8 horas na pele. A projeção é marcante nas primeiras horas e depois evolui para um rastro floral, cremoso, feminino e elegante.",
+
+  caracteristicas: [
+    "Inspirado no Parfums de Marly Delina",
+    "Fragrância feminina floral e frutada",
+    "Abertura frutada e levemente ácida",
+    "Rosa e peônia elegantes",
+    "Fundo cremoso de baunilha e almíscar",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Excelente para encontros e ocasiões especiais"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 4,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Dia",
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Ameno",
+      "Quente",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Romântico",
+      "Feminino",
+      "Elegante",
+      "Delicado",
+      "Sofisticado"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias florais, frutadas, românticas e sofisticadas.",
+
+    impressao:
+      "Uma abertura frutada e vibrante que evolui para um coração floral elegante, finalizando com uma base cremosa, delicada e envolvente."
+  },
+
+  nossaAvaliacao:
+    "O Delilah oferece uma combinação muito agradável entre frutas, rosas e uma base cremosa. É uma excelente alternativa ao Delina, entregando feminilidade, elegância, boa fixação e ótimo custo-benefício.",
+
+  semelhantes: [
+    "Parfums de Marly Delina",
+    "Souvenir Floral Bouquet",
+    "Fakhar Rose"
+  ]
+}),
+criarProduto({
+  id: 54,
+  slug: "musamam-black-intense",
+  nome: "Musamam Black Intense",
+  marca: "Lattafa",
+  preco: 500,
+  imagem: "/Perfumes/musamam-black-intense.jpeg",
+  categoria: "Unissex",
+  genero: "Unissex",
+  selo: "Lançamento",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Musamam Black Intense, da Lattafa, é uma fragrância unissex intensa, misteriosa e sofisticada. A abertura combina lavanda, noz-moscada, bergamota e sálvia, criando um início aromático, fresco e especiado. No coração, gerânio, Rosyfolia, Mahonial e cedro acrescentam elegância floral e profundidade amadeirada. A base de madeira de bordo, patchouli, fava-tonka, Cocoapulse e Ambrofix entrega um acabamento quente, cremoso, levemente achocolatado e extremamente envolvente.",
+
+  inspiradoEm: "Criação autoral da Lattafa",
+
+  familiaOlfativa: "Amadeirado Aromático",
+
+  notasTopo: [
+    "Lavanda",
+    "Noz-moscada",
+    "Bergamota",
+    "Sálvia"
+  ],
+
+  notasCoracao: [
+    "Gerânio",
+    "Rosyfolia",
+    "Mahonial",
+    "Cedro"
+  ],
+
+  notasBase: [
+    "Madeira de bordo",
+    "Patchouli",
+    "Fava-tonka",
+    "Cocoapulse",
+    "Ambrofix"
+  ],
+
+  fixacao: 5,
+  projecao: 5,
+
+  duracao: "8 a 12 horas",
+
+  rastro: "Marcante e intenso",
+
+  ocasioes: [
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Festas",
+    "Noite",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Outono",
+    "Inverno",
+    "Primavera"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta excelente fixação, permanecendo aproximadamente entre 8 e 12 horas na pele. Sua projeção é intensa nas primeiras horas e depois evolui para um rastro amadeirado, quente, cremoso e sofisticado.",
+
+  caracteristicas: [
+    "Criação autoral da Lattafa",
+    "Fragrância unissex intensa e sofisticada",
+    "Perfil amadeirado, aromático e especiado",
+    "Lavanda e sálvia aromáticas",
+    "Fundo quente de fava-tonka e patchouli",
+    "Toque cremoso e levemente achocolatado",
+    "Excelente fixação",
+    "Projeção intensa",
+    "Ideal para noites e dias frios",
+    "Fragrância marcante e diferenciada"
+  ],
+
+  performance: {
+    intensidade: 5,
+    versatilidade: 3,
+    elegancia: 5,
+    frescor: 2,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Outono",
+      "Inverno",
+      "Primavera"
+    ],
+
+    periodos: [
+      "Noite",
+      "Fim de tarde"
+    ],
+
+    climas: [
+      "Frio",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Intenso",
+      "Misterioso",
+      "Elegante",
+      "Moderno",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para homens e mulheres que gostam de fragrâncias intensas, amadeiradas, especiadas e com personalidade marcante.",
+
+    impressao:
+      "Uma abertura aromática e especiada que evolui para madeiras elegantes, finalizando com um fundo quente, cremoso e levemente achocolatado."
+  },
+
+  nossaAvaliacao:
+    "O Musamam Black Intense é uma fragrância ousada, moderna e muito bem construída. A combinação de especiarias, madeiras, fava-tonka e Cocoapulse proporciona um aroma diferente, sofisticado e de excelente desempenho. É uma ótima escolha para noites frias e ocasiões em que se deseja transmitir presença e personalidade.",
+
+  semelhantes: [
+    "Musamam",
+    "Liquid Brun",
+    "Asad Elixir"
+  ]
+}),
+criarProduto({
+  id: 55,
+  slug: "angham-second-song",
+  nome: "Angham Second Song",
+  marca: "Lattafa",
+  preco: 500,
+  imagem: "/Perfumes/argham-second-song.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Lançamento",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Angham Second Song, da Lattafa, é uma fragrância feminina floral, frutada e gourmand, criada para transmitir elegância, leveza e sofisticação. A abertura combina bergamota brilhante com pera suculenta e delicada flor de pera. No coração, flor de laranjeira e peônia encontram o toque cremoso e adocicado do pralinê. A base de baunilha, fava-tonka, ambroxan e almíscar proporciona um acabamento moderno, confortável e envolvente.",
+
+  inspiradoEm: "Dolce & Gabbana My Devotion",
+
+  familiaOlfativa: "Floral Frutado Gourmand",
+
+  notasTopo: [
+    "Bergamota",
+    "Pera",
+    "Flor de pera"
+  ],
+
+  notasCoracao: [
+    "Flor de laranjeira",
+    "Peônia",
+    "Pralinê"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Fava-tonka",
+    "Ambroxan",
+    "Almíscar"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Passeios",
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, permanecendo aproximadamente entre 6 e 8 horas na pele. Sua projeção é perceptível nas primeiras horas e depois evolui para um rastro floral, cremoso, delicado e confortável.",
+
+  caracteristicas: [
+    "Inspirado no Dolce & Gabbana My Devotion",
+    "Fragrância feminina floral e gourmand",
+    "Abertura fresca e frutada",
+    "Pera suculenta e bergamota brilhante",
+    "Coração floral com toque de pralinê",
+    "Fundo cremoso de baunilha e fava-tonka",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Elegante e fácil de usar",
+    "Excelente para primavera e verão"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 4,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Dia",
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Romântico",
+      "Elegante",
+      "Delicado",
+      "Moderno"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias florais, frutadas, cremosas e levemente adocicadas.",
+
+    impressao:
+      "Uma abertura luminosa de bergamota e pera que evolui para flores delicadas com pralinê, finalizando em uma base cremosa, confortável e elegante."
+  },
+
+  nossaAvaliacao:
+    "O Angham Second Song oferece uma combinação feminina e muito agradável entre pera, flores brancas, pralinê e baunilha. É uma fragrância elegante, versátil e fácil de agradar, funcionando muito bem durante o dia, em encontros e em ocasiões especiais.",
+
+  semelhantes: [
+    "Dolce & Gabbana My Devotion",
+    "Yara Rosa",
+    "Chants Tenderina"
+  ]
+}),
+criarProduto({
+  id: 56,
+  slug: "souvenir-desert-rose",
+  nome: "Souvenir Desert Rose",
+  marca: "Afnan",
+  preco: 500,
+  imagem: "/Perfumes/souvenir-desert-rose.jpeg",
+  categoria: "Unissex",
+  genero: "Unissex",
+  selo: "Premium",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Souvenir Desert Rose, da Afnan, é uma fragrância unissex frutada, floral e envolvente. Sua abertura combina pêssego suculento, framboesa e cassis, criando uma sensação doce, vibrante e marcante. No coração, heliotrópio, lírio-do-vale e almíscar branco acrescentam suavidade floral e um toque levemente atalcado. A base de sândalo, notas cítricas e âmbar proporciona um acabamento quente, elegante e sofisticado.",
+
+  inspiradoEm: "Criação autoral da Afnan",
+
+  familiaOlfativa: "Floral Frutado Âmbar",
+
+  notasTopo: [
+    "Pêssego",
+    "Framboesa",
+    "Cassis"
+  ],
+
+  notasCoracao: [
+    "Heliotrópio",
+    "Lírio-do-vale",
+    "Almíscar branco"
+  ],
+
+  notasBase: [
+    "Sândalo",
+    "Notas cítricas",
+    "Âmbar"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Passeios",
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, com duração aproximada entre 6 e 8 horas na pele. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro frutado, floral, confortável e elegante.",
+
+  caracteristicas: [
+    "Criação autoral da Afnan",
+    "Fragrância unissex frutada e floral",
+    "Abertura doce e suculenta",
+    "Pêssego, framboesa e cassis marcantes",
+    "Coração floral levemente atalcado",
+    "Fundo quente de sândalo e âmbar",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Fragrância elegante e envolvente",
+    "Excelente para encontros e eventos"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 4,
+    elegancia: 5,
+    frescor: 3,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Dia",
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Elegante",
+      "Romântico",
+      "Envolvente",
+      "Sofisticado",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para homens e mulheres que gostam de fragrâncias frutadas, florais, adocicadas e com um fundo quente e sofisticado.",
+
+    impressao:
+      "Uma abertura frutada, doce e suculenta que evolui para flores delicadas, finalizando com um fundo quente de sândalo e âmbar."
+  },
+
+  nossaAvaliacao:
+    "O Souvenir Desert Rose entrega uma combinação envolvente entre frutas vermelhas, pêssego, flores e madeiras. Possui um aroma sofisticado, boa fixação e uma apresentação luxuosa, sendo uma excelente escolha para encontros, eventos e ocasiões especiais.",
+
+  semelhantes: [
+    "Souvenir Floral Bouquet",
+    "Yara Rosa",
+    "Delilah"
+  ]
+}),
+criarProduto({
+  id: 57,
+  slug: "sabah-al-ward-garden-of-eden",
+  nome: "Sabah Al Ward Garden of Eden",
+  marca: "Al Wataniah",
+  preco: 350,
+  imagem: "/Perfumes/sabah-al-ward-garden-of-eden.jpeg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Lançamento",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Sabah Al Ward Garden of Eden, da Al Wataniah, é uma fragrância feminina floral, aquática e delicadamente adocicada. Sua abertura combina lótus azul, notas aquáticas, bergamota, frutas e mandarina, criando uma sensação fresca, luminosa e tropical. No coração, lírio, íris, frangipani e jasmim formam um buquê floral elegante. A base de baunilha, sândalo, âmbar e almíscar proporciona um acabamento cremoso, confortável e sofisticado.",
+
+  inspiradoEm: "Criação autoral da Al Wataniah",
+
+  familiaOlfativa: "Floral Aquático",
+
+  notasTopo: [
+    "Lótus azul",
+    "Notas aquáticas",
+    "Bergamota",
+    "Notas frutadas",
+    "Mandarina"
+  ],
+
+  notasCoracao: [
+    "Lírio",
+    "Íris",
+    "Frangipani",
+    "Jasmim"
+  ],
+
+  notasBase: [
+    "Baunilha",
+    "Sândalo",
+    "Âmbar",
+    "Almíscar"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "6 a 8 horas",
+
+  rastro: "Moderado e elegante",
+
+  ocasioes: [
+    "Dia a dia",
+    "Trabalho",
+    "Passeios",
+    "Encontros",
+    "Eventos durante o dia",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Primavera",
+    "Verão",
+    "Outono"
+  ],
+
+  volume: "100 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, permanecendo aproximadamente entre 6 e 8 horas na pele. Sua projeção é perceptível nas primeiras horas e depois evolui para um rastro floral, aquático, cremoso e confortável.",
+
+  caracteristicas: [
+    "Criação autoral da Al Wataniah",
+    "Fragrância feminina floral e aquática",
+    "Lançamento de 2026",
+    "Abertura fresca e luminosa",
+    "Lótus azul e notas aquáticas",
+    "Coração floral tropical e elegante",
+    "Fundo cremoso de baunilha e sândalo",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Excelente para dias quentes"
+  ],
+
+  performance: {
+    intensidade: 3,
+    versatilidade: 5,
+    elegancia: 5,
+    frescor: 5,
+    docura: 3
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Primavera",
+      "Verão",
+      "Outono"
+    ],
+
+    periodos: [
+      "Dia",
+      "Fim de tarde",
+      "Noite"
+    ],
+
+    climas: [
+      "Quente",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Feminino",
+      "Delicado",
+      "Elegante",
+      "Tropical",
+      "Sofisticado"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias florais, aquáticas, frescas e levemente cremosas.",
+
+    impressao:
+      "Uma abertura fresca e aquática que evolui para um buquê de flores tropicais, finalizando com uma base cremosa, confortável e elegante."
+  },
+
+  nossaAvaliacao:
+    "O Sabah Al Ward Garden of Eden oferece uma combinação muito agradável entre frescor aquático, flores tropicais e uma base cremosa. É uma fragrância feminina elegante, versátil e especialmente indicada para primavera, verão e ambientes durante o dia.",
+
+  semelhantes: [
+    "Dior J'adore",
+    "Sabah Al Ward",
+    "Souvenir Floral Bouquet"
+  ]
+}),
+criarProduto({
+  id: 58,
+  slug: "durrat-al-aroos",
+  nome: "Durrat Al Aroos",
+  marca: "Al Wataniah",
+  preco: 280,
+  imagem: "/Perfumes/durrat-al-aroos.jpg",
+  categoria: "Feminino",
+  genero: "Feminino",
+  selo: "Novo",
+  avaliacao: 4.9,
+  avaliacoes: 0,
+
+  descricao:
+    "Durrat Al Aroos, da Al Wataniah, é uma fragrância feminina oriental, amadeirada e especiada. A abertura combina almíscar branco com óleo de cipriol, também conhecido como nagarmota, criando uma sensação elegante, terrosa e levemente atalcada. No coração, baunilha, cardamomo e açafrão acrescentam calor e sofisticação. A base de madeira guaiac e cumarina proporciona um acabamento amadeirado, adocicado e envolvente.",
+
+  inspiradoEm: "Jo Malone Myrrh & Tonka",
+
+  familiaOlfativa: "Oriental Amadeirado Especiado",
+
+  notasTopo: [
+    "Almíscar branco",
+    "Óleo de cipriol",
+    "Nagarmota"
+  ],
+
+  notasCoracao: [
+    "Baunilha",
+    "Cardamomo",
+    "Açafrão"
+  ],
+
+  notasBase: [
+    "Madeira guaiac",
+    "Cumarina"
+  ],
+
+  fixacao: 4,
+  projecao: 4,
+
+  duracao: "7 a 9 horas",
+
+  rastro: "Moderado a marcante",
+
+  ocasioes: [
+    "Encontros",
+    "Jantares",
+    "Eventos",
+    "Festas",
+    "Noite",
+    "Ocasiões especiais"
+  ],
+
+  estacoes: [
+    "Outono",
+    "Inverno",
+    "Primavera"
+  ],
+
+  volume: "85 ml",
+
+  concentracao: "Eau de Parfum (EDP)",
+
+  origem: "Emirados Árabes Unidos",
+
+  desempenho:
+    "Apresenta boa fixação, permanecendo aproximadamente entre 7 e 9 horas na pele. Sua projeção é marcante nas primeiras horas e depois evolui para um rastro quente, amadeirado, especiado e confortável.",
+
+  caracteristicas: [
+    "Inspirado no Jo Malone Myrrh & Tonka",
+    "Fragrância feminina oriental e amadeirada",
+    "Perfil quente, especiado e sofisticado",
+    "Almíscar branco levemente atalcado",
+    "Baunilha, cardamomo e açafrão envolventes",
+    "Fundo elegante de madeira guaiac",
+    "Boa fixação",
+    "Projeção equilibrada",
+    "Ideal para noites e dias frios",
+    "Excelente custo-benefício"
+  ],
+
+  performance: {
+    intensidade: 4,
+    versatilidade: 3,
+    elegancia: 5,
+    frescor: 2,
+    docura: 4
+  },
+
+  usoIdeal: {
+    estacoes: [
+      "Outono",
+      "Inverno",
+      "Primavera"
+    ],
+
+    periodos: [
+      "Noite",
+      "Fim de tarde"
+    ],
+
+    climas: [
+      "Frio",
+      "Ameno",
+      "Ambientes climatizados"
+    ]
+  },
+
+  perfil: {
+    estilos: [
+      "Elegante",
+      "Quente",
+      "Misterioso",
+      "Sofisticado",
+      "Marcante"
+    ],
+
+    publico:
+      "Indicado para mulheres que gostam de fragrâncias orientais, amadeiradas, especiadas e levemente adocicadas.",
+
+    impressao:
+      "Uma abertura almiscarada e terrosa que evolui para especiarias quentes e baunilha, finalizando com um fundo amadeirado, elegante e envolvente."
+  },
+
+  nossaAvaliacao:
+    "O Durrat Al Aroos oferece uma combinação diferenciada entre almíscar branco, especiarias, baunilha e madeira guaiac. É uma fragrância feminina quente, sofisticada e com personalidade, indicada especialmente para encontros, eventos e ocasiões noturnas.",
+
+  semelhantes: [
+    "Jo Malone Myrrh & Tonka",
+    "Musamam Black Intense",
+    "Khamrah Qahwa"
+  ]
+}),
 ];
+
 export function buscarProdutoPorSlug(slug: string) {
   return produtos.find((produto) => produto.slug === slug);
 }
