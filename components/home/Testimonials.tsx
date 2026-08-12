@@ -1,4 +1,11 @@
- import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaHome,
+  FaMapMarkerAlt,
+  FaShippingFast,
+  FaStar,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 const depoimentos = [
   {
@@ -39,15 +46,19 @@ const depoimentos = [
   },
 ];
 
-const cidadesAtendidas = [
-  "Saquarema",
-  "Araruama",
-  "São Pedro da Aldeia",
-  "Cabo Frio",
-  "Arraial do Cabo",
-  "Armação dos Búzios",
-  "Rio das Ostras",
+const beneficios = [
+  "Entrega nacional",
+  "Envio seguro",
+  "Código de rastreamento",
+  "Compra pelo WhatsApp",
+  "Atendimento personalizado",
 ];
+
+const mensagemConsultoria = encodeURIComponent(
+  "Olá! Conheci o serviço de consultoria em perfumaria da Bold Parfum pelo site e gostaria de receber mais informações.",
+);
+
+const linkConsultoria = `https://wa.me/5522998771598?text=${mensagemConsultoria}`;
 
 export default function Testimonials() {
   return (
@@ -98,28 +109,73 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-3xl border border-yellow-400/20 bg-yellow-400/5 px-5 py-6 text-center sm:px-8">
-          <div className="flex items-center justify-center gap-2 text-yellow-400">
-            <FaMapMarkerAlt />
+        <div className="mt-10 rounded-3xl border border-yellow-400/20 bg-yellow-400/5 px-5 py-7 text-center sm:px-8">
+          <div className="flex items-center justify-center gap-3 text-yellow-400">
+            <FaShippingFast size={20} />
 
-            <p className="font-bold uppercase tracking-widest">
-              Atendemos toda a Região dos Lagos
-            </p>
+            <h3 className="font-bold uppercase tracking-widest">
+              Enviamos para todo o Brasil
+            </h3>
           </div>
 
-          <p className="mt-3 text-sm leading-6 text-zinc-400">
-            Atendimento próximo e personalizado para clientes da nossa região.
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-zinc-400">
+            Compre de qualquer lugar do país. Enviamos nossos perfumes com
+            segurança, rastreamento e atendimento personalizado.
           </p>
 
           <div className="mt-5 flex flex-wrap justify-center gap-2">
-            {cidadesAtendidas.map((cidade) => (
+            {beneficios.map((beneficio) => (
               <span
-                key={cidade}
+                key={beneficio}
                 className="rounded-full border border-zinc-700 bg-black/50 px-4 py-2 text-sm font-semibold text-zinc-300"
               >
-                {cidade}
+                {beneficio}
               </span>
             ))}
+          </div>
+        </div>
+
+        <div className="mt-6 overflow-hidden rounded-3xl border border-yellow-400/30 bg-zinc-950">
+          <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-yellow-400">
+                <FaBriefcase />
+                Consultoria personalizada em perfumaria
+              </p>
+
+              <h3 className="mt-3 text-2xl font-black text-white sm:text-3xl">
+                Para clientes, empresas e equipes
+              </h3>
+
+              <p className="mt-4 max-w-4xl leading-7 text-zinc-400">
+                A Bold Parfum oferece atendimento personalizado para clientes e
+                empresas de todo o Brasil. Auxiliamos na escolha de fragrâncias,
+                criação de presentes, ações corporativas, experiências olfativas
+                e treinamentos personalizados para empresas e suas equipes.
+              </p>
+
+              <div className="mt-5 flex items-start gap-3 rounded-2xl border border-zinc-800 bg-black/50 p-4">
+                <FaHome
+                  className="mt-1 shrink-0 text-yellow-400"
+                  size={18}
+                />
+
+                <p className="text-sm leading-6 text-zinc-300">
+                  Na Região dos Lagos, também realizamos consultorias
+                  presenciais, com atendimento em residências e empresas.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href={linkConsultoria}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-6 py-4 font-bold text-black transition hover:bg-yellow-300"
+            >
+              <FaWhatsapp size={20} />
+              Solicitar uma consultoria
+            </a>
           </div>
         </div>
       </div>

@@ -65,7 +65,7 @@ export default function InspiredSection() {
               </p>
 
               <p className="mt-1 text-xs leading-5 text-zinc-500">
-                Encontre opções inspiradas em Dior, Creed e Yves Saint Laurent.
+                Encontre opções inspiradas em Dior, Creed, Yves Saint Laurent e outras grandes referências da perfumaria mundial.
               </p>
             </div>
           </div>
