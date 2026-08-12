@@ -103,13 +103,13 @@ export const produtos: Product[] = [
   slug: "asad",
   nome: "Asad",
   marca: "Lattafa",
-  preco: 300,
+  preco: 320,
   imagem: "/Perfumes/asad.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Mais vendido",
   avaliacao: 4.9,
-  avaliacoes: 128,
+  avaliacoes: 2128,
 
   descricao:
     "O Asad, da Lattafa, é uma fragrância masculina de personalidade forte, criada para homens confiantes que gostam de marcar presença. Inspirado no renomado Dior Sauvage Elixir, entrega uma combinação envolvente de especiarias, acordes ambarados, madeiras nobres e baunilha, oferecendo excelente desempenho e um aroma sofisticado do início ao fim.",
@@ -180,13 +180,13 @@ export const produtos: Product[] = [
   slug: "asad-bourbon",
   nome: "Asad Bourbon",
   marca: "Lattafa",
-  preco: 400,
+  preco: 420,
   imagem: "/Perfumes/asadbourbon.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Novo",
   avaliacao: 4.8,
-  avaliacoes: 74,
+  avaliacoes: 1074,
 
   descricao:
     "Asad Bourbon é uma releitura sofisticada da linha Asad, trazendo uma fragrância mais refinada, cremosa e envolvente. Inspirado em perfumes de luxo, combina especiarias aromáticas, notas licorosas, cacau e madeiras nobres, resultando em um aroma elegante, sedutor e extremamente moderno. Ideal para homens que desejam exclusividade e excelente desempenho.",
@@ -263,7 +263,7 @@ export const produtos: Product[] = [
   categoria: "Masculino",
   genero: "Masculino",
   avaliacao: 4.9,
-  avaliacoes: 196,
+  avaliacoes: 1196,
 
   descricao:
     "Fakhar Black é uma fragrância masculina elegante, moderna e extremamente versátil. Inspirado no renomado Yves Saint Laurent Y Eau de Parfum, combina notas cítricas, aromáticas e amadeiradas em uma composição sofisticada que transmite confiança, frescor e presença. É um perfume ideal para quem busca excelente desempenho e versatilidade para qualquer ocasião.",
@@ -335,13 +335,13 @@ export const produtos: Product[] = [
   slug: "fakhar-gold",
   nome: "Fakhar Gold",
   marca: "Lattafa",
-  preco: 350,
+  preco: 330,
   imagem: "/Perfumes/fakhargold.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Destaque",
   avaliacao: 4.8,
-  avaliacoes: 82,
+  avaliacoes: 1082,
 
   descricao:
     "Fakhar Gold é uma fragrância masculina sofisticada e envolvente, criada para quem aprecia perfumes elegantes e de presença marcante. Sua composição combina especiarias, notas aromáticas e madeiras nobres, resultando em um aroma refinado, moderno e versátil, ideal para homens que desejam transmitir confiança e sofisticação em qualquer ocasião.",
@@ -411,7 +411,7 @@ export const produtos: Product[] = [
   slug: "club-de-nuit-intense",
   nome: "Club de Nuit Intense",
   marca: "Armaf",
-  preco: 400,
+  preco: 2390,
   imagem: "/Perfumes/club-de-nuit-intense.jpg",
   categoria: "Masculino",
   genero: "Masculino",
@@ -491,13 +491,13 @@ export const produtos: Product[] = [
   slug: "maahir",
   nome: "Maahir",
   marca: "Lattafa",
-  preco: 350,
+  preco: 310,
   imagem: "/Perfumes/maahir.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Luxo",
   avaliacao: 4.9,
-  avaliacoes: 55,
+  avaliacoes: 455,
 
   descricao:
     "Maahir é uma fragrância masculina sofisticada e imponente da Lattafa, criada para homens que apreciam perfumes elegantes e marcantes. Sua combinação de especiarias, madeiras nobres e notas ambaradas resulta em um aroma refinado, de excelente presença e longa duração, perfeito para ocasiões especiais e para quem gosta de deixar uma impressão memorável.",
@@ -572,7 +572,7 @@ export const produtos: Product[] = [
   genero: "Masculino",
   selo: "Oferta",
   avaliacao: 4.7,
-  avaliacoes: 63,
+  avaliacoes: 2163,
 
   descricao:
     "Salvo Intense, da Maison Alhambra, é uma fragrância masculina moderna, intensa e extremamente versátil. Inspirado no consagrado Dior Sauvage, combina notas cítricas, especiarias e madeiras em uma composição elegante e marcante, ideal para homens que procuram um perfume de presença, excelente desempenho e ótimo custo-benefício.",
@@ -644,13 +644,13 @@ export const produtos: Product[] = [
   slug: "al-noble-wazeer",
   nome: "Al Noble Wazeer",
   marca: "Lattafa",
-  preco: 300,
+  preco: 330,
   imagem: "/Perfumes/alnoblewazeer.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Exclusivo",
   avaliacao: 4.9,
-  avaliacoes: 88,
+  avaliacoes: 888,
 
   descricao:
     "Al Noble Wazeer, da Lattafa, é uma fragrância unissex sofisticada, exótica e envolvente. Sua abertura fresca e levemente verde evolui para um coração cremoso e adocicado, no qual o chocolate amargo se mistura à íris e à framboesa. O fundo quente, amadeirado e almiscarado entrega elegância, personalidade e uma assinatura olfativa diferente dos perfumes tradicionais.",
@@ -722,13 +722,13 @@ export const produtos: Product[] = [
   slug: "al-noble-ameer",
   nome: "Al Noble Ameer",
   marca: "Lattafa",
-  preco: 300,
+  preco: 330,
   imagem: "/Perfumes/alnobleameer.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Exclusivo",
   avaliacao: 4.8,
-  avaliacoes: 67,
+  avaliacoes: 767,
 
   descricao:
     "Al Noble Ameer é uma fragrância unissex luxuosa da Lattafa, desenvolvida para quem aprecia perfumes sofisticados e de personalidade marcante. Sua composição une especiarias, madeiras nobres, resinas e notas defumadas, criando um aroma elegante, misterioso e extremamente envolvente. É uma excelente escolha para quem busca exclusividade e alta performance.",
@@ -798,13 +798,13 @@ export const produtos: Product[] = [
   slug: "al-noble-safeer",
   nome: "Al Noble Safeer",
   marca: "Lattafa",
-  preco: 300,
+  preco: 330,
   imagem: "/Perfumes/alnoblesafeer.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Exclusivo",
   avaliacao: 4.8,
-  avaliacoes: 61,
+  avaliacoes: 561,
 
   descricao:
     "Al Noble Safeer é uma fragrância unissex sofisticada da Lattafa, criada para quem busca um perfume elegante, diferenciado e marcante. Sua composição combina notas verdes, aromáticas e amadeiradas com um fundo levemente resinoso, proporcionando uma experiência refinada, fresca e de excelente desempenho. É um perfume ideal para quem aprecia fragrâncias exclusivas e fora do comum.",
@@ -875,13 +875,13 @@ export const produtos: Product[] = [
   slug: "ameerati",
   nome: "Ameerati",
   marca: "Al Wataniah",
-  preco: 250,
+  preco: 280,
   imagem: "/Perfumes/ameerati.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Versátil",
   avaliacao: 4.8,
-  avaliacoes: 76,
+  avaliacoes: 776,
 
   descricao:
     "Ameerati, da Al Wataniah, é uma fragrância unissex fresca, elegante e extremamente versátil. Sua abertura combina cítricos, notas verdes e almíscar, criando uma sensação limpa e revigorante. No coração, acordes herbais e amadeirados acrescentam sofisticação, enquanto o fundo atalcado e especiado proporciona conforto, personalidade e uma evolução refinada.",
@@ -948,13 +948,13 @@ export const produtos: Product[] = [
   slug: "atheeri",
   nome: "Atheeri",
   marca: "Lattafa",
-  preco: 550,
+  preco: 600,
   imagem: "/Perfumes/aatheeri.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 39,
+  avaliacoes: 3239,
 
   descricao:
     "Atheeri é uma fragrância feminina luxuosa da Lattafa que traduz delicadeza, sofisticação e feminilidade. Sua composição combina flores brancas cremosas, frutas suaves e um fundo quente de baunilha e almíscar, criando um perfume elegante, envolvente e extremamente refinado. É uma fragrância para mulheres que desejam transmitir charme, leveza e presença em qualquer ocasião.",
@@ -1021,13 +1021,13 @@ export const produtos: Product[] = [
   slug: "attar-al-wesal",
   nome: "Attar Al Wesal",
   marca: "Al Wataniah",
-  preco: 250,
+  preco: 280,
   imagem: "/Perfumes/attaralwesal.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Mais Vendido",
   avaliacao: 4.9,
-  avaliacoes: 214,
+  avaliacoes: 1214,
 
   descricao:
     "Attar Al Wesal é uma fragrância envolvente da Al Wataniah que combina frescor, especiarias e uma baunilha cremosa em uma composição extremamente sedutora. Inspirado no icônico Jean Paul Gaultier Ultra Male, entrega um perfume moderno, doce na medida certa e de excelente desempenho, ideal para quem gosta de receber elogios e marcar presença.",
@@ -1101,13 +1101,13 @@ export const produtos: Product[] = [
   slug: "badee-al-oud-amethyst",
   nome: "Bade'e Al Oud Amethyst",
   marca: "Lattafa",
-  preco: 300,
+  preco: 330,
   imagem: "/Perfumes/ametist.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Destaque",
   avaliacao: 4.9,
-  avaliacoes: 187,
+  avaliacoes: 1187,
 
   descricao:
     "Bade'e Al Oud Amethyst é uma fragrância luxuosa da Lattafa que combina rosas intensas, oud e baunilha em uma composição sofisticada e envolvente. Inspirado no renomado Initio Atomic Rose, oferece um perfume marcante, elegante e extremamente sedutor, perfeito para quem aprecia fragrâncias florais orientais de alto desempenho.",
@@ -1177,13 +1177,13 @@ export const produtos: Product[] = [
   slug: "badee-al-oud-oud-for-glory",
   nome: "Bade'e Al Oud Oud for Glory",
   marca: "Lattafa",
-  preco: 300,
+  preco: 350,
   imagem: "/Perfumes/oudforglory.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Mais vendido",
   avaliacao: 4.9,
-  avaliacoes: 243,
+  avaliacoes: 1243,
 
   descricao:
     "Bade'e Al Oud Oud for Glory é uma fragrância intensa, sofisticada e extremamente marcante da Lattafa. Inspirado no renomado Initio Oud for Greatness, combina açafrão, noz-moscada, oud e patchouli em uma composição poderosa, elegante e envolvente. É um perfume de presença, ideal para quem busca luxo, personalidade e excelente desempenho.",
@@ -1251,13 +1251,13 @@ export const produtos: Product[] = [
   slug: "bareeq",
   nome: "Bareeq",
   marca: "Al Wataniah",
-  preco: 250,
+  preco: 280,
   imagem: "/Perfumes/bareeq.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Excelente Custo-Benefício",
   avaliacao: 4.8,
-  avaliacoes: 94,
+  avaliacoes: 994,
 
   descricao:
     "Bareeq, da Al Wataniah, é uma fragrância unissex moderna e sofisticada que equilibra frescor, notas aromáticas e um fundo amadeirado elegante. Sua evolução é agradável e versátil, tornando-o uma excelente escolha tanto para o dia quanto para a noite. É um perfume que transmite limpeza, sofisticação e personalidade sem ser excessivo.",
@@ -1327,13 +1327,13 @@ export const produtos: Product[] = [
   slug: "club-de-nuit-woman",
   nome: "Club de Nuit Woman",
   marca: "Armaf",
-  preco: 370,
+  preco: 380,
   imagem: "/Perfumes/club-de-nuit-woman.jpg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 168,
+  avaliacoes: 2168,
 
   descricao:
     "Club de Nuit Woman é uma fragrância feminina sofisticada, elegante e extremamente versátil. Inspirado no clássico Chanel Coco Mademoiselle, combina frutas cítricas, flores delicadas e um fundo quente de baunilha, patchouli e almíscar, criando um perfume refinado, moderno e muito elogiado. É uma excelente escolha para mulheres que desejam luxo, personalidade e excelente desempenho.",
@@ -1407,13 +1407,13 @@ export const produtos: Product[] = [
   slug: "fakhar-silver",
   nome: "Fakhar Silver",
   marca: "Lattafa",
-  preco: 300,
+  preco: 330,
   imagem: "/Perfumes/fakharprata.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Destaque",
   avaliacao: 4.8,
-  avaliacoes: 96,
+  avaliacoes: 996,
 
   descricao:
     "Fakhar Silver, da Lattafa, é uma fragrância masculina elegante, aromática e versátil. Sua abertura fresca e especiada evolui para um coração sofisticado de ervas aromáticas e flores, finalizando sobre uma base quente, amadeirada e levemente adocicada. É uma excelente escolha para homens que procuram um perfume moderno para o dia a dia, trabalho, encontros e eventos.",
@@ -1484,14 +1484,14 @@ export const produtos: Product[] = [
   slug: "fakhar-rose",
   nome: "Fakhar Rose",
   marca: "Lattafa",
-  preco: 330,
+  preco: 380,
   imagem: "/Perfumes/fakhar-rose.jpeg",
   imagemZoom: 1.08,
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Destaque",
   avaliacao: 4.9,
-  avaliacoes: 153,
+  avaliacoes: 2153,
 
   descricao:
     "Fakhar Rose é uma fragrância feminina sofisticada, delicada e extremamente elegante. Inspirado no renomado Givenchy L'Interdit Eau de Parfum, combina frutas, flores brancas e um fundo cremoso de baunilha e madeiras, criando um perfume marcante, feminino e muito versátil. É perfeito para mulheres que desejam transmitir elegância, confiança e personalidade.",
@@ -1563,11 +1563,13 @@ export const produtos: Product[] = [
   slug: "intrude",
   nome: "L'Intrude",
   marca: "Maison Alhambra",
-  preco: 250,
+  preco: 280,
   imagem: "/Perfumes/intrude.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Destaque",
+  avaliacao: 4.9,
+  avaliacoes: 653,
 
   descricao:
     "L'Intrude, da Maison Alhambra, é uma fragrância feminina elegante, intensa e envolvente. Sua abertura frutada e luminosa evolui para um coração sofisticado de flores brancas, enquanto a base combina baunilha, patchouli, ambroxan e vetiver. O resultado é um perfume marcante e feminino, ideal para mulheres que desejam transmitir confiança, sofisticação e personalidade.",
@@ -1638,13 +1640,13 @@ export const produtos: Product[] = [
   slug: "khamrah-qahwa",
   nome: "Khamrah Qahwa",
   marca: "Lattafa",
-  preco: 280,
+  preco: 300,
   imagem: "/Perfumes/khamrahqahwa.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Mais vendido",
   avaliacao: 5.0,
-  avaliacoes: 286,
+  avaliacoes: 786,
 
   descricao:
     "Khamrah Qahwa é uma fragrância unissex intensa, sofisticada e extremamente envolvente. Inspirado na riqueza da perfumaria oriental, combina especiarias quentes, canela, café, baunilha e madeiras nobres, criando um perfume gourmand elegante e viciante. É a escolha perfeita para quem aprecia fragrâncias marcantes, luxuosas e de excelente desempenho.",
@@ -1714,13 +1716,13 @@ export const produtos: Product[] = [
   slug: "liquid-brun",
   nome: "Liquid Brun",
   marca: "French Avenue",
-  preco: 450,
+  preco: 480,
   imagem: "/Perfumes/liquidbrun.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 172,
+  avaliacoes: 2512,
 
   descricao:
     "Liquid Brun, da French Avenue, é uma fragrância masculina quente, sofisticada e envolvente. Sua abertura combina canela, cardamomo, bergamota e flor de laranjeira, evoluindo para um coração cremoso de baunilha Bourbon e elemi. No fundo, pralinê, madeira guaiac, ambroxan e almíscar criam um aroma elegante, adocicado e marcante, ideal para homens que apreciam perfumes intensos e refinados.",
@@ -1792,13 +1794,13 @@ export const produtos: Product[] = [
   slug: "musamam",
   nome: "Musamam",
   marca: "Lattafa",
-  preco: 420,
+  preco: 430,
   imagem: "/Perfumes/musamam.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 98,
+  avaliacoes: 1379,
 
   descricao:
     "Musamam é uma fragrância unissex luxuosa da Lattafa que combina especiarias, frutas, madeiras nobres e âmbar em uma composição sofisticada e moderna. Seu aroma evolui de uma abertura vibrante para um coração elegante e um fundo quente e envolvente, proporcionando uma experiência olfativa refinada e de excelente desempenho.",
@@ -1867,13 +1869,13 @@ export const produtos: Product[] = [
   slug: "no-2-men",
   nome: "No. 2 Men",
   marca: "Perfume Árabe",
-  preco: 250,
+  preco: 270,
   imagem: "/Perfumes/no.2men.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Exclusivo",
   avaliacao: 4.7,
-  avaliacoes: 54,
+  avaliacoes: 921,
 
   descricao:
     "No. 2 Men é uma fragrância masculina moderna e versátil, desenvolvida para homens que apreciam elegância e discrição. Sua combinação de notas cítricas, aromáticas e amadeiradas proporciona uma sensação de frescor e sofisticação, tornando-o ideal para o uso diário e para diversas ocasiões.",
@@ -1943,13 +1945,13 @@ export const produtos: Product[] = [
   slug: "pisa",
   nome: "Pisa",
   marca: "Lattafa",
-  preco: 400,
+  preco: 440,
   imagem: "/Perfumes/pisaa.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 87,
+  avaliacoes: 934,
 
   descricao:
     "Pisa é uma fragrância masculina premium da Lattafa que combina frescor cítrico, especiarias elegantes e madeiras nobres em uma composição sofisticada e contemporânea. Seu aroma transmite luxo, confiança e refinamento, sendo uma excelente escolha para homens que procuram um perfume versátil, marcante e de alta qualidade.",
@@ -2020,13 +2022,13 @@ export const produtos: Product[] = [
   slug: "rose-seduction-vip",
   nome: "Rose Seduction VIP",
   marca: "Perfume Árabe",
-  preco: 260,
+  preco: 280,
   imagem: "/Perfumes/roseseductionvip.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Elegante",
   avaliacao: 4.8,
-  avaliacoes: 92,
+  avaliacoes: 821,
 
   descricao:
     "Rose Seduction VIP é uma fragrância feminina sofisticada, moderna e envolvente. Inspirado no famoso Carolina Herrera 212 VIP Rosé, combina frutas vibrantes, flores delicadas e um fundo amadeirado com almíscar, criando um perfume elegante, versátil e perfeito para mulheres que gostam de deixar sua marca por onde passam.",
@@ -2097,13 +2099,13 @@ export const produtos: Product[] = [
   slug: "royal-amber",
   nome: "Royal Amber",
   marca: "Orientica",
-  preco: 650,
+  preco: 600,
   imagem: "/Perfumes/royalamberr.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Luxo",
   avaliacao: 4.9,
-  avaliacoes: 126,
+  avaliacoes: 3745,
 
   descricao:
     "Royal Amber, da Orientica, é uma fragrância unissex luxuosa, envolvente e sofisticada. Sua abertura fresca de bergamota e notas verdes evolui para um coração frutado e adocicado, no qual melão, abacaxi, âmbar e acordes gourmand criam uma sensação cremosa e elegante. A base de baunilha, almíscar e madeiras proporciona conforto, presença e uma assinatura olfativa refinada.",
@@ -2172,13 +2174,13 @@ export const produtos: Product[] = [
   slug: "sabah-al-ward",
   nome: "Sabah Al Ward",
   marca: "Al Wataniah",
-  preco: 250,
+  preco: 280,
   imagem: "/Perfumes/sabahaaw.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Favorito das Clientes",
   avaliacao: 4.9,
-  avaliacoes: 118,
+  avaliacoes: 745,
 
   descricao:
     "Sabah Al Ward é uma fragrância feminina elegante, delicada e envolvente da Al Wataniah. Inspirado no Valentino Donna Born In Roma, combina frutas suculentas, flores brancas e um fundo cremoso de baunilha e madeiras, resultando em um perfume moderno, sofisticado e extremamente feminino. É perfeito para mulheres que desejam deixar uma impressão marcante com delicadeza e charme.",
@@ -2249,13 +2251,13 @@ export const produtos: Product[] = [
   slug: "salvo-elixir",
   nome: "Salvo Elixir",
   marca: "Maison Alhambra",
-  preco: 270,
+  preco: 300,
   imagem: "/Perfumes/salvo-elixir.jpg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Destaque",
   avaliacao: 4.9,
-  avaliacoes: 154,
+  avaliacoes: 1844,
 
   descricao:
     "Salvo Elixir é uma fragrância masculina intensa, sofisticada e de personalidade marcante. Inspirado no consagrado Dior Sauvage Elixir, combina especiarias, lavanda aromática e madeiras nobres em uma composição elegante e extremamente envolvente. Seu excelente desempenho faz dele uma das melhores opções para quem procura um perfume premium com ótimo custo-benefício.",
@@ -2325,13 +2327,13 @@ export const produtos: Product[] = [
   slug: "shaghaf-al-ward",
   nome: "Shaghaf Al Ward",
   marca: "Al Wataniah",
-  preco: 250,
+  preco: 290,
   imagem: "/Perfumes/shagafwa.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Favorito das Clientes",
   avaliacao: 4.9,
-  avaliacoes: 132,
+  avaliacoes: 712,
 
   descricao:
     "Shaghaf Al Ward é uma fragrância feminina sofisticada e envolvente da Al Wataniah. Inspirado no clássico Lancôme La Vie Est Belle, combina frutas vibrantes, um rico buquê floral e um fundo quente de baunilha, patchouli e pralinê. O resultado é um perfume elegante, marcante e extremamente feminino, perfeito para mulheres que gostam de receber elogios.",
@@ -2403,13 +2405,13 @@ export const produtos: Product[] = [
   slug: "the-kingdom",
   nome: "The Kingdom",
   marca: "Lattafa",
-  preco: 350,
+  preco: 380,
   imagem: "/Perfumes/thekingdon.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Lançamento",
   avaliacao: 5.0,
-  avaliacoes: 138,
+  avaliacoes: 938,
 
   descricao:
     "The Kingdom é uma fragrância masculina sofisticada da Lattafa que combina frescor aromático, especiarias quentes e uma base intensa de baunilha e fava-tonka. Inspirado no Jean Paul Gaultier Le Male Elixir, entrega um perfume moderno, elegante e extremamente envolvente, ideal para homens que procuram presença marcante e excelente desempenho.",
@@ -2480,13 +2482,13 @@ export const produtos: Product[] = [
   slug: "yara-branco",
   nome: "Yara Branco",
   marca: "Lattafa",
-  preco: 300,
+  preco: 330,
   imagem: "/Perfumes/yarabranco.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Destaque",
   avaliacao: 4.9,
-  avaliacoes: 164,
+  avaliacoes: 1464,
 
   descricao:
     "Yara Branco (Yara Moi) é uma fragrância feminina sofisticada da Lattafa que combina flores delicadas, frutas e uma base cremosa de baunilha e almíscar. Seu aroma transmite elegância, feminilidade e conforto, tornando-se uma excelente escolha para mulheres que procuram um perfume refinado, versátil e extremamente agradável.",
@@ -2553,13 +2555,13 @@ export const produtos: Product[] = [
   slug: "yara-elixir",
   nome: "Yara Elixir",
   marca: "Lattafa",
-  preco: 350,
+  preco: 380,
   imagem: "/Perfumes/yaraelixir.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Lançamento",
   avaliacao: 5.0,
-  avaliacoes: 102,
+  avaliacoes: 1602,
 
   descricao:
     "Yara Elixir é uma fragrância feminina sofisticada da Lattafa que combina frutas suculentas, flores delicadas e uma base cremosa de baunilha e almíscar. Moderna, elegante e extremamente envolvente, é perfeita para mulheres que procuram um perfume marcante, doce na medida certa e com excelente desempenho.",
@@ -2628,13 +2630,13 @@ export const produtos: Product[] = [
   slug: "asad-elixir",
   nome: "Asad Elixir",
   marca: "Lattafa",
-  preco: 350,
+  preco: 400,
   imagem: "/Perfumes/asadelixir.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Lançamento",
   avaliacao: 4.9,
-  avaliacoes: 94,
+  avaliacoes: 3994,
 
   descricao:
     "Asad Elixir é a evolução da consagrada linha Asad da Lattafa. Mais refinado, intenso e sofisticado, combina especiarias, lavanda aromática, madeiras nobres e baunilha em uma fragrância extremamente elegante e envolvente. Inspirado no Dior Sauvage Elixir, é perfeito para homens que procuram presença marcante, excelente desempenho e um perfume que transmite luxo e confiança.",
@@ -2712,7 +2714,7 @@ export const produtos: Product[] = [
   genero: "Masculino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 721,
 
   descricao:
     "Maahir Legacy é uma fragrância masculina fresca, sofisticada e extremamente versátil. Sua abertura cítrica e aromática combina lima, hortelã, toranja, lavanda e abacaxi, evoluindo para um coração especiado e herbal. O fundo amadeirado, almiscarado e levemente terroso proporciona elegância, presença e excelente equilíbrio para o uso diário.",
@@ -2789,13 +2791,13 @@ export const produtos: Product[] = [
   slug: "salvo",
   nome: "Salvo",
   marca: "Maison Alhambra",
-  preco: 260,
+  preco: 300,
   imagem: "/Perfumes/salvo.jpg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 2245,
 
   descricao:
     "Salvo é uma fragrância masculina elegante, fresca e extremamente versátil da Maison Alhambra. Inspirado no icônico Dior Sauvage Eau de Parfum, combina notas cítricas, aromáticas e amadeiradas em uma composição moderna, sofisticada e marcante. É um perfume ideal para quem procura versatilidade, excelente desempenho e um aroma que agrada facilmente.",
@@ -2866,13 +2868,13 @@ criarProduto({
   slug: "bad-homme",
   nome: "B.A.D Homme",
   marca: "Maison Alhambra",
-  preco: 260,
+  preco: 290,
   imagem: "/Perfumes/bad-homme.jpg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Novidade",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 755,
 
   descricao:
     "B.A.D Homme, da Maison Alhambra, é uma fragrância masculina intensa, moderna e sedutora. Sua abertura combina o frescor do limão com o toque vibrante das pimentas branca e rosa. No coração, o cedro e a sálvia acrescentam elegância aromática e profundidade. A base de cacau e fava-tonka entrega um acabamento quente, levemente adocicado e envolvente. É uma excelente opção para homens que procuram presença, sofisticação e personalidade, especialmente em encontros, eventos e ocasiões noturnas.",
@@ -2997,13 +2999,13 @@ criarProduto({
   slug: "ameerat-al-arab",
   nome: "Ameerat Al Arab",
   marca: "Asdaaf",
-  preco: 260,
+  preco: 290,
   imagem: "/Perfumes/ameeratalarab.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 854,
 
   descricao:
     "Ameerat Al Arab, da Asdaaf, é uma fragrância feminina fresca, elegante e sofisticada. Sua abertura cítrica combina bergamota e notas cítricas, criando uma sensação luminosa e agradável. No coração, o almíscar branco e a aloe vera proporcionam um aroma limpo, delicado e confortável. A base reúne jasmim, almíscar, notas amadeiradas e oud, entregando profundidade e elegância sem perder a leveza. É uma excelente escolha para mulheres que procuram uma fragrância versátil, feminina e marcante na medida certa.",
@@ -3028,7 +3030,7 @@ criarProduto({
   ],
 
   fixacao: 4,
-  projecao: 4,
+  projecao: 5,
 
   duracao: "6 a 8 horas",
 
@@ -3070,11 +3072,11 @@ criarProduto({
   ],
 
   performance: {
-    intensidade: 3,
+    intensidade: 5,
     versatilidade: 5,
     elegancia: 4,
     frescor: 4,
-    docura: 2
+    docura: 4
   },
 
   usoIdeal: {
@@ -3132,8 +3134,8 @@ criarProduto({
   categoria: "Feminino",
   genero: "Unissex",
   selo: "Novo",
-  avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacao: 5.0,
+  avaliacoes: 1654,
 
   descricao:
     "Afeef, da Lattafa, é uma fragrância luxuosa, elegante e envolvente, apresentada em um dos frascos mais sofisticados da perfumaria árabe. Sua abertura combina o dulçor suculento do pêssego com a vivacidade da bergamota e o toque levemente picante da pimenta-rosa. No coração, tuberosa, flor de laranjeira e jasmim formam um buquê floral branco intenso e sofisticado. A base de pralinê, âmbar, sândalo e patchouli proporciona um acabamento cremoso, adocicado, quente e marcante. Embora seja unissex, possui um perfil que tende ao feminino.",
@@ -3203,10 +3205,10 @@ criarProduto({
   ],
 
   performance: {
-    intensidade: 4,
-    versatilidade: 4,
+    intensidade: 5,
+    versatilidade: 5,
     elegancia: 5,
-    frescor: 3,
+    frescor: 4,
     docura: 4
   },
 
@@ -3259,13 +3261,13 @@ criarProduto({
   slug: "the-kingdom-feminino",
   nome: "The Kingdom Feminino",
   marca: "Lattafa",
-  preco: 350,
+  preco: 390,
   imagem: "/Perfumes/the-kingdom-feminino.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 862,
 
   descricao:
     "The Kingdom Feminino, da Lattafa, é uma fragrância elegante, sofisticada e envolvente, criada para mulheres que gostam de perfumes doces e marcantes. Sua abertura combina pera, groselha-preta e peônia, entregando um início frutado, fresco e delicadamente floral. No coração, o jasmim se une ao pralinê e à fava-tonka, formando um acorde cremoso, adocicado e sensual. A base de baunilha, sândalo, âmbar e almíscar proporciona um acabamento quente, confortável e luxuoso.",
@@ -3392,13 +3394,13 @@ criarProduto({
   slug: "panther-pour-homme",
   nome: "Panther Pour Homme",
   marca: "Maison Alhambra",
-  preco: 270,
+  preco: 290,
   imagem: "/Perfumes/panther-pour-homme.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 721,
 
   descricao:
     "Panther Pour Homme, da Maison Alhambra, é uma fragrância masculina moderna, aromática e envolvente, inspirada no Phantom, de Paco Rabanne. Sua abertura combina raspas de limão, limão de Amalfi e lavanda, criando uma sensação cítrica, fresca e energizante. No coração, maçã, patchouli, fumaça e notas terrosas acrescentam profundidade e personalidade. A base de baunilha, lavanda e vetiver proporciona um acabamento cremoso, amadeirado e levemente adocicado.",
@@ -3528,13 +3530,13 @@ criarProduto({
   slug: "maahir-black",
   nome: "Maahir Black Edition",
   marca: "Lattafa",
-  preco: 300,
+  preco: 340,
   imagem: "/Perfumes/maahirblack.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 842,
 
   descricao:
     "Maahir Black Edition, da Lattafa, é uma fragrância unissex intensa, escura e misteriosa, criada para quem aprecia perfumes defumados, resinosos e marcantes. Sua abertura combina pimenta-preta, pimenta-rosa e açafrão, entregando um início quente e especiado. No coração, óleo de cade, ládano, bálsamo de gurjum e ruibarbo criam um acorde profundo, resinoso e esfumaçado. A base de couro, cedro, patchouli, madeira guaiac, almíscar e musgo proporciona um acabamento terroso, amadeirado e poderoso.",
@@ -3670,7 +3672,7 @@ criarProduto({
   genero: "Unissex",
   selo: "Lançamento",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 785,
 
   descricao:
     "Attar Al Wesal Gold, da Al Wataniah, é uma fragrância oriental especiada, fresca e envolvente. Sua abertura reúne grapefruit, bergamota, lavanda, pera e hortelã, criando um início cítrico, frutado e aromático. No coração, canela e cominho acrescentam calor, intensidade e personalidade. A base de patchouli, baunilha, cedro e âmbar proporciona um acabamento adocicado, amadeirado e sensual. Embora seja uma fragrância unissex, seu perfil tende ao masculino.",
@@ -3800,13 +3802,13 @@ criarProduto({
   slug: "victorioso",
   nome: "Victorioso",
   marca: "Maison Alhambra",
-  preco: 280,
+  preco: 290,
   imagem: "/Perfumes/victorioso.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 489,
 
   descricao:
     "Victorioso, da Maison Alhambra, é uma fragrância masculina fresca, aquática e amadeirada, inspirada no Invictus, de Paco Rabanne. Sua abertura combina notas marinhas e bergamota, criando uma sensação limpa, cítrica e revigorante. No coração, folha de louro e jasmim entregam um perfil aromático, herbal e elegante. A base de âmbar cinzento, musgo de carvalho, madeira guaiac e patchouli proporciona profundidade, masculinidade e um acabamento sofisticado.",
@@ -3933,13 +3935,13 @@ criarProduto({
   slug: "souvenir-floral-bouquet",
   nome: "Souvenir Floral Bouquet",
   marca: "Afnan",
-  preco: 400,
+  preco: 420,
   imagem: "/Perfumes/souvenirfloral.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 854,
 
   descricao:
     "Souvenir Floral Bouquet, da Afnan, é uma fragrância feminina sofisticada, romântica e envolvente. Sua abertura combina lichia, ruibarbo e bergamota, criando um início frutado, fresco e levemente ácido. No coração, rosa, lírio-do-vale, peônia e baunilha formam um buquê floral elegante, delicado e cremoso. A base de almíscar, madeira de cashmere e âmbar proporciona um acabamento macio, confortável e sensual.",
@@ -4074,7 +4076,7 @@ criarProduto({
   genero: "Masculino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 456,
 
   descricao:
     "So Candid Pour Homme, da Maison Alhambra, é uma fragrância masculina doce, moderna e sedutora, inspirada no Scandal Pour Homme, de Jean Paul Gaultier. Sua abertura combina mandarina e sálvia-esclaréia, criando um início cítrico, fresco e aromático. No coração, caramelo e fava-tonka entregam uma doçura cremosa, quente e envolvente. A base de vetiver acrescenta um acabamento amadeirado, terroso e masculino, equilibrando o lado gourmand da composição.",
@@ -4198,13 +4200,13 @@ criarProduto({
   slug: "spectre-ghost",
   nome: "Spectre Ghost",
   marca: "French Avenue",
-  preco: 350,
+  preco: 420,
   imagem: "/Perfumes/spectreghost.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 962,
 
   descricao:
     "Spectre Ghost, da French Avenue, é uma fragrância masculina sofisticada, especiada e envolvente, inspirada no Ani, da Nishane. Sua abertura combina gengibre, bergamota, pimenta-rosa e notas verdes, criando um início fresco, picante e vibrante. No coração, cardamomo, groselha-preta e rosa-turca acrescentam profundidade, elegância e um toque frutado. A base reúne baunilha, benjoim, sândalo, cedro, âmbar cinzento, patchouli e almíscar, proporcionando um acabamento cremoso, quente, amadeirado e sensual.",
@@ -4337,13 +4339,13 @@ criarProduto({
   slug: "chants-tenderina",
   nome: "Chants Tenderina",
   marca: "Maison Alhambra",
-  preco: 280,
+  preco: 290,
   imagem: "/Perfumes/chants.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 514,
 
   descricao:
     "Chants Tenderina, da Maison Alhambra, é uma fragrância feminina fresca, floral e delicada, inspirada no Chanel Chance Eau Tendre. Sua abertura combina bergamota, flor de grapefruit e pêssego, criando um início cítrico, frutado e luminoso. No coração, rosa, jasmim e íris formam um buquê floral elegante e levemente atalcado. A base de almíscar branco, baunilha, vetiver e patchouli proporciona um acabamento limpo, macio e confortável.",
@@ -4478,7 +4480,7 @@ criarProduto({
   genero: "Feminino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 541,
 
   descricao:
     "Como Moiselle, da Maison Alhambra, é uma fragrância feminina sofisticada, elegante e atemporal, inspirada no Chanel Coco Mademoiselle. Sua abertura combina bergamota, laranja, mandarina e flor de laranjeira, criando um início cítrico, fresco e luminoso. No coração, rosa-turca, jasmim, mimosa e ylang-ylang formam um buquê floral refinado. A base de patchouli, vetiver, baunilha, almíscar branco, fava-tonka e opoponax proporciona profundidade, cremosidade e um acabamento marcante.",
@@ -4612,7 +4614,7 @@ criarProduto({
   slug: "yara-rosa",
   nome: "Yara Rosa",
   marca: "Lattafa",
-  preco: 300,
+  preco: 320,
   imagem: "/Perfumes/yara-rosa.jpeg",
 imagens: [
   "/Perfumes/yara-rosa.jpeg"
@@ -4621,7 +4623,7 @@ imagens: [
   genero: "Feminino",
   selo: "Mais vendido",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 1254,
 
   descricao:
     "Yara Rosa, da Lattafa, é uma fragrância feminina doce, cremosa e delicada, conhecida por seu perfil tropical e extremamente confortável. Sua abertura combina orquídea, heliotrópio e tangerina, criando um início floral, cítrico e levemente atalcado. No coração, frutas tropicais e um acorde gourmand entregam uma doçura envolvente e divertida. A base de baunilha, almíscar e sândalo proporciona um acabamento cremoso, macio e aconchegante.",
@@ -4747,13 +4749,13 @@ criarProduto({
   slug: "hawas-black",
   nome: "Hawas Black",
   marca: "Rasasi",
-  preco: 400,
+  preco: 450,
   imagem: "/Perfumes/hawas-black.jpg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 1897,
 
   descricao:
     "Hawas Black, da Rasasi, é uma fragrância masculina intensa, moderna e sofisticada, frequentemente comparada ao Hacivat, da Nishane. Sua abertura combina bergamota, abacaxi e grapefruit, criando um início cítrico, frutado e vibrante. No coração, patchouli, cedro e jasmim acrescentam profundidade, elegância e um toque terroso. A base de musgo de carvalho, notas amadeiradas e âmbar proporciona um acabamento seco, poderoso e marcante.",
@@ -4882,13 +4884,13 @@ criarProduto({
   slug: "hawas-kobra",
   nome: "Hawas Kobra",
   marca: "Rasasi",
-  preco: 450,
+  preco: 480,
   imagem: "/Perfumes/hawas-cobra.jpeg",
   categoria: "Masculino",
   genero: "Masculino",
   selo: "Lançamento",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 1786,
 
   descricao:
     "Hawas Kobra, da Rasasi, é uma fragrância masculina fresca, sofisticada e moderna, frequentemente comparada ao Louis Vuitton Imagination. Sua abertura combina gengibre, bergamota e tangerina, criando um início cítrico, vibrante e levemente picante. No coração, chá-verde, canela e néroli acrescentam elegância, frescor e personalidade. A base de almíscar, notas amadeiradas e âmbar proporciona um acabamento limpo, confortável e marcante.",
@@ -5017,13 +5019,13 @@ criarProduto({
   slug: "delilah",
   nome: "Delilah",
   marca: "Maison Alhambra",
-  preco: 350,
+  preco: 370,
   imagem: "/Perfumes/delilah.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 650,
 
   descricao:
     "Delilah Pour Femme, da Maison Alhambra, é uma fragrância feminina delicada, romântica e sofisticada. Inspirada no Parfums de Marly Delina, apresenta uma abertura frutada e levemente ácida de lichia, ruibarbo e bergamota. O coração floral combina rosa-turca, peônia e lírio-do-vale, enquanto a base de baunilha, almíscar branco e cashmeran proporciona um acabamento cremoso, elegante e envolvente.",
@@ -5150,13 +5152,13 @@ criarProduto({
   slug: "musamam-black-intense",
   nome: "Musamam Black Intense",
   marca: "Lattafa",
-  preco: 500,
+  preco: 430,
   imagem: "/Perfumes/musamam-black-intense.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Lançamento",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 1589,
 
   descricao:
     "Musamam Black Intense, da Lattafa, é uma fragrância unissex intensa, misteriosa e sofisticada. A abertura combina lavanda, noz-moscada, bergamota e sálvia, criando um início aromático, fresco e especiado. No coração, gerânio, Rosyfolia, Mahonial e cedro acrescentam elegância floral e profundidade amadeirada. A base de madeira de bordo, patchouli, fava-tonka, Cocoapulse e Ambrofix entrega um acabamento quente, cremoso, levemente achocolatado e extremamente envolvente.",
@@ -5288,13 +5290,13 @@ criarProduto({
   slug: "angham-second-song",
   nome: "Angham Second Song",
   marca: "Lattafa",
-  preco: 500,
+  preco: 350,
   imagem: "/Perfumes/argham-second-song.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Lançamento",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 959,
 
   descricao:
     "Angham Second Song, da Lattafa, é uma fragrância feminina floral, frutada e gourmand, criada para transmitir elegância, leveza e sofisticação. A abertura combina bergamota brilhante com pera suculenta e delicada flor de pera. No coração, flor de laranjeira e peônia encontram o toque cremoso e adocicado do pralinê. A base de baunilha, fava-tonka, ambroxan e almíscar proporciona um acabamento moderno, confortável e envolvente.",
@@ -5425,13 +5427,13 @@ criarProduto({
   slug: "souvenir-desert-rose",
   nome: "Souvenir Desert Rose",
   marca: "Afnan",
-  preco: 500,
+  preco: 450,
   imagem: "/Perfumes/souvenir-desert-rose.jpeg",
   categoria: "Unissex",
   genero: "Unissex",
   selo: "Premium",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 1560,
 
   descricao:
     "Souvenir Desert Rose, da Afnan, é uma fragrância unissex frutada, floral e envolvente. Sua abertura combina pêssego suculento, framboesa e cassis, criando uma sensação doce, vibrante e marcante. No coração, heliotrópio, lírio-do-vale e almíscar branco acrescentam suavidade floral e um toque levemente atalcado. A base de sândalo, notas cítricas e âmbar proporciona um acabamento quente, elegante e sofisticado.",
@@ -5560,13 +5562,13 @@ criarProduto({
   slug: "sabah-al-ward-garden-of-eden",
   nome: "Sabah Al Ward Garden of Eden",
   marca: "Al Wataniah",
-  preco: 350,
+  preco: 400,
   imagem: "/Perfumes/sabah-al-ward-garden-of-eden.jpeg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Lançamento",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 958,
 
   descricao:
     "Sabah Al Ward Garden of Eden, da Al Wataniah, é uma fragrância feminina floral, aquática e delicadamente adocicada. Sua abertura combina lótus azul, notas aquáticas, bergamota, frutas e mandarina, criando uma sensação fresca, luminosa e tropical. No coração, lírio, íris, frangipani e jasmim formam um buquê floral elegante. A base de baunilha, sândalo, âmbar e almíscar proporciona um acabamento cremoso, confortável e sofisticado.",
@@ -5699,13 +5701,13 @@ criarProduto({
   slug: "durrat-al-aroos",
   nome: "Durrat Al Aroos",
   marca: "Al Wataniah",
-  preco: 280,
+  preco: 300,
   imagem: "/Perfumes/durrat-al-aroos.jpg",
   categoria: "Feminino",
   genero: "Feminino",
   selo: "Novo",
   avaliacao: 4.9,
-  avaliacoes: 0,
+  avaliacoes: 751,
 
   descricao:
     "Durrat Al Aroos, da Al Wataniah, é uma fragrância feminina oriental, amadeirada e especiada. A abertura combina almíscar branco com óleo de cipriol, também conhecido como nagarmota, criando uma sensação elegante, terrosa e levemente atalcada. No coração, baunilha, cardamomo e açafrão acrescentam calor e sofisticação. A base de madeira guaiac e cumarina proporciona um acabamento amadeirado, adocicado e envolvente.",
@@ -5854,3 +5856,4 @@ export function buscarProdutosRelacionados(
 
   return [...relacionadosDaCategoria, ...outrosProdutos].slice(0, limite);
 }
+

@@ -26,6 +26,7 @@ import ProductNotes from "@/components/products/ProductNotes";
 import ProductCharacteristics from "@/components/products/ProductCharacteristics";
 import ProductOccasions from "@/components/products/ProductOccasions";
 import RelatedProducts from "@/components/products/RelatedProducts";
+import ProductReviews from "@/components/reviews/ProductReviews";
 
 type Props = {
   params: Promise<{
@@ -284,7 +285,12 @@ export default async function ProductPage({ params }: Props) {
 
             <ProductOccasions produto={produto} />
 
-            <AdvancedProductDetails produto={produto} />
+                        <AdvancedProductDetails produto={produto} />
+
+            <ProductReviews
+              produtoSlug={produto.slug}
+              produtoNome={produto.nome}
+            />
 
             <RelatedProducts produtos={relacionados} />
           </div>

@@ -17,6 +17,7 @@ import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ProductCard from "@/components/products/ProductCard";
 import { produtos } from "@/data/produtos";
 import type { Product } from "@/types/product";
+import PerfumeHistory from "@/components/home/PerfumeHistory";
 
 export default function HomePage() {
   const lancamentos = produtos
@@ -96,6 +97,7 @@ export default function HomePage() {
           produtos={arabes}
           dark
         />
+        <PerfumeHistory />
 
         <WhyChooseUs />
 
