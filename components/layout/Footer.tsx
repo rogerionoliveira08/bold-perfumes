@@ -24,7 +24,9 @@ export default function Footer() {
 
             <div className="mt-5 flex flex-wrap gap-3">
               <a
-                href="https://wa.me/5522998771598?text=Olá! Vim pelo site da Bold Parfum e gostaria de atendimento."
+                href={`https://wa.me/5522998771598?text=${encodeURIComponent(
+                  "Olá! Vim pelo site da Bold Parfum e gostaria de atendimento.",
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-green-500/40 bg-green-500/[0.06] px-4 py-2.5 text-xs font-black text-green-400 transition hover:bg-green-500 hover:text-black"
@@ -93,6 +95,33 @@ export default function Footer() {
                   className="transition hover:text-yellow-400"
                 >
                   Favoritos
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/politica-de-trocas-e-devolucoes"
+                  className="transition hover:text-yellow-400"
+                >
+                  Trocas e Devoluções
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/direitos-autorais"
+                  className="transition hover:text-yellow-400"
+                >
+                  Direitos Autorais
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/politica-de-comentarios-e-avaliacoes"
+                  className="transition hover:text-yellow-400"
+                >
+                  Comentários e Avaliações
                 </Link>
               </li>
             </ul>
