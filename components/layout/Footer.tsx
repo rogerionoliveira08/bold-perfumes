@@ -1,7 +1,8 @@
  import Link from "next/link";
 import {
   FaCreditCard,
-  FaInstagram,
+FaEnvelope,
+FaInstagram,
   FaMapMarkerAlt,
   FaShippingFast,
   FaWhatsapp,
@@ -113,6 +114,45 @@ export default function Footer() {
               </div>
 
               <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3">
+  <FaEnvelope
+    className="mt-0.5 shrink-0 text-yellow-400"
+    size={15}
+  />
+
+  <div className="min-w-0">
+    <a
+      href="mailto:atendimento@boldparfum.com.br"
+      className="block break-all font-bold text-zinc-200 transition hover:text-yellow-400"
+    >
+      atendimento@boldparfum.com.br
+    </a>
+
+    <p className="mt-0.5 text-xs text-zinc-500">
+      Dúvidas, pedidos e atendimento
+    </p>
+  </div>
+</div>
+
+<div className="flex items-start gap-3">
+  <FaEnvelope
+    className="mt-0.5 shrink-0 text-yellow-400"
+    size={15}
+  />
+
+  <div className="min-w-0">
+    <a
+      href="mailto:consultoria@boldparfum.com.br"
+      className="block break-all font-bold text-zinc-200 transition hover:text-yellow-400"
+    >
+      consultoria@boldparfum.com.br
+    </a>
+
+    <p className="mt-0.5 text-xs text-zinc-500">
+      Consultoria personalizada em perfumaria
+    </p>
+  </div>
+</div>
                 <FaMapMarkerAlt
                   className="mt-0.5 shrink-0 text-yellow-400"
                   size={15}

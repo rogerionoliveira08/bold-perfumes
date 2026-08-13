@@ -1,5 +1,6 @@
 import {
   FaBriefcase,
+  FaEnvelope,
   FaHome,
   FaMapMarkerAlt,
   FaShippingFast,
@@ -167,15 +168,25 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <a
-              href={linkConsultoria}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-6 py-4 font-bold text-black transition hover:bg-yellow-300"
-            >
-              <FaWhatsapp size={20} />
-              Solicitar uma consultoria
-            </a>
+            <div className="flex w-full flex-col gap-3 lg:w-auto">
+  <a
+    href={linkConsultoria}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-6 py-4 font-bold text-black transition hover:bg-yellow-300"
+  >
+    <FaWhatsapp size={20} />
+    Solicitar uma consultoria
+  </a>
+
+  <a
+    href="mailto:consultoria@boldparfum.com.br"
+    className="inline-flex items-center justify-center gap-2 rounded-xl border border-yellow-400/40 bg-black px-5 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black"
+  >
+    <FaEnvelope size={17} />
+    consultoria@boldparfum.com.br
+  </a>
+</div>
           </div>
         </div>
       </div>
