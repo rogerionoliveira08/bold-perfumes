@@ -8,6 +8,10 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const whatsappMessage = encodeURIComponent(
+    "Olá! Vim pelo site da Bold Parfum e gostaria de atendimento.",
+  );
+
   return (
     <footer className="border-t border-yellow-400/40 bg-black text-white">
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12">
@@ -24,9 +28,7 @@ export default function Footer() {
 
             <div className="mt-5 flex flex-wrap gap-3">
               <a
-                href={`https://wa.me/5522998771598?text=${encodeURIComponent(
-                  "Olá! Vim pelo site da Bold Parfum e gostaria de atendimento.",
-                )}`}
+                href={`https://wa.me/5522998771598?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-green-500/40 bg-green-500/[0.06] px-4 py-2.5 text-xs font-black text-green-400 transition hover:bg-green-500 hover:text-black"
@@ -104,6 +106,24 @@ export default function Footer() {
                   className="transition hover:text-yellow-400"
                 >
                   Trocas e Devoluções
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/politica-de-privacidade"
+                  className="transition hover:text-yellow-400"
+                >
+                  Política de Privacidade
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/termos-de-uso"
+                  className="transition hover:text-yellow-400"
+                >
+                  Termos de Uso
                 </Link>
               </li>
 
