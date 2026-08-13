@@ -1,9 +1,8 @@
- import Link from "next/link";
+import Link from "next/link";
 import {
   FaCreditCard,
-FaEnvelope,
-FaInstagram,
-  FaMapMarkerAlt,
+  FaEnvelope,
+  FaInstagram,
   FaShippingFast,
   FaWhatsapp,
 } from "react-icons/fa";
@@ -12,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-yellow-400/40 bg-black text-white">
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_0.9fr_1fr]">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_0.7fr_0.85fr_1fr]">
           <div>
             <h2 className="text-2xl font-black tracking-tight text-yellow-400">
               Bold Parfum
@@ -35,7 +34,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/bold.ouse/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-300 transition hover:border-pink-500/60 hover:text-pink-400"
@@ -43,6 +42,18 @@ export default function Footer() {
                 <FaInstagram size={16} />
                 Instagram
               </a>
+            </div>
+
+            <div className="mt-5 space-y-3">
+              <EmailLink
+                email="atendimento@boldparfum.com.br"
+                description="Dúvidas, pedidos e atendimento"
+              />
+
+              <EmailLink
+                email="consultoria@boldparfum.com.br"
+                description="Consultoria personalizada em perfumaria"
+              />
             </div>
           </div>
 
@@ -53,10 +64,7 @@ export default function Footer() {
 
             <ul className="mt-4 space-y-3 text-sm text-zinc-400">
               <li>
-                <Link
-                  href="/"
-                  className="transition hover:text-yellow-400"
-                >
+                <Link href="/" className="transition hover:text-yellow-400">
                   Início
                 </Link>
               </li>
@@ -95,7 +103,7 @@ export default function Footer() {
               Atendimento
             </h3>
 
-            <div className="mt-4 space-y-4 text-sm text-zinc-400">
+            <div className="mt-4 text-sm text-zinc-400">
               <div className="flex items-start gap-3">
                 <FaWhatsapp
                   className="mt-0.5 shrink-0 text-yellow-400"
@@ -103,68 +111,10 @@ export default function Footer() {
                 />
 
                 <div>
-                  <p className="font-bold text-zinc-200">
-                    (22) 99877-1598
-                  </p>
+                  <p className="font-bold text-zinc-200">(22) 99877-1598</p>
 
-                  <p className="mt-0.5 text-xs text-zinc-500">
+                  <p className="mt-0.5 text-xs leading-5 text-zinc-500">
                     Atendimento rápido pelo WhatsApp
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="flex items-start gap-3">
-  <FaEnvelope
-    className="mt-0.5 shrink-0 text-yellow-400"
-    size={15}
-  />
-
-  <div className="min-w-0">
-    <a
-      href="mailto:atendimento@boldparfum.com.br"
-      className="block break-all font-bold text-zinc-200 transition hover:text-yellow-400"
-    >
-      atendimento@boldparfum.com.br
-    </a>
-
-    <p className="mt-0.5 text-xs text-zinc-500">
-      Dúvidas, pedidos e atendimento
-    </p>
-  </div>
-</div>
-
-<div className="flex items-start gap-3">
-  <FaEnvelope
-    className="mt-0.5 shrink-0 text-yellow-400"
-    size={15}
-  />
-
-  <div className="min-w-0">
-    <a
-      href="mailto:consultoria@boldparfum.com.br"
-      className="block break-all font-bold text-zinc-200 transition hover:text-yellow-400"
-    >
-      consultoria@boldparfum.com.br
-    </a>
-
-    <p className="mt-0.5 text-xs text-zinc-500">
-      Consultoria personalizada em perfumaria
-    </p>
-  </div>
-</div>
-                <FaMapMarkerAlt
-                  className="mt-0.5 shrink-0 text-yellow-400"
-                  size={15}
-                />
-
-                <div>
-                  <p className="font-bold text-zinc-200">
-                    Saquarema - RJ
-                  </p>
-
-                  <p className="mt-0.5 text-xs text-zinc-500">
-                    Enviamos para todo o Brasil
                   </p>
                 </div>
               </div>
@@ -219,6 +169,34 @@ export default function Footer() {
   );
 }
 
+function EmailLink({
+  email,
+  description,
+}: {
+  email: string;
+  description: string;
+}) {
+  return (
+    <div className="flex items-start gap-3">
+      <FaEnvelope
+        className="mt-0.5 shrink-0 text-yellow-400"
+        size={15}
+      />
+
+      <div className="min-w-0">
+        <a
+          href={`mailto:${email}`}
+          className="whitespace-nowrap text-[12px] font-bold text-zinc-200 transition hover:text-yellow-400 sm:text-sm"
+        >
+          {email}
+        </a>
+
+        <p className="mt-0.5 text-xs text-zinc-500">{description}</p>
+      </div>
+    </div>
+  );
+}
+
 function InfoCard({
   icon,
   title,
@@ -230,13 +208,10 @@ function InfoCard({
 }) {
   return (
     <div className="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-950 p-3">
-      <span className="mt-0.5 shrink-0 text-yellow-400">
-        {icon}
-      </span>
+      <span className="mt-0.5 shrink-0 text-yellow-400">{icon}</span>
 
       <div>
         <p className="text-sm font-black text-white">{title}</p>
-
         <p className="mt-0.5 text-xs text-zinc-500">{text}</p>
       </div>
     </div>
