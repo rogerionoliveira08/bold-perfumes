@@ -59,7 +59,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/bold.ouse/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-pink-500/80 bg-pink-500/[0.04] px-4 py-3 text-center text-[12px] font-black text-pink-400 transition duration-200 hover:bg-pink-500 hover:text-white active:scale-[0.98] sm:min-h-12 sm:text-[13px]"

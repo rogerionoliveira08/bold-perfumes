@@ -10,8 +10,8 @@
 const beneficios = [
   {
     icon: <FaStar />,
-    titulo: "+500 clientes satisfeitos",
-    texto: "Confiança construída com atendimento próximo e fragrâncias selecionadas.",
+    titulo: "Curadoria especializada",
+texto: "Fragrâncias selecionadas de acordo com estilo, ocasião e preferência olfativa.",
   },
   {
     icon: <FaShippingFast />,

@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.boldparfum.com.br"),
   title: {
     default: "Bold Parfum | Perfumes Árabes e Importados",
     template: "%s | Bold Parfum",

@@ -50,14 +50,6 @@ export default function WeeklyOffer() {
             </p>
 
             <div className="mt-4 flex items-center gap-2">
-              <div className="flex items-center gap-1 text-yellow-400">
-                <FaStar size={12} />
-
-                <span className="text-sm font-black">4,9</span>
-              </div>
-
-              <span className="text-zinc-700">•</span>
-
               <span className="text-xs text-zinc-500">
                 Perfume intenso e sofisticado
               </span>
@@ -76,7 +68,7 @@ export default function WeeklyOffer() {
 
               <div className="mt-1.5 flex flex-wrap items-end gap-2">
                 <p className="text-2xl font-black text-yellow-400 sm:text-3xl">
-                  R$ R$ 420,00
+                  R$ 420,00
                 </p>
 
                 <p className="pb-0.5 text-xs text-zinc-500">

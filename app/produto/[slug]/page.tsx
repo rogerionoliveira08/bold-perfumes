@@ -211,16 +211,6 @@ export default async function ProductPage({ params }: Props) {
         name: "Bold Parfum",
       },
     },
-    aggregateRating:
-      produto.avaliacoes > 0
-        ? {
-            "@type": "AggregateRating",
-            ratingValue: produto.avaliacao,
-            reviewCount: produto.avaliacoes,
-            bestRating: 5,
-            worstRating: 1,
-          }
-        : undefined,
     additionalProperty: propriedadesAdicionais,
   };
 
@@ -300,8 +290,7 @@ export default async function ProductPage({ params }: Props) {
               <FaGlobeAmericas className="shrink-0 text-yellow-400" />
 
               <p>
-                Entregamos para todo o Brasil. O frete é calculado conforme o
-                CEP.
+                Entregamos para todo o Brasil. Frete grátis nas compras acima de R$ 1.000; nos demais pedidos, o valor é calculado pelo CEP.
               </p>
             </div>
           </section>

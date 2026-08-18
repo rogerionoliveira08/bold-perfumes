@@ -2309,7 +2309,7 @@ export const produtos: Product[] = [
   origem: "Emirados Árabes Unidos",
 
   desempenho:
-    "Entrega excelente desempenho, permanecendo entre 10 e 12 horas na pele, com projeção intensa nas primeiras horas. Sua evolução destaca a lavanda aromática envolvida por especiarias e madeiras, deixando um rastro sofisticado e muito marcante.",
+    "Entrega excelente desempenho, com projeção intensa nas primeiras horas.",
 
   caracteristicas: [
     "Inspirado no Dior Sauvage Elixir",
@@ -2463,7 +2463,7 @@ export const produtos: Product[] = [
   origem: "Emirados Árabes Unidos",
 
   desempenho:
-    "Apresenta excelente desempenho, permanecendo entre 10 e 12 horas na pele, com projeção intensa nas primeiras horas. Sua evolução evidencia a baunilha cremosa, a fava-tonka e o tabaco, resultando em um aroma quente, sedutor e extremamente elegante.",
+    "Entrega excelente desempenho, com projeção intensa nas primeiras horas.",
 
   caracteristicas: [
     "Inspirado no Jean Paul Gaultier Le Male Elixir",
@@ -2690,7 +2690,7 @@ export const produtos: Product[] = [
   origem: "Emirados Árabes Unidos",
 
   desempenho:
-    "Apresenta excelente desempenho, permanecendo entre 10 e 12 horas na pele, com projeção intensa nas primeiras horas. Sua evolução evidencia as especiarias, a lavanda e a baunilha sobre um fundo amadeirado elegante, proporcionando um aroma sofisticado e extremamente marcante.",
+    "Entrega excelente desempenho, com projeção intensa nas primeiras horas.",
 
   caracteristicas: [
     "Inspirado no Dior Sauvage Elixir",

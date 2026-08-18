@@ -159,18 +159,6 @@ export default function ProductCard({
           </h3>
         </Link>
 
-        <div className="mt-1 flex min-w-0 items-center gap-1 text-[8px] sm:mt-1.5 sm:text-[11px]">
-          <div className="flex shrink-0 items-center gap-1 text-yellow-400">
-            <FaStar size={8} />
-            <span className="font-bold">{avaliacao}</span>
-          </div>
-
-          <span className="text-zinc-700">•</span>
-
-          <span className="truncate text-zinc-500">
-            {avaliacoes} avaliações
-          </span>
-        </div>
 
         {inspiradoEm ? (
           <div className="mt-1.5 rounded-md border border-yellow-400/15 bg-yellow-400/[0.04] px-2 py-1.5 sm:mt-2 sm:rounded-lg sm:px-2.5">

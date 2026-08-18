@@ -33,12 +33,6 @@ export default function ProductSummary({ produto }: Props) {
       ? produto.caracteristicas.slice(0, 5)
       : criarMotivosPadrao(produto);
 
-  const textoAvaliacoes =
-    produto.avaliacoes > 0
-      ? `${produto.avaliacoes} ${
-          produto.avaliacoes === 1 ? "avaliação" : "avaliações"
-        }`
-      : "Novidade no catálogo";
 
   return (
     <div className="min-w-0 lg:pt-1">
@@ -73,25 +67,11 @@ export default function ProductSummary({ produto }: Props) {
           {produto.nome}
         </h1>
 
-        <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs sm:text-sm">
-          <div className="flex items-center gap-1.5">
-            <FaStar className="text-yellow-400" size={13} />
-
-            <span className="font-black text-yellow-400">
-              {produto.avaliacao.toLocaleString("pt-BR")}
-            </span>
-          </div>
-
-          <span className="h-1 w-1 rounded-full bg-zinc-700" />
-
-          <span className="text-zinc-400">{textoAvaliacoes}</span>
-
-          <span className="h-1 w-1 rounded-full bg-zinc-700" />
-
-          <span className="font-semibold text-zinc-300">
-            {produto.familiaOlfativa}
-          </span>
-        </div>
+        <div className="mt-3 flex items-center text-sm">
+  <span className="font-semibold text-zinc-300">
+    {produto.familiaOlfativa}
+  </span>
+</div>
       </header>
 
       {produto.inspiradoEm ? (
@@ -159,7 +139,7 @@ export default function ProductSummary({ produto }: Props) {
             />
 
             <p>
-              Entrega para todo o Brasil, com frete calculado conforme o CEP.
+              Entrega para todo o Brasil. Frete grátis nas compras acima de R$ 1.000; nos demais pedidos, o frete é calculado pelo CEP.
             </p>
           </div>
         </div>
@@ -271,7 +251,7 @@ export default function ProductSummary({ produto }: Props) {
       </section>
 
       <a
-        href="https://wa.me/"
+        href={`https://wa.me/5522998771598?text=${encodeURIComponent(`Olá! Estou vendo o perfume ${produto.nome} no site da Bold Parfum e gostaria de ajuda para saber se ele combina comigo.`)}`}
         className="mt-4 flex items-center justify-center gap-2 rounded-xl border border-green-500/20 bg-green-500/[0.05] px-4 py-3 text-center text-[10px] font-bold text-green-400 transition hover:border-green-400/50 hover:bg-green-500/10 sm:text-xs"
       >
         <FaWhatsapp className="shrink-0" size={14} />

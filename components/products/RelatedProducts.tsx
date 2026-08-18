@@ -61,10 +61,7 @@ export default function RelatedProducts({ produtos }: Props) {
 
         <div className="mt-7 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {produtos.map((produto) => {
-            const textoAvaliacoes =
-              produto.avaliacoes > 0
-                ? `${produto.avaliacoes} avaliações`
-                : "Novidade";
+
 
             return (
               <Link
@@ -113,19 +110,7 @@ export default function RelatedProducts({ produtos }: Props) {
                     </p>
                   )}
 
-                  <div className="mt-2.5 flex items-center gap-1.5 text-[9px] sm:text-[10px]">
-                    <FaStar className="text-yellow-400" size={9} />
 
-                    <span className="font-black text-yellow-400">
-                      {produto.avaliacao.toLocaleString("pt-BR")}
-                    </span>
-
-                    <span className="h-1 w-1 rounded-full bg-zinc-700" />
-
-                    <span className="truncate text-zinc-500">
-                      {textoAvaliacoes}
-                    </span>
-                  </div>
 
                   <div className="mt-3 border-t border-zinc-800 pt-3">
                     <p className="truncate text-sm font-black tracking-tight text-yellow-400 sm:text-base">
