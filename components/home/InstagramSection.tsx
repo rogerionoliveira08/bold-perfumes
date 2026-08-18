@@ -53,7 +53,7 @@ export default function InstagramSection() {
           </div>
 
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/bold.ouse/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl border border-pink-500/40 bg-pink-500/[0.05] px-5 py-3 text-xs font-black text-pink-400 transition hover:border-pink-500 hover:bg-pink-500 hover:text-white sm:w-auto sm:text-sm"
@@ -67,7 +67,7 @@ export default function InstagramSection() {
           {publicacoes.map((publicacao) => (
             <a
               key={publicacao.id}
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/bold.ouse/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Ver publicação da Bold Parfum no Instagram"
