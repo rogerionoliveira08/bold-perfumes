@@ -178,7 +178,7 @@ export default function Footer() {
             <div className="mt-4 space-y-3">
               <InfoCard
                 icon={<FaCreditCard />}
-                title="Até 12x"
+                title="Até 10x sem juros"
                 text="Parcelamento no cartão"
               />
 

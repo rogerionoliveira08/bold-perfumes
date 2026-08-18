@@ -26,7 +26,7 @@ export default function ProductSummary({ produto }: Props) {
       currency: "BRL",
     });
 
-  const valorParcela = produto.preco / 6;
+  const valorParcela = produto.preco / 10;
 
   const motivosParaEscolher =
     produto.caracteristicas && produto.caracteristicas.length > 0
@@ -133,7 +133,7 @@ export default function ProductSummary({ produto }: Props) {
             </p>
 
             <span className="mb-1 rounded-full border border-yellow-400/20 bg-yellow-400/[0.07] px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.1em] text-yellow-300">
-              Em até 6x
+              Em até 10x
             </span>
           </div>
 
@@ -144,7 +144,7 @@ export default function ProductSummary({ produto }: Props) {
             />
 
             <p>
-              6x de{" "}
+              10x de{" "}
               <strong className="font-black text-white">
                 {formatarPreco(valorParcela)}
               </strong>{" "}

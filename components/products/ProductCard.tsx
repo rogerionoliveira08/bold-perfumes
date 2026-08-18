@@ -49,7 +49,7 @@ export default function ProductCard({
     currency: "BRL",
   });
 
-  const parcelaFormatada = (preco / 6).toLocaleString("pt-BR", {
+  const parcelaFormatada = (preco / 10).toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
@@ -200,7 +200,7 @@ export default function ProductCard({
           </p>
 
           <p className="mt-0.5 truncate text-[7px] text-zinc-500 sm:text-[10px]">
-            6x de {parcelaFormatada} sem juros
+            10x de {parcelaFormatada} sem juros
           </p>
         </div>
 

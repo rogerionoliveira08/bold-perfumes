@@ -16,7 +16,7 @@ const beneficios = [
   {
     icon: <FaShippingFast />,
     titulo: "Enviamos para todo o Brasil",
-    texto: "Postagem rápida e acompanhamento do pedido.",
+    texto: "Frete grátis nas compras acima de R$ 1.000, com postagem rápida e acompanhamento do pedido.",
   },
   {
     icon: <FaLock />,
@@ -25,13 +25,13 @@ const beneficios = [
   },
   {
     icon: <FaCreditCard />,
-    titulo: "Parcelamento em até 12x",
+    titulo: "Até 10x sem juros",
     texto: "Mais facilidade para escolher sua próxima fragrância.",
   },
   {
     icon: <FaMapMarkedAlt />,
     titulo: "Frete calculado por CEP",
-    texto: "Consulte o valor da entrega de acordo com sua região.",
+    texto: "Para compras de até R$ 1.000, consulte o valor da entrega para sua região.",
   },
   {
     icon: <FaWhatsapp />,

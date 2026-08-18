@@ -76,11 +76,11 @@ export default function WeeklyOffer() {
 
               <div className="mt-1.5 flex flex-wrap items-end gap-2">
                 <p className="text-2xl font-black text-yellow-400 sm:text-3xl">
-                  R$ 350,00
+                  R$ R$ 420,00
                 </p>
 
                 <p className="pb-0.5 text-xs text-zinc-500">
-                  ou 6x de R$ 58,33 sem juros
+                  ou 10x de R$ 42,00 sem juros
                 </p>
               </div>
             </div>

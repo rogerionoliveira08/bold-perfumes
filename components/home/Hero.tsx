@@ -36,7 +36,7 @@ export default function Hero() {
           <div className="mt-4 grid max-w-2xl grid-cols-2 gap-x-3 gap-y-2 text-[10px] text-zinc-300 sm:mt-6 sm:gap-x-4 sm:gap-y-3 sm:text-sm">
             <Benefit text="Produtos originais" />
             <Benefit text="Envio para todo o Brasil" />
-            <Benefit text="Parcelamento em até 12x" />
+            <Benefit text="Até 10x sem juros" />
             <Benefit text="Atendimento pelo WhatsApp" />
           </div>
 

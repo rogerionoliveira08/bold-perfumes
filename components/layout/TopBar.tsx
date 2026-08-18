@@ -3,8 +3,8 @@ import { FaCheckCircle, FaCreditCard, FaTruck } from "react-icons/fa";
 const beneficios = [
   {
     icon: <FaTruck />,
-    desktop: "Frete para todo o Brasil",
-    mobile: "Frete Brasil",
+    desktop: "Frete grátis acima de R$ 1.000",
+mobile: "Frete grátis +R$ 1.000",
   },
   {
     icon: <FaCheckCircle />,
@@ -13,8 +13,8 @@ const beneficios = [
   },
   {
     icon: <FaCreditCard />,
-    desktop: "Parcele em até 12x",
-    mobile: "Até 12x",
+   desktop: "Parcele em até 10x sem juros",
+mobile: "10x sem juros",
   },
 ];
 

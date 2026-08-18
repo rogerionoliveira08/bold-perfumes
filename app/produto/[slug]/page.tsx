@@ -716,7 +716,7 @@ function TrustSection() {
     },
     {
       icon: <FaCreditCard />,
-      titulo: "Até 12x",
+      titulo: "Até 10x sem juros",
       texto: "Facilidade no pagamento",
     },
     {

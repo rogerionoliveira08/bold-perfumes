@@ -133,7 +133,7 @@ export default function RelatedProducts({ produtos }: Props) {
                     </p>
 
                     <p className="mt-1 truncate text-[8px] text-zinc-500 sm:text-[9px]">
-                      6x de {formatarPreco(produto.preco / 6)} sem juros
+                      10x de {formatarPreco(produto.preco / 10)} sem juros
                     </p>
                   </div>
 
