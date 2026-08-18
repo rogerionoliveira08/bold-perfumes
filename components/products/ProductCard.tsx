@@ -194,17 +194,18 @@ export default function ProductCard({
 
         <div className="mt-auto pt-2 sm:pt-2.5">
           <button
-            type="button"
-            onClick={adicionarProduto}
-            className="flex w-full items-center justify-center gap-1 rounded-lg bg-yellow-400 px-2 py-1.5 text-[8px] font-black text-black transition hover:bg-yellow-300 active:scale-[0.98] sm:gap-1.5 sm:rounded-xl sm:py-2.5 sm:text-xs"
+  type="button"
+  onClick={adicionarProduto}
+  aria-label={`Adicionar ${nome} à minha seleção`}
+  className="flex w-full items-center justify-center gap-1 rounded-lg bg-yellow-400 px-2 py-1.5 text-[8px] font-black text-black transition hover:bg-yellow-300 active:scale-[0.98] sm:gap-1.5 sm:rounded-xl sm:py-2.5 sm:text-xs"
           >
             <FaShoppingCart size={10} />
 
-            <span className="sm:hidden">Adicionar</span>
+            <span className="sm:hidden">Selecionar</span>
 
             <span className="hidden sm:inline">
-              Adicionar ao carrinho
-            </span>
+  Adicionar à seleção
+</span>
           </button>
 
           <Link

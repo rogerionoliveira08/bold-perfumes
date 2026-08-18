@@ -17,7 +17,11 @@ export interface ProductPerfil {
   publico: string;
   impressao?: string;
 }
-
+export type ProductAvailability =
+  | "Em estoque"
+  | "Poucas unidades"
+  | "Sob consulta"
+  | "Indisponível";
 export interface Product {
   id: number;
   slug: string;
@@ -26,6 +30,7 @@ export interface Product {
   marca: string;
 
   preco: number;
+  disponibilidade?: ProductAvailability;
   imagem: string;
   imagens?: string[];
 

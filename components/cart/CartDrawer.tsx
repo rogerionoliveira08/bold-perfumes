@@ -50,6 +50,10 @@ export default function CartDrawer() {
     (acc, item) => acc + item.preco * item.quantidade,
     0,
   );
+  const informacaoFrete =
+  total > 1000
+    ? "Frete grátis para compras acima de R$ 1.000"
+    : "Frete calculado de acordo com o CEP";
 
   const quantidadeTotal = carrinho.reduce(
     (acc, item) => acc + item.quantidade,
@@ -76,7 +80,7 @@ Valor: ${formatarPreco(item.preco * item.quantidade)}`,
   .join("\n\n")}
 
 Subtotal dos produtos: ${formatarPreco(total)}
-Frete: calcular de acordo com o CEP
+${informacaoFrete}
 
 Aguardo o atendimento.`,
   );
@@ -89,7 +93,7 @@ Aguardo o atendimento.`,
     <div className="fixed inset-0 z-[9999] h-[100dvh] w-screen overflow-hidden">
       <button
         type="button"
-        aria-label="Fechar carrinho"
+        aria-label="Fechar minha seleção"
         onClick={fecharCarrinho}
         className="absolute inset-0 bg-black/75 backdrop-blur-sm"
       />
@@ -109,7 +113,7 @@ Aguardo o atendimento.`,
                 id="titulo-carrinho"
                 className="truncate text-base font-bold text-white sm:text-lg"
               >
-                Seu Carrinho
+                Minha Seleção
               </h2>
 
               <p className="text-[10px] text-zinc-500 sm:text-[11px]">
@@ -136,7 +140,7 @@ Aguardo o atendimento.`,
             <button
               type="button"
               onClick={fecharCarrinho}
-              aria-label="Fechar carrinho"
+              aria-label="Fechar minha seleção"
               className="flex h-9 w-9 items-center justify-center rounded-full text-white transition hover:bg-zinc-800"
             >
               <FaTimes size={17} />
@@ -152,11 +156,11 @@ Aguardo o atendimento.`,
               </div>
 
               <h3 className="mt-4 text-lg font-bold text-white">
-                Seu carrinho está vazio
+                 Sua seleção está vazia
               </h3>
 
               <p className="mt-2 max-w-xs text-sm leading-6 text-zinc-400">
-                Adicione seus perfumes favoritos para concluir o pedido.
+                Escolha suas fragrâncias favoritas e monte sua seleção.
               </p>
 
               <button
@@ -164,7 +168,7 @@ Aguardo o atendimento.`,
                 onClick={fecharCarrinho}
                 className="mt-5 rounded-xl bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
               >
-                Continuar comprando
+                Explorar perfumes
               </button>
             </div>
           ) : (
@@ -255,7 +259,7 @@ Aguardo o atendimento.`,
                 </p>
 
                 <p className="mt-0.5 text-[10px] text-zinc-500 sm:text-[11px]">
-                  Frete calculado de acordo com o CEP
+                  {informacaoFrete}
                 </p>
 
                 <p className="mt-1 truncate text-xl font-extrabold text-yellow-400 sm:text-2xl">

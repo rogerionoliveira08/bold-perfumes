@@ -33,6 +33,18 @@ export default function ProductSummary({ produto }: Props) {
       ? produto.caracteristicas.slice(0, 5)
       : criarMotivosPadrao(produto);
 
+      const disponibilidade = produto.disponibilidade ?? "Sob consulta";
+
+const corDisponibilidade =
+  disponibilidade === "Em estoque"
+    ? "border-green-500/20 bg-green-500/[0.06] text-green-400"
+    : disponibilidade === "Poucas unidades"
+      ? "border-yellow-400/20 bg-yellow-400/[0.07] text-yellow-400"
+      : disponibilidade === "Indisponível"
+        ? "border-red-500/20 bg-red-500/[0.06] text-red-400"
+        : "border-zinc-700 bg-zinc-900 text-zinc-300";
+      
+
 
   return (
     <div className="min-w-0 lg:pt-1">
@@ -142,6 +154,12 @@ export default function ProductSummary({ produto }: Props) {
               Entrega para todo o Brasil. Frete grátis nas compras acima de R$ 1.000; nos demais pedidos, o frete é calculado pelo CEP.
             </p>
           </div>
+          <div
+  className={`mt-3 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[10px] font-bold sm:text-xs ${corDisponibilidade}`}
+>
+  <span className="h-2 w-2 rounded-full bg-current" />
+  Disponibilidade: {disponibilidade}
+</div>
         </div>
       </section>
 

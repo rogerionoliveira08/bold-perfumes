@@ -12,7 +12,7 @@ const perguntas = [
   {
     pergunta: "Como faço para finalizar a compra?",
     resposta:
-      'Adicione os produtos ao carrinho e clique em "Finalizar pedido no WhatsApp". A mensagem será enviada com os itens e o valor total.',
+  'Adicione os perfumes à sua seleção e clique em "Finalizar pedido no WhatsApp". A mensagem será enviada com os produtos escolhidos e o valor total para você concluir o atendimento.',
   },
   {
     pergunta: "Posso pedir ajuda para escolher um perfume?",

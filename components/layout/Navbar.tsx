@@ -198,7 +198,8 @@ function CartButton({
     <button
       type="button"
       onClick={abrirCarrinho}
-      aria-label={`Abrir carrinho com ${totalItens} itens`}
+      aria-label={`Abrir minha seleção com ${totalItens} itens`}
+title="Minha Seleção"
       className="relative text-white transition hover:text-yellow-400"
     >
       <FaShoppingCart size={21} />

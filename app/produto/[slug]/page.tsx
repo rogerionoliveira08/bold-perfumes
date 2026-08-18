@@ -18,7 +18,7 @@ import type { Product } from "@/types/product";
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import WhatsAppButton from "@/components/layout/WhatsAppButton";
+
 import ProductGallery from "@/components/products/ProductGallery";
 import ProductSummary from "@/components/products/ProductSummary";
 import ProductDescription from "@/components/products/ProductDescription";
@@ -298,7 +298,7 @@ export default async function ProductPage({ params }: Props) {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      
     </>
   );
 }
