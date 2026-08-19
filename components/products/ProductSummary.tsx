@@ -269,7 +269,17 @@ const corDisponibilidade =
       </section>
 
       <a
-        href={`https://wa.me/5522998771598?text=${encodeURIComponent(`Olá! Estou vendo o perfume ${produto.nome} no site da Bold Parfum e gostaria de ajuda para saber se ele combina comigo.`)}`}
+        href={`https://wa.me/5522998771598?text=${encodeURIComponent(
+          `Olá! Gostaria de uma consultoria da Bold Parfum sobre este perfume:
+
+Perfume: ${produto.nome}
+Família olfativa: ${produto.familiaOlfativa}
+Link: https://www.boldparfum.com.br/produto/${produto.slug}
+
+Quero entender se essa fragrância combina com meu estilo, minha rotina e as ocasiões em que pretendo usá-la.`,
+        )}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="mt-4 flex items-center justify-center gap-2 rounded-xl border border-green-500/20 bg-green-500/[0.05] px-4 py-3 text-center text-[10px] font-bold text-green-400 transition hover:border-green-400/50 hover:bg-green-500/10 sm:text-xs"
       >
         <FaWhatsapp className="shrink-0" size={14} />

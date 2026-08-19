@@ -17,14 +17,23 @@ export default function ProductActions({ produto }: Props) {
   const { adicionarAoCarrinho } = useCart();
   const [adicionado, setAdicionado] = useState(false);
 
-  const mensagem = encodeURIComponent(
-    `Olá! Tenho interesse no perfume ${produto.nome}, da marca ${produto.marca}. Poderia me passar mais informações?`,
-  );
-
   const precoFormatado = produto.preco.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
+
+  const linkProduto = `https://www.boldparfum.com.br/produto/${produto.slug}`;
+
+  const mensagem = encodeURIComponent(
+    `Olá! Tenho interesse em comprar este perfume da Bold Parfum:
+
+Perfume: ${produto.nome}
+Marca: ${produto.marca}
+Preço: ${precoFormatado}
+Link: ${linkProduto}
+
+Gostaria de confirmar a disponibilidade e receber as orientações para finalizar o pedido.`,
+  );
 
   function adicionarProduto() {
     adicionarAoCarrinho(produto);
