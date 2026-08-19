@@ -4,7 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { FavoritesProvider } from "@/context/FavoritesContext";
 import CartDrawer from "@/components/cart/CartDrawer";
-
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -110,8 +110,9 @@ export default function RootLayout({
       >
         <CartProvider>
           <FavoritesProvider>
-            {children}
+                        {children}
             <CartDrawer />
+            <GoogleAnalytics />
           </FavoritesProvider>
         </CartProvider>
       </body>

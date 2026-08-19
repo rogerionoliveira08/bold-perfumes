@@ -34,7 +34,7 @@ export default function PoliticaDePrivacidadePage() {
             </p>
 
             <p className="mt-4 text-sm text-zinc-500">
-              Última atualização: 13 de agosto de 2026.
+              Última atualização: 19 de agosto de 2026.
             </p>
           </div>
         </section>
@@ -129,7 +129,47 @@ export default function PoliticaDePrivacidadePage() {
                 do navegador ou da limpeza dos dados de navegação.
               </p>
             </PolicySection>
+            <PolicySection title="5.1. Cookies e Google Analytics">
+              <p>
+                O site utiliza tecnologias de armazenamento local necessárias
+                para manter funcionalidades como carrinho, favoritos e
+                preferências de privacidade.
+              </p>
 
+              <p>
+                Com a autorização do usuário, também utilizamos o Google
+                Analytics para compreender como o site é acessado e melhorar
+                seu conteúdo, desempenho e experiência de navegação.
+              </p>
+
+              <p>
+                Essa ferramenta poderá registrar informações como páginas
+                visitadas, tempo de navegação, tipo de dispositivo, navegador,
+                origem aproximada do acesso, interações e cliques realizados no
+                site. Não utilizamos o Google Analytics para solicitar senhas,
+                dados bancários ou conteúdo de conversas no WhatsApp.
+              </p>
+
+              <p>
+                Os cookies de análise somente serão ativados após o
+                consentimento do visitante. A escolha poderá ser alterada a
+                qualquer momento pelo botão “Cookies”, disponível no site.
+              </p>
+
+              <p>
+                O tratamento realizado pelo Google também está sujeito à sua
+                própria{" "}
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-yellow-400 transition hover:text-yellow-300"
+                >
+                  Política de Privacidade
+                </a>
+                .
+              </p>
+            </PolicySection>
             <PolicySection title="6. Comentários e avaliações">
               <p>
                 Quando o usuário publica uma avaliação, determinadas
