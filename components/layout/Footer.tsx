@@ -81,7 +81,23 @@ export default function Footer() {
                   Produtos
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/quem-somos"
+                  className="transition hover:text-yellow-400"
+                >
+                  Quem Somos
+                </Link>
+              </li>
 
+              <li>
+                <Link
+                  href="/garantia-de-originalidade"
+                  className="transition hover:text-yellow-400"
+                >
+                  Garantia de Originalidade
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/#categorias"
