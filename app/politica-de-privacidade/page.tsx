@@ -129,7 +129,7 @@ export default function PoliticaDePrivacidadePage() {
                 do navegador ou da limpeza dos dados de navegação.
               </p>
             </PolicySection>
-            <PolicySection title="5.1. Cookies e Google Analytics">
+            <PolicySection title="5.1. Cookies, Google Analytics e Meta Pixel">
               <p>
                 O site utiliza tecnologias de armazenamento local necessárias
                 para manter funcionalidades como carrinho, favoritos e
@@ -149,7 +149,13 @@ export default function PoliticaDePrivacidadePage() {
                 site. Não utilizamos o Google Analytics para solicitar senhas,
                 dados bancários ou conteúdo de conversas no WhatsApp.
               </p>
-
+              <p>
+                Com a autorização do usuário, também utilizamos o Meta Pixel
+                para medir visitas, visualizações de páginas e resultados de
+                campanhas realizadas no Instagram e no Facebook. A ferramenta
+                poderá tratar informações técnicas do dispositivo, navegador,
+                endereço IP e interações realizadas no site.
+              </p>
               <p>
                 Os cookies de análise somente serão ativados após o
                 consentimento do visitante. A escolha poderá ser alterada a
@@ -161,6 +167,18 @@ export default function PoliticaDePrivacidadePage() {
                 própria{" "}
                 <a
                   href="https://policies.google.com/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-yellow-400 transition hover:text-yellow-300"
+                >
+                  Política de Privacidade
+                </a>
+                .
+              </p>
+                            <p>
+                O tratamento realizado pela Meta também está sujeito à sua{" "}
+                <a
+                  href="https://www.facebook.com/privacy/policy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-yellow-400 transition hover:text-yellow-300"

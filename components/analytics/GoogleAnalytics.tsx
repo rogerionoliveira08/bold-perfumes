@@ -1,17 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 
 const GA_MEASUREMENT_ID = "G-QZ13SCVCBN";
+const META_PIXEL_ID = "1743083507825776";
 const CONSENT_KEY = "bold-parfum-cookie-consent";
 
 type ConsentStatus = "accepted" | "rejected" | null;
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 export default function GoogleAnalytics() {
+  const pathname = usePathname();
   const [consent, setConsent] = useState<ConsentStatus>(null);
   const [ready, setReady] = useState(false);
+  const initialMetaPageView = useRef(false);
 
   useEffect(() => {
     const savedConsent = window.localStorage.getItem(CONSENT_KEY);
@@ -22,6 +32,19 @@ export default function GoogleAnalytics() {
 
     setReady(true);
   }, []);
+
+  useEffect(() => {
+    if (consent !== "accepted") {
+      return;
+    }
+
+    if (!initialMetaPageView.current) {
+      initialMetaPageView.current = true;
+      return;
+    }
+
+    window.fbq?.("track", "PageView");
+  }, [consent, pathname]);
 
   function updateConsent(status: Exclude<ConsentStatus, null>) {
     window.localStorage.setItem(CONSENT_KEY, status);
@@ -56,6 +79,21 @@ export default function GoogleAnalytics() {
               });
             `}
           </Script>
+
+          <Script id="meta-pixel" strategy="afterInteractive">
+            {`
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '${META_PIXEL_ID}');
+              fbq('track', 'PageView');
+            `}
+          </Script>
         </>
       ) : null}
 
@@ -71,9 +109,9 @@ export default function GoogleAnalytics() {
               </h2>
 
               <p className="mt-1.5 text-xs leading-5 text-zinc-400 sm:text-sm sm:leading-6">
-                Utilizamos cookies de análise para entender como o site é
-                acessado e melhorar sua experiência. Você pode aceitar ou
-                recusar esses cookies.{" "}
+                Utilizamos cookies de análise e marketing para entender como o
+                site é acessado, melhorar sua experiência e medir campanhas.
+                Você pode aceitar ou recusar esses cookies.{" "}
                 <Link
                   href="/politica-de-privacidade"
                   className="font-bold text-yellow-400 transition hover:text-yellow-300"
