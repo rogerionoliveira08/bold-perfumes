@@ -97,6 +97,7 @@ export default function Hero() {
                   alt="Perfume premium da Bold Parfum"
                   fill
                   priority
+                  loading="eager"
                   sizes="(max-width: 1024px) 100vw, 52vw"
                   className="object-cover object-center"
                 />
