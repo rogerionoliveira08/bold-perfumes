@@ -202,7 +202,7 @@ export default function CatalogClient() {
       />
 
       <section className="min-w-0">
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-4 sm:p-5">
+        <div className="rounded-2xl border border-stone-200 bg-surface p-4 shadow-sm sm:p-5">
           <div className="relative">
             <FaSearch className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
 
@@ -211,7 +211,7 @@ export default function CatalogClient() {
               value={busca}
               onChange={(evento) => setBusca(evento.target.value)}
               placeholder="Pesquise por perfume, marca ou inspiração..."
-              className="w-full rounded-xl border border-zinc-700 bg-black py-3.5 pl-11 pr-12 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-yellow-400"
+              className="w-full rounded-xl border border-stone-300 bg-white py-3.5 pl-11 pr-12 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/15"
             />
 
             {busca && (
@@ -234,11 +234,11 @@ export default function CatalogClient() {
 
         <div className="my-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-yellow-400">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-gold-dark">
               Nossa seleção
             </p>
 
-            <h2 className="mt-1 text-2xl font-black text-white sm:text-3xl">
+            <h2 className="mt-1 text-2xl font-black text-zinc-900 sm:text-3xl">
               Catálogo de Perfumes
             </h2>
 
@@ -254,7 +254,7 @@ export default function CatalogClient() {
             <button
               type="button"
               onClick={() => setFiltrosMobileAbertos(true)}
-              className="relative flex flex-1 items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm font-bold text-white transition hover:border-yellow-400 hover:text-yellow-400 lg:hidden"
+              className="relative flex flex-1 items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:border-brand-gold hover:text-brand-gold-dark lg:hidden"
             >
               <FaFilter size={13} />
               Filtros
@@ -282,7 +282,7 @@ export default function CatalogClient() {
                     evento.target.value as Ordenacao,
                   )
                 }
-                className="w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition focus:border-yellow-400 sm:min-w-[210px]"
+                className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm text-zinc-900 shadow-sm outline-none transition focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/15 sm:min-w-[210px]"
               >
                 <option value="relevancia">
                   Relevância

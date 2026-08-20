@@ -11,10 +11,10 @@ export default function ProdutosPage() {
       <TopBar />
       <Navbar />
 
-      <main className="min-h-screen overflow-x-hidden bg-black text-white">
+      <main className="min-h-screen overflow-x-hidden bg-background text-zinc-900">
         <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:py-10">
           <header className="mb-8">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-yellow-400">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-brand-gold-dark">
               Catálogo
             </p>
 
@@ -22,7 +22,7 @@ export default function ProdutosPage() {
               Todos os Perfumes
             </h1>
 
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-400 sm:text-base">
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600 sm:text-base">
               Explore nossa coleção de perfumes árabes, importados e
               fragrâncias premium cuidadosamente selecionadas pela Bold Parfum.
             </p>
@@ -30,8 +30,8 @@ export default function ProdutosPage() {
 
           <Suspense
             fallback={
-              <div className="rounded-3xl border border-zinc-800 bg-zinc-950 px-6 py-16 text-center">
-                <p className="font-bold text-yellow-400">
+              <div className="rounded-2xl border border-stone-200 bg-surface px-6 py-16 text-center shadow-sm">
+                <p className="font-bold text-brand-gold-dark">
                   Carregando catálogo...
                 </p>
               </div>

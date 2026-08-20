@@ -106,14 +106,14 @@ export default function Filters({
 
   const conteudo = (
     <>
-      <div className="flex items-center justify-between gap-3 border-b border-zinc-800 pb-5">
+      <div className="flex items-center justify-between gap-3 border-b border-stone-200 pb-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-yellow-400 text-black">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gold text-black">
             <FaFilter size={14} />
           </div>
 
           <div>
-            <h2 className="text-lg font-black text-white">
+            <h2 className="text-lg font-black text-zinc-900">
               Filtros
             </h2>
 
@@ -128,7 +128,7 @@ export default function Filters({
             <button
               type="button"
               onClick={limparFiltros}
-              className="rounded-lg px-2.5 py-2 text-xs font-bold text-red-400 transition hover:bg-red-500/10"
+              className="rounded-lg px-2.5 py-2 text-xs font-bold text-red-600 transition hover:bg-red-50"
             >
               Limpar
             </button>
@@ -138,7 +138,7 @@ export default function Filters({
             type="button"
             onClick={fecharMobile}
             aria-label="Fechar filtros"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-white transition hover:bg-zinc-800 lg:hidden"
+            className="flex h-9 w-9 items-center justify-center rounded-full text-zinc-700 transition hover:bg-stone-100 lg:hidden"
           >
             <FaTimes size={15} />
           </button>
@@ -287,11 +287,11 @@ export default function Filters({
         </FilterSection>
       </div>
 
-      <div className="mt-8 border-t border-zinc-800 pt-5 lg:hidden">
+      <div className="mt-8 border-t border-stone-200 pt-5 lg:hidden">
         <button
           type="button"
           onClick={fecharMobile}
-          className="w-full rounded-xl bg-yellow-400 px-4 py-3.5 text-sm font-extrabold text-black transition hover:bg-yellow-300"
+          className="w-full rounded-xl bg-brand-gold px-4 py-3.5 text-sm font-extrabold text-black transition hover:brightness-105"
         >
           Ver resultados
         </button>
@@ -301,7 +301,7 @@ export default function Filters({
 
   return (
     <>
-      <aside className="hidden h-fit rounded-2xl border border-zinc-800 bg-zinc-950 p-5 lg:sticky lg:top-28 lg:block">
+      <aside className="hidden h-fit rounded-2xl border border-stone-200 bg-white p-5 shadow-sm lg:sticky lg:top-28 lg:block">
         {conteudo}
       </aside>
 
@@ -311,10 +311,10 @@ export default function Filters({
             type="button"
             aria-label="Fechar filtros"
             onClick={fecharMobile}
-            className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
 
-          <aside className="absolute inset-y-0 left-0 w-[88%] max-w-sm overflow-y-auto border-r border-zinc-800 bg-zinc-950 p-5 shadow-2xl">
+          <aside className="absolute inset-y-0 left-0 w-[88%] max-w-sm overflow-y-auto border-r border-stone-200 bg-white p-5 shadow-2xl">
             {conteudo}
           </aside>
         </div>
@@ -332,7 +332,7 @@ function FilterSection({
 }) {
   return (
     <fieldset>
-      <legend className="mb-3 text-sm font-black uppercase tracking-[0.12em] text-white">
+      <legend className="mb-3 text-sm font-black uppercase tracking-[0.1em] text-zinc-900">
         {title}
       </legend>
 
@@ -357,7 +357,7 @@ function RadioOption({
   count?: number;
 }) {
   return (
-    <label className="group flex cursor-pointer items-center justify-between gap-3 rounded-lg px-2 py-1.5 transition hover:bg-zinc-900">
+    <label className="group flex cursor-pointer items-center justify-between gap-3 rounded-lg px-2 py-1.5 transition hover:bg-stone-100">
       <div className="flex min-w-0 items-center gap-3">
         <input
           type="radio"
@@ -365,14 +365,14 @@ function RadioOption({
           value={value}
           checked={checked}
           onChange={onChange}
-          className="h-4 w-4 shrink-0 accent-yellow-400"
+          className="h-4 w-4 shrink-0 accent-brand-gold"
         />
 
         <span
           className={`truncate text-sm transition ${
             checked
-              ? "font-bold text-yellow-400"
-              : "text-zinc-400 group-hover:text-white"
+              ? "font-bold text-brand-gold-dark"
+              : "text-zinc-600 group-hover:text-zinc-900"
           }`}
         >
           {label}
@@ -380,7 +380,7 @@ function RadioOption({
       </div>
 
       {typeof count === "number" && (
-        <span className="shrink-0 rounded-full bg-zinc-900 px-2 py-0.5 text-[10px] font-semibold text-zinc-500">
+        <span className="shrink-0 rounded-full bg-stone-100 px-2 py-0.5 text-[10px] font-semibold text-zinc-500">
           {count}
         </span>
       )}
@@ -389,5 +389,5 @@ function RadioOption({
 }
 
 function Divider() {
-  return <div className="h-px bg-zinc-800" />;
+  return <div className="h-px bg-stone-200" />;
 }
