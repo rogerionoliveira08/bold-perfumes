@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaCheck,
   FaShoppingCart,
@@ -34,16 +34,39 @@ Link: ${linkProduto}
 
 Gostaria de confirmar a disponibilidade e receber as orientações para finalizar o pedido.`,
   );
+    useEffect(() => {
+    window.fbq?.("track", "ViewContent", {
+      content_ids: [produto.id],
+      content_name: produto.nome,
+      content_type: "product",
+      value: produto.preco,
+      currency: "BRL",
+    });
+  }, [produto.id, produto.nome, produto.preco]);
 
   function adicionarProduto() {
     adicionarAoCarrinho(produto);
     setAdicionado(true);
-
+    window.fbq?.("track", "AddToCart", {
+      content_ids: [produto.id],
+      content_name: produto.nome,
+      content_type: "product",
+      value: produto.preco,
+      currency: "BRL",
+    });
     window.setTimeout(() => {
       setAdicionado(false);
     }, 2200);
   }
-
+  function rastrearCompraWhatsapp() {
+    window.fbq?.("track", "InitiateCheckout", {
+      content_ids: [produto.id],
+      content_name: produto.nome,
+      content_type: "product",
+      value: produto.preco,
+      currency: "BRL",
+    });
+  }
   return (
     <>
       <div className="mt-5">
@@ -74,6 +97,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
 
           <a
             href={`https://wa.me/5522998771598?text=${mensagem}`}
+                        onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Comprar ${produto.nome} pelo WhatsApp`}
@@ -127,6 +151,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
 
           <a
             href={`https://wa.me/5522998771598?text=${mensagem}`}
+                        onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Falar sobre ${produto.nome} pelo WhatsApp`}
