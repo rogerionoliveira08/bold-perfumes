@@ -1,76 +1,138 @@
+import Link from "next/link";
 import {
   FaComments,
-  FaGem,
   FaShieldAlt,
-  FaShippingFast,
+  FaStore,
+  FaWhatsapp,
 } from "react-icons/fa";
 
-const motivos = [
+const mensagemConsultoria =
+  "Olá! Vim pelo site da Bold Parfum e gostaria de ajuda para escolher meu perfume.";
+
+const atendentes = [
   {
-    icon: <FaGem />,
-    titulo: "Perfumes selecionados",
-    texto:
-      "Escolhemos fragrâncias marcantes, sofisticadas e com excelente desempenho.",
+    nome: "Rogério",
+    telefone: "5522999281815",
   },
+  {
+    nome: "Thainá",
+    telefone: "552299928565",
+  },
+];
+
+const provas = [
   {
     icon: <FaShieldAlt />,
-    titulo: "Procedência garantida",
+    titulo: "Garantia de originalidade",
     texto:
-      "Trabalhamos com produtos originais e informações transparentes em cada compra.",
+      "Conheça os cuidados adotados pela Bold Parfum na seleção e conferência das fragrâncias.",
+    href: "/garantia-de-originalidade",
+    link: "Como garantimos",
   },
   {
-    icon: <FaComments />,
-    titulo: "Atendimento personalizado",
+    icon: <FaStore />,
+    titulo: "Conheça a Bold Parfum",
     texto:
-      "Ajudamos você a encontrar a fragrância ideal de acordo com seu estilo e ocasião.",
-  },
-  {
-    icon: <FaShippingFast />,
-    titulo: "Envio rápido e seguro",
-    texto:
-      "Seu pedido é preparado com cuidado e protegido para chegar em perfeito estado.",
+      "Saiba mais sobre nossa proposta, atendimento e compromisso com cada cliente.",
+    href: "/quem-somos",
+    link: "Quem somos",
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden border-y border-zinc-900 bg-zinc-950 py-16 text-white sm:py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.07),transparent_45%)]" />
+    <section className="border-b border-zinc-800 bg-zinc-950 py-14 text-white sm:py-18">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-400">
+              Confiança para escolher
+            </p>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-yellow-400">
-            Experiência Bold
-          </p>
+            <h2 className="mt-3 text-3xl font-black sm:text-4xl">
+              Por que comprar na Bold Parfum?
+            </h2>
 
-          <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
-            Por que escolher a Bold Parfum?
-          </h2>
+            <p className="mt-3 text-sm leading-7 text-zinc-400 sm:text-base">
+              Informações claras, produtos selecionados e atendimento humano
+              antes, durante e depois da sua escolha.
+            </p>
+          </div>
 
-          <p className="mt-4 leading-7 text-zinc-400">
-            Mais do que vender perfumes, queremos ajudar você a encontrar uma
-            fragrância que combine com sua personalidade e seja lembrada.
-          </p>
+          <Link
+            href="/garantia-de-originalidade"
+            className="hidden border border-yellow-400 px-6 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black sm:inline-flex"
+          >
+            Conheça nossa garantia
+          </Link>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {motivos.map((motivo) => (
+        <div className="mt-9 grid gap-4 md:grid-cols-3">
+          {provas.map((prova) => (
             <article
-              key={motivo.titulo}
-              className="group rounded-3xl border border-zinc-800 bg-black/50 p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50 hover:shadow-xl hover:shadow-yellow-500/5"
+              key={prova.titulo}
+              className="flex min-h-[250px] flex-col border border-zinc-800 bg-black p-6 transition duration-300 hover:border-yellow-400"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-yellow-400/10 text-xl text-yellow-400 transition group-hover:bg-yellow-400 group-hover:text-black">
-                {motivo.icon}
+              <div className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-lg text-black">
+                {prova.icon}
               </div>
 
-              <h3 className="mt-5 text-xl font-bold">{motivo.titulo}</h3>
+              <h3 className="mt-5 text-xl font-extrabold">
+                {prova.titulo}
+              </h3>
 
               <p className="mt-3 text-sm leading-6 text-zinc-400">
-                {motivo.texto}
+                {prova.texto}
               </p>
+
+              <Link
+                href={prova.href}
+                className="mt-auto pt-5 text-sm font-bold text-yellow-400 transition hover:text-yellow-300"
+              >
+                {prova.link} →
+              </Link>
             </article>
           ))}
+
+          <article className="flex min-h-[250px] flex-col border border-zinc-800 bg-black p-6 transition duration-300 hover:border-yellow-400">
+            <div className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-lg text-black">
+              <FaComments />
+            </div>
+
+            <h3 className="mt-5 text-xl font-extrabold">
+              Consultoria personalizada
+            </h3>
+
+            <p className="mt-3 text-sm leading-6 text-zinc-400">
+              Escolha com quem deseja falar e receba ajuda para encontrar uma
+              fragrância adequada ao seu estilo.
+            </p>
+
+            <div className="mt-auto grid gap-2 pt-5">
+              {atendentes.map((atendente) => (
+                <Link
+                  key={atendente.nome}
+                  href={`https://wa.me/${atendente.telefone}?text=${encodeURIComponent(
+                    mensagemConsultoria,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex min-h-11 items-center justify-center gap-2 bg-green-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-green-500"
+                >
+                  <FaWhatsapp />
+                  Falar com {atendente.nome}
+                </Link>
+              ))}
+            </div>
+          </article>
         </div>
+
+        <Link
+          href="/garantia-de-originalidade"
+          className="mt-6 flex w-full items-center justify-center border border-yellow-400 px-4 py-3 text-sm font-bold text-yellow-400 sm:hidden"
+        >
+          Conheça nossa garantia
+        </Link>
       </div>
     </section>
   );

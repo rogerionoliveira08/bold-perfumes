@@ -96,7 +96,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
           </button>
 
           <a
-            href={`https://wa.me/5522998771598?text=${mensagem}`}
+            href={`https://wa.me/5522999281815?text=${mensagem}`}
                         onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"
@@ -150,7 +150,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
           </button>
 
           <a
-            href={`https://wa.me/5522998771598?text=${mensagem}`}
+            href={`https://wa.me/5522999281815?text=${mensagem}`}
                         onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import {
   FaCreditCard,
@@ -7,15 +8,30 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-export default function Footer() {
-  const whatsappMessage = encodeURIComponent(
-    "Olá! Vim pelo site da Bold Parfum e gostaria de atendimento.",
-  );
+const mensagemWhatsApp =
+  "Olá! Vim pelo site da Bold Parfum e gostaria de atendimento.";
 
+const atendentes = [
+  {
+    nome: "Rogério",
+    numeroExibido: "(22) 99928-1815",
+    telefone: "5522999281815",
+  },
+  {
+    nome: "Thainá",
+    numeroExibido: "(22) 9992-8565",
+    telefone: "552299928565",
+  },
+];
+
+export default function Footer() {
   return (
-    <footer className="border-t border-yellow-400/40 bg-black text-white">
+    <footer
+      id="contato"
+      className="border-t border-yellow-400/40 bg-black text-white"
+    >
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_0.7fr_0.85fr_1fr]">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr]">
           <div>
             <h2 className="text-2xl font-black tracking-tight text-yellow-400">
               Bold Parfum
@@ -23,30 +39,19 @@ export default function Footer() {
 
             <p className="mt-3 max-w-sm text-sm leading-6 text-zinc-400">
               Perfumes árabes e importados selecionados para quem busca
-              presença, sofisticação e excelente fixação.
+              personalidade, qualidade e uma fragrância que combine com seu
+              estilo.
             </p>
 
-            <div className="mt-5 flex flex-wrap gap-3">
-              <a
-                href={`https://wa.me/5522998771598?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-green-500/40 bg-green-500/[0.06] px-4 py-2.5 text-xs font-black text-green-400 transition hover:bg-green-500 hover:text-black"
-              >
-                <FaWhatsapp size={16} />
-                WhatsApp
-              </a>
-
-              <a
-                href="https://www.instagram.com/bold.ouse/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-300 transition hover:border-pink-500/60 hover:text-pink-400"
-              >
-                <FaInstagram size={16} />
-                Instagram
-              </a>
-            </div>
+            <a
+              href="https://www.instagram.com/bold.ouse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-300 transition hover:border-pink-500 hover:text-pink-400"
+            >
+              <FaInstagram size={16} />
+              Instagram
+            </a>
 
             <div className="mt-5 space-y-3">
               <EmailLink
@@ -81,12 +86,13 @@ export default function Footer() {
                   Produtos
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/quem-somos"
                   className="transition hover:text-yellow-400"
                 >
-                  Quem Somos
+                  Quem somos
                 </Link>
               </li>
 
@@ -95,9 +101,10 @@ export default function Footer() {
                   href="/garantia-de-originalidade"
                   className="transition hover:text-yellow-400"
                 >
-                  Garantia de Originalidade
+                  Garantia de originalidade
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/#categorias"
@@ -121,7 +128,7 @@ export default function Footer() {
                   href="/politica-de-trocas-e-devolucoes"
                   className="transition hover:text-yellow-400"
                 >
-                  Trocas e Devoluções
+                  Trocas e devoluções
                 </Link>
               </li>
 
@@ -130,7 +137,7 @@ export default function Footer() {
                   href="/politica-de-privacidade"
                   className="transition hover:text-yellow-400"
                 >
-                  Política de Privacidade
+                  Política de privacidade
                 </Link>
               </li>
 
@@ -139,7 +146,7 @@ export default function Footer() {
                   href="/termos-de-uso"
                   className="transition hover:text-yellow-400"
                 >
-                  Termos de Uso
+                  Termos de uso
                 </Link>
               </li>
 
@@ -148,7 +155,7 @@ export default function Footer() {
                   href="/direitos-autorais"
                   className="transition hover:text-yellow-400"
                 >
-                  Direitos Autorais
+                  Direitos autorais
                 </Link>
               </li>
 
@@ -157,7 +164,7 @@ export default function Footer() {
                   href="/politica-de-comentarios-e-avaliacoes"
                   className="transition hover:text-yellow-400"
                 >
-                  Comentários e Avaliações
+                  Comentários e avaliações
                 </Link>
               </li>
             </ul>
@@ -168,21 +175,37 @@ export default function Footer() {
               Atendimento
             </h3>
 
-            <div className="mt-4 text-sm text-zinc-400">
-              <div className="flex items-start gap-3">
-                <FaWhatsapp
-                  className="mt-0.5 shrink-0 text-yellow-400"
-                  size={15}
-                />
+            <p className="mt-4 text-xs leading-5 text-zinc-500">
+              Escolha com quem deseja falar:
+            </p>
 
-                <div>
-                  <p className="font-bold text-zinc-200">(22) 99877-1598</p>
+            <div className="mt-4 space-y-3">
+              {atendentes.map((atendente) => (
+                <a
+                  key={atendente.nome}
+                  href={`https://wa.me/${atendente.telefone}?text=${encodeURIComponent(
+                    mensagemWhatsApp,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 border border-green-500/30 bg-green-500/[0.06] p-3 transition hover:border-green-500 hover:bg-green-500/10"
+                >
+                  <FaWhatsapp
+                    className="mt-0.5 shrink-0 text-green-400"
+                    size={17}
+                  />
 
-                  <p className="mt-0.5 text-xs leading-5 text-zinc-500">
-                    Atendimento rápido pelo WhatsApp
-                  </p>
-                </div>
-              </div>
+                  <div>
+                    <p className="text-sm font-bold text-zinc-200">
+                      {atendente.nome}
+                    </p>
+
+                    <p className="mt-0.5 text-xs text-zinc-400">
+                      {atendente.numeroExibido}
+                    </p>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
 
@@ -256,7 +279,9 @@ function EmailLink({
           {email}
         </a>
 
-        <p className="mt-0.5 text-xs text-zinc-500">{description}</p>
+        <p className="mt-0.5 text-xs text-zinc-500">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -267,13 +292,15 @@ function InfoCard({
   title,
   text,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   text: string;
 }) {
   return (
-    <div className="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-950 p-3">
-      <span className="mt-0.5 shrink-0 text-yellow-400">{icon}</span>
+    <div className="flex items-start gap-3 border border-zinc-800 bg-zinc-950 p-3">
+      <span className="mt-0.5 shrink-0 text-yellow-400">
+        {icon}
+      </span>
 
       <div>
         <p className="text-sm font-black text-white">{title}</p>
@@ -285,7 +312,7 @@ function InfoCard({
 
 function PaymentBadge({ text }: { text: string }) {
   return (
-    <span className="rounded-lg border border-zinc-800 bg-zinc-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-zinc-300">
+    <span className="border border-zinc-800 bg-zinc-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-zinc-300">
       {text}
     </span>
   );

@@ -49,7 +49,7 @@ export default function Hero() {
             </Link>
 
             <a
-              href="https://wa.me/5522998771598?text=Olá! Vim pelo site da Bold Parfum e gostaria de conhecer os perfumes disponíveis."
+              href="https://wa.me/5522999281815?text=Olá! Vim pelo site da Bold Parfum e gostaria de conhecer os perfumes disponíveis."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-green-500/80 bg-green-500/[0.04] px-4 py-3 text-center text-[12px] font-black text-green-400 transition duration-200 hover:bg-green-500 hover:text-black active:scale-[0.98] sm:min-h-12 sm:text-[13px]"

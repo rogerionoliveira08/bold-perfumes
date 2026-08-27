@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const whatsappTrocas =
-  "https://wa.me/5522998771598?text=" +
+  "https://wa.me/5522999281815?text=" +
   encodeURIComponent(
     "Olá! Vim pelo site da Bold Parfum e gostaria de solicitar atendimento sobre uma troca ou devolução.",
   );

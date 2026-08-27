@@ -1,4 +1,4 @@
- import Link from "next/link";
+import Link from "next/link";
 import {
   FaCrown,
   FaFire,
@@ -11,7 +11,7 @@ import {
 const categorias = [
   {
     nome: "Masculinos",
-    descricao: "Fragrâncias marcantes e sofisticadas",
+    descricao: "Fragrâncias marcantes, frescas e sofisticadas",
     href: "/produtos?categoria=Masculino",
     icone: <FaVenusMars />,
   },
@@ -22,28 +22,28 @@ const categorias = [
     icone: <FaCrown />,
   },
   {
-    nome: "Árabes",
-    descricao: "Presença, luxo e excelente fixação",
-    href: "/produtos?categoria=Arabe",
+    nome: "Unissex",
+    descricao: "Fragrâncias versáteis para diferentes estilos",
+    href: "/produtos?categoria=Unissex",
+    icone: <FaSprayCan />,
+  },
+  {
+    nome: "Perfumes árabes",
+    descricao: "Tradição oriental, personalidade e intensidade",
+    href: "/produtos",
     icone: <FaMoon />,
   },
   {
-    nome: "Promoções",
-    descricao: "Oportunidades especiais por tempo limitado",
-    href: "/produtos?filtro=promocoes",
-    icone: <FaGift />,
-  },
-  {
     nome: "Mais vendidos",
-    descricao: "Os favoritos dos clientes da Bold Parfum",
+    descricao: "Conheça os favoritos dos clientes da Bold Parfum",
     href: "/produtos?filtro=mais-vendidos",
     icone: <FaFire />,
   },
   {
-    nome: "Decants",
-    descricao: "Experimente novas fragrâncias em versões menores",
-    href: "/produtos?categoria=Decants",
-    icone: <FaSprayCan />,
+    nome: "Ofertas",
+    descricao: "Condições especiais em fragrâncias selecionadas",
+    href: "/produtos?filtro=promocoes",
+    icone: <FaGift />,
   },
 ];
 
@@ -51,49 +51,65 @@ export default function CategorySection() {
   return (
     <section
       id="categorias"
-      className="border-y border-zinc-900 bg-black px-4 py-9 text-white sm:px-6 sm:py-11"
+      className="border-b border-zinc-200 bg-white px-4 py-12 sm:px-6 sm:py-16"
     >
       <div className="mx-auto w-full max-w-7xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[10px] font-black uppercase tracking-[0.18em] text-yellow-400 sm:text-xs">
-            Encontre sua fragrância
-          </p>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-600">
+              Encontre sua fragrância
+            </p>
 
-          <h2 className="mt-2 text-2xl font-black tracking-tight text-white sm:text-4xl">
-            Explore por categoria
-          </h2>
+            <h2 className="mt-2 text-3xl font-black tracking-tight text-zinc-950 sm:text-4xl">
+              Explore por categoria
+            </h2>
 
-          <p className="mt-2 text-xs leading-5 text-zinc-500 sm:text-sm sm:leading-6">
-            Escolha o estilo que mais combina com sua personalidade e descubra
-            perfumes selecionados para cada ocasião.
-          </p>
+            <p className="mt-3 text-sm leading-6 text-zinc-600 sm:text-base">
+              Escolha por estilo e encontre mais rapidamente os perfumes que
+              combinam com você.
+            </p>
+          </div>
+
+          <Link
+            href="/produtos"
+            className="hidden border border-zinc-950 px-6 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white sm:inline-flex"
+          >
+            Ver catálogo completo
+          </Link>
         </div>
 
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {categorias.map((categoria) => (
             <Link
               key={categoria.nome}
               href={categoria.href}
-              className="group flex min-h-[150px] flex-col rounded-2xl border border-zinc-800 bg-zinc-950 p-4 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/60 hover:bg-yellow-400/[0.04] hover:shadow-[0_14px_35px_rgba(250,204,21,0.08)] sm:min-h-[170px]"
+              className="group flex min-h-[170px] flex-col border border-zinc-200 bg-zinc-50 p-4 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:bg-white hover:shadow-lg sm:min-h-[185px] sm:p-5"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-400/20 bg-yellow-400/[0.06] text-lg text-yellow-400 transition group-hover:border-yellow-400/50 group-hover:bg-yellow-400 group-hover:text-black sm:h-11 sm:w-11 sm:text-xl">
+              <div className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-lg text-black">
                 {categoria.icone}
               </div>
 
-              <h3 className="mt-4 text-sm font-black leading-tight text-white transition group-hover:text-yellow-400 sm:text-base">
+              <h3 className="mt-4 text-sm font-extrabold leading-tight text-zinc-950 transition group-hover:text-yellow-600 sm:text-base">
                 {categoria.nome}
               </h3>
 
-              <p className="mt-2 line-clamp-3 text-[10px] leading-4 text-zinc-500 sm:text-xs sm:leading-5">
+              <p className="mt-2 text-xs leading-5 text-zinc-600">
                 {categoria.descricao}
               </p>
 
-              <span className="mt-auto pt-3 text-[9px] font-black uppercase tracking-[0.12em] text-yellow-400 sm:text-[10px]">
+              <span className="mt-auto pt-4 text-[10px] font-extrabold uppercase tracking-[0.1em] text-zinc-950">
                 Ver produtos
               </span>
             </Link>
           ))}
         </div>
+
+        <Link
+          href="/produtos"
+          className="mt-6 flex w-full items-center justify-center border border-zinc-950 px-4 py-3 text-sm font-bold text-zinc-950 sm:hidden"
+        >
+          Ver catálogo completo
+        </Link>
       </div>
     </section>
   );

@@ -3,11 +3,11 @@ import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import BenefitsSection from "@/components/home/BenefitsSection";
-import BrandsSection from "@/components/home/BrandsSection";
+import CategorySection from "@/components/home/CategorySection";
 import ProductCarousel from "@/components/home/ProductCarousel";
 import WeeklyOffer from "@/components/home/WeeklyOffer";
 import InspiredSection from "@/components/home/InspiredSection";
-import CategorySection from "@/components/home/CategorySection";
+import BrandsSection from "@/components/home/BrandsSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import InstagramSection from "@/components/home/InstagramSection";
@@ -17,7 +17,6 @@ import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ProductCard from "@/components/products/ProductCard";
 import { produtos } from "@/data/produtos";
 import type { Product } from "@/types/product";
-import PerfumeHistory from "@/components/home/PerfumeHistory";
 
 export default function HomePage() {
   const lancamentos = produtos
@@ -34,33 +33,17 @@ export default function HomePage() {
     .sort((a, b) => b.avaliacoes - a.avaliacoes)
     .slice(0, 4);
 
-  const femininos = produtos
-    .filter(
-      (produto) =>
-        produto.genero === "Feminino" ||
-        produto.categoria === "Feminino",
-    )
-    .slice(0, 4);
-
-  const arabes = produtos
-    .filter(
-      (produto) =>
-        produto.origem.toLowerCase().includes("emirados") ||
-        produto.categoria.toLowerCase().includes("árabe"),
-    )
-    .slice(0, 4);
-
   return (
     <>
       <TopBar />
       <Navbar />
 
-      <main className="min-h-screen overflow-x-hidden bg-black text-white">
+      <main className="min-h-screen overflow-x-hidden bg-white text-zinc-950">
         <Hero />
 
         <BenefitsSection />
 
-        <BrandsSection />
+        <CategorySection />
 
         <ProductCarousel
           eyebrow="Novidades da Bold Parfum"
@@ -76,32 +59,14 @@ export default function HomePage() {
           title="Mais vendidos"
           description="Perfumes marcantes que conquistaram espaço entre os mais procurados da loja."
           produtos={maisVendidos}
-          dark
+          offWhite
         />
 
         <InspiredSection />
 
-        {femininos.length > 0 && (
-          <ProductSection
-            eyebrow="Elegância e personalidade"
-            title="Perfumes femininos"
-            description="Fragrâncias envolventes para mulheres que desejam deixar uma assinatura inesquecível."
-            produtos={femininos}
-          />
-        )}
-
-        <ProductSection
-          eyebrow="Luxo, intensidade e tradição"
-          title="Perfumes árabes"
-          description="Perfumes com excelente presença, ótima fixação e combinações olfativas sofisticadas."
-          produtos={arabes}
-          dark
-        />
-        <PerfumeHistory />
+        <BrandsSection />
 
         <WhyChooseUs />
-
-        <CategorySection />
 
         <Testimonials />
 
@@ -121,7 +86,7 @@ type ProductSectionProps = {
   title: string;
   description: string;
   produtos: Product[];
-  dark?: boolean;
+  offWhite?: boolean;
 };
 
 function ProductSection({
@@ -129,7 +94,7 @@ function ProductSection({
   title,
   description,
   produtos,
-  dark = false,
+  offWhite = false,
 }: ProductSectionProps) {
   if (produtos.length === 0) {
     return null;
@@ -137,29 +102,29 @@ function ProductSection({
 
   return (
     <section
-      className={`border-y border-zinc-900 py-10 sm:py-14 ${
-        dark ? "bg-zinc-950/70" : "bg-black"
+      className={`border-b border-zinc-200 py-10 sm:py-14 ${
+        offWhite ? "bg-zinc-50" : "bg-white"
       }`}
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-yellow-400 sm:text-xs">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-yellow-600 sm:text-xs">
               {eyebrow}
             </p>
 
-            <h2 className="mt-2 text-2xl font-black text-white sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-black text-zinc-950 sm:text-4xl">
               {title}
             </h2>
 
-            <p className="mt-2 text-xs leading-5 text-zinc-400 sm:mt-3 sm:text-base sm:leading-6">
+            <p className="mt-2 text-xs leading-5 text-zinc-600 sm:mt-3 sm:text-base sm:leading-6">
               {description}
             </p>
           </div>
 
           <Link
             href="/produtos"
-            className="hidden shrink-0 rounded-xl border border-yellow-400 px-5 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black sm:inline-flex"
+            className="hidden shrink-0 border border-zinc-950 px-5 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white sm:inline-flex"
           >
             Ver todos
           </Link>
@@ -186,7 +151,7 @@ function ProductSection({
 
         <Link
           href="/produtos"
-          className="mt-6 flex w-full items-center justify-center rounded-xl border border-yellow-400 px-4 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black sm:hidden"
+          className="mt-6 flex w-full items-center justify-center border border-zinc-950 px-4 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white sm:hidden"
         >
           Ver todos os perfumes
         </Link>

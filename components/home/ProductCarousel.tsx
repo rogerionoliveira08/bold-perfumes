@@ -1,12 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import {
   FaChevronLeft,
   FaChevronRight,
-  FaPause,
-  FaPlay,
 } from "react-icons/fa";
 import ProductCard from "@/components/products/ProductCard";
 import type { Product } from "@/types/product";
@@ -25,7 +23,6 @@ export default function ProductCarousel({
   produtos,
 }: ProductCarouselProps) {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [autoplayAtivo, setAutoplayAtivo] = useState(true);
 
   function moverCarrossel(direcao: "anterior" | "proximo") {
     const carousel = carouselRef.current;
@@ -42,92 +39,41 @@ export default function ProductCarousel({
     });
   }
 
-  useEffect(() => {
-    if (!autoplayAtivo || produtos.length <= 1) {
-      return;
-    }
-
-    const intervalo = window.setInterval(() => {
-      const carousel = carouselRef.current;
-
-      if (!carousel) {
-        return;
-      }
-
-      const chegouAoFinal =
-        carousel.scrollLeft + carousel.clientWidth >=
-        carousel.scrollWidth - 20;
-
-      if (chegouAoFinal) {
-        carousel.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-
-        return;
-      }
-
-      carousel.scrollBy({
-        left: Math.max(carousel.clientWidth * 0.82, 260),
-        behavior: "smooth",
-      });
-    }, 5000);
-
-    return () => window.clearInterval(intervalo);
-  }, [autoplayAtivo, produtos.length]);
-
   if (produtos.length === 0) {
     return null;
   }
 
   return (
-    <section className="relative overflow-hidden border-y border-zinc-900 bg-zinc-950/70 py-12 text-white sm:py-16">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.07),transparent_38%)]" />
-
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6">
+    <section className="border-b border-zinc-200 bg-white py-12 sm:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-7 flex items-end justify-between gap-5 sm:mb-9">
           <div className="max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-yellow-400">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-600">
               {eyebrow}
             </p>
 
-            <h2 className="mt-2 text-3xl font-black text-white sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-black text-zinc-950 sm:text-4xl">
               {title}
             </h2>
 
-            <p className="mt-3 text-sm leading-6 text-zinc-400 sm:text-base">
+            <p className="mt-3 text-sm leading-6 text-zinc-600 sm:text-base">
               {description}
             </p>
           </div>
 
           <div className="hidden shrink-0 items-center gap-2 sm:flex">
-            <button
-              type="button"
-              onClick={() => setAutoplayAtivo((estadoAtual) => !estadoAtual)}
-              aria-label={
-                autoplayAtivo
-                  ? "Pausar carrossel"
-                  : "Reproduzir carrossel"
-              }
-              title={
-                autoplayAtivo
-                  ? "Pausar carrossel"
-                  : "Reproduzir carrossel"
-              }
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-black text-zinc-300 transition hover:border-yellow-400 hover:text-yellow-400"
+            <Link
+              href="/produtos"
+              className="mr-2 border border-zinc-950 px-5 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white"
             >
-              {autoplayAtivo ? (
-                <FaPause size={12} />
-              ) : (
-                <FaPlay size={12} />
-              )}
-            </button>
+              Ver catálogo
+            </Link>
 
             <button
               type="button"
               onClick={() => moverCarrossel("anterior")}
               aria-label="Ver produtos anteriores"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-black text-white transition hover:border-yellow-400 hover:bg-yellow-400 hover:text-black"
+              className="flex h-11 w-11 items-center justify-center border border-zinc-300 bg-white text-zinc-950 transition hover:border-zinc-950"
             >
               <FaChevronLeft size={13} />
             </button>
@@ -136,7 +82,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("proximo")}
               aria-label="Ver próximos produtos"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-yellow-400 bg-yellow-400 text-black transition hover:bg-yellow-300"
+              className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-black transition hover:bg-yellow-300"
             >
               <FaChevronRight size={13} />
             </button>
@@ -145,9 +91,7 @@ export default function ProductCarousel({
 
         <div
           ref={carouselRef}
-          onMouseEnter={() => setAutoplayAtivo(false)}
-          onMouseLeave={() => setAutoplayAtivo(true)}
-          className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 sm:gap-5 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-zinc-900 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-yellow-400"
+          className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 sm:gap-5 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-yellow-400"
         >
           {produtos.map((produto) => (
             <div
@@ -177,7 +121,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("anterior")}
               aria-label="Ver produtos anteriores"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-700 bg-black text-white"
+              className="flex h-11 w-11 items-center justify-center border border-zinc-300 bg-white text-zinc-950"
             >
               <FaChevronLeft size={12} />
             </button>
@@ -186,7 +130,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("proximo")}
               aria-label="Ver próximos produtos"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 text-black"
+              className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-black"
             >
               <FaChevronRight size={12} />
             </button>
@@ -194,7 +138,7 @@ export default function ProductCarousel({
 
           <Link
             href="/produtos"
-            className="rounded-xl border border-yellow-400 px-4 py-2.5 text-xs font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black"
+            className="border border-zinc-950 px-4 py-3 text-xs font-bold text-zinc-950"
           >
             Ver catálogo
           </Link>

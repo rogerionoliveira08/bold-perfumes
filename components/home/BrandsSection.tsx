@@ -1,4 +1,4 @@
- import Link from "next/link";
+import Link from "next/link";
 import {
   FaCrown,
   FaGem,
@@ -9,7 +9,7 @@ import {
 const marcas = [
   {
     nome: "Lattafa",
-    descricao: "Perfumes árabes premium",
+    descricao: "Perfumes árabes originais",
     icone: FaCrown,
   },
   {
@@ -29,38 +29,45 @@ const marcas = [
   },
   {
     nome: "French Avenue",
-    descricao: "Luxo moderno",
+    descricao: "Perfumaria árabe moderna",
     icone: FaGem,
   },
   {
     nome: "Orientica",
-    descricao: "Alta perfumaria",
+    descricao: "Fragrâncias sofisticadas",
     icone: FaCrown,
   },
 ];
 
 export default function BrandsSection() {
   return (
-    <section className="relative overflow-hidden border-y border-zinc-900 bg-zinc-950 py-14">
-      <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-yellow-400/5 blur-3xl" />
+    <section className="border-b border-zinc-200 bg-zinc-50 py-12 sm:py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-600">
+              Perfumaria internacional
+            </span>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="text-center">
-          <span className="text-xs font-black uppercase tracking-[0.30em] text-yellow-400">
-            Perfumaria internacional
-          </span>
+            <h2 className="mt-2 text-3xl font-black text-zinc-950 sm:text-4xl">
+              Marcas em destaque
+            </h2>
 
-          <h2 className="mt-3 text-3xl font-black text-white sm:text-4xl">
-            Marcas em destaque
-          </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-600 sm:text-base">
+              Conheça marcas reconhecidas pela qualidade, personalidade e
+              sofisticação de suas fragrâncias.
+            </p>
+          </div>
 
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-zinc-400 sm:text-base">
-            Trabalhamos com marcas reconhecidas pela qualidade, excelente
-            fixação e sofisticação de suas fragrâncias.
-          </p>
+          <Link
+            href="/produtos"
+            className="hidden shrink-0 border border-zinc-950 px-6 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white sm:inline-flex"
+          >
+            Ver todas as marcas
+          </Link>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
           {marcas.map((marca) => {
             const Icon = marca.icone;
 
@@ -68,17 +75,17 @@ export default function BrandsSection() {
               <Link
                 key={marca.nome}
                 href={`/produtos?marca=${encodeURIComponent(marca.nome)}`}
-                className="group rounded-2xl border border-zinc-800 bg-black p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-[0_15px_35px_rgba(250,204,21,.12)]"
+                className="group flex min-h-[170px] flex-col items-center justify-center border border-zinc-200 bg-white p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-lg"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-yellow-400/10 text-yellow-400 transition group-hover:bg-yellow-400 group-hover:text-black">
-                  <Icon size={22} />
+                <div className="flex h-12 w-12 items-center justify-center bg-yellow-400 text-black">
+                  <Icon size={20} />
                 </div>
 
-                <h3 className="mt-5 text-center text-sm font-black text-white transition group-hover:text-yellow-400">
+                <h3 className="mt-4 text-sm font-extrabold text-zinc-950 transition group-hover:text-yellow-600">
                   {marca.nome}
                 </h3>
 
-                <p className="mt-2 text-center text-[11px] leading-5 text-zinc-500">
+                <p className="mt-2 text-xs leading-5 text-zinc-500">
                   {marca.descricao}
                 </p>
               </Link>
@@ -86,14 +93,12 @@ export default function BrandsSection() {
           })}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <Link
-            href="/produtos"
-            className="rounded-xl border border-yellow-400 px-7 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black"
-          >
-            Ver catálogo completo
-          </Link>
-        </div>
+        <Link
+          href="/produtos"
+          className="mt-6 flex w-full items-center justify-center border border-zinc-950 px-4 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white sm:hidden"
+        >
+          Ver todas as marcas
+        </Link>
       </div>
     </section>
   );

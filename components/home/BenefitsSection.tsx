@@ -1,7 +1,5 @@
- import {
-  FaCreditCard,
-  FaLock,
-  FaMapMarkedAlt,
+import {
+  FaCheckCircle,
   FaShippingFast,
   FaStar,
   FaWhatsapp,
@@ -11,54 +9,48 @@ const beneficios = [
   {
     icon: <FaStar />,
     titulo: "Curadoria especializada",
-texto: "Fragrâncias selecionadas de acordo com estilo, ocasião e preferência olfativa.",
+    texto:
+      "Fragrâncias selecionadas de acordo com seu estilo, ocasião e preferência olfativa.",
+  },
+  {
+    icon: <FaCheckCircle />,
+    titulo: "Perfumes originais",
+    texto:
+      "Trabalhamos com perfumes árabes originais e fornecedores selecionados.",
   },
   {
     icon: <FaShippingFast />,
-    titulo: "Enviamos para todo o Brasil",
-    texto: "Frete grátis nas compras acima de R$ 1.000, com postagem rápida e acompanhamento do pedido.",
-  },
-  {
-    icon: <FaLock />,
-    titulo: "Compra segura",
-    texto: "Suporte durante toda a compra para você comprar com tranquilidade.",
-  },
-  {
-    icon: <FaCreditCard />,
-    titulo: "Até 10x sem juros",
-    texto: "Mais facilidade para escolher sua próxima fragrância.",
-  },
-  {
-    icon: <FaMapMarkedAlt />,
-    titulo: "Frete calculado por CEP",
-    texto: "Para compras de até R$ 1.000, consulte o valor da entrega para sua região.",
+    titulo: "Envio para todo o Brasil",
+    texto:
+      "Entrega acompanhada e frete calculado de acordo com o seu CEP.",
   },
   {
     icon: <FaWhatsapp />,
-    titulo: "Atendimento pelo WhatsApp",
-    texto: "Tire dúvidas e receba ajuda rápida para escolher seu perfume.",
+    titulo: "Consultoria pelo WhatsApp",
+    texto:
+      "Receba uma indicação personalizada antes de escolher sua fragrância.",
   },
 ];
 
 export default function BenefitsSection() {
   return (
-    <section className="border-b border-zinc-900 bg-zinc-950/70">
-      <div className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 sm:py-7">
-        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-6">
+    <section className="border-b border-zinc-200 bg-white">
+      <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {beneficios.map((beneficio) => (
             <article
               key={beneficio.titulo}
-              className="group flex min-h-[145px] flex-col rounded-xl border border-zinc-800 bg-black/50 p-3 transition duration-300 hover:-translate-y-0.5 hover:border-yellow-400/50 hover:bg-yellow-400/[0.03] sm:min-h-[165px] sm:rounded-2xl sm:p-4"
+              className="group flex min-h-[150px] flex-col border border-zinc-200 bg-white p-4 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-lg sm:min-h-[165px] sm:p-5"
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/[0.07] text-sm text-yellow-400 transition group-hover:border-yellow-400/50 group-hover:bg-yellow-400 group-hover:text-black sm:h-10 sm:w-10 sm:rounded-xl sm:text-base">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-yellow-400 text-base text-black">
                 {beneficio.icon}
               </div>
 
-              <h2 className="mt-3 text-[11px] font-black leading-4 text-white sm:text-sm sm:leading-5">
+              <h2 className="mt-4 text-sm font-extrabold leading-5 text-zinc-950 sm:text-base">
                 {beneficio.titulo}
               </h2>
 
-              <p className="mt-1.5 line-clamp-3 text-[9px] leading-4 text-zinc-500 sm:text-[11px] sm:leading-5">
+              <p className="mt-2 text-xs leading-5 text-zinc-600 sm:text-sm">
                 {beneficio.texto}
               </p>
             </article>

@@ -120,7 +120,7 @@ export default function GarantiaDeOriginalidadePage() {
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
-                href={`https://wa.me/5522998771598?text=${encodeURIComponent(
+                href={`https://wa.me/5522999281815?text=${encodeURIComponent(
                   "Olá! Vim pela página Garantia de Originalidade da Bold Parfum e gostaria de tirar uma dúvida sobre um produto.",
                 )}`}
                 target="_blank"

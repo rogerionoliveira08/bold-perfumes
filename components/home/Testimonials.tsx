@@ -59,7 +59,7 @@ const mensagemConsultoria = encodeURIComponent(
   "Olá! Conheci o serviço de consultoria em perfumaria da Bold Parfum pelo site e gostaria de receber mais informações.",
 );
 
-const linkConsultoria = `https://wa.me/5522998771598?text=${mensagemConsultoria}`;
+const linkConsultoria = `https://wa.me/5522999281815?text=${mensagemConsultoria}`;
 
 export default function Testimonials() {
   return (

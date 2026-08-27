@@ -269,7 +269,7 @@ const corDisponibilidade =
       </section>
 
       <a
-        href={`https://wa.me/5522998771598?text=${encodeURIComponent(
+        href={`https://wa.me/5522999281815?text=${encodeURIComponent(
           `Olá! Gostaria de uma consultoria da Bold Parfum sobre este perfume:
 
 Perfume: ${produto.nome}

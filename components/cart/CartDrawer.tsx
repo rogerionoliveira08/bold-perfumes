@@ -274,7 +274,7 @@ Aguardo o atendimento.`,
             </div>
 
             <a
-              href={`https://wa.me/5522998771598?text=${mensagemWhatsApp}`}
+              href={`https://wa.me/5522999281815?text=${mensagemWhatsApp}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-3 py-3 text-center text-sm font-bold text-black transition hover:bg-green-400 active:scale-[0.99] sm:mt-3 sm:text-base"

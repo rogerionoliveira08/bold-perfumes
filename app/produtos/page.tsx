@@ -23,7 +23,7 @@ export default function ProdutosPage() {
             </h1>
 
             <p className="mt-3 max-w-3xl text-sm leading-6 text-zinc-600 sm:text-base">
-              Explore nossa coleção de perfumes árabes, importados e
+              Explore nossa coleção de perfumes árabe<main className="min-h-screen overflow-x-hidden bg-black text-white"></main>s, importados e
               fragrâncias premium cuidadosamente selecionadas pela Bold Parfum.
             </p>
           </header>

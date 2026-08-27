@@ -349,7 +349,7 @@ export default function PoliticaDePrivacidadePage() {
                 Também é possível entrar em contato pelo WhatsApp:
                 {" "}
                 <a
-                  href="https://wa.me/5522998771598"
+                  href="https://wa.me/5522999281815"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-bold text-yellow-400 transition hover:text-yellow-300"

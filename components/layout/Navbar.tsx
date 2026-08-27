@@ -29,54 +29,57 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-yellow-500 bg-black">
-      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-5 md:py-4">
-        <div className="flex items-center justify-between gap-3">
+    <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white shadow-sm">
+      <div className="mx-auto max-w-7xl px-4 py-3 sm:px-5">
+        <div className="flex items-center justify-between gap-4">
           <Link
             href="/"
             onClick={fecharMenu}
-            className="whitespace-nowrap text-xl font-extrabold text-yellow-400 sm:text-2xl md:text-3xl"
+            className="whitespace-nowrap text-xl font-extrabold text-black sm:text-2xl md:text-3xl"
           >
-            Bold Parfum
+            Bold <span className="text-yellow-500">Parfum</span>
           </Link>
 
-          <div className="hidden max-w-sm flex-1 md:flex">
+          <div className="hidden max-w-md flex-1 md:flex">
             <SearchBar />
           </div>
 
-          <nav className="hidden items-center gap-5 text-sm text-white md:flex">
-            <div className="hidden items-center gap-2 whitespace-nowrap font-medium xl:flex">
-              <FaSprayCan size={15} />
-              <span>Sua assinatura olfativa</span>
-            </div>
-
+          <nav className="hidden items-center gap-5 text-sm font-medium text-zinc-800 md:flex">
             <Link
               href="/produtos"
-              className="transition hover:text-yellow-400"
+              className="transition hover:text-yellow-600"
             >
               Produtos
             </Link>
 
             <Link
+              href="/#categorias"
+              className="transition hover:text-yellow-600"
+            >
+              Categorias
+            </Link>
+
+            <Link
               href="/guia-da-perfumaria"
-              className="flex items-center gap-1.5 whitespace-nowrap font-semibold text-yellow-400 transition hover:text-yellow-300"
+              className="flex items-center gap-1.5 whitespace-nowrap transition hover:text-yellow-600"
             >
               <FaBookOpen size={14} />
               Guia
             </Link>
 
             <Link
-              href="/#categorias"
-              className="transition hover:text-yellow-400"
+              href="/#contato"
+              className="transition hover:text-yellow-600"
             >
-              Categorias
+              Contato
             </Link>
 
             <Link
-              href="/#contato"
-              className="transition hover:text-yellow-400"
+              href="/guia-da-perfumaria"
+              className="hidden items-center gap-2 whitespace-nowrap rounded-lg bg-yellow-400 px-4 py-2.5 font-bold text-black transition hover:bg-yellow-300 xl:flex"
             >
-              Contato
+              <FaSprayCan size={15} />
+              Descubra seu perfume
             </Link>
 
             <FavoriteLink totalFavoritos={totalFavoritos} />
@@ -98,11 +101,9 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMenuAberto((atual) => !atual)}
-              aria-label={
-                menuAberto ? "Fechar menu" : "Abrir menu"
-              }
+              aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuAberto}
-              className="text-yellow-400"
+              className="text-black"
             >
               {menuAberto ? (
                 <FaTimes size={23} />
@@ -118,45 +119,49 @@ export default function Navbar() {
         </div>
 
         {menuAberto && (
-          <nav className="mt-4 border-t border-zinc-800 pt-4 md:hidden">
-            <div className="flex flex-col gap-2">
+          <nav className="mt-4 border-t border-zinc-200 bg-white pt-4 md:hidden">
+            <div className="flex flex-col gap-1">
               <Link
                 href="/produtos"
                 onClick={fecharMenu}
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-white transition hover:bg-zinc-900 hover:text-yellow-400"
+                className="rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 Produtos
               </Link>
 
               <Link
+                href="/#categorias"
+                onClick={fecharMenu}
+                className="rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
+              >
+                Categorias
+              </Link>
+
+              <Link
                 href="/guia-da-perfumaria"
                 onClick={fecharMenu}
-                className="flex items-center gap-2 rounded-xl border border-yellow-400/30 bg-yellow-400/10 px-4 py-3 text-sm font-bold text-yellow-400"
+                className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 <FaBookOpen size={15} />
                 Guia da Perfumaria
               </Link>
 
               <Link
-                href="/#categorias"
-                onClick={fecharMenu}
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-white transition hover:bg-zinc-900 hover:text-yellow-400"
-              >
-                Categorias
-              </Link>
-
-              <Link
                 href="/#contato"
                 onClick={fecharMenu}
-                className="rounded-xl px-4 py-3 text-sm font-semibold text-white transition hover:bg-zinc-900 hover:text-yellow-400"
+                className="rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 Contato
               </Link>
-            </div>
 
-            <div className="mt-3 flex items-center gap-2 border-t border-zinc-800 px-4 pt-4 text-xs text-zinc-400">
-              <FaSprayCan className="text-yellow-400" size={14} />
-              Sua assinatura olfativa
+              <Link
+                href="/guia-da-perfumaria"
+                onClick={fecharMenu}
+                className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-yellow-400 px-4 py-3 text-sm font-bold text-black"
+              >
+                <FaSprayCan size={15} />
+                Descubra seu perfume
+              </Link>
             </div>
           </nav>
         )}
@@ -174,7 +179,7 @@ function FavoriteLink({
     <Link
       href="/favoritos"
       aria-label={`Abrir favoritos com ${totalFavoritos} produtos`}
-      className="relative text-white transition hover:text-red-500"
+      className="relative text-zinc-900 transition hover:text-red-500"
     >
       <FaHeart size={21} />
 
@@ -199,8 +204,8 @@ function CartButton({
       type="button"
       onClick={abrirCarrinho}
       aria-label={`Abrir minha seleção com ${totalItens} itens`}
-title="Minha Seleção"
-      className="relative text-white transition hover:text-yellow-400"
+      title="Minha Seleção"
+      className="relative text-zinc-900 transition hover:text-yellow-600"
     >
       <FaShoppingCart size={21} />
 
