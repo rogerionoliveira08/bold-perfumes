@@ -20,6 +20,9 @@ type Ordenacao =
   | "mais-vendidos"
   | "nome";
 
+const QUANTIDADE_INICIAL = 12;
+const QUANTIDADE_ADICIONAL = 12;
+
 function normalizarTexto(texto: string) {
   return texto
     .normalize("NFD")
@@ -55,22 +58,51 @@ function criarTextoPesquisa(produto: Product) {
 
 export default function CatalogClient() {
   const searchParams = useSearchParams();
+
   const buscaInicial = searchParams.get("busca") ?? "";
+  const categoriaInicial = searchParams.get("categoria") ?? "";
+  const filtroInicial = searchParams.get("filtro") ?? "";
 
   const [busca, setBusca] = useState(buscaInicial);
   const [marca, setMarca] = useState("");
-  const [categoria, setCategoria] = useState("");
+  const [categoria, setCategoria] = useState(categoriaInicial);
   const [genero, setGenero] = useState("");
   const [familia, setFamilia] = useState("");
   const [precoMaximo, setPrecoMaximo] = useState("");
-  const [ordenacao, setOrdenacao] =
-    useState<Ordenacao>("relevancia");
+  const [filtroEspecial, setFiltroEspecial] =
+    useState(filtroInicial);
+  const [ordenacao, setOrdenacao] = useState<Ordenacao>(
+    filtroInicial === "mais-vendidos"
+      ? "mais-vendidos"
+      : "relevancia",
+  );
+  const [quantidadeVisivel, setQuantidadeVisivel] =
+    useState(QUANTIDADE_INICIAL);
   const [filtrosMobileAbertos, setFiltrosMobileAbertos] =
     useState(false);
 
   useEffect(() => {
     setBusca(buscaInicial);
-  }, [buscaInicial]);
+    setCategoria(categoriaInicial);
+    setFiltroEspecial(filtroInicial);
+
+    if (filtroInicial === "mais-vendidos") {
+      setOrdenacao("mais-vendidos");
+    }
+  }, [buscaInicial, categoriaInicial, filtroInicial]);
+
+  useEffect(() => {
+    setQuantidadeVisivel(QUANTIDADE_INICIAL);
+  }, [
+    busca,
+    marca,
+    categoria,
+    genero,
+    familia,
+    precoMaximo,
+    filtroEspecial,
+    ordenacao,
+  ]);
 
   const produtosFiltrados = useMemo(() => {
     const termo = normalizarTexto(busca);
@@ -84,17 +116,29 @@ export default function CatalogClient() {
         marca === "" || produto.marca === marca;
 
       const categoriaOk =
-        categoria === "" || produto.categoria === categoria;
+        categoria === "" ||
+        produto.categoria === categoria ||
+        produto.genero === categoria;
 
       const generoOk =
         genero === "" || produto.genero === genero;
 
       const familiaOk =
-        familia === "" || produto.familiaOlfativa === familia;
+        familia === "" ||
+        produto.familiaOlfativa === familia;
 
       const precoOk =
         precoMaximo === "" ||
         produto.preco <= Number(precoMaximo);
+
+      const seloNormalizado = normalizarTexto(
+        produto.selo ?? "",
+      );
+
+      const filtroEspecialOk =
+        filtroEspecial !== "promocoes" ||
+        seloNormalizado.includes("oferta") ||
+        seloNormalizado.includes("promocao");
 
       return (
         buscaOk &&
@@ -102,7 +146,8 @@ export default function CatalogClient() {
         categoriaOk &&
         generoOk &&
         familiaOk &&
-        precoOk
+        precoOk &&
+        filtroEspecialOk
       );
     });
 
@@ -154,8 +199,17 @@ export default function CatalogClient() {
     genero,
     familia,
     precoMaximo,
+    filtroEspecial,
     ordenacao,
   ]);
+
+  const produtosVisiveis = produtosFiltrados.slice(
+    0,
+    quantidadeVisivel,
+  );
+
+  const existemMaisProdutos =
+    quantidadeVisivel < produtosFiltrados.length;
 
   const filtrosAtivos =
     busca !== "" ||
@@ -163,7 +217,8 @@ export default function CatalogClient() {
     categoria !== "" ||
     genero !== "" ||
     familia !== "" ||
-    precoMaximo !== "";
+    precoMaximo !== "" ||
+    filtroEspecial !== "";
 
   const quantidadeFiltrosAtivos = [
     marca,
@@ -171,6 +226,7 @@ export default function CatalogClient() {
     genero,
     familia,
     precoMaximo,
+    filtroEspecial,
   ].filter(Boolean).length;
 
   function limparFiltros() {
@@ -180,6 +236,7 @@ export default function CatalogClient() {
     setGenero("");
     setFamilia("");
     setPrecoMaximo("");
+    setFiltroEspecial("");
     setOrdenacao("relevancia");
   }
 
@@ -202,16 +259,18 @@ export default function CatalogClient() {
       />
 
       <section className="min-w-0">
-        <div className="rounded-2xl border border-stone-200 bg-surface p-4 shadow-sm sm:p-5">
+        <div className="border border-zinc-200 bg-zinc-50 p-4 sm:p-5">
           <div className="relative">
             <FaSearch className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500" />
 
             <input
               type="search"
               value={busca}
-              onChange={(evento) => setBusca(evento.target.value)}
+              onChange={(evento) =>
+                setBusca(evento.target.value)
+              }
               placeholder="Pesquise por perfume, marca ou inspiração..."
-              className="w-full rounded-xl border border-stone-300 bg-white py-3.5 pl-11 pr-12 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/15"
+              className="w-full border border-zinc-300 bg-white py-3.5 pl-11 pr-12 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-400/20"
             />
 
             {busca && (
@@ -219,7 +278,7 @@ export default function CatalogClient() {
                 type="button"
                 onClick={() => setBusca("")}
                 aria-label="Limpar pesquisa"
-                className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full text-zinc-500 transition hover:bg-zinc-800 hover:text-white"
+                className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center text-zinc-500 transition hover:bg-zinc-950 hover:text-white"
               >
                 <FaTimes size={13} />
               </button>
@@ -232,14 +291,14 @@ export default function CatalogClient() {
           </p>
         </div>
 
-        <div className="my-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div className="my-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-gold-dark">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-yellow-600">
               Nossa seleção
             </p>
 
-            <h2 className="mt-1 text-2xl font-black text-zinc-900 sm:text-3xl">
-              Catálogo de Perfumes
+            <h2 className="mt-1 text-2xl font-black text-zinc-950 sm:text-3xl">
+              Catálogo de perfumes
             </h2>
 
             <p className="mt-2 text-sm text-zinc-500">
@@ -253,8 +312,10 @@ export default function CatalogClient() {
           <div className="flex w-full gap-2 sm:w-auto">
             <button
               type="button"
-              onClick={() => setFiltrosMobileAbertos(true)}
-              className="relative flex flex-1 items-center justify-center gap-2 rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm font-bold text-zinc-900 shadow-sm transition hover:border-brand-gold hover:text-brand-gold-dark lg:hidden"
+              onClick={() =>
+                setFiltrosMobileAbertos(true)
+              }
+              className="relative flex min-h-12 flex-1 items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-3 text-sm font-bold text-zinc-950 transition hover:border-yellow-500 lg:hidden"
             >
               <FaFilter size={13} />
               Filtros
@@ -267,10 +328,7 @@ export default function CatalogClient() {
             </button>
 
             <div className="flex-1 sm:flex-none">
-              <label
-                htmlFor="ordenacao"
-                className="sr-only"
-              >
+              <label htmlFor="ordenacao" className="sr-only">
                 Ordenar por
               </label>
 
@@ -282,7 +340,7 @@ export default function CatalogClient() {
                     evento.target.value as Ordenacao,
                   )
                 }
-                className="w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-sm text-zinc-900 shadow-sm outline-none transition focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/15 sm:min-w-[210px]"
+                className="min-h-12 w-full border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-950 outline-none transition focus:border-yellow-500 focus:ring-2 focus:ring-yellow-400/20 sm:min-w-[210px]"
               >
                 <option value="relevancia">
                   Relevância
@@ -357,10 +415,27 @@ export default function CatalogClient() {
               />
             )}
 
+            {filtroEspecial === "mais-vendidos" && (
+              <FilterChip
+                label="Mais vendidos"
+                onRemove={() => {
+                  setFiltroEspecial("");
+                  setOrdenacao("relevancia");
+                }}
+              />
+            )}
+
+            {filtroEspecial === "promocoes" && (
+              <FilterChip
+                label="Ofertas"
+                onRemove={() => setFiltroEspecial("")}
+              />
+            )}
+
             <button
               type="button"
               onClick={limparFiltros}
-              className="px-3 py-2 text-xs font-bold text-red-400 transition hover:text-red-300"
+              className="px-3 py-2 text-xs font-bold text-red-600 transition hover:text-red-700"
             >
               Limpar tudo
             </button>
@@ -368,43 +443,63 @@ export default function CatalogClient() {
         )}
 
         {produtosFiltrados.length > 0 ? (
-          <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 2xl:grid-cols-4">
-            {produtosFiltrados.map((produto) => (
-              <ProductCard
-                key={produto.id}
-                id={produto.id}
-                slug={produto.slug}
-                nome={produto.nome}
-                marca={produto.marca}
-                preco={produto.preco}
-                imagem={produto.imagem}
-                categoria={produto.categoria}
-                selo={produto.selo}
-                avaliacao={produto.avaliacao}
-                avaliacoes={produto.avaliacoes}
-                inspiradoEm={produto.inspiradoEm}
-              />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+              {produtosVisiveis.map((produto) => (
+                <ProductCard
+                  key={produto.id}
+                  id={produto.id}
+                  slug={produto.slug}
+                  nome={produto.nome}
+                  marca={produto.marca}
+                  preco={produto.preco}
+                  imagem={produto.imagem}
+                  categoria={produto.categoria}
+                  selo={produto.selo}
+                  avaliacao={produto.avaliacao}
+                  avaliacoes={produto.avaliacoes}
+                  inspiradoEm={produto.inspiradoEm}
+                />
+              ))}
+            </div>
+
+            {existemMaisProdutos && (
+              <div className="mt-10 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setQuantidadeVisivel(
+                      (quantidadeAtual) =>
+                        quantidadeAtual +
+                        QUANTIDADE_ADICIONAL,
+                    )
+                  }
+                  className="min-h-12 border border-zinc-950 bg-white px-8 py-3 text-sm font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white"
+                >
+                  Carregar mais perfumes
+                </button>
+              </div>
+            )}
+          </>
         ) : (
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-950 px-6 py-16 text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 text-yellow-400">
+          <div className="border border-zinc-200 bg-zinc-50 px-6 py-16 text-center">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center bg-yellow-400 text-black">
               <FaSearch size={20} />
             </div>
 
-            <h3 className="mt-5 text-xl font-bold">
+            <h3 className="mt-5 text-xl font-bold text-zinc-950">
               Nenhum perfume encontrado
             </h3>
 
-            <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-zinc-400">
-              Tente pesquisar outro nome ou remover alguns
-              filtros selecionados.
+            <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-zinc-600">
+              Tente pesquisar outro nome, explorar uma categoria ou
+              remover alguns filtros.
             </p>
 
             <button
               type="button"
               onClick={limparFiltros}
-              className="mt-6 rounded-xl bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
+              className="mt-6 bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
             >
               Limpar pesquisa e filtros
             </button>
@@ -430,11 +525,14 @@ function FilterChip({
       onClick={onRemove}
       className={`flex max-w-full items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition ${
         destaque
-          ? "border-yellow-400/30 bg-yellow-400/5 text-yellow-400"
-          : "border-zinc-700 text-zinc-300 hover:border-zinc-500"
+          ? "border-yellow-400 bg-yellow-50 text-zinc-950"
+          : "border-zinc-300 bg-white text-zinc-700 hover:border-zinc-500"
       }`}
     >
-      <span className="max-w-[220px] truncate">{label}</span>
+      <span className="max-w-[220px] truncate">
+        {label}
+      </span>
+
       <FaTimes size={9} />
     </button>
   );

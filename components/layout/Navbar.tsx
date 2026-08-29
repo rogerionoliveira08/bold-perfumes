@@ -16,6 +16,7 @@ import SearchBar from "@/components/common/SearchBar";
 
 export default function Navbar() {
   const [menuAberto, setMenuAberto] = useState(false);
+
   const { carrinho, abrirCarrinho } = useCart();
   const { totalFavoritos } = useFavorites();
 
@@ -29,39 +30,40 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white shadow-sm">
+    <header className="sticky top-0 z-40 border-b border-zinc-200 bg-white">
       <div className="mx-auto max-w-7xl px-4 py-3 sm:px-5">
         <div className="flex items-center justify-between gap-4">
           <Link
             href="/"
             onClick={fecharMenu}
-            className="whitespace-nowrap text-xl font-extrabold text-black sm:text-2xl md:text-3xl"
+            aria-label="Bold Parfum — Página inicial"
+            className="shrink-0 whitespace-nowrap font-sans text-[21px] font-medium uppercase leading-none tracking-[0.24em] text-black no-underline decoration-transparent transition-opacity hover:opacity-65 sm:text-[25px] lg:text-[28px]"
           >
-            Bold <span className="text-yellow-500">Parfum</span>
+            BOLD PARFUM
           </Link>
 
           <div className="hidden max-w-md flex-1 md:flex">
             <SearchBar />
           </div>
 
-          <nav className="hidden items-center gap-5 text-sm font-medium text-zinc-800 md:flex">
+          <nav className="hidden items-center gap-5 text-sm font-normal text-zinc-900 md:flex">
             <Link
               href="/produtos"
-              className="transition hover:text-yellow-600"
+              className="no-underline transition hover:text-zinc-500"
             >
               Produtos
             </Link>
 
             <Link
               href="/#categorias"
-              className="transition hover:text-yellow-600"
+              className="no-underline transition hover:text-zinc-500"
             >
               Categorias
             </Link>
 
             <Link
               href="/guia-da-perfumaria"
-              className="flex items-center gap-1.5 whitespace-nowrap transition hover:text-yellow-600"
+              className="flex items-center gap-1.5 whitespace-nowrap no-underline transition hover:text-zinc-500"
             >
               <FaBookOpen size={14} />
               Guia
@@ -69,14 +71,14 @@ export default function Navbar() {
 
             <Link
               href="/#contato"
-              className="transition hover:text-yellow-600"
+              className="no-underline transition hover:text-zinc-500"
             >
               Contato
             </Link>
 
             <Link
               href="/guia-da-perfumaria"
-              className="hidden items-center gap-2 whitespace-nowrap rounded-lg bg-yellow-400 px-4 py-2.5 font-bold text-black transition hover:bg-yellow-300 xl:flex"
+              className="hidden items-center gap-2 whitespace-nowrap border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-black no-underline transition hover:border-black xl:flex"
             >
               <FaSprayCan size={15} />
               Descubra seu perfume
@@ -121,43 +123,39 @@ export default function Navbar() {
         {menuAberto && (
           <nav className="mt-4 border-t border-zinc-200 bg-white pt-4 md:hidden">
             <div className="flex flex-col gap-1">
-              <Link
+              <MobileLink
                 href="/produtos"
                 onClick={fecharMenu}
-                className="rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 Produtos
-              </Link>
+              </MobileLink>
 
-              <Link
+              <MobileLink
                 href="/#categorias"
                 onClick={fecharMenu}
-                className="rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 Categorias
-              </Link>
+              </MobileLink>
 
-              <Link
+              <MobileLink
                 href="/guia-da-perfumaria"
                 onClick={fecharMenu}
-                className="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 <FaBookOpen size={15} />
                 Guia da Perfumaria
-              </Link>
+              </MobileLink>
 
-              <Link
+              <MobileLink
                 href="/#contato"
                 onClick={fecharMenu}
-                className="rounded-lg px-4 py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100"
               >
                 Contato
-              </Link>
+              </MobileLink>
 
               <Link
                 href="/guia-da-perfumaria"
                 onClick={fecharMenu}
-                className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-yellow-400 px-4 py-3 text-sm font-bold text-black"
+                className="mt-2 flex items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-3 text-sm font-medium text-black no-underline transition hover:border-black"
               >
                 <FaSprayCan size={15} />
                 Descubra seu perfume
@@ -170,6 +168,26 @@ export default function Navbar() {
   );
 }
 
+function MobileLink({
+  href,
+  onClick,
+  children,
+}: {
+  href: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="flex items-center gap-2 px-4 py-3 text-sm font-normal text-zinc-900 no-underline transition hover:bg-zinc-100"
+    >
+      {children}
+    </Link>
+  );
+}
+
 function FavoriteLink({
   totalFavoritos,
 }: {
@@ -179,12 +197,12 @@ function FavoriteLink({
     <Link
       href="/favoritos"
       aria-label={`Abrir favoritos com ${totalFavoritos} produtos`}
-      className="relative text-zinc-900 transition hover:text-red-500"
+      className="relative text-zinc-950 no-underline transition hover:text-red-600"
     >
       <FaHeart size={21} />
 
       {totalFavoritos > 0 && (
-        <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-500 px-1 text-[10px] font-bold text-white">
+        <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-semibold text-white">
           {totalFavoritos > 99 ? "99+" : totalFavoritos}
         </span>
       )}
@@ -204,13 +222,13 @@ function CartButton({
       type="button"
       onClick={abrirCarrinho}
       aria-label={`Abrir minha seleção com ${totalItens} itens`}
-      title="Minha Seleção"
-      className="relative text-zinc-900 transition hover:text-yellow-600"
+      title="Minha seleção"
+      className="relative text-zinc-950 transition hover:text-zinc-500"
     >
       <FaShoppingCart size={21} />
 
       {totalItens > 0 && (
-        <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-[10px] font-bold text-black">
+        <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-black px-1 text-[10px] font-semibold text-white">
           {totalItens > 99 ? "99+" : totalItens}
         </span>
       )}

@@ -1,140 +1,128 @@
- import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import {
-  FaCheckCircle,
+  FaCheck,
   FaInstagram,
-  FaShippingFast,
-  FaStar,
   FaWhatsapp,
 } from "react-icons/fa";
 
+const mensagemWhatsApp = encodeURIComponent(
+  "Olá! Vim pelo site da Bold Parfum e gostaria de conhecer os perfumes disponíveis.",
+);
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-zinc-900 bg-black text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,0.13),transparent_36%)]" />
+    <section className="border-b border-zinc-200 bg-white text-zinc-950">
+      <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-9">
+        <div className="grid overflow-hidden border border-zinc-200 bg-zinc-50 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="order-2 flex flex-col justify-center px-6 py-9 sm:px-10 sm:py-12 lg:order-1 lg:px-12 lg:py-14">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-zinc-500 sm:text-xs">
+              Perfumaria árabe e importada
+            </p>
 
-      <div className="pointer-events-none absolute right-0 top-0 h-72 w-72 rounded-full bg-yellow-400/[0.04] blur-3xl" />
+            <h1 className="mt-4 max-w-lg text-[32px] font-semibold leading-[1.08] tracking-[-0.025em] text-black sm:text-[42px] lg:text-[46px]">
+              Encontre uma fragrância que represente você.
+            </h1>
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-6 px-4 py-7 sm:px-6 sm:py-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:py-16">
-        <div className="min-w-0">
-          <div className="inline-flex items-center gap-2 rounded-full border border-yellow-400/25 bg-yellow-400/[0.06] px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.16em] text-yellow-400 sm:px-3.5 sm:py-2 sm:text-xs">
-            <FaStar size={10} />
-            Perfumes árabes originais
-          </div>
+            <p className="mt-5 max-w-lg text-sm font-normal leading-7 text-zinc-600 sm:text-base">
+              Perfumes originais, marcantes e sofisticados para diferentes
+              estilos, ocasiões e momentos.
+            </p>
 
-          <h1 className="mt-4 max-w-3xl text-[31px] font-black leading-[1.06] tracking-tight sm:mt-5 sm:text-5xl lg:text-[56px]">
-            Sua presença começa pela{" "}
-            <span className="text-yellow-400">fragrância certa.</span>
-          </h1>
+            <div className="mt-6 grid max-w-lg grid-cols-1 gap-3 text-xs text-zinc-700 sm:grid-cols-2 sm:text-sm">
+              <Benefit text="Perfumes selecionados" />
+              <Benefit text="Produtos originais" />
+              <Benefit text="Até 10x sem juros" />
+              <Benefit text="Envio para todo o Brasil" />
+            </div>
 
-          <p className="mt-3 max-w-2xl text-[13px] leading-5 text-zinc-300 sm:mt-4 sm:text-base sm:leading-7 lg:text-lg">
-            Perfumes marcantes, sofisticados e com excelente fixação para
-            transformar cada ocasião em uma assinatura inesquecível.
-          </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/produtos"
+                className="inline-flex min-h-12 items-center justify-center bg-black px-7 py-3 text-sm font-semibold text-white no-underline transition hover:bg-zinc-800"
+              >
+                Conhecer perfumes
+              </Link>
 
-          <div className="mt-4 grid max-w-2xl grid-cols-2 gap-x-3 gap-y-2 text-[10px] text-zinc-300 sm:mt-6 sm:gap-x-4 sm:gap-y-3 sm:text-sm">
-            <Benefit text="Produtos originais" />
-            <Benefit text="Envio para todo o Brasil" />
-            <Benefit text="Até 10x sem juros" />
-            <Benefit text="Atendimento pelo WhatsApp" />
-          </div>
-
-          <div className="mt-5 grid grid-cols-1 gap-2.5 sm:mt-7 sm:grid-cols-3 sm:gap-3">
-            <Link
-              href="/produtos"
-              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-yellow-400 px-4 py-3 text-center text-[12px] font-black text-black transition duration-200 hover:bg-yellow-300 active:scale-[0.98] sm:min-h-12 sm:text-[13px]"
-            >
-              Ver todos os perfumes
-            </Link>
-
-            <a
-              href="https://wa.me/5522999281815?text=Olá! Vim pelo site da Bold Parfum e gostaria de conhecer os perfumes disponíveis."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-green-500/80 bg-green-500/[0.04] px-4 py-3 text-center text-[12px] font-black text-green-400 transition duration-200 hover:bg-green-500 hover:text-black active:scale-[0.98] sm:min-h-12 sm:text-[13px]"
-            >
-              <FaWhatsapp size={17} />
-              Falar no WhatsApp
-            </a>
+              <a
+                href={`https://wa.me/5522999281815?text=${mensagemWhatsApp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-zinc-300 bg-white px-6 py-3 text-sm font-medium text-black no-underline transition hover:border-black"
+              >
+                <FaWhatsapp className="text-green-600" size={17} />
+                Falar com consultor
+              </a>
+            </div>
 
             <a
               href="https://www.instagram.com/bold.ouse/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-pink-500/80 bg-pink-500/[0.04] px-4 py-3 text-center text-[12px] font-black text-pink-400 transition duration-200 hover:bg-pink-500 hover:text-white active:scale-[0.98] sm:min-h-12 sm:text-[13px]"
+              className="mt-6 inline-flex w-fit items-center gap-2 text-xs font-normal text-zinc-500 no-underline transition hover:text-black"
             >
-              <FaInstagram size={18} />
-              Instagram
+              <FaInstagram size={15} />
+              Acompanhe a Bold Parfum no Instagram
             </a>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] text-zinc-500 sm:mt-6 sm:gap-x-4 sm:text-sm">
-            <div className="flex items-center gap-2">
-              <div className="flex text-yellow-400">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <FaStar key={index} size={11} />
-                ))}
+          <div className="order-1 p-3 sm:p-5 lg:order-2">
+            <div className="relative h-[300px] overflow-hidden bg-zinc-900 sm:h-[390px] lg:h-[470px]">
+              <Image
+                src="/Perfumes/perfume.jpeg"
+                alt="Perfume selecionado pela Bold Parfum"
+                fill
+                priority
+                loading="eager"
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover object-center"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+              <div className="absolute left-4 top-4 bg-white px-4 py-2 sm:left-6 sm:top-6">
+                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-black">
+                  Seleção Bold Parfum
+                </p>
               </div>
 
-              <span className="font-bold text-zinc-300">4,9/5</span>
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/70">
+                  Coleção premium
+                </p>
+
+                <h2 className="mt-2 max-w-md text-xl font-semibold leading-tight text-white sm:text-2xl">
+                  Perfumes que deixam sua presença marcada
+                </h2>
+
+                <Link
+                  href="/produtos"
+                  className="mt-4 inline-flex border-b border-white pb-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-white no-underline transition hover:opacity-70"
+                >
+                  Ver coleção
+                </Link>
+              </div>
             </div>
-
-            <span className="hidden h-4 w-px bg-zinc-800 sm:block" />
-
-            <span>Fragrâncias selecionadas para impressionar</span>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
-          <div className="pointer-events-none absolute -inset-5 rounded-full bg-yellow-400/[0.08] blur-3xl" />
+        <div className="grid border-x border-b border-zinc-200 bg-white sm:grid-cols-3">
+          <Information
+            title="Compra segura"
+            text="Atendimento durante toda a compra"
+          />
 
-          <div className="relative overflow-hidden rounded-[22px] border border-yellow-400/25 bg-gradient-to-b from-zinc-900 to-black p-2.5 shadow-2xl shadow-yellow-500/[0.08] sm:rounded-[30px] sm:p-5">
-            <div className="relative overflow-hidden rounded-[16px] border border-zinc-800 bg-black sm:rounded-3xl">
-              <div className="relative h-[255px] w-full sm:h-[420px] lg:h-[500px]">
-                <Image
-                  src="/Perfumes/perfume.jpeg"
-                  alt="Perfume premium da Bold Parfum"
-                  fill
-                  priority
-                  loading="eager"
-                  sizes="(max-width: 1024px) 100vw, 52vw"
-                  className="object-cover object-center"
-                />
+          <Information
+            title="Consultoria personalizada"
+            text="Ajuda para escolher sua fragrância"
+            border
+          />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
-
-                <div className="absolute inset-x-0 bottom-0 px-4 pb-4 pt-14 sm:px-7 sm:pb-7 sm:pt-20">
-                  <p className="text-[9px] font-black uppercase tracking-[0.16em] text-yellow-400 sm:text-xs">
-                    Coleção premium
-                  </p>
-
-                  <h2 className="mt-1 max-w-lg text-lg font-black leading-tight text-white sm:mt-1.5 sm:text-3xl">
-                    Fragrâncias para quem quer ser lembrado
-                  </h2>
-
-                  <p className="mt-1.5 max-w-lg text-[10px] leading-4 text-zinc-300 sm:mt-2 sm:text-sm sm:leading-6">
-                    Perfumes para trabalho, encontros, eventos e momentos
-                    especiais.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-2 grid grid-cols-2 gap-2 sm:mt-4 sm:gap-3">
-              <MiniCard
-                icon={<FaShippingFast />}
-                title="Envio rápido"
-                text="Postagem agilizada"
-              />
-
-              <MiniCard
-                icon={<FaCheckCircle />}
-                title="Procedência"
-                text="Produtos originais"
-              />
-            </div>
-          </div>
+          <Information
+            title="Entrega acompanhada"
+            text="Envio para todo o Brasil"
+            border
+          />
         </div>
       </div>
     </section>
@@ -143,36 +131,40 @@ export default function Hero() {
 
 function Benefit({ text }: { text: string }) {
   return (
-    <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
-      <FaCheckCircle className="shrink-0 text-yellow-400" size={12} />
+    <div className="flex items-center gap-2">
+      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-black text-white">
+        <FaCheck size={7} />
+      </span>
 
-      <span className="leading-4 sm:leading-5">{text}</span>
+      <span>{text}</span>
     </div>
   );
 }
 
-function MiniCard({
-  icon,
+function Information({
   title,
   text,
+  border = false,
 }: {
-  icon: ReactNode;
   title: string;
   text: string;
+  border?: boolean;
 }) {
   return (
-    <div className="flex min-w-0 items-start gap-2 rounded-xl border border-zinc-800 bg-zinc-950 px-2.5 py-2.5 sm:rounded-2xl sm:p-3.5">
-      <span className="mt-0.5 shrink-0 text-yellow-400">{icon}</span>
+    <div
+      className={`px-5 py-4 sm:px-6 ${
+        border
+          ? "border-t border-zinc-200 sm:border-l sm:border-t-0"
+          : ""
+      }`}
+    >
+      <p className="text-xs font-semibold text-black sm:text-sm">
+        {title}
+      </p>
 
-      <div className="min-w-0">
-        <p className="truncate text-[10px] font-black text-white sm:text-sm">
-          {title}
-        </p>
-
-        <p className="mt-0.5 truncate text-[8px] text-zinc-500 sm:text-[11px]">
-          {text}
-        </p>
-      </div>
+      <p className="mt-1 text-[10px] font-normal leading-5 text-zinc-500 sm:text-xs">
+        {text}
+      </p>
     </div>
   );
 }

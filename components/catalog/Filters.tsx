@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useEffect, useMemo } from "react";
 import { FaFilter, FaTimes } from "react-icons/fa";
 import { produtos } from "@/data/produtos";
@@ -42,24 +43,27 @@ export default function Filters({
   limparFiltros,
 }: FiltersProps) {
   const marcas = useMemo(
-    () => ordenarTextos(produtos.map((produto) => produto.marca)),
-    [],
-  );
-
-  const categorias = useMemo(
-    () => ordenarTextos(produtos.map((produto) => produto.categoria)),
+    () =>
+      ordenarTextos(
+        produtos.map((produto) => produto.marca),
+      ),
     [],
   );
 
   const generos = useMemo(
-    () => ordenarTextos(produtos.map((produto) => produto.genero)),
+    () =>
+      ordenarTextos(
+        produtos.map((produto) => produto.genero),
+      ),
     [],
   );
 
   const familias = useMemo(
     () =>
       ordenarTextos(
-        produtos.map((produto) => produto.familiaOlfativa),
+        produtos.map(
+          (produto) => produto.familiaOlfativa,
+        ),
       ),
     [],
   );
@@ -76,48 +80,62 @@ export default function Filters({
       return;
     }
 
-    const overflowAnterior = document.body.style.overflow;
+    const overflowAnterior =
+      document.body.style.overflow;
+
     document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = overflowAnterior;
+      document.body.style.overflow =
+        overflowAnterior;
     };
   }, [abertoMobile]);
 
   function contarPorMarca(valor: string) {
-    return produtos.filter((produto) => produto.marca === valor).length;
-  }
-
-  function contarPorCategoria(valor: string) {
     return produtos.filter(
-      (produto) => produto.categoria === valor,
+      (produto) => produto.marca === valor,
     ).length;
   }
 
   function contarPorGenero(valor: string) {
-    return produtos.filter((produto) => produto.genero === valor).length;
+    return produtos.filter(
+      (produto) =>
+        produto.genero === valor ||
+        produto.categoria === valor,
+    ).length;
   }
 
   function contarPorFamilia(valor: string) {
     return produtos.filter(
-      (produto) => produto.familiaOlfativa === valor,
+      (produto) =>
+        produto.familiaOlfativa === valor,
     ).length;
+  }
+
+  function selecionarGenero(valor: string) {
+    setGenero(valor);
+    setCategoria("");
+  }
+
+  function limparParaQuem() {
+    setGenero("");
+    setCategoria("");
   }
 
   const conteudo = (
     <>
-      <div className="flex items-center justify-between gap-3 border-b border-stone-200 pb-5">
+      <div className="flex items-center justify-between gap-3 border-b border-zinc-200 pb-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gold text-black">
+          <div className="flex h-10 w-10 items-center justify-center bg-yellow-400 text-black">
             <FaFilter size={14} />
           </div>
 
           <div>
-            <h2 className="text-lg font-black text-zinc-900">
+            <h2 className="text-lg font-black text-zinc-950">
               Filtros
             </h2>
 
-            <p className="text-[11px] text-zinc-500">
+            <p className="text-xs text-zinc-500">
               Refine sua busca
             </p>
           </div>
@@ -128,7 +146,7 @@ export default function Filters({
             <button
               type="button"
               onClick={limparFiltros}
-              className="rounded-lg px-2.5 py-2 text-xs font-bold text-red-600 transition hover:bg-red-50"
+              className="min-h-10 px-2.5 py-2 text-xs font-bold text-red-600 transition hover:bg-red-50"
             >
               Limpar
             </button>
@@ -138,7 +156,7 @@ export default function Filters({
             type="button"
             onClick={fecharMobile}
             aria-label="Fechar filtros"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-zinc-700 transition hover:bg-stone-100 lg:hidden"
+            className="flex h-10 w-10 items-center justify-center text-zinc-700 transition hover:bg-zinc-100 lg:hidden"
           >
             <FaTimes size={15} />
           </button>
@@ -146,6 +164,38 @@ export default function Filters({
       </div>
 
       <div className="mt-6 space-y-7">
+        <FilterSection title="Para quem">
+          <RadioOption
+            name="genero"
+            label="Todos"
+            value=""
+            checked={
+              genero === "" && categoria === ""
+            }
+            onChange={limparParaQuem}
+            count={produtos.length}
+          />
+
+          {generos.map((item) => (
+            <RadioOption
+              key={item}
+              name="genero"
+              label={item}
+              value={item}
+              checked={
+                genero === item ||
+                categoria === item
+              }
+              onChange={() =>
+                selecionarGenero(item)
+              }
+              count={contarPorGenero(item)}
+            />
+          ))}
+        </FilterSection>
+
+        <Divider />
+
         <FilterSection title="Marca">
           <RadioOption
             name="marca"
@@ -156,67 +206,19 @@ export default function Filters({
             count={produtos.length}
           />
 
-          {marcas.map((item) => (
-            <RadioOption
-              key={item}
-              name="marca"
-              label={item}
-              value={item}
-              checked={marca === item}
-              onChange={() => setMarca(item)}
-              count={contarPorMarca(item)}
-            />
-          ))}
-        </FilterSection>
-
-        <Divider />
-
-        <FilterSection title="Gênero">
-          <RadioOption
-            name="genero"
-            label="Todos"
-            value=""
-            checked={genero === ""}
-            onChange={() => setGenero("")}
-            count={produtos.length}
-          />
-
-          {generos.map((item) => (
-            <RadioOption
-              key={item}
-              name="genero"
-              label={item}
-              value={item}
-              checked={genero === item}
-              onChange={() => setGenero(item)}
-              count={contarPorGenero(item)}
-            />
-          ))}
-        </FilterSection>
-
-        <Divider />
-
-        <FilterSection title="Categoria">
-          <RadioOption
-            name="categoria"
-            label="Todas"
-            value=""
-            checked={categoria === ""}
-            onChange={() => setCategoria("")}
-            count={produtos.length}
-          />
-
-          {categorias.map((item) => (
-            <RadioOption
-              key={item}
-              name="categoria"
-              label={item}
-              value={item}
-              checked={categoria === item}
-              onChange={() => setCategoria(item)}
-              count={contarPorCategoria(item)}
-            />
-          ))}
+          <div className="max-h-72 space-y-1 overflow-y-auto pr-1">
+            {marcas.map((item) => (
+              <RadioOption
+                key={item}
+                name="marca"
+                label={item}
+                value={item}
+                checked={marca === item}
+                onChange={() => setMarca(item)}
+                count={contarPorMarca(item)}
+              />
+            ))}
+          </div>
         </FilterSection>
 
         <Divider />
@@ -231,7 +233,7 @@ export default function Filters({
             count={produtos.length}
           />
 
-          <div className="max-h-64 space-y-2.5 overflow-y-auto pr-1">
+          <div className="max-h-72 space-y-1 overflow-y-auto pr-1">
             {familias.map((item) => (
               <RadioOption
                 key={item}
@@ -239,7 +241,9 @@ export default function Filters({
                 label={item}
                 value={item}
                 checked={familia === item}
-                onChange={() => setFamilia(item)}
+                onChange={() =>
+                  setFamilia(item)
+                }
                 count={contarPorFamilia(item)}
               />
             ))}
@@ -280,18 +284,22 @@ export default function Filters({
               name="preco"
               label={item.label}
               value={item.value}
-              checked={precoMaximo === item.value}
-              onChange={() => setPrecoMaximo(item.value)}
+              checked={
+                precoMaximo === item.value
+              }
+              onChange={() =>
+                setPrecoMaximo(item.value)
+              }
             />
           ))}
         </FilterSection>
       </div>
 
-      <div className="mt-8 border-t border-stone-200 pt-5 lg:hidden">
+      <div className="mt-8 border-t border-zinc-200 pt-5 lg:hidden">
         <button
           type="button"
           onClick={fecharMobile}
-          className="w-full rounded-xl bg-brand-gold px-4 py-3.5 text-sm font-extrabold text-black transition hover:brightness-105"
+          className="min-h-12 w-full bg-yellow-400 px-4 py-3.5 text-sm font-extrabold text-black transition hover:bg-yellow-300"
         >
           Ver resultados
         </button>
@@ -301,7 +309,7 @@ export default function Filters({
 
   return (
     <>
-      <aside className="hidden h-fit rounded-2xl border border-stone-200 bg-white p-5 shadow-sm lg:sticky lg:top-28 lg:block">
+      <aside className="hidden h-fit border border-zinc-200 bg-white p-5 lg:sticky lg:top-28 lg:block">
         {conteudo}
       </aside>
 
@@ -311,10 +319,10 @@ export default function Filters({
             type="button"
             aria-label="Fechar filtros"
             onClick={fecharMobile}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60"
           />
 
-          <aside className="absolute inset-y-0 left-0 w-[88%] max-w-sm overflow-y-auto border-r border-stone-200 bg-white p-5 shadow-2xl">
+          <aside className="absolute inset-y-0 left-0 w-[88%] max-w-sm overflow-y-auto border-r border-zinc-200 bg-white p-5 shadow-2xl">
             {conteudo}
           </aside>
         </div>
@@ -328,15 +336,17 @@ function FilterSection({
   children,
 }: {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <fieldset>
-      <legend className="mb-3 text-sm font-black uppercase tracking-[0.1em] text-zinc-900">
+      <legend className="mb-3 text-sm font-black uppercase tracking-[0.08em] text-zinc-950">
         {title}
       </legend>
 
-      <div className="space-y-2.5">{children}</div>
+      <div className="space-y-1">
+        {children}
+      </div>
     </fieldset>
   );
 }
@@ -357,7 +367,7 @@ function RadioOption({
   count?: number;
 }) {
   return (
-    <label className="group flex cursor-pointer items-center justify-between gap-3 rounded-lg px-2 py-1.5 transition hover:bg-stone-100">
+    <label className="group flex min-h-11 cursor-pointer items-center justify-between gap-3 px-2 py-2 transition hover:bg-zinc-100">
       <div className="flex min-w-0 items-center gap-3">
         <input
           type="radio"
@@ -365,14 +375,14 @@ function RadioOption({
           value={value}
           checked={checked}
           onChange={onChange}
-          className="h-4 w-4 shrink-0 accent-brand-gold"
+          className="h-4 w-4 shrink-0 accent-yellow-500"
         />
 
         <span
           className={`truncate text-sm transition ${
             checked
-              ? "font-bold text-brand-gold-dark"
-              : "text-zinc-600 group-hover:text-zinc-900"
+              ? "font-bold text-zinc-950"
+              : "text-zinc-600 group-hover:text-zinc-950"
           }`}
         >
           {label}
@@ -380,7 +390,7 @@ function RadioOption({
       </div>
 
       {typeof count === "number" && (
-        <span className="shrink-0 rounded-full bg-stone-100 px-2 py-0.5 text-[10px] font-semibold text-zinc-500">
+        <span className="shrink-0 rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-semibold text-zinc-500">
           {count}
         </span>
       )}
@@ -389,5 +399,5 @@ function RadioOption({
 }
 
 function Divider() {
-  return <div className="h-px bg-stone-200" />;
+  return <div className="h-px bg-zinc-200" />;
 }

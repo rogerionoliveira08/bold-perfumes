@@ -226,7 +226,7 @@ export default async function ProductPage({ params }: Props) {
       <TopBar />
       <Navbar />
 
-      <main className="min-h-screen overflow-x-hidden bg-white text-zinc-950">
+      <main className="min-h-screen overflow-x-hidden bg-black text-white">
         <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 sm:py-7">
           <nav
             aria-label="Navegação estrutural"
