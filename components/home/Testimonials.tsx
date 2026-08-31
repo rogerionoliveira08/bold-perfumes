@@ -7,6 +7,7 @@ import {
   FaStar,
   FaWhatsapp,
 } from "react-icons/fa";
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 const depoimentos = [
   {
@@ -59,20 +60,20 @@ const mensagemConsultoria = encodeURIComponent(
   "Olá! Conheci o serviço de consultoria em perfumaria da Bold Parfum pelo site e gostaria de receber mais informações.",
 );
 
-const linkConsultoria = `https://wa.me/5522999281815?text=${mensagemConsultoria}`;
+
 
 export default function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-black py-16 text-white sm:py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,204,21,0.06),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_50%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-yellow-400">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-zinc-400">
             Depoimentos
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-5xl">
             O que nossos clientes dizem
           </h2>
 
@@ -86,9 +87,9 @@ export default function Testimonials() {
           {depoimentos.map((item) => (
             <article
               key={`${item.nome}-${item.cidade}`}
-              className="group flex h-full flex-col rounded-3xl border border-zinc-800 bg-zinc-950 p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/40 hover:shadow-xl hover:shadow-yellow-500/5"
+              className="group flex h-full flex-col rounded-3xl border border-zinc-800 bg-zinc-950 p-6 transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-xl hover:shadow-black/20"
             >
-              <div className="flex text-yellow-400">
+              <div className="flex gap-0.5 text-yellow-400">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <FaStar key={index} size={15} />
                 ))}
@@ -102,7 +103,7 @@ export default function Testimonials() {
                 <p className="font-bold text-white">{item.nome}</p>
 
                 <p className="mt-1 flex items-center gap-2 text-sm text-zinc-500">
-                  <FaMapMarkerAlt size={12} className="text-yellow-400" />
+                  <FaMapMarkerAlt size={12} className="text-zinc-400" />
                   {item.cidade}
                 </p>
               </div>
@@ -110,8 +111,8 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-3xl border border-yellow-400/20 bg-yellow-400/5 px-5 py-7 text-center sm:px-8">
-          <div className="flex items-center justify-center gap-3 text-yellow-400">
+        <div className="mt-10 rounded-3xl border border-zinc-800 bg-white/[0.03] px-5 py-7 text-center sm:px-8">
+          <div className="flex items-center justify-center gap-3 text-orange-400">
             <FaShippingFast size={20} />
 
             <h3 className="font-bold uppercase tracking-widest">
@@ -136,10 +137,10 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-6 overflow-hidden rounded-3xl border border-yellow-400/30 bg-zinc-950">
+        <div className="mt-6 overflow-hidden rounded-3xl border border-zinc-700 bg-zinc-950">
           <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-yellow-400">
+              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-zinc-400">
                 <FaBriefcase />
                 Consultoria personalizada em perfumaria
               </p>
@@ -157,7 +158,7 @@ export default function Testimonials() {
 
               <div className="mt-5 flex items-start gap-3 rounded-2xl border border-zinc-800 bg-black/50 p-4">
                 <FaHome
-                  className="mt-1 shrink-0 text-yellow-400"
+                  className="mt-1 shrink-0 text-zinc-300"
                   size={18}
                 />
 
@@ -169,24 +170,22 @@ export default function Testimonials() {
             </div>
 
             <div className="flex w-full flex-col gap-3 lg:w-auto">
-  <a
-    href={linkConsultoria}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-6 py-4 font-bold text-black transition hover:bg-yellow-300"
-  >
-    <FaWhatsapp size={20} />
-    Solicitar uma consultoria
-  </a>
+              <WhatsAppChoiceButton
+  mensagem={mensagemConsultoria}
+  className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-4 font-bold text-white transition hover:bg-green-700"
+>
+  <FaWhatsapp size={20} />
+  Solicitar uma consultoria
+</WhatsAppChoiceButton>
 
-  <a
-    href="mailto:consultoria@boldparfum.com.br"
-    className="inline-flex items-center justify-center gap-2 rounded-xl border border-yellow-400/40 bg-black px-5 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black"
-  >
-    <FaEnvelope size={17} />
-    consultoria@boldparfum.com.br
-  </a>
-</div>
+              <a
+                href="mailto:consultoria@boldparfum.com.br"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-zinc-600 bg-black px-5 py-3 text-sm font-bold text-white transition hover:border-white hover:bg-white hover:text-black"
+              >
+                <FaEnvelope size={17} />
+                consultoria@boldparfum.com.br
+              </a>
+            </div>
           </div>
         </div>
       </div>

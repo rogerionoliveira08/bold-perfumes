@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react"; 
 import Link from "next/link";
 import {
   FaBoxOpen,
@@ -12,6 +13,7 @@ import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 export const metadata: Metadata = {
   title: "Garantia de Originalidade | Bold Parfum",
@@ -20,15 +22,18 @@ export const metadata: Metadata = {
 };
 
 export default function GarantiaDeOriginalidadePage() {
+  const mensagemDuvida =
+    "Olá! Vim pela página Garantia de Originalidade da Bold Parfum e gostaria de tirar uma dúvida sobre um produto.";
+
   return (
     <>
       <TopBar />
       <Navbar />
 
       <main className="min-h-screen bg-black text-white">
-        <section className="border-b border-yellow-400/20 bg-gradient-to-b from-yellow-400/[0.08] to-black">
+        <section className="border-b border-zinc-800 bg-gradient-to-b from-blue-500/[0.08] to-black">
           <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-yellow-400">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-blue-400">
               Procedência, qualidade e confiança
             </p>
 
@@ -50,30 +55,34 @@ export default function GarantiaDeOriginalidadePage() {
               icon={<FaShieldAlt />}
               title="Compromisso com a originalidade"
               text="Os produtos comercializados pela Bold Parfum são selecionados com atenção à procedência e à autenticidade, respeitando as características apresentadas por seus fabricantes."
+              cor="bg-blue-600"
             />
 
             <InfoCard
               icon={<FaSearch />}
               title="Conferência dos produtos"
               text="Observamos as condições do frasco, da embalagem e da apresentação geral do produto antes do envio, buscando oferecer uma experiência de compra segura e cuidadosa."
+              cor="bg-violet-600"
             />
 
             <InfoCard
               icon={<FaFingerprint />}
               title="Características de fabricação"
               text="Códigos, selos, etiquetas, inscrições, celofane e detalhes da embalagem podem variar conforme a marca, o lote, o país de distribuição ou atualizações realizadas pelo fabricante."
+              cor="bg-cyan-600"
             />
 
             <InfoCard
               icon={<FaBoxOpen />}
               title="Envio cuidadoso"
               text="Cada pedido é preparado com atenção para preservar o perfume e sua embalagem durante o transporte até o endereço informado pelo cliente."
+              cor="bg-orange-500"
             />
           </div>
 
           <section className="mt-12 rounded-3xl border border-zinc-800 bg-zinc-950 p-6 sm:p-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-yellow-400 text-xl text-black">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-xl text-white">
                 <FaCheckCircle />
               </span>
 
@@ -107,7 +116,7 @@ export default function GarantiaDeOriginalidadePage() {
             </div>
           </section>
 
-          <section className="mt-8 overflow-hidden rounded-3xl border border-yellow-400/30 bg-gradient-to-br from-yellow-400/[0.12] via-zinc-950 to-black p-6 sm:p-10">
+          <section className="mt-8 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-green-500/[0.08] via-zinc-950 to-black p-6 sm:p-10">
             <h2 className="text-2xl font-black sm:text-3xl">
               Ficou com alguma dúvida?
             </h2>
@@ -119,21 +128,17 @@ export default function GarantiaDeOriginalidadePage() {
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={`https://wa.me/5522999281815?text=${encodeURIComponent(
-                  "Olá! Vim pela página Garantia de Originalidade da Bold Parfum e gostaria de tirar uma dúvida sobre um produto.",
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-6 py-3.5 text-sm font-black text-black transition hover:bg-yellow-300"
+              <WhatsAppChoiceButton
+                mensagem={mensagemDuvida}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-black text-white transition hover:bg-[#20ba5a]"
               >
                 <FaWhatsapp size={18} />
                 Tirar uma dúvida
-              </a>
+              </WhatsAppChoiceButton>
 
               <Link
                 href="/produtos"
-                className="inline-flex items-center justify-center rounded-xl border border-zinc-700 px-6 py-3.5 text-sm font-black text-white transition hover:border-yellow-400 hover:text-yellow-400"
+                className="inline-flex items-center justify-center rounded-xl border border-zinc-600 px-6 py-3.5 text-sm font-black text-white transition hover:border-white hover:bg-white hover:text-black"
               >
                 Conhecer os perfumes
               </Link>
@@ -143,7 +148,7 @@ export default function GarantiaDeOriginalidadePage() {
           <div className="mt-8">
             <Link
               href="/"
-              className="text-sm font-bold text-yellow-400 transition hover:text-yellow-300"
+              className="text-sm font-bold text-zinc-400 transition hover:text-white"
             >
               ← Voltar para a página inicial
             </Link>
@@ -161,14 +166,18 @@ function InfoCard({
   icon,
   title,
   text,
+  cor,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   text: string;
+  cor: string;
 }) {
   return (
-    <article className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-yellow-400/50">
-      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-yellow-400 text-lg text-black">
+    <article className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:-translate-y-1 hover:border-zinc-500">
+      <span
+        className={`flex h-11 w-11 items-center justify-center rounded-xl text-lg text-white ${cor}`}
+      >
         {icon}
       </span>
 

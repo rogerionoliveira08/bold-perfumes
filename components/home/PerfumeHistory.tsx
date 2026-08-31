@@ -22,11 +22,11 @@ const historyItems = [
 export default function PerfumeHistory() {
   return (
     <section className="relative overflow-hidden border-y border-zinc-900 bg-zinc-950 py-14 sm:py-20">
-      <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-yellow-400/5 blur-3xl" />
+      <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-white/[0.04] blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-yellow-400">
+          <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-zinc-400">
             Tradição, arte e sofisticação
           </p>
 
@@ -46,14 +46,14 @@ export default function PerfumeHistory() {
           {historyItems.map((item, index) => (
             <article
               key={item.period}
-              className="group relative rounded-2xl border border-zinc-800 bg-black/60 p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400/50"
+              className="group relative rounded-2xl border border-zinc-800 bg-black/60 p-6 transition duration-300 hover:-translate-y-1 hover:border-zinc-500"
             >
               <div className="mb-5 flex items-center justify-between">
-                <span className="rounded-full border border-yellow-400/30 bg-yellow-400/10 px-3 py-1 text-xs font-bold text-yellow-400">
+                <span className="rounded-full border border-zinc-700 bg-white/[0.04] px-3 py-1 text-xs font-bold text-zinc-300">
                   {item.period}
                 </span>
 
-                <span className="text-3xl font-black text-zinc-800 transition group-hover:text-yellow-400/30">
+                <span className="text-3xl font-black text-zinc-800 transition group-hover:text-zinc-600">
                   0{index + 1}
                 </span>
               </div>
@@ -69,7 +69,7 @@ export default function PerfumeHistory() {
           ))}
         </div>
 
-        <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-yellow-400/20 bg-yellow-400/5 px-5 py-6 text-center sm:px-8">
+        <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-zinc-800 bg-white/[0.03] px-5 py-6 text-center sm:px-8">
           <p className="text-sm leading-7 text-zinc-300 sm:text-base">
             Ingredientes como <strong className="text-white">oud</strong>,
             rosas, âmbar, almíscar, especiarias e resinas continuam presentes
@@ -77,7 +77,7 @@ export default function PerfumeHistory() {
             inesquecíveis.
           </p>
 
-          <p className="mt-3 font-semibold italic text-yellow-400">
+          <p className="mt-3 font-semibold italic text-white">
             Mais do que uma fragrância, uma verdadeira assinatura olfativa.
           </p>
         </div>

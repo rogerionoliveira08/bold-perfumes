@@ -12,7 +12,7 @@ const perguntas = [
   {
     pergunta: "Como faço para finalizar a compra?",
     resposta:
-  'Adicione os perfumes à sua seleção e clique em "Finalizar pedido no WhatsApp". A mensagem será enviada com os produtos escolhidos e o valor total para você concluir o atendimento.',
+      'Adicione os perfumes à sua seleção e clique em "Finalizar pedido no WhatsApp". A mensagem será enviada com os produtos escolhidos e o valor total para você concluir o atendimento.',
   },
   {
     pergunta: "Posso pedir ajuda para escolher um perfume?",
@@ -31,11 +31,11 @@ export default function FAQ() {
     <section className="border-t border-zinc-900 bg-zinc-950 py-16 text-white sm:py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-yellow-400">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-zinc-400">
             Tire suas dúvidas
           </p>
 
-          <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
+          <h2 className="mt-3 text-3xl font-bold text-white sm:text-5xl">
             Perguntas frequentes
           </h2>
 
@@ -48,12 +48,12 @@ export default function FAQ() {
           {perguntas.map((item) => (
             <details
               key={item.pergunta}
-              className="group rounded-2xl border border-zinc-800 bg-black/50 p-5 open:border-yellow-400/40"
+              className="group rounded-2xl border border-zinc-800 bg-black/50 p-5 transition open:border-zinc-500 open:bg-black"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-white">
                 <span>{item.pergunta}</span>
 
-                <span className="text-2xl text-yellow-400 transition group-open:rotate-45">
+                <span className="text-2xl text-white transition group-open:rotate-45">
                   +
                 </span>
               </summary>

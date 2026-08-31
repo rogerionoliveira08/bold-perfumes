@@ -16,7 +16,7 @@ const atendentes = [
   },
   {
     nome: "Thainá",
-    telefone: "552299928565",
+    telefone: "5522992885658",
   },
 ];
 
@@ -28,6 +28,7 @@ const provas = [
       "Conheça os cuidados adotados pela Bold Parfum na seleção e conferência das fragrâncias.",
     href: "/garantia-de-originalidade",
     link: "Como garantimos",
+    cor: "bg-blue-600",
   },
   {
     icon: <FaStore />,
@@ -36,6 +37,7 @@ const provas = [
       "Saiba mais sobre nossa proposta, atendimento e compromisso com cada cliente.",
     href: "/quem-somos",
     link: "Quem somos",
+    cor: "bg-[#d50000]",
   },
 ];
 
@@ -45,7 +47,7 @@ export default function WhyChooseUs() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-400">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-400">
               Confiança para escolher
             </p>
 
@@ -61,7 +63,7 @@ export default function WhyChooseUs() {
 
           <Link
             href="/garantia-de-originalidade"
-            className="hidden border border-yellow-400 px-6 py-3 text-sm font-bold text-yellow-400 transition hover:bg-yellow-400 hover:text-black sm:inline-flex"
+            className="hidden border border-white px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-black sm:inline-flex"
           >
             Conheça nossa garantia
           </Link>
@@ -71,13 +73,15 @@ export default function WhyChooseUs() {
           {provas.map((prova) => (
             <article
               key={prova.titulo}
-              className="flex min-h-[250px] flex-col border border-zinc-800 bg-black p-6 transition duration-300 hover:border-yellow-400"
+              className="flex min-h-[250px] flex-col border border-zinc-800 bg-black p-6 transition duration-300 hover:-translate-y-1 hover:border-zinc-500"
             >
-              <div className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-lg text-black">
+              <div
+                className={`flex h-11 w-11 items-center justify-center text-lg text-white ${prova.cor}`}
+              >
                 {prova.icon}
               </div>
 
-              <h3 className="mt-5 text-xl font-extrabold">
+              <h3 className="mt-5 text-xl font-extrabold text-white">
                 {prova.titulo}
               </h3>
 
@@ -87,19 +91,19 @@ export default function WhyChooseUs() {
 
               <Link
                 href={prova.href}
-                className="mt-auto pt-5 text-sm font-bold text-yellow-400 transition hover:text-yellow-300"
+                className="mt-auto pt-5 text-sm font-bold text-white transition hover:text-zinc-400"
               >
                 {prova.link} →
               </Link>
             </article>
           ))}
 
-          <article className="flex min-h-[250px] flex-col border border-zinc-800 bg-black p-6 transition duration-300 hover:border-yellow-400">
-            <div className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-lg text-black">
+          <article className="flex min-h-[250px] flex-col border border-zinc-800 bg-black p-6 transition duration-300 hover:-translate-y-1 hover:border-zinc-500">
+            <div className="flex h-11 w-11 items-center justify-center bg-[#25D366] text-lg text-white">
               <FaComments />
             </div>
 
-            <h3 className="mt-5 text-xl font-extrabold">
+            <h3 className="mt-5 text-xl font-extrabold text-white">
               Consultoria personalizada
             </h3>
 
@@ -117,7 +121,7 @@ export default function WhyChooseUs() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex min-h-11 items-center justify-center gap-2 bg-green-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-green-500"
+                  className="flex min-h-11 items-center justify-center gap-2 bg-[#25D366] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#20ba5a]"
                 >
                   <FaWhatsapp />
                   Falar com {atendente.nome}
@@ -129,7 +133,7 @@ export default function WhyChooseUs() {
 
         <Link
           href="/garantia-de-originalidade"
-          className="mt-6 flex w-full items-center justify-center border border-yellow-400 px-4 py-3 text-sm font-bold text-yellow-400 sm:hidden"
+          className="mt-6 flex w-full items-center justify-center border border-white px-4 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-black sm:hidden"
         >
           Conheça nossa garantia
         </Link>

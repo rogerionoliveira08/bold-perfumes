@@ -344,65 +344,64 @@ export const produtos: Product[] = [
   avaliacoes: 1082,
 
   descricao:
-    "Fakhar Gold é uma fragrância masculina sofisticada e envolvente, criada para quem aprecia perfumes elegantes e de presença marcante. Sua composição combina especiarias, notas aromáticas e madeiras nobres, resultando em um aroma refinado, moderno e versátil, ideal para homens que desejam transmitir confiança e sofisticação em qualquer ocasião.",
+    "Fakhar Gold Extrait é uma fragrância masculina intensa, sofisticada e marcante da Lattafa. Com referência olfativa no 1 Million Parfum, de Paco Rabanne, combina especiarias, nuances florais, couro, âmbar e madeiras em uma composição quente, elegante e envolvente. É indicado para homens que procuram presença, sensualidade e personalidade.",
 
-  familiaOlfativa: "Oriental Amadeirado",
+  inspiradoEm: "Paco Rabanne 1 Million Parfum",
+
+  familiaOlfativa: "Couro Especiado Amadeirado",
 
   notasTopo: [
-    "Bergamota",
-    "Gengibre",
-    "Toranja"
+    "Toranja",
+    "Pimenta-rosa",
+    "Cardamomo",
   ],
 
   notasCoracao: [
-    "Lavanda",
-    "Sálvia",
-    "Gerânio"
+    "Tuberosa",
+    "Artemísia",
+    "Notas solares",
   ],
 
   notasBase: [
+    "Couro",
     "Âmbar",
-    "Cedro",
-    "Fava-tonka",
-    "Vetiver"
+    "Cashmeran",
+    "Ládano",
   ],
 
   fixacao: 5,
-
   projecao: 4,
 
   ocasioes: [
-    "Trabalho",
-    "Eventos",
-    "Encontros",
     "Noite",
-    "Ocasiões especiais"
+    "Encontros",
+    "Eventos",
+    "Jantares",
+    "Ocasiões especiais",
   ],
 
   estacoes: [
-    "Primavera",
     "Outono",
-    "Inverno"
+    "Inverno",
+    "Noites de primavera",
   ],
 
-  concentracao: "Eau de Parfum (EDP)",
-
+  concentracao: "Extrait de Parfum",
   volume: "100 ml",
-
   origem: "Emirados Árabes Unidos",
 
   desempenho:
-    "Entrega excelente desempenho, permanecendo entre 8 e 12 horas na pele, com projeção intensa nas primeiras horas e ótima evolução ao longo do dia.",
+    "Apresenta ótima fixação e projeção marcante, especialmente nas primeiras horas. Sua evolução quente, especiada, ambarada e levemente adocicada funciona melhor durante a noite e em temperaturas amenas ou frias.",
 
   caracteristicas: [
-    "Fragrância elegante e sofisticada",
+    "Referência olfativa no Paco Rabanne 1 Million Parfum",
+    "Fragrância quente e sofisticada",
+    "Perfil especiado, ambarado e levemente adocicado",
     "Excelente fixação",
-    "Ótima projeção",
-    "Ideal para homens modernos",
-    "Versátil para uso diurno e noturno",
-    "Muito elogiado pela elegância",
+    "Projeção marcante",
+    "Ideal para noites e ocasiões especiais",
+    "Aroma masculino e envolvente",
     "Excelente custo-benefício",
-    "Perfume de alta qualidade da Lattafa"
   ],
 }),
 
@@ -2262,7 +2261,7 @@ export const produtos: Product[] = [
   descricao:
     "Salvo Elixir é uma fragrância masculina intensa, sofisticada e de personalidade marcante. Inspirado no consagrado Dior Sauvage Elixir, combina especiarias, lavanda aromática e madeiras nobres em uma composição elegante e extremamente envolvente. Seu excelente desempenho faz dele uma das melhores opções para quem procura um perfume premium com ótimo custo-benefício.",
 
-  inspiradoEm: "Dior Sauvage Elixir",
+  inspiradoEm: "Hugo Boss Bottled Absolu",
 
   familiaOlfativa: "Aromático Especiado",
 
@@ -2312,7 +2311,7 @@ export const produtos: Product[] = [
     "Entrega excelente desempenho, com projeção intensa nas primeiras horas.",
 
   caracteristicas: [
-    "Inspirado no Dior Sauvage Elixir",
+    "Com referência olfativa no Hugo Boss Bottled Absolu",
     "Fragrância intensa e sofisticada",
     "Excelente fixação",
     "Projeção intensa",
@@ -2693,7 +2692,7 @@ export const produtos: Product[] = [
     "Entrega excelente desempenho, com projeção intensa nas primeiras horas.",
 
   caracteristicas: [
-    "Inspirado no Dior Sauvage Elixir",
+    "Referência olfativa no Hugo Boss Bottled Absolu",
     "Lançamento da Lattafa",
     "Fragrância intensa e sofisticada",
     "Excelente fixação",
@@ -2802,7 +2801,7 @@ export const produtos: Product[] = [
   descricao:
     "Salvo é uma fragrância masculina elegante, fresca e extremamente versátil da Maison Alhambra. Inspirado no icônico Dior Sauvage Eau de Parfum, combina notas cítricas, aromáticas e amadeiradas em uma composição moderna, sofisticada e marcante. É um perfume ideal para quem procura versatilidade, excelente desempenho e um aroma que agrada facilmente.",
 
-  inspiradoEm: "Dior Sauvage Eau de Parfum",
+  inspiradoEm: "Dior Sauvage Eau de Toilette",
 
   familiaOlfativa: "Aromático Especiado",
 

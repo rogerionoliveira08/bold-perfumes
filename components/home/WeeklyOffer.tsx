@@ -44,13 +44,13 @@ export default function WeeklyOffer() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/50" />
 
-            <span className="absolute left-5 top-5 bg-yellow-400 px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-black">
+            <span className="absolute left-5 top-5 bg-[#d50000] px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-white">
               Destaque da semana
             </span>
           </div>
 
           <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 lg:px-12">
-            <div className="flex items-center gap-2 text-yellow-400">
+            <div className="flex items-center gap-2 text-zinc-400">
               <FaStar size={12} />
 
               <p className="text-[10px] font-extrabold uppercase tracking-[0.18em]">
@@ -77,19 +77,19 @@ export default function WeeklyOffer() {
                 Preço
               </p>
 
-              <p className="mt-1 text-3xl font-black text-yellow-400">
+              <p className="mt-1 text-3xl font-black tracking-tight text-white">
                 {precoFormatado}
               </p>
 
-              <p className="mt-1 text-xs text-zinc-400">
-                10x de {parcelaFormatada} sem juros
+              <p className="mt-1 text-xs font-bold uppercase text-zinc-400">
+                Ou 10x de {parcelaFormatada} sem juros
               </p>
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={`/produto/${produto.slug}`}
-                className="inline-flex min-h-12 items-center justify-center gap-2 bg-yellow-400 px-6 py-3 text-sm font-black text-black transition hover:bg-yellow-300"
+                className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#d50000] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b80000]"
               >
                 <FaShoppingBag size={13} />
                 Conhecer fragrância
@@ -97,7 +97,7 @@ export default function WeeklyOffer() {
 
               <Link
                 href="/produtos"
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-zinc-600 px-6 py-3 text-sm font-bold text-white transition hover:border-white"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-zinc-600 px-6 py-3 text-sm font-bold text-white transition hover:border-white hover:bg-white hover:text-black"
               >
                 Ver outros perfumes
                 <FaArrowRight size={11} />

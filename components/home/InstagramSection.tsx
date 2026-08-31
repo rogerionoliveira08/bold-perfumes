@@ -34,7 +34,7 @@ export default function InstagramSection() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-yellow-400">
+            <div className="flex items-center gap-2 text-pink-400">
               <FaInstagram size={18} />
 
               <p className="text-[10px] font-black uppercase tracking-[0.18em] sm:text-xs">
@@ -42,7 +42,7 @@ export default function InstagramSection() {
               </p>
             </div>
 
-            <h2 className="mt-2 text-2xl font-black tracking-tight sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-black tracking-tight text-white sm:text-4xl">
               Perfumes, novidades e dicas no Instagram
             </h2>
 
@@ -113,7 +113,7 @@ export default function InstagramSection() {
             </p>
           </div>
 
-          <span className="mt-3 inline-block text-xs font-black text-yellow-400 sm:mt-0">
+          <span className="mt-3 inline-block text-xs font-black text-pink-400 sm:mt-0">
             #BoldParfum
           </span>
         </div>

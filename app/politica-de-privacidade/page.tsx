@@ -3,6 +3,7 @@ import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade | Bold Parfum",
@@ -345,19 +346,19 @@ export default function PoliticaDePrivacidadePage() {
                 atendimento@boldparfum.com.br
               </a>
 
-              <p>
-                Também é possível entrar em contato pelo WhatsApp:
-                {" "}
-                <a
-                  href="https://wa.me/5522999281815"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold text-yellow-400 transition hover:text-yellow-300"
-                >
-                  (22) 99877-1598
-                </a>
-                .
-              </p>
+              <div className="flex flex-col items-start gap-3">
+  <p>
+    Também é possível entrar em contato pelo WhatsApp. Escolha com quem
+    deseja falar:
+  </p>
+
+  <WhatsAppChoiceButton
+    mensagem="Olá! Vim pela página Política de Privacidade da Bold Parfum e gostaria de tirar uma dúvida sobre meus dados pessoais."
+    className="inline-flex items-center justify-center bg-[#25D366] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#20ba5a]"
+  >
+    Escolher atendimento no WhatsApp
+  </WhatsAppChoiceButton>
+</div>
             </PolicySection>
           </div>
         </section>

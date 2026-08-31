@@ -21,7 +21,7 @@ export default function InspiredSection() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 text-yellow-600">
+            <div className="flex items-center gap-2 text-zinc-500">
               <FaGem size={12} />
 
               <p className="text-xs font-extrabold uppercase tracking-[0.18em]">
@@ -48,7 +48,7 @@ export default function InspiredSection() {
           </Link>
         </div>
 
-        <div className="mt-6 border-l-4 border-yellow-400 bg-white px-4 py-4 sm:px-5">
+        <div className="mt-6 border-l-4 border-black bg-white px-4 py-4 sm:px-5">
           <p className="text-xs leading-5 text-zinc-600 sm:text-sm">
             A referência olfativa ajuda você a entender o estilo da
             fragrância. Isso não significa que os perfumes sejam idênticos:

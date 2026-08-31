@@ -14,8 +14,8 @@ const atendentes = [
   },
   {
     nome: "Thainá",
-    numeroExibido: "(22) 9992-8565",
-    telefone: "552299928565",
+    numeroExibido: "(22)99288-5658",
+    telefone: "5522992885658",
   },
 ];
 
@@ -23,9 +23,9 @@ export default function WhatsAppButton() {
   const [aberto, setAberto] = useState(false);
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-4 right-4 z-50 sm:bottom-5 sm:right-5">
       {aberto && (
-        <div className="absolute bottom-16 right-0 w-[280px] overflow-hidden border border-zinc-200 bg-white shadow-2xl">
+        <div className="absolute bottom-14 right-0 w-[280px] overflow-hidden border border-zinc-200 bg-white shadow-2xl">
           <div className="flex items-start justify-between bg-zinc-950 px-4 py-4 text-white">
             <div>
               <p className="text-sm font-extrabold">
@@ -87,12 +87,12 @@ export default function WhatsAppButton() {
             : "Escolher atendimento pelo WhatsApp"
         }
         aria-expanded={aberto}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-[#20ba5a]"
+        className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#20ba5a]"
       >
         {aberto ? (
-          <FaTimes size={24} />
+          <FaTimes size={18} />
         ) : (
-          <FaWhatsapp size={32} />
+          <FaWhatsapp size={23} />
         )}
       </button>
     </div>

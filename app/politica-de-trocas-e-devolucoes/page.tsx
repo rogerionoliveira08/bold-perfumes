@@ -14,6 +14,7 @@ import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 export const metadata: Metadata = {
   title: "Trocas e Devoluções | Bold Parfum",
@@ -21,11 +22,8 @@ export const metadata: Metadata = {
     "Conheça as condições e os procedimentos para trocas, devoluções, arrependimento e reembolsos na Bold Parfum.",
 };
 
-const whatsappTrocas =
-  "https://wa.me/5522999281815?text=" +
-  encodeURIComponent(
-    "Olá! Vim pelo site da Bold Parfum e gostaria de solicitar atendimento sobre uma troca ou devolução.",
-  );
+const mensagemTrocas =
+  "Olá! Vim pelo site da Bold Parfum e gostaria de solicitar atendimento sobre uma troca ou devolução.";
 
 export default function PoliticaDeTrocasEDevolucoesPage() {
   return (
@@ -190,15 +188,13 @@ export default function PoliticaDeTrocasEDevolucoesPage() {
               </p>
 
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a
-                  href={whatsappTrocas}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-green-500 px-5 py-3 text-sm font-black text-black transition hover:bg-green-400"
-                >
-                  <FaWhatsapp size={18} />
-                  Solicitar pelo WhatsApp
-                </a>
+                <WhatsAppChoiceButton
+  mensagem={mensagemTrocas}
+  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-black text-white transition hover:bg-[#20ba5a]"
+>
+  <FaWhatsapp size={18} />
+  Solicitar pelo WhatsApp
+</WhatsAppChoiceButton>
 
                 <a
                   href="mailto:atendimento@boldparfum.com.br?subject=Solicitação de troca ou devolução"

@@ -13,6 +13,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { useCart } from "@/context/CartContext";
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 export default function CartDrawer() {
   const [montado, setMontado] = useState(false);
@@ -66,8 +67,7 @@ export default function CartDrawer() {
       currency: "BRL",
     });
 
-  const mensagemWhatsApp = encodeURIComponent(
-    `Olá, equipe da Bold Parfum!
+  const mensagemWhatsApp = `Olá, equipe da Bold Parfum!
 
 Gostaria de fazer o seguinte pedido:
 
@@ -82,8 +82,7 @@ Valor: ${formatarPreco(item.preco * item.quantidade)}`,
 Subtotal dos produtos: ${formatarPreco(total)}
 ${informacaoFrete}
 
-Aguardo o atendimento.`,
-  );
+Aguardo o atendimento.`;
 
   if (!montado || !carrinhoAberto) {
     return null;
@@ -273,15 +272,13 @@ Aguardo o atendimento.`,
               </div>
             </div>
 
-            <a
-              href={`https://wa.me/5522999281815?text=${mensagemWhatsApp}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-3 py-3 text-center text-sm font-bold text-black transition hover:bg-green-400 active:scale-[0.99] sm:mt-3 sm:text-base"
-            >
-              <FaWhatsapp size={18} />
-              <span className="truncate">Finalizar pedido no WhatsApp</span>
-            </a>
+            <WhatsAppChoiceButton
+  mensagem={mensagemWhatsApp}
+  className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-3 py-3 text-center text-sm font-bold text-white transition hover:bg-[#20ba5a] active:scale-[0.99] sm:mt-3 sm:text-base"
+>
+  <FaWhatsapp size={18} />
+  <span className="truncate">Finalizar pedido no WhatsApp</span>
+</WhatsAppChoiceButton>
           </footer>
         )}
       </aside>

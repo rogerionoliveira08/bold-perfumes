@@ -5,10 +5,7 @@ import {
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
-
-const mensagemWhatsApp = encodeURIComponent(
-  "Olá! Vim pelo site da Bold Parfum e gostaria de conhecer os perfumes disponíveis.",
-);
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 export default function Hero() {
   return (
@@ -44,15 +41,13 @@ export default function Hero() {
                 Conhecer perfumes
               </Link>
 
-              <a
-                href={`https://wa.me/5522999281815?text=${mensagemWhatsApp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-zinc-300 bg-white px-6 py-3 text-sm font-medium text-black no-underline transition hover:border-black"
+              <WhatsAppChoiceButton
+                mensagem="Olá! Vim pelo site da Bold Parfum e gostaria de ajuda para escolher uma fragrância."
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-zinc-300 bg-white px-6 py-3 text-sm font-medium text-black transition hover:border-black"
               >
-                <FaWhatsapp className="text-green-600" size={17} />
+                <FaWhatsapp className="text-[#25D366]" size={17} />
                 Falar com consultor
-              </a>
+              </WhatsAppChoiceButton>
             </div>
 
             <a
@@ -67,41 +62,16 @@ export default function Hero() {
           </div>
 
           <div className="order-1 p-3 sm:p-5 lg:order-2">
-            <div className="relative h-[300px] overflow-hidden bg-zinc-900 sm:h-[390px] lg:h-[470px]">
+            <div className="relative flex h-[300px] items-center justify-center overflow-hidden bg-transparent sm:h-[390px] lg:h-[470px]">
               <Image
-                src="/Perfumes/perfume.jpeg"
-                alt="Perfume selecionado pela Bold Parfum"
-                fill
+                src="/emblema-bold-preto-branco.png"
+                alt="Emblema da Bold Parfum"
+                width={800}
+                height={1200}
                 priority
-                loading="eager"
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover object-center"
+                sizes="(max-width: 1024px) 70vw, 35vw"
+                className="h-[72%] w-auto object-contain mix-blend-multiply sm:h-[78%]"
               />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-              <div className="absolute left-4 top-4 bg-white px-4 py-2 sm:left-6 sm:top-6">
-                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-black">
-                  Seleção Bold Parfum
-                </p>
-              </div>
-
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7">
-                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-white/70">
-                  Coleção premium
-                </p>
-
-                <h2 className="mt-2 max-w-md text-xl font-semibold leading-tight text-white sm:text-2xl">
-                  Perfumes que deixam sua presença marcada
-                </h2>
-
-                <Link
-                  href="/produtos"
-                  className="mt-4 inline-flex border-b border-white pb-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-white no-underline transition hover:opacity-70"
-                >
-                  Ver coleção
-                </Link>
-              </div>
             </div>
           </div>
         </div>

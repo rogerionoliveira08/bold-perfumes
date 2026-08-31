@@ -48,7 +48,7 @@ export default function ProductCarousel({
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-7 flex items-end justify-between gap-5 sm:mb-9">
           <div className="max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-600">
+            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-500">
               {eyebrow}
             </p>
 
@@ -73,7 +73,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("anterior")}
               aria-label="Ver produtos anteriores"
-              className="flex h-11 w-11 items-center justify-center border border-zinc-300 bg-white text-zinc-950 transition hover:border-zinc-950"
+              className="flex h-11 w-11 items-center justify-center border border-zinc-300 bg-white text-zinc-950 transition hover:border-zinc-950 hover:bg-zinc-100"
             >
               <FaChevronLeft size={13} />
             </button>
@@ -82,7 +82,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("proximo")}
               aria-label="Ver próximos produtos"
-              className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-black transition hover:bg-yellow-300"
+              className="flex h-11 w-11 items-center justify-center bg-black text-white transition hover:bg-zinc-800"
             >
               <FaChevronRight size={13} />
             </button>
@@ -91,7 +91,7 @@ export default function ProductCarousel({
 
         <div
           ref={carouselRef}
-          className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 sm:gap-5 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-yellow-400"
+          className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 sm:gap-5 [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-zinc-100 [&::-webkit-scrollbar-thumb]:bg-black"
         >
           {produtos.map((produto) => (
             <div
@@ -121,7 +121,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("anterior")}
               aria-label="Ver produtos anteriores"
-              className="flex h-11 w-11 items-center justify-center border border-zinc-300 bg-white text-zinc-950"
+              className="flex h-11 w-11 items-center justify-center border border-zinc-300 bg-white text-zinc-950 transition hover:border-zinc-950"
             >
               <FaChevronLeft size={12} />
             </button>
@@ -130,7 +130,7 @@ export default function ProductCarousel({
               type="button"
               onClick={() => moverCarrossel("proximo")}
               aria-label="Ver próximos produtos"
-              className="flex h-11 w-11 items-center justify-center bg-yellow-400 text-black"
+              className="flex h-11 w-11 items-center justify-center bg-black text-white transition hover:bg-zinc-800"
             >
               <FaChevronRight size={12} />
             </button>
@@ -138,7 +138,7 @@ export default function ProductCarousel({
 
           <Link
             href="/produtos"
-            className="border border-zinc-950 px-4 py-3 text-xs font-bold text-zinc-950"
+            className="border border-zinc-950 px-4 py-3 text-xs font-bold text-zinc-950 transition hover:bg-zinc-950 hover:text-white"
           >
             Ver catálogo
           </Link>

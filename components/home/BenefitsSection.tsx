@@ -11,24 +11,28 @@ const beneficios = [
     titulo: "Curadoria especializada",
     texto:
       "Fragrâncias selecionadas de acordo com seu estilo, ocasião e preferência olfativa.",
+    cor: "bg-violet-600",
   },
   {
     icon: <FaCheckCircle />,
     titulo: "Perfumes originais",
     texto:
       "Trabalhamos com perfumes árabes originais e fornecedores selecionados.",
+    cor: "bg-blue-600",
   },
   {
     icon: <FaShippingFast />,
     titulo: "Envio para todo o Brasil",
     texto:
       "Entrega acompanhada e frete calculado de acordo com o seu CEP.",
+    cor: "bg-orange-500",
   },
   {
     icon: <FaWhatsapp />,
     titulo: "Consultoria pelo WhatsApp",
     texto:
       "Receba uma indicação personalizada antes de escolher sua fragrância.",
+    cor: "bg-green-600",
   },
 ];
 
@@ -40,9 +44,11 @@ export default function BenefitsSection() {
           {beneficios.map((beneficio) => (
             <article
               key={beneficio.titulo}
-              className="group flex min-h-[150px] flex-col border border-zinc-200 bg-white p-4 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-lg sm:min-h-[165px] sm:p-5"
+              className="group flex min-h-[150px] flex-col border border-zinc-200 bg-white p-4 transition duration-300 hover:-translate-y-1 hover:border-zinc-400 hover:shadow-md sm:min-h-[165px] sm:p-5"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-yellow-400 text-base text-black">
+              <div
+                className={`flex h-10 w-10 shrink-0 items-center justify-center text-base text-white ${beneficio.cor}`}
+              >
                 {beneficio.icon}
               </div>
 

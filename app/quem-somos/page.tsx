@@ -12,6 +12,7 @@ import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 
 export const metadata: Metadata = {
   title: "Quem Somos | Bold Parfum",
@@ -91,17 +92,13 @@ export default function QuemSomosPage() {
               </p>
 
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={`https://wa.me/5522999281815?text=${encodeURIComponent(
-                    "Olá! Vim pela página Quem Somos da Bold Parfum e gostaria de uma consultoria para encontrar meu perfume ideal.",
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-6 py-3.5 text-sm font-black text-black transition hover:bg-yellow-300"
-                >
-                  <FaWhatsapp size={18} />
-                  Falar com um consultor
-                </a>
+                <WhatsAppChoiceButton
+  mensagem="Olá! Vim pela página Quem Somos da Bold Parfum e gostaria de uma consultoria para encontrar meu perfume ideal."
+  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-6 py-3.5 text-sm font-black text-white transition hover:bg-[#20ba5a]"
+>
+  <FaWhatsapp size={18} />
+  Falar com um consultor
+</WhatsAppChoiceButton>
 
                 <Link
                   href="/produtos"

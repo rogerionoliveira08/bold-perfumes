@@ -1,4 +1,4 @@
- import { produtos } from "@/data/produtos";
+import { produtos } from "@/data/produtos";
 import ProductCard from "@/components/products/ProductCard";
 
 export default function BestSellers() {
@@ -8,11 +8,11 @@ export default function BestSellers() {
     <section className="bg-black px-4 py-12 text-white sm:px-6 lg:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="mb-8 text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-yellow-400">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-white/60">
             Destaques
           </p>
 
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
             Mais vendidos
           </h2>
         </div>

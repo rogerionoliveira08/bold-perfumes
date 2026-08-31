@@ -86,11 +86,19 @@ export default function ProductCard({
     alternarFavorito(produtoResumido);
   }
 
+  const seloPromocional =
+    selo?.toLowerCase().includes("oferta") ||
+    selo?.toLowerCase().includes("promoção");
+
   return (
-    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-[0_16px_40px_rgba(41,37,36,0.12)] sm:rounded-2xl">
+    <article className="group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-zinc-950 hover:shadow-[0_16px_40px_rgba(41,37,36,0.12)] sm:rounded-2xl">
       <div className="relative overflow-hidden">
         {selo && (
-          <span className="absolute left-2 top-2 z-30 max-w-[66%] truncate rounded-full bg-brand-gold px-2 py-1 text-[7px] font-black uppercase tracking-[0.08em] text-black shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px]">
+          <span
+            className={`absolute left-2 top-2 z-30 max-w-[66%] truncate rounded-full px-2 py-1 text-[7px] font-black uppercase tracking-[0.08em] text-white shadow-md sm:left-3 sm:top-3 sm:px-2.5 sm:text-[9px] ${
+              seloPromocional ? "bg-[#d50000]" : "bg-black"
+            }`}
+          >
             {selo}
           </span>
         )}
@@ -110,8 +118,8 @@ export default function ProductCard({
           }
           className={`absolute right-2 top-2 z-30 flex h-7 w-7 items-center justify-center rounded-full border shadow-sm backdrop-blur-md transition active:scale-90 sm:right-3 sm:top-3 sm:h-8 sm:w-8 ${
             favoritado
-              ? "border-red-500 bg-red-500 text-white"
-              : "border-stone-200 bg-white/90 text-zinc-700 hover:border-red-500 hover:bg-red-500 hover:text-white"
+              ? "border-red-600 bg-red-600 text-white"
+              : "border-stone-200 bg-white/90 text-zinc-700 hover:border-red-600 hover:bg-red-600 hover:text-white"
           }`}
         >
           {favoritado ? (
@@ -153,18 +161,18 @@ export default function ProductCard({
         </div>
 
         <Link href={`/produto/${slug}`} className="mt-1 block min-w-0">
-          <h3 className="line-clamp-2 min-h-8 text-[12px] font-black leading-4 text-zinc-900 transition hover:text-brand-gold-dark sm:min-h-10 sm:text-base sm:leading-5">
+          <h3 className="line-clamp-2 min-h-8 text-[12px] font-black leading-4 text-zinc-900 transition hover:text-zinc-600 sm:min-h-10 sm:text-base sm:leading-5">
             {nome}
           </h3>
         </Link>
 
         {inspiradoEm ? (
-          <div className="mt-1.5 rounded-md border border-brand-gold/25 bg-[#faf7ed] px-2 py-1.5 sm:mt-2 sm:rounded-lg sm:px-2.5">
+          <div className="mt-1.5 rounded-md border border-stone-200 bg-stone-50 px-2 py-1.5 sm:mt-2 sm:rounded-lg sm:px-2.5">
             <p className="text-[6px] font-bold uppercase tracking-[0.1em] text-zinc-500 sm:text-[8px]">
-              Inspirado em
+              Referência olfativa
             </p>
 
-            <p className="mt-0.5 truncate text-[8px] font-bold text-brand-gold-dark sm:text-[11px]">
+            <p className="mt-0.5 truncate text-[8px] font-bold text-zinc-900 sm:text-[11px]">
               {inspiradoEm}
             </p>
           </div>
@@ -180,13 +188,13 @@ export default function ProductCard({
           </div>
         )}
 
-        <div className="mt-2 border-t border-stone-200 pt-2 sm:mt-2.5 sm:pt-2.5">
-          <p className="truncate text-[15px] font-black tracking-tight text-zinc-900 sm:text-lg">
+        <div className="mt-2 border-t border-stone-200 pt-3 sm:mt-2.5 sm:pt-3">
+          <p className="truncate text-[18px] font-extrabold leading-none tracking-[-0.03em] text-zinc-800 sm:text-[25px]">
             {precoFormatado}
           </p>
 
-          <p className="mt-0.5 truncate text-[7px] text-zinc-500 sm:text-[10px]">
-            10x de {parcelaFormatada} sem juros
+          <p className="mt-1 truncate text-[9px] font-extrabold uppercase leading-none tracking-[-0.01em] text-zinc-700 sm:text-[13px]">
+            Ou 10x de {parcelaFormatada} sem juros
           </p>
         </div>
 
@@ -195,7 +203,7 @@ export default function ProductCard({
             type="button"
             onClick={adicionarProduto}
             aria-label={`Adicionar ${nome} à minha seleção`}
-            className="flex w-full items-center justify-center gap-1 rounded-lg bg-brand-gold px-2 py-1.5 text-[8px] font-black text-black transition hover:brightness-105 active:scale-[0.98] sm:gap-1.5 sm:rounded-xl sm:py-2.5 sm:text-xs"
+            className="flex w-full items-center justify-center gap-1 rounded-lg bg-black px-2 py-1.5 text-[8px] font-black text-white transition hover:bg-zinc-800 active:scale-[0.98] sm:gap-1.5 sm:rounded-xl sm:py-2.5 sm:text-xs"
           >
             <FaShoppingCart size={10} />
 
@@ -208,7 +216,7 @@ export default function ProductCard({
 
           <Link
             href={`/produto/${slug}`}
-            className="mt-1 block text-center text-[7px] font-semibold text-zinc-500 transition hover:text-brand-gold-dark sm:mt-1.5 sm:text-[10px]"
+            className="mt-1 block text-center text-[7px] font-semibold text-zinc-500 transition hover:text-black sm:mt-1.5 sm:text-[10px]"
           >
             Ver detalhes
           </Link>

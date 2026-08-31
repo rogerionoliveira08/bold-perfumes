@@ -11,31 +11,37 @@ const marcas = [
     nome: "Lattafa",
     descricao: "Perfumes árabes originais",
     icone: FaCrown,
+    cor: "bg-red-600",
   },
   {
     nome: "Armaf",
     descricao: "Elegância e performance",
     icone: FaGem,
+    cor: "bg-blue-600",
   },
   {
     nome: "Maison Alhambra",
     descricao: "Inspirados em grandes clássicos",
     icone: FaSprayCan,
+    cor: "bg-violet-600",
   },
   {
     nome: "Al Wataniah",
     descricao: "Tradição oriental",
     icone: FaStar,
+    cor: "bg-green-600",
   },
   {
     nome: "French Avenue",
     descricao: "Perfumaria árabe moderna",
     icone: FaGem,
+    cor: "bg-orange-500",
   },
   {
     nome: "Orientica",
     descricao: "Fragrâncias sofisticadas",
     icone: FaCrown,
+    cor: "bg-pink-600",
   },
 ];
 
@@ -45,7 +51,7 @@ export default function BrandsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-yellow-600">
+            <span className="text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-500">
               Perfumaria internacional
             </span>
 
@@ -75,17 +81,19 @@ export default function BrandsSection() {
               <Link
                 key={marca.nome}
                 href={`/produtos?marca=${encodeURIComponent(marca.nome)}`}
-                className="group flex min-h-[170px] flex-col items-center justify-center border border-zinc-200 bg-white p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-lg"
+                className="group flex min-h-[175px] flex-col items-center justify-center border border-zinc-800 bg-black p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-xl"
               >
-                <div className="flex h-12 w-12 items-center justify-center bg-yellow-400 text-black">
+                <div
+                  className={`flex h-12 w-12 items-center justify-center text-white transition duration-300 group-hover:scale-105 ${marca.cor}`}
+                >
                   <Icon size={20} />
                 </div>
 
-                <h3 className="mt-4 text-sm font-extrabold text-zinc-950 transition group-hover:text-yellow-600">
+                <h3 className="mt-4 text-sm font-extrabold text-white">
                   {marca.nome}
                 </h3>
 
-                <p className="mt-2 text-xs leading-5 text-zinc-500">
+                <p className="mt-2 text-xs leading-5 text-zinc-400">
                   {marca.descricao}
                 </p>
               </Link>
