@@ -34,7 +34,8 @@ Link: ${linkProduto}
 
 Gostaria de confirmar a disponibilidade e receber as orientações para finalizar o pedido.`,
   );
-    useEffect(() => {
+
+  useEffect(() => {
     window.fbq?.("track", "ViewContent", {
       content_ids: [produto.id],
       content_name: produto.nome,
@@ -47,6 +48,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
   function adicionarProduto() {
     adicionarAoCarrinho(produto);
     setAdicionado(true);
+
     window.fbq?.("track", "AddToCart", {
       content_ids: [produto.id],
       content_name: produto.nome,
@@ -54,10 +56,12 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
       value: produto.preco,
       currency: "BRL",
     });
+
     window.setTimeout(() => {
       setAdicionado(false);
     }, 2200);
   }
+
   function rastrearCompraWhatsapp() {
     window.fbq?.("track", "InitiateCheckout", {
       content_ids: [produto.id],
@@ -67,6 +71,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
       currency: "BRL",
     });
   }
+
   return (
     <>
       <div className="mt-5">
@@ -76,10 +81,10 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
             onClick={adicionarProduto}
             disabled={adicionado}
             aria-label={`Adicionar ${produto.nome} à minha seleção`}
-            className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-black transition sm:min-h-14 sm:text-base ${
+            className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-black transition sm:min-h-14 sm:text-base ${
               adicionado
-                ? "cursor-default bg-green-500 text-black"
-                : "bg-yellow-400 text-black hover:bg-yellow-300 active:scale-[0.98]"
+                ? "cursor-default border-green-500 bg-green-500 text-black"
+                : "border-black bg-black text-white hover:bg-zinc-800 active:scale-[0.98]"
             }`}
           >
             {adicionado ? (
@@ -97,11 +102,11 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
 
           <a
             href={`https://wa.me/5522999281815?text=${mensagem}`}
-                        onClick={rastrearCompraWhatsapp}
+            onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Comprar ${produto.nome} pelo WhatsApp`}
-            className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-green-500 bg-green-500/[0.05] px-4 py-3 text-sm font-black text-green-400 transition hover:bg-green-500 hover:text-black active:scale-[0.98] sm:min-h-14 sm:text-base"
+            className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border border-green-600 bg-white px-4 py-3 text-sm font-black text-green-700 transition hover:bg-green-600 hover:text-white active:scale-[0.98] sm:min-h-14 sm:text-base"
           >
             <FaWhatsapp size={17} />
             Comprar no WhatsApp
@@ -114,13 +119,14 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
         </p>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-zinc-800 bg-zinc-950/95 px-3 pb-[max(8px,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_30px_rgba(0,0,0,0.55)] backdrop-blur-md sm:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-[60] border-t border-zinc-800 bg-black px-3 pb-[max(8px,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_30px_rgba(0,0,0,0.55)] sm:hidden">
         <div className="mx-auto flex max-w-md items-center gap-2">
           <div className="min-w-0 shrink-0">
-            <p className="text-[9px] font-bold uppercase tracking-wide text-zinc-500">
+            <p className="text-[9px] font-bold uppercase tracking-wide text-zinc-400">
               Valor
             </p>
-            <p className="max-w-[92px] truncate text-sm font-black text-yellow-400">
+
+            <p className="max-w-[92px] truncate text-sm font-black text-white">
               {precoFormatado}
             </p>
           </div>
@@ -130,10 +136,10 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
             onClick={adicionarProduto}
             disabled={adicionado}
             aria-label={`Adicionar ${produto.nome} à minha seleção`}
-            className={`flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-xl px-3 text-xs font-black transition active:scale-[0.98] ${
+            className={`flex min-h-12 min-w-0 flex-1 items-center justify-center gap-1.5 rounded-xl border px-3 text-xs font-black transition active:scale-[0.98] ${
               adicionado
-                ? "bg-green-500 text-black"
-                : "bg-yellow-400 text-black"
+                ? "border-green-500 bg-green-500 text-black"
+                : "border-white bg-white text-black"
             }`}
           >
             {adicionado ? (
@@ -151,7 +157,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
 
           <a
             href={`https://wa.me/5522999281815?text=${mensagem}`}
-                        onClick={rastrearCompraWhatsapp}
+            onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Falar sobre ${produto.nome} pelo WhatsApp`}

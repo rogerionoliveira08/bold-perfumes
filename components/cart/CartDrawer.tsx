@@ -105,7 +105,7 @@ Aguardo o atendimento.`;
       >
         <header className="box-border flex min-h-[64px] shrink-0 items-center justify-between border-b border-zinc-800 px-4 pb-3 pt-[max(12px,env(safe-area-inset-top))] sm:px-5">
           <div className="flex min-w-0 items-center gap-3">
-            <FaShoppingCart className="shrink-0 text-yellow-400" />
+            <FaShoppingCart className="shrink-0 text-white" />
 
             <div className="min-w-0">
               <h2
@@ -150,7 +150,7 @@ Aguardo o atendimento.`;
         <main className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain px-3 py-2">
           {carrinho.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center px-6 text-center">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-zinc-900 text-yellow-400">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-white">
                 <FaShoppingCart size={22} />
               </div>
 
@@ -165,7 +165,7 @@ Aguardo o atendimento.`;
               <button
                 type="button"
                 onClick={fecharCarrinho}
-                className="mt-5 rounded-xl bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
+                className="mt-5 rounded-xl bg-white px-6 py-3 font-bold text-black transition hover:bg-zinc-200"
               >
                 Explorar perfumes
               </button>
@@ -197,7 +197,7 @@ Aguardo o atendimento.`;
                             {item.nome}
                           </h3>
 
-                          <p className="mt-0.5 text-xs font-bold text-yellow-400">
+                          <p className="mt-0.5 text-xs font-bold text-white">
                             {formatarPreco(item.preco)}
                           </p>
                         </div>
@@ -218,7 +218,7 @@ Aguardo o atendimento.`;
                             type="button"
                             onClick={() => diminuirQuantidade(item.id)}
                             aria-label={`Diminuir quantidade de ${item.nome}`}
-                            className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800 text-white transition hover:bg-yellow-400 hover:text-black"
+                            className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800 text-white transition hover:bg-white hover:text-black"
                           >
                             <FaMinus size={9} />
                           </button>
@@ -231,7 +231,7 @@ Aguardo o atendimento.`;
                             type="button"
                             onClick={() => aumentarQuantidade(item.id)}
                             aria-label={`Aumentar quantidade de ${item.nome}`}
-                            className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800 text-white transition hover:bg-yellow-400 hover:text-black"
+                            className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-800 text-white transition hover:bg-white hover:text-black"
                           >
                             <FaPlus size={9} />
                           </button>
@@ -261,13 +261,20 @@ Aguardo o atendimento.`;
                   {informacaoFrete}
                 </p>
 
-                <p className="mt-1 truncate text-xl font-extrabold text-yellow-400 sm:text-2xl">
+                <p className="mt-1 truncate text-xl font-extrabold text-white sm:text-2xl">
                   {formatarPreco(total)}
                 </p>
+                <p className="mt-1 text-[11px] font-semibold text-zinc-400 sm:text-xs">
+  ou 10x de{" "}
+  <strong className="text-zinc-200">
+    {formatarPreco(total / 10)}
+  </strong>{" "}
+  sem juros
+</p>
               </div>
 
               <div className="flex shrink-0 items-center gap-1 pb-1 text-[9px] text-zinc-500 sm:text-[10px]">
-                <FaLock size={9} className="text-yellow-400" />
+                <FaLock size={9} className="text-zinc-400" />
                 Seguro
               </div>
             </div>

@@ -51,7 +51,7 @@ export default function Hero() {
             </div>
 
             <a
-              href="https://www.instagram.com/bold.ouse/"
+              href="https://www.instagram.com/bold.parfum/"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex w-fit items-center gap-2 text-xs font-normal text-zinc-500 no-underline transition hover:text-black"
@@ -137,4 +137,4 @@ function Information({
       </p>
     </div>
   );
-}
+} 

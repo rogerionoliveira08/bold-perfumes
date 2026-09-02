@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   FaCrown,
   FaGem,
+  FaHeart,
   FaSprayCan,
   FaStar,
 } from "react-icons/fa";
@@ -11,37 +12,43 @@ const marcas = [
     nome: "Lattafa",
     descricao: "Perfumes árabes originais",
     icone: FaCrown,
-    cor: "bg-red-600",
+    cor: "bg-[#D8C28A]",
+    corIcone: "text-black",
   },
   {
     nome: "Armaf",
     descricao: "Elegância e performance",
     icone: FaGem,
-    cor: "bg-blue-600",
+    cor: "bg-white",
+    corIcone: "text-black",
   },
   {
     nome: "Maison Alhambra",
     descricao: "Inspirados em grandes clássicos",
     icone: FaSprayCan,
-    cor: "bg-violet-600",
+    cor: "bg-[#556B2F]",
+    corIcone: "text-white",
   },
   {
     nome: "Al Wataniah",
     descricao: "Tradição oriental",
     icone: FaStar,
-    cor: "bg-green-600",
+    cor: "bg-blue-600",
+    corIcone: "text-white",
   },
   {
     nome: "French Avenue",
     descricao: "Perfumaria árabe moderna",
     icone: FaGem,
     cor: "bg-orange-500",
+    corIcone: "text-white",
   },
   {
     nome: "Orientica",
     descricao: "Fragrâncias sofisticadas",
-    icone: FaCrown,
-    cor: "bg-pink-600",
+    icone: FaHeart,
+    cor: "bg-red-600",
+    corIcone: "text-white",
   },
 ];
 
@@ -84,7 +91,7 @@ export default function BrandsSection() {
                 className="group flex min-h-[175px] flex-col items-center justify-center border border-zinc-800 bg-black p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-zinc-500 hover:shadow-xl"
               >
                 <div
-                  className={`flex h-12 w-12 items-center justify-center text-white transition duration-300 group-hover:scale-105 ${marca.cor}`}
+                  className={`flex h-12 w-12 items-center justify-center rounded-full transition duration-300 group-hover:scale-110 ${marca.cor} ${marca.corIcone}`}
                 >
                   <Icon size={20} />
                 </div>

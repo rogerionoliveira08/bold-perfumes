@@ -127,7 +127,7 @@ export default function ProductGallery({
                       aria-pressed={selecionada}
                       className={`group relative aspect-[4/5] overflow-hidden border bg-white p-1 transition ${
                         selecionada
-                          ? "border-yellow-500"
+                          ? "border-black"
                           : "border-zinc-200 hover:border-zinc-500"
                       }`}
                     >
@@ -144,7 +144,7 @@ export default function ProductGallery({
                       </div>
 
                       {selecionada && (
-                        <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-yellow-400" />
+                        <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full border border-white bg-black" />
                       )}
                     </button>
                   );
@@ -161,7 +161,7 @@ export default function ProductGallery({
                   setLightboxAberto(true)
                 }
                 aria-label={`Ampliar imagem de ${nome}`}
-                className="group relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden border border-zinc-200 bg-zinc-100 shadow-sm transition hover:border-yellow-500"
+                className="group relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden border border-zinc-300 bg-zinc-100 shadow-sm transition hover:border-black"
               >
                 <Image
                   src={imagemAtual}
@@ -174,7 +174,7 @@ export default function ProductGallery({
 
                 <div className="pointer-events-none absolute left-3 top-3 flex items-center gap-2 bg-black/80 px-3 py-2 text-[9px] font-black uppercase tracking-[0.12em] text-white sm:left-4 sm:top-4 sm:text-[10px]">
                   <FaGem
-                    className="text-yellow-400"
+                    className="text-white"
                     size={10}
                   />
                   Seleção Bold Parfum
@@ -182,13 +182,13 @@ export default function ProductGallery({
 
                 <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 bg-black/80 px-3 py-2 text-[9px] font-bold text-white sm:bottom-4 sm:left-4 sm:text-[10px]">
                   <FaSearchPlus
-                    className="text-yellow-400"
+                    className="text-white"
                     size={11}
                   />
                   Clique para ampliar
                 </div>
 
-                <span className="pointer-events-none absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/80 text-white transition group-hover:bg-yellow-400 group-hover:text-black sm:bottom-4 sm:right-4 sm:h-11 sm:w-11">
+                <span className="pointer-events-none absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-black/80 text-white transition group-hover:bg-white group-hover:text-black sm:bottom-4 sm:right-4 sm:h-11 sm:w-11">
                   <FaExpand size={14} />
                 </span>
               </button>
@@ -237,7 +237,7 @@ export default function ProductGallery({
                         aria-pressed={selecionada}
                         className={`relative aspect-[4/5] overflow-hidden border bg-white p-1 ${
                           selecionada
-                            ? "border-yellow-500"
+                            ? "border-black"
                             : "border-zinc-200"
                         }`}
                       >
@@ -285,7 +285,7 @@ export default function ProductGallery({
                 setLightboxAberto(false)
               }
               aria-label="Fechar imagem ampliada"
-              className="absolute right-4 top-4 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-black/80 text-white transition hover:border-yellow-400 hover:text-yellow-400 sm:right-6 sm:top-6"
+              className="absolute right-4 top-4 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-zinc-700 bg-black/80 text-white transition hover:border-white hover:bg-white hover:text-black sm:right-6 sm:top-6"
             >
               <FaTimes size={17} />
             </button>
@@ -299,7 +299,7 @@ export default function ProductGallery({
                     mostrarImagemAnterior();
                   }}
                   aria-label="Imagem anterior"
-                  className="absolute left-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-700 bg-black/80 text-white transition hover:border-yellow-400 hover:text-yellow-400 sm:left-6"
+                  className="absolute left-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-700 bg-black/80 text-white transition hover:border-white hover:bg-white hover:text-black sm:left-6"
                 >
                   <FaChevronLeft size={15} />
                 </button>
@@ -311,7 +311,7 @@ export default function ProductGallery({
                     mostrarProximaImagem();
                   }}
                   aria-label="Próxima imagem"
-                  className="absolute right-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-700 bg-black/80 text-white transition hover:border-yellow-400 hover:text-yellow-400 sm:right-6"
+                  className="absolute right-3 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-700 bg-black/80 text-white transition hover:border-white hover:bg-white hover:text-black sm:right-6"
                 >
                   <FaChevronRight size={15} />
                 </button>

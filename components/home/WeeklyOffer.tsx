@@ -9,7 +9,7 @@ import { produtos } from "@/data/produtos";
 
 export default function WeeklyOffer() {
   const produto = produtos.find(
-    (item) => item.slug === "asad-elixir",
+    (item) => item.slug === "atheeri",
   );
 
   if (!produto) {
@@ -33,21 +33,35 @@ export default function WeeklyOffer() {
     <section className="border-b border-zinc-200 bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="grid overflow-hidden bg-zinc-950 lg:grid-cols-2">
-          <div className="relative min-h-[300px] overflow-hidden sm:min-h-[380px] lg:min-h-[430px]">
-            <Image
-              src={produto.imagem}
-              alt={`${produto.nome} da marca ${produto.marca}`}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-center"
-            />
+          <div className="relative min-h-[420px] overflow-hidden bg-black sm:min-h-[520px] lg:min-h-[560px]">
+  <Image
+    src={produto.imagem}
+    alt=""
+    fill
+    sizes="(max-width: 1024px) 100vw, 50vw"
+    aria-hidden="true"
+    className="scale-110 object-cover object-center opacity-40 blur-xl"
+  />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/50" />
+  <div className="absolute inset-0 bg-black/25" />
 
-            <span className="absolute left-5 top-5 bg-[#d50000] px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-white">
-              Destaque da semana
-            </span>
-          </div>
+  <Image
+    src={produto.imagem}
+    alt={`${produto.nome} da marca ${produto.marca}`}
+    fill
+    priority
+    sizes="(max-width: 1024px) 100vw, 50vw"
+    className="relative z-10 object-contain object-center p-3 sm:p-5 lg:p-6"
+  />
+
+  <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+
+  <div className="pointer-events-none absolute inset-y-0 right-0 z-20 hidden w-32 bg-gradient-to-r from-transparent to-zinc-950/80 lg:block" />
+
+  <span className="absolute left-5 top-5 z-30 bg-[#d50000] px-3 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-white shadow-lg">
+    Destaque da semana
+  </span>
+</div>
 
           <div className="flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 lg:px-12">
             <div className="flex items-center gap-2 text-zinc-400">
@@ -67,9 +81,9 @@ export default function WeeklyOffer() {
             </p>
 
             <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-300">
-              Uma fragrância marcante e envolvente para quem busca
-              intensidade, personalidade e uma presença olfativa que não
-              passa despercebida.
+              Uma fragrância floral oriental elegante, luminosa e envolvente.
+              Ideal para quem busca delicadeza, sofisticação e uma presença
+              marcante sem perder a suavidade.
             </p>
 
             <div className="mt-6 border-y border-zinc-800 py-5">

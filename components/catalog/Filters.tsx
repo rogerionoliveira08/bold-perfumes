@@ -126,7 +126,7 @@ export default function Filters({
     <>
       <div className="flex items-center justify-between gap-3 border-b border-zinc-200 pb-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center bg-yellow-400 text-black">
+          <div className="flex h-10 w-10 items-center justify-center bg-black text-white">
             <FaFilter size={14} />
           </div>
 
@@ -299,7 +299,7 @@ export default function Filters({
         <button
           type="button"
           onClick={fecharMobile}
-          className="min-h-12 w-full bg-yellow-400 px-4 py-3.5 text-sm font-extrabold text-black transition hover:bg-yellow-300"
+          className="min-h-12 w-full bg-black px-4 py-3.5 text-sm font-extrabold text-white transition hover:bg-zinc-800"
         >
           Ver resultados
         </button>
@@ -375,7 +375,7 @@ function RadioOption({
           value={value}
           checked={checked}
           onChange={onChange}
-          className="h-4 w-4 shrink-0 accent-yellow-500"
+          className="h-4 w-4 shrink-0 accent-black"
         />
 
         <span

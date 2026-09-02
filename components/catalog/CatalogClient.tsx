@@ -270,7 +270,7 @@ export default function CatalogClient() {
                 setBusca(evento.target.value)
               }
               placeholder="Pesquise por perfume, marca ou inspiração..."
-              className="w-full border border-zinc-300 bg-white py-3.5 pl-11 pr-12 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-400/20"
+              className="w-full border border-zinc-300 bg-white py-3.5 pl-11 pr-12 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-black focus:ring-2 focus:ring-black/10"
             />
 
             {busca && (
@@ -293,7 +293,7 @@ export default function CatalogClient() {
 
         <div className="my-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-yellow-600">
+            <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-zinc-500">
               Nossa seleção
             </p>
 
@@ -315,13 +315,13 @@ export default function CatalogClient() {
               onClick={() =>
                 setFiltrosMobileAbertos(true)
               }
-              className="relative flex min-h-12 flex-1 items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-3 text-sm font-bold text-zinc-950 transition hover:border-yellow-500 lg:hidden"
+              className="relative flex min-h-12 flex-1 items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-3 text-sm font-bold text-zinc-950 transition hover:border-black lg:hidden"
             >
               <FaFilter size={13} />
               Filtros
 
               {quantidadeFiltrosAtivos > 0 && (
-                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-yellow-400 px-1 text-[10px] font-black text-black">
+                <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-black px-1 text-[10px] font-black text-white">
                   {quantidadeFiltrosAtivos}
                 </span>
               )}
@@ -340,7 +340,7 @@ export default function CatalogClient() {
                     evento.target.value as Ordenacao,
                   )
                 }
-                className="min-h-12 w-full border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-950 outline-none transition focus:border-yellow-500 focus:ring-2 focus:ring-yellow-400/20 sm:min-w-[210px]"
+                className="min-h-12 w-full border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-950 outline-none transition focus:border-black focus:ring-2 focus:ring-black/10 sm:min-w-[210px]"
               >
                 <option value="relevancia">
                   Relevância
@@ -483,7 +483,7 @@ export default function CatalogClient() {
           </>
         ) : (
           <div className="border border-zinc-200 bg-zinc-50 px-6 py-16 text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center bg-yellow-400 text-black">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center bg-black text-white">
               <FaSearch size={20} />
             </div>
 
@@ -499,7 +499,7 @@ export default function CatalogClient() {
             <button
               type="button"
               onClick={limparFiltros}
-              className="mt-6 bg-yellow-400 px-6 py-3 font-bold text-black transition hover:bg-yellow-300"
+              className="mt-6 bg-black px-6 py-3 font-bold text-white transition hover:bg-zinc-800"
             >
               Limpar pesquisa e filtros
             </button>
@@ -525,7 +525,7 @@ function FilterChip({
       onClick={onRemove}
       className={`flex max-w-full items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold transition ${
         destaque
-          ? "border-yellow-400 bg-yellow-50 text-zinc-950"
+          ? "border-black bg-black text-white"
           : "border-zinc-300 bg-white text-zinc-700 hover:border-zinc-500"
       }`}
     >

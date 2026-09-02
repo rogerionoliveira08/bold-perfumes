@@ -161,18 +161,18 @@ export default function ProductReviews({
   return (
     <section
       id="avaliacoes"
-      className="scroll-mt-36 border-t border-zinc-900 pt-8 sm:pt-12"
+      className="scroll-mt-36 border-t border-zinc-300 pt-8 sm:pt-12"
     >
       <div className="flex flex-col gap-2">
-        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-yellow-400">
+        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-zinc-500">
           Experiências reais
         </p>
 
-        <h2 className="text-2xl font-black text-white sm:text-3xl">
+        <h2 className="text-2xl font-black text-zinc-950 sm:text-3xl">
           Avaliações dos clientes
         </h2>
 
-        <p className="max-w-3xl text-sm leading-6 text-zinc-400 sm:text-base">
+        <p className="max-w-3xl text-sm leading-6 text-zinc-600 sm:text-base">
           Veja a opinião de quem já conheceu esta fragrância ou compartilhe
           sua própria experiência.
         </p>
@@ -184,7 +184,7 @@ export default function ProductReviews({
             {carregando ? (
               <div className="flex min-h-48 items-center justify-center">
                 <FaSpinner
-                  className="animate-spin text-yellow-400"
+                  className="animate-spin text-white"
                   size={24}
                 />
               </div>
@@ -223,7 +223,7 @@ export default function ProductReviews({
 
                       <div className="h-2 overflow-hidden rounded-full bg-zinc-800">
                         <div
-                          className="h-full rounded-full bg-yellow-400 transition-all"
+                          className="h-full rounded-full bg-white transition-all"
                           style={{
                             width: `${item.porcentagem}%`,
                           }}
@@ -255,18 +255,18 @@ export default function ProductReviews({
             )}
           </div>
 
-          <div className="flex gap-3 rounded-2xl border border-yellow-400/20 bg-yellow-400/5 p-4">
+          <div className="flex gap-3 rounded-2xl border border-zinc-300 bg-zinc-100 p-4">
             <FaShieldAlt
-              className="mt-1 shrink-0 text-yellow-400"
+              className="mt-1 shrink-0 text-zinc-950"
               size={18}
             />
 
             <div>
-              <p className="text-sm font-bold text-white">
+              <p className="text-sm font-bold text-zinc-950">
                 Experiências da comunidade
               </p>
 
-              <p className="mt-1 text-xs leading-5 text-zinc-400">
+              <p className="mt-1 text-xs leading-5 text-zinc-600">
                 As avaliações são publicadas automaticamente. Conteúdos
                 ofensivos, falsos ou que não tratem do produto poderão ser removidos.
               </p>
@@ -340,7 +340,7 @@ export default function ProductReviews({
               onChange={(event) => setNome(event.target.value)}
               maxLength={60}
               placeholder="Como seu nome deve aparecer"
-              className="mt-2 w-full rounded-xl border border-zinc-700 bg-black px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-yellow-400"
+              className="mt-2 w-full rounded-xl border border-zinc-700 bg-black px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white"
             />
           </div>
 
@@ -367,7 +367,7 @@ export default function ProductReviews({
               rows={5}
               maxLength={800}
               placeholder="Fale sobre o aroma, fixação, projeção e em quais ocasiões você usou..."
-              className="mt-2 w-full resize-none rounded-xl border border-zinc-700 bg-black px-4 py-3 text-sm leading-6 text-white outline-none transition placeholder:text-zinc-600 focus:border-yellow-400"
+              className="mt-2 w-full resize-none rounded-xl border border-zinc-700 bg-black px-4 py-3 text-sm leading-6 text-white outline-none transition placeholder:text-zinc-500 focus:border-white"
             />
           </div>
 
@@ -403,7 +403,7 @@ export default function ProductReviews({
           <button
             type="submit"
             disabled={enviando}
-            className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-5 py-3.5 text-sm font-black text-black transition hover:bg-yellow-300 disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-black text-black transition hover:bg-zinc-200 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {enviando ? (
               <>
@@ -424,7 +424,7 @@ export default function ProductReviews({
 
       {!carregando && avaliacoes.length > 0 && (
         <div className="mt-8 space-y-4">
-          <h3 className="text-lg font-black text-white">
+          <h3 className="text-lg font-black text-zinc-950">
             O que os clientes estão dizendo
           </h3>
 

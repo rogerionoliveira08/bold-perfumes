@@ -109,7 +109,7 @@ function ProductSection({
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-yellow-600 sm:text-xs">
+            <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-zinc-500 sm:text-xs">
               {eyebrow}
             </p>
 

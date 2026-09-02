@@ -83,7 +83,7 @@ Quero entender se essa fragrância combina com meu estilo, minha rotina e as oca
               {produto.categoria}
             </span>
 
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-green-300 bg-green-50 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.08em] text-green-700 sm:text-[10px]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.08em] text-zinc-950 sm:text-[10px]">
               <FaCheckCircle size={10} />
               Original
             </span>

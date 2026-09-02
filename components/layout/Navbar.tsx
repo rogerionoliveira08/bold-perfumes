@@ -47,50 +47,50 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden items-center gap-5 text-sm font-normal text-zinc-900 md:flex">
-            <Link
-              href="/produtos"
-              className="no-underline transition hover:text-zinc-500"
-            >
-              Produtos
-            </Link>
+  <Link
+    href="/produtos"
+    className="no-underline transition hover:text-zinc-500"
+  >
+    Produtos
+  </Link>
 
-            <Link
-              href="/#categorias"
-              className="no-underline transition hover:text-zinc-500"
-            >
-              Categorias
-            </Link>
+  <Link
+    href="/#categorias"
+    className="no-underline transition hover:text-zinc-500"
+  >
+    Categorias
+  </Link>
 
-            <Link
-              href="/guia-da-perfumaria"
-              className="flex items-center gap-1.5 whitespace-nowrap no-underline transition hover:text-zinc-500"
-            >
-              <FaBookOpen size={14} />
-              Guia
-            </Link>
+  <Link
+    href="/guia-da-perfumaria"
+    className="flex items-center gap-1.5 whitespace-nowrap no-underline transition hover:text-zinc-500"
+  >
+    <FaBookOpen size={14} />
+    Guia
+  </Link>
 
-            <Link
-              href="/#contato"
-              className="no-underline transition hover:text-zinc-500"
-            >
-              Contato
-            </Link>
+  <Link
+    href="/#contato"
+    className="no-underline transition hover:text-zinc-500"
+  >
+    Contato
+  </Link>
 
-            <Link
-              href="/guia-da-perfumaria"
-              className="hidden items-center gap-2 whitespace-nowrap border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-black no-underline transition hover:border-black xl:flex"
-            >
-              <FaSprayCan size={15} />
-              Descubra seu perfume
-            </Link>
+  <Link
+  href="/descubra-seu-perfume"
+  onClick={fecharMenu}
+  className="mt-2 flex items-center justify-center gap-2 border border-zinc-300 bg-white px-4 py-3 text-sm font-medium text-black no-underline transition hover:border-black"
+>
+  <FaSprayCan size={15} />
+  Descubra seu perfume
+</Link>
+  <FavoriteLink totalFavoritos={totalFavoritos} />
 
-            <FavoriteLink totalFavoritos={totalFavoritos} />
-
-            <CartButton
-              totalItens={totalItens}
-              abrirCarrinho={abrirCarrinho}
-            />
-          </nav>
+  <CartButton
+    totalItens={totalItens}
+    abrirCarrinho={abrirCarrinho}
+  />
+</nav>
 
           <div className="flex items-center gap-4 md:hidden">
             <FavoriteLink totalFavoritos={totalFavoritos} />

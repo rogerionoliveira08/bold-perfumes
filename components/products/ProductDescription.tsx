@@ -1,4 +1,4 @@
- import {
+import {
   FaCrown,
   FaGem,
   FaQuoteLeft,
@@ -21,133 +21,127 @@ export default function ProductDescription({ produto }: Props) {
     criarImpressao(produto);
 
   return (
-    <section className="relative overflow-hidden rounded-[28px] border border-zinc-800 bg-gradient-to-br from-zinc-950 via-zinc-950 to-yellow-400/[0.035] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)] sm:p-8">
-      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-yellow-400/[0.06] blur-3xl" />
+    <section className="overflow-hidden rounded-[28px] border border-zinc-800 bg-zinc-950 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:p-8">
+      <header className="flex items-start gap-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-zinc-700 bg-white text-black sm:h-12 sm:w-12">
+          <FaQuoteLeft size={15} />
+        </div>
 
-      <div className="relative">
-        <header className="flex items-start gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-yellow-400/20 bg-yellow-400/[0.08] text-yellow-400 shadow-[0_0_24px_rgba(250,204,21,0.08)] sm:h-12 sm:w-12">
-            <FaQuoteLeft size={15} />
+        <div className="min-w-0">
+          <p className="text-[9px] font-black uppercase tracking-[0.22em] text-zinc-400 sm:text-[11px]">
+            A essência desta fragrância
+          </p>
+
+          <h2 className="mt-1.5 max-w-3xl text-2xl font-black leading-tight tracking-[-0.025em] text-white sm:text-3xl">
+            Uma presença que começa no aroma e permanece na memória.
+          </h2>
+        </div>
+      </header>
+
+      <div className="mt-6 border-t border-zinc-800 pt-6">
+        <p className="max-w-5xl whitespace-pre-line text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">
+          {produto.descricao}
+        </p>
+      </div>
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-2">
+        <article className="group rounded-2xl border border-zinc-800 bg-black p-5 transition duration-300 hover:border-zinc-600 hover:bg-zinc-900 sm:p-6">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-black">
+              <FaUserCheck size={14} />
+            </div>
+
+            <div>
+              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-zinc-400">
+                Perfil ideal
+              </p>
+
+              <h3 className="mt-1 text-lg font-black text-white">
+                Para quem é este perfume?
+              </h3>
+            </div>
           </div>
 
-          <div className="min-w-0">
-            <p className="text-[9px] font-black uppercase tracking-[0.22em] text-yellow-400 sm:text-[11px]">
-              A essência desta fragrância
-            </p>
+          <p className="mt-4 text-sm leading-7 text-zinc-300">
+            {textoParaQuem}
+          </p>
+        </article>
 
-            <h2 className="mt-1.5 max-w-3xl text-2xl font-black leading-tight tracking-[-0.025em] text-white sm:text-3xl">
-              Uma presença que começa no aroma e permanece na memória.
-            </h2>
+        <article className="group rounded-2xl border border-zinc-800 bg-black p-5 transition duration-300 hover:border-zinc-600 hover:bg-zinc-900 sm:p-6">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-900 text-white">
+              <FaGem size={14} />
+            </div>
+
+            <div>
+              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-zinc-400">
+                Sensação olfativa
+              </p>
+
+              <h3 className="mt-1 text-lg font-black text-white">
+                O que essa fragrância transmite?
+              </h3>
+            </div>
           </div>
-        </header>
 
-        <div className="mt-6 border-t border-zinc-800 pt-6">
-          <p className="max-w-5xl whitespace-pre-line text-sm leading-7 text-zinc-300 sm:text-base sm:leading-8">
-            {produto.descricao}
+          <p className="mt-4 text-sm leading-7 text-zinc-300">
+            {impressao}
+          </p>
+        </article>
+      </div>
+
+      {produto.inspiradoEm ? (
+        <div className="mt-5 rounded-2xl border border-zinc-700 bg-zinc-900 p-5 sm:p-6">
+          <div className="flex items-start gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-black">
+              <FaCrown size={15} />
+            </div>
+
+            <div className="min-w-0">
+              <p className="text-[9px] font-black uppercase tracking-[0.2em] text-zinc-400">
+                Referência olfativa
+              </p>
+
+              <h3 className="mt-1 text-lg font-black text-white">
+                Uma interpretação inspirada em{" "}
+                <span className="text-white">
+                  {produto.inspiradoEm}
+                </span>
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-zinc-300">
+                Uma alternativa criada para entregar uma experiência olfativa
+                semelhante, preservando personalidade própria e excelente
+                custo-benefício.
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {produto.nossaAvaliacao ? (
+        <div className="mt-5 rounded-2xl border border-zinc-800 bg-black p-5 sm:p-6">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-900 text-white">
+              <FaStar size={14} />
+            </div>
+
+            <div>
+              <p className="text-[9px] font-black uppercase tracking-[0.18em] text-zinc-400">
+                Curadoria Bold Parfum
+              </p>
+
+              <h3 className="mt-1 text-lg font-black text-white">
+                Nossa leitura da fragrância
+              </h3>
+            </div>
+          </div>
+
+          <p className="mt-4 text-sm leading-7 text-zinc-300 sm:text-base">
+            {produto.nossaAvaliacao}
           </p>
         </div>
-
-        <div className="mt-6 grid gap-4 lg:grid-cols-2">
-          <article className="group rounded-2xl border border-zinc-800 bg-black/35 p-5 transition duration-300 hover:border-yellow-400/25 hover:bg-yellow-400/[0.025] sm:p-6">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-yellow-400 text-black">
-                <FaUserCheck size={14} />
-              </div>
-
-              <div>
-                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-yellow-400">
-                  Perfil ideal
-                </p>
-
-                <h3 className="mt-1 text-lg font-black text-white">
-                  Para quem é este perfume?
-                </h3>
-              </div>
-            </div>
-
-            <p className="mt-4 text-sm leading-7 text-zinc-400">
-              {textoParaQuem}
-            </p>
-          </article>
-
-          <article className="group rounded-2xl border border-zinc-800 bg-black/35 p-5 transition duration-300 hover:border-yellow-400/25 hover:bg-yellow-400/[0.025] sm:p-6">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-yellow-400/20 bg-yellow-400/[0.08] text-yellow-400">
-                <FaGem size={14} />
-              </div>
-
-              <div>
-                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-yellow-400">
-                  Sensação olfativa
-                </p>
-
-                <h3 className="mt-1 text-lg font-black text-white">
-                  O que essa fragrância transmite?
-                </h3>
-              </div>
-            </div>
-
-            <p className="mt-4 text-sm leading-7 text-zinc-400">
-              {impressao}
-            </p>
-          </article>
-        </div>
-
-        {produto.inspiradoEm ? (
-          <div className="relative mt-5 overflow-hidden rounded-2xl border border-yellow-400/20 bg-gradient-to-r from-yellow-400/[0.08] via-yellow-400/[0.035] to-transparent p-5 sm:p-6">
-            <div className="pointer-events-none absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-yellow-400/10 blur-3xl" />
-
-            <div className="relative flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-yellow-400 text-black">
-                <FaCrown size={15} />
-              </div>
-
-              <div className="min-w-0">
-                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-yellow-400">
-                  Referência olfativa
-                </p>
-
-                <h3 className="mt-1 text-lg font-black text-white">
-                  Uma interpretação inspirada em{" "}
-                  <span className="text-yellow-400">
-                    {produto.inspiradoEm}
-                  </span>
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-zinc-400">
-                  Uma alternativa criada para entregar uma experiência olfativa
-                  semelhante, preservando personalidade própria e excelente
-                  custo-benefício.
-                </p>
-              </div>
-            </div>
-          </div>
-        ) : null}
-
-        {produto.nossaAvaliacao ? (
-          <div className="mt-5 rounded-2xl border border-zinc-800 bg-black/40 p-5 sm:p-6">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-yellow-400/20 bg-yellow-400/[0.08] text-yellow-400">
-                <FaStar size={14} />
-              </div>
-
-              <div>
-                <p className="text-[9px] font-black uppercase tracking-[0.18em] text-yellow-400">
-                  Curadoria Bold Parfum
-                </p>
-
-                <h3 className="mt-1 text-lg font-black text-white">
-                  Nossa leitura da fragrância
-                </h3>
-              </div>
-            </div>
-
-            <p className="mt-4 text-sm leading-7 text-zinc-400 sm:text-base">
-              {produto.nossaAvaliacao}
-            </p>
-          </div>
-        ) : null}
-      </div>
+      ) : null}
     </section>
   );
 }

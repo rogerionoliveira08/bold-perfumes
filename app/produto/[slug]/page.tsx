@@ -229,31 +229,31 @@ export default async function ProductPage({ params }: Props) {
       <main className="min-h-screen overflow-x-hidden bg-white text-zinc-950">
         <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 sm:py-7">
           <nav
-            aria-label="Navegação estrutural"
-            className="mb-4 flex min-w-0 items-center gap-2 overflow-hidden text-[11px] text-zinc-500 sm:mb-7 sm:flex-wrap sm:text-sm"
-          >
-            <Link
-              href="/"
-              className="shrink-0 transition hover:text-yellow-400"
-            >
-              Início
-            </Link>
+  aria-label="Navegação estrutural"
+  className="mb-4 flex min-w-0 items-center gap-2 overflow-hidden text-[11px] text-zinc-600 sm:mb-7 sm:flex-wrap sm:text-sm"
+>
+  <Link
+    href="/"
+    className="shrink-0 text-zinc-600 transition hover:text-black"
+  >
+    Início
+  </Link>
 
-            <span className="shrink-0 text-zinc-700">/</span>
+  <span className="shrink-0 text-zinc-400">/</span>
 
-            <Link
-              href="/produtos"
-              className="shrink-0 transition hover:text-yellow-400"
-            >
-              Perfumes
-            </Link>
+  <Link
+    href="/produtos"
+    className="shrink-0 text-zinc-600 transition hover:text-black"
+  >
+    Perfumes
+  </Link>
 
-            <span className="shrink-0 text-zinc-700">/</span>
+  <span className="shrink-0 text-zinc-400">/</span>
 
-            <span className="min-w-0 truncate font-semibold text-yellow-400">
-              {produto.nome}
-            </span>
-          </nav>
+  <span className="min-w-0 truncate font-semibold text-zinc-950">
+    {produto.nome}
+  </span>
+</nav>
 
           <div className="grid items-start gap-6 lg:grid-cols-[430px_1fr] lg:gap-10 xl:grid-cols-[470px_1fr]">
             <ProductGallery
@@ -287,7 +287,7 @@ export default async function ProductPage({ params }: Props) {
 
           <section className="mt-9 border-t border-zinc-900 pt-6 sm:mt-12 sm:pt-8">
             <div className="flex items-center justify-center gap-2 text-center text-[11px] leading-5 text-zinc-500 sm:text-sm">
-              <FaGlobeAmericas className="shrink-0 text-yellow-400" />
+              <FaGlobeAmericas className="shrink-0 text-blue-600" />
 
               <p>
                 Entregamos para todo o Brasil. Frete grátis nas compras acima de R$ 1.000; nos demais pedidos, o valor é calculado pelo CEP.
@@ -333,7 +333,7 @@ function AdvancedProductDetails({ produto }: { produto: Product }) {
   }
 
   return (
-    <div className="space-y-8 sm:space-y-12">
+    <div className="space-y-8 rounded-[28px] border border-zinc-800 bg-zinc-950 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.22)] sm:space-y-12 sm:p-8">
       {possuiDesempenho ? (
         <ProductPerformanceSection produto={produto} />
       ) : null}
@@ -343,14 +343,14 @@ function AdvancedProductDetails({ produto }: { produto: Product }) {
       {possuiPerfil ? <ProductProfile produto={produto} /> : null}
 
       {produto.nossaAvaliacao ? (
-        <section className="overflow-hidden rounded-2xl border border-yellow-400/20 bg-gradient-to-br from-yellow-400/[0.08] to-zinc-950 p-5 sm:p-7">
+        <section className="overflow-hidden rounded-2xl border border-zinc-700 bg-black p-5 sm:p-7">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-yellow-400 text-black">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-black">
               <FaStar />
             </div>
 
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-yellow-400">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-zinc-400">
                 Opinião especializada
               </p>
 
@@ -379,7 +379,7 @@ function AdvancedProductDetails({ produto }: { produto: Product }) {
                 key={semelhante}
                 className="flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-950 p-4"
               >
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-yellow-400/10 text-xs text-yellow-400">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-xs text-black">
                   <FaCheck />
                 </div>
 
@@ -456,7 +456,7 @@ function ProductPerformanceSection({ produto }: { produto: Product }) {
         </div>
 
         {indicadores.length > 0 ? (
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 sm:p-6">
+          <div className="rounded-2xl border border-zinc-700 bg-black p-5 sm:p-6">
             <h3 className="text-base font-black text-white">
               Perfil de intensidade
             </h3>
@@ -472,12 +472,12 @@ function ProductPerformanceSection({ produto }: { produto: Product }) {
             </div>
           </div>
         ) : produto.desempenho ? (
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 sm:p-6">
+          <div className="rounded-2xl border border-zinc-700 bg-black p-5 sm:p-6">
             <h3 className="text-base font-black text-white">
               O que esperar
             </h3>
 
-            <p className="mt-3 text-sm leading-7 text-zinc-400 sm:text-base">
+            <p className="mt-3 text-sm leading-7 text-zinc-300 sm:text-base">
               {produto.desempenho}
             </p>
           </div>
@@ -485,8 +485,8 @@ function ProductPerformanceSection({ produto }: { produto: Product }) {
       </div>
 
       {produto.performance && produto.desempenho ? (
-        <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5">
-          <p className="text-sm leading-7 text-zinc-400 sm:text-base">
+        <div className="mt-4 rounded-2xl border border-zinc-700 bg-black p-5">
+          <p className="text-sm leading-7 text-zinc-300 sm:text-base">
             {produto.desempenho}
           </p>
         </div>
@@ -551,7 +551,7 @@ function ProductProfile({ produto }: { produto: Product }) {
 
       <div className="mt-5 grid gap-4 lg:grid-cols-2">
         {produto.perfil.estilos.length > 0 ? (
-          <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 sm:p-6">
+          <div className="rounded-2xl border border-zinc-700 bg-black p-5 sm:p-6">
             <h3 className="text-base font-black text-white">
               Estilo
             </h3>
@@ -560,7 +560,7 @@ function ProductProfile({ produto }: { produto: Product }) {
               {produto.perfil.estilos.map((estilo) => (
                 <span
                   key={estilo}
-                  className="rounded-full border border-yellow-400/20 bg-yellow-400/[0.07] px-3 py-1.5 text-xs font-bold text-yellow-300"
+                  className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-xs font-bold text-zinc-200 transition hover:border-white hover:bg-white hover:text-black"
                 >
                   {estilo}
                 </span>
@@ -569,20 +569,20 @@ function ProductProfile({ produto }: { produto: Product }) {
           </div>
         ) : null}
 
-        <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 sm:p-6">
+        <div className="rounded-2xl border border-zinc-700 bg-black p-5 sm:p-6">
           <h3 className="text-base font-black text-white">
             Ideal para quem
           </h3>
 
-          <p className="mt-3 text-sm leading-7 text-zinc-400">
+          <p className="mt-3 text-sm leading-7 text-zinc-300">
             {produto.perfil.publico}
           </p>
         </div>
       </div>
 
       {produto.perfil.impressao ? (
-        <div className="mt-4 rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5">
-          <p className="text-sm leading-7 text-zinc-400 sm:text-base">
+        <div className="mt-4 rounded-2xl border border-zinc-700 bg-black p-5">
+          <p className="text-sm leading-7 text-zinc-300 sm:text-base">
             <strong className="text-white">Impressão olfativa: </strong>
             {produto.perfil.impressao}
           </p>
@@ -609,14 +609,14 @@ function PerformanceBar({
           {nome}
         </span>
 
-        <span className="text-xs font-black text-yellow-400">
+        <span className="text-xs font-black text-white">
           {valorSeguro}/5
         </span>
       </div>
 
       <div className="h-2 overflow-hidden rounded-full bg-zinc-800">
         <div
-          className="h-full rounded-full bg-yellow-400"
+          className="h-full rounded-full bg-white"
           style={{ width: percentual }}
         />
       </div>
@@ -632,8 +632,8 @@ function InformationCard({
   value: string;
 }) {
   return (
-    <div className="rounded-xl border border-zinc-800 bg-zinc-950 p-4">
-      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+    <div className="rounded-xl border border-zinc-700 bg-black p-4">
+      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
         {label}
       </p>
 
@@ -652,7 +652,7 @@ function TagCard({
   items: string[];
 }) {
   return (
-    <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5">
+    <div className="rounded-2xl border border-zinc-700 bg-black p-5">
       <h3 className="text-base font-black text-white">
         {title}
       </h3>
@@ -661,7 +661,7 @@ function TagCard({
         {items.map((item) => (
           <span
             key={item}
-            className="rounded-full border border-zinc-700 bg-black px-3 py-1.5 text-xs font-semibold text-zinc-300"
+            className="rounded-full border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-xs font-semibold text-zinc-200 transition hover:border-white hover:bg-white hover:text-black"
           >
             {item}
           </span>
@@ -680,7 +680,7 @@ function SectionTitle({
 }) {
   return (
     <div>
-      <p className="text-xs font-bold uppercase tracking-[0.22em] text-yellow-400">
+      <p className="text-xs font-bold uppercase tracking-[0.22em] text-zinc-400">
         {eyebrow}
       </p>
 
@@ -718,15 +718,15 @@ function TrustSection() {
   return (
     <section
       aria-label="Benefícios da compra"
-      className="mt-7 border-y border-zinc-900 py-5 sm:mt-10 sm:py-6"
+      className="mt-7 border-y border-zinc-300 py-5 sm:mt-10 sm:py-6"
     >
       <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3">
         {beneficios.map((beneficio) => (
           <article
             key={beneficio.titulo}
-            className="flex min-w-0 items-start gap-2.5 rounded-xl border border-zinc-800 bg-zinc-950/70 p-3 transition hover:border-yellow-400/40 sm:gap-3 sm:p-4"
+            className="flex min-w-0 items-start gap-2.5 rounded-xl border border-zinc-800 bg-black p-3 transition duration-300 hover:bg-zinc-900 sm:gap-3 sm:p-4"
           >
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-yellow-400/20 bg-yellow-400/[0.07] text-xs text-yellow-400 sm:h-10 sm:w-10 sm:text-sm">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-zinc-700 bg-white text-xs text-black sm:h-10 sm:w-10 sm:text-sm">
               {beneficio.icon}
             </div>
 
@@ -735,7 +735,7 @@ function TrustSection() {
                 {beneficio.titulo}
               </h2>
 
-              <p className="mt-0.5 text-[8px] leading-3.5 text-zinc-500 sm:mt-1 sm:text-[11px] sm:leading-4">
+              <p className="mt-0.5 text-[8px] leading-3.5 text-zinc-300 sm:mt-1 sm:text-[11px] sm:leading-4">
                 {beneficio.texto}
               </p>
             </div>

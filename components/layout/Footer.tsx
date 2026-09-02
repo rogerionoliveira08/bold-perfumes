@@ -28,12 +28,12 @@ export default function Footer() {
   return (
     <footer
       id="contato"
-      className="border-t border-yellow-400/40 bg-black text-white"
+      className="border-t border-zinc-800 bg-black text-white"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr]">
           <div>
-            <h2 className="text-2xl font-black tracking-tight text-yellow-400">
+            <h2 className="text-2xl font-black tracking-tight text-white">
               Bold Parfum
             </h2>
 
@@ -44,10 +44,10 @@ export default function Footer() {
             </p>
 
             <a
-              href="https://www.instagram.com/bold.ouse/"
+              href="https://www.instagram.com/bold.parfum/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-300 transition hover:border-pink-500 hover:text-pink-400"
+              className="mt-5 inline-flex items-center gap-2 border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-200 transition hover:border-white hover:bg-white hover:text-black"
             >
               <FaInstagram size={16} />
               Instagram
@@ -67,13 +67,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.12em] text-yellow-400">
+            <h3 className="text-sm font-black uppercase tracking-[0.12em] text-white">
               Links rápidos
             </h3>
 
             <ul className="mt-4 space-y-3 text-sm text-zinc-400">
               <li>
-                <Link href="/" className="transition hover:text-yellow-400">
+                <Link href="/" className="transition hover:text-white">
                   Início
                 </Link>
               </li>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/produtos"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Produtos
                 </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/quem-somos"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Quem somos
                 </Link>
@@ -99,7 +99,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/garantia-de-originalidade"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Garantia de originalidade
                 </Link>
@@ -108,7 +108,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#categorias"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Categorias
                 </Link>
@@ -117,7 +117,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/favoritos"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Favoritos
                 </Link>
@@ -126,7 +126,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/politica-de-trocas-e-devolucoes"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Trocas e devoluções
                 </Link>
@@ -135,7 +135,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/politica-de-privacidade"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Política de privacidade
                 </Link>
@@ -144,7 +144,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/termos-de-uso"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Termos de uso
                 </Link>
@@ -153,7 +153,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/direitos-autorais"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Direitos autorais
                 </Link>
@@ -162,7 +162,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/politica-de-comentarios-e-avaliacoes"
-                  className="transition hover:text-yellow-400"
+                  className="transition hover:text-white"
                 >
                   Comentários e avaliações
                 </Link>
@@ -171,11 +171,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.12em] text-yellow-400">
+            <h3 className="text-sm font-black uppercase tracking-[0.12em] text-white">
               Atendimento
             </h3>
 
-            <p className="mt-4 text-xs leading-5 text-zinc-500">
+            <p className="mt-4 text-xs leading-5 text-zinc-400">
               Escolha com quem deseja falar:
             </p>
 
@@ -210,7 +210,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-black uppercase tracking-[0.12em] text-yellow-400">
+            <h3 className="text-sm font-black uppercase tracking-[0.12em] text-white">
               Compra segura
             </h3>
 
@@ -230,10 +230,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-zinc-900 pt-6">
+        <div className="mt-10 border-t border-zinc-800 pt-6">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-400">
                 Formas de pagamento
               </p>
 
@@ -245,7 +245,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-xs leading-5 text-zinc-600 sm:text-right">
+            <p className="text-xs leading-5 text-zinc-500 sm:text-right">
               © 2026 Bold Parfum. Todos os direitos reservados.
               <br />
               Sua assinatura olfativa.
@@ -267,14 +267,14 @@ function EmailLink({
   return (
     <div className="flex items-start gap-3">
       <FaEnvelope
-        className="mt-0.5 shrink-0 text-yellow-400"
+        className="mt-0.5 shrink-0 text-white"
         size={15}
       />
 
       <div className="min-w-0">
         <a
           href={`mailto:${email}`}
-          className="whitespace-nowrap text-[12px] font-bold text-zinc-200 transition hover:text-yellow-400 sm:text-sm"
+          className="whitespace-nowrap text-[12px] font-bold text-zinc-200 transition hover:text-white sm:text-sm"
         >
           {email}
         </a>
@@ -297,14 +297,14 @@ function InfoCard({
   text: string;
 }) {
   return (
-    <div className="flex items-start gap-3 border border-zinc-800 bg-zinc-950 p-3">
-      <span className="mt-0.5 shrink-0 text-yellow-400">
+    <div className="flex items-start gap-3 border border-zinc-800 bg-zinc-950 p-3 transition hover:border-zinc-600">
+      <span className="mt-0.5 shrink-0 text-white">
         {icon}
       </span>
 
       <div>
         <p className="text-sm font-black text-white">{title}</p>
-        <p className="mt-0.5 text-xs text-zinc-500">{text}</p>
+        <p className="mt-0.5 text-xs text-zinc-400">{text}</p>
       </div>
     </div>
   );
@@ -312,7 +312,7 @@ function InfoCard({
 
 function PaymentBadge({ text }: { text: string }) {
   return (
-    <span className="border border-zinc-800 bg-zinc-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-zinc-300">
+    <span className="border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-zinc-300 transition hover:border-white hover:bg-white hover:text-black">
       {text}
     </span>
   );

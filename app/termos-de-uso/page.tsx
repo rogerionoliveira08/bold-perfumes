@@ -431,4 +431,4 @@ function TermsSection({
       </div>
     </article>
   );
-}
+  }
