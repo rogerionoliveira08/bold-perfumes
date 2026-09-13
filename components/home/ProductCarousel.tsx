@@ -48,9 +48,6 @@ export default function ProductCarousel({
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
         <div className="mb-7 flex items-end justify-between gap-5 sm:mb-9">
           <div className="max-w-2xl">
-            <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-500">
-              text-zinc-500
-            </p>
 
             <h2 className="mt-2 text-3xl font-black text-zinc-950 sm:text-4xl">
               {title}

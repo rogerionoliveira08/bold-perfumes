@@ -139,6 +139,7 @@ export const produtos: Product[] = [
 
   fixacao: 5,
   projecao: 5,
+  duracao: "6 a 8 horas",
 
   ocasioes: [
     "Noite",
@@ -161,7 +162,7 @@ export const produtos: Product[] = [
   origem: "Emirados Árabes Unidos",
 
   desempenho:
-    "Excelente desempenho. Na pele costuma permanecer entre 8 e 12 horas, podendo ultrapassar esse tempo em roupas. A projeção é intensa nas primeiras horas e continua perceptível por bastante tempo.",
+  "Excelente desempenho, podendo permanecer por mais tempo em roupas. A projeção é intensa nas primeiras horas e continua perceptível por bastante tempo.",
 
   caracteristicas: [
     "Inspirado no Dior Sauvage Elixir",
@@ -2261,7 +2262,7 @@ export const produtos: Product[] = [
   descricao:
     "Salvo Elixir é uma fragrância masculina intensa, sofisticada e de personalidade marcante. Inspirado no consagrado Dior Sauvage Elixir, combina especiarias, lavanda aromática e madeiras nobres em uma composição elegante e extremamente envolvente. Seu excelente desempenho faz dele uma das melhores opções para quem procura um perfume premium com ótimo custo-benefício.",
 
-  inspiradoEm: "Hugo Boss Bottled Absolu",
+  inspiradoEm: "Dior Sauvage Elixir",
 
   familiaOlfativa: "Aromático Especiado",
 
@@ -2311,7 +2312,7 @@ export const produtos: Product[] = [
     "Entrega excelente desempenho, com projeção intensa nas primeiras horas.",
 
   caracteristicas: [
-    "Com referência olfativa no Hugo Boss Bottled Absolu",
+    "Com referência olfativa no Dior Sauvage Elixir",
     "Fragrância intensa e sofisticada",
     "Excelente fixação",
     "Projeção intensa",
@@ -2638,29 +2639,29 @@ export const produtos: Product[] = [
   avaliacoes: 3994,
 
   descricao:
-    "Asad Elixir é a evolução da consagrada linha Asad da Lattafa. Mais refinado, intenso e sofisticado, combina especiarias, lavanda aromática, madeiras nobres e baunilha em uma fragrância extremamente elegante e envolvente. Inspirado no Dior Sauvage Elixir, é perfeito para homens que procuram presença marcante, excelente desempenho e um perfume que transmite luxo e confiança.",
+    "Asad Elixir é uma fragrância masculina intensa e sofisticada da Lattafa. Sua composição combina especiarias, tabaco, cedro, baunilha, resinas e madeiras em uma evolução quente e envolvente. Com referência olfativa no Hugo Boss Bottled Absolu, é indicado para quem procura presença marcante e um perfil elegante para noites e clima ameno ou frio.",
 
-  inspiradoEm: "Dior Sauvage Elixir",
+  inspiradoEm: "Hugo Boss Bottled Absolu",
 
-  familiaOlfativa: "Oriental Especiado",
+  familiaOlfativa: "Oriental Amadeirado Especiado",
 
   notasTopo: [
-    "Pimenta-preta",
-    "Bergamota",
-    "Canela"
+    "Pimenta-rosa",
+    "Açafrão",
+    "Toranja"
   ],
 
   notasCoracao: [
-    "Lavanda",
-    "Patchouli",
-    "Incenso"
+    "Tabaco",
+    "Baunilha",
+    "Cedro"
   ],
 
   notasBase: [
-    "Baunilha",
-    "Âmbar",
-    "Madeiras Nobres",
-    "Benjoim"
+    "Âmbar claro",
+    "Olíbano",
+    "Patchouli",
+    "Madeira de cashmere"
   ],
 
   fixacao: 5,
@@ -2799,7 +2800,7 @@ export const produtos: Product[] = [
   avaliacoes: 2245,
 
   descricao:
-    "Salvo é uma fragrância masculina elegante, fresca e extremamente versátil da Maison Alhambra. Inspirado no icônico Dior Sauvage Eau de Parfum, combina notas cítricas, aromáticas e amadeiradas em uma composição moderna, sofisticada e marcante. É um perfume ideal para quem procura versatilidade, excelente desempenho e um aroma que agrada facilmente.",
+    "Salvo é uma fragrância masculina elegante, fresca e extremamente versátil da Maison Alhambra. Inspirado no icônico Dior Sauvage Eau de Toilette, combina notas cítricas, aromáticas e amadeiradas em uma composição moderna, sofisticada e marcante. É um perfume ideal para quem procura versatilidade, excelente desempenho e um aroma que agrada facilmente.",
 
   inspiradoEm: "Dior Sauvage Eau de Toilette",
 
@@ -2851,7 +2852,7 @@ export const produtos: Product[] = [
     "Apresenta excelente desempenho para uma fragrância fresca, permanecendo entre 7 e 10 horas na pele. Sua projeção é marcante nas primeiras horas e evolui de forma elegante e confortável durante todo o dia.",
 
   caracteristicas: [
-    "Inspirado no Dior Sauvage Eau de Parfum",
+    "Inspirado no Dior Sauvage Eau de Toilette",
     "Fragrância fresca e sofisticada",
     "Excelente para uso diário",
     "Ótima fixação",

@@ -99,9 +99,7 @@ export default function Filters({
 
   function contarPorGenero(valor: string) {
     return produtos.filter(
-      (produto) =>
-        produto.genero === valor ||
-        produto.categoria === valor,
+      (produto) => produto.genero === valor,
     ).length;
   }
 
