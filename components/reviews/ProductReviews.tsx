@@ -1,6 +1,6 @@
  "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { SyntheticEvent } from "react";
 import {
   FaCheckCircle,
@@ -19,6 +19,9 @@ type Avaliacao = {
   comentario: string;
   compra_verificada: boolean;
   criado_em: string;
+  produto_nome: string;
+  foto_url: string | null;
+  foto_autorizada: boolean;
 };
 
 type ProductReviewsProps = {
@@ -39,6 +42,8 @@ export default function ProductReviews({
   const [notaEmDestaque, setNotaEmDestaque] = useState(0);
   const [erro, setErro] = useState("");
   const [sucesso, setSucesso] = useState(false);
+  const [website, setWebsite] = useState("");
+  const inicioFormulario = useRef(Date.now());
 
   const carregarAvaliacoes = useCallback(async () => {
     setCarregando(true);
@@ -46,7 +51,7 @@ export default function ProductReviews({
     const { data, error } = await supabase
       .from("avaliacoes")
       .select(
-        "id, nome_cliente, nota, comentario, compra_verificada, criado_em",
+        "id, nome_cliente, nota, comentario, compra_verificada, criado_em, produto_nome, foto_url, foto_autorizada",
       )
       .eq("produto_slug", produtoSlug)
       .eq("aprovado", true)
@@ -107,6 +112,16 @@ export default function ProductReviews({
     setErro("");
     setSucesso(false);
 
+    if (website) {
+      setSucesso(true);
+      return;
+    }
+
+    if (Date.now() - inicioFormulario.current < 3000) {
+      setErro("Aguarde alguns segundos antes de enviar a avaliação.");
+      return;
+    }
+
     const nomeLimpo = nome.trim();
     const comentarioLimpo = comentario.trim();
 
@@ -132,12 +147,15 @@ export default function ProductReviews({
 
     setEnviando(true);
 
+    const visitorId = obterVisitorId();
+
     const { error } = await supabase.from("avaliacoes").insert({
       produto_slug: produtoSlug,
       produto_nome: produtoNome,
       nome_cliente: nomeLimpo,
       nota,
       comentario: comentarioLimpo,
+      visitor_id: visitorId,
     });
 
     setEnviando(false);
@@ -155,6 +173,7 @@ export default function ProductReviews({
     setNota(0);
     setNotaEmDestaque(0);
     setSucesso(true);
+    inicioFormulario.current = Date.now();
     await carregarAvaliacoes();
   }
 
@@ -165,7 +184,7 @@ export default function ProductReviews({
     >
       <div className="flex flex-col gap-2">
         <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-zinc-500">
-          Experiências reais
+          Avaliações do produto
         </p>
 
         <h2 className="text-2xl font-black text-zinc-950 sm:text-3xl">
@@ -173,8 +192,8 @@ export default function ProductReviews({
         </h2>
 
         <p className="max-w-3xl text-sm leading-6 text-zinc-600 sm:text-base">
-          Veja a opinião de quem já conheceu esta fragrância ou compartilhe
-          sua própria experiência.
+          Veja avaliações abertas da comunidade e identifique separadamente
+          as compras confirmadas pela Bold Parfum.
         </p>
       </div>
 
@@ -202,8 +221,8 @@ export default function ProductReviews({
                   <p className="mt-2 text-xs text-zinc-500">
                     Com base em {avaliacoes.length}{" "}
                     {avaliacoes.length === 1
-                      ? "avaliação real"
-                      : "avaliações reais"}
+                      ? "avaliação publicada"
+                      : "avaliações publicadas"}
                   </p>
                 </div>
 
@@ -244,12 +263,12 @@ export default function ProductReviews({
                 </div>
 
                 <h3 className="mt-4 text-lg font-black text-white">
-                  Experiências dos clientes
+                  Ainda não há avaliações
                 </h3>
 
                 <p className="mt-2 max-w-sm text-sm leading-6 text-zinc-500">
-                  Os comentários enviados diretamente pelos clientes da
-                  Bold Parfum aparecerão aqui conforme forem enviados.
+                  Seja a primeira pessoa a compartilhar uma experiência com
+                  esta fragrância.
                 </p>
               </div>
             )}
@@ -263,12 +282,12 @@ export default function ProductReviews({
 
             <div>
               <p className="text-sm font-bold text-zinc-950">
-                Experiências da comunidade
+                Avaliações abertas da comunidade
               </p>
 
               <p className="mt-1 text-xs leading-5 text-zinc-600">
-                As avaliações são publicadas automaticamente. Conteúdos
-                ofensivos, falsos ou que não tratem do produto poderão ser removidos.
+                Qualquer visitante pode enviar uma avaliação. O selo Compra
+                verificada aparece somente quando a Bold confirma o pedido.
               </p>
             </div>
           </div>
@@ -278,8 +297,20 @@ export default function ProductReviews({
           onSubmit={enviarAvaliacao}
           className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 sm:p-6"
         >
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <label htmlFor="website-avaliacao">Website</label>
+            <input
+              id="website-avaliacao"
+              name="website"
+              type="text"
+              value={website}
+              onChange={(event) => setWebsite(event.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
           <h3 className="text-xl font-black text-white">
-            Avalie este perfume
+            Envie uma avaliação da comunidade
           </h3>
 
           <p className="mt-2 text-sm leading-6 text-zinc-400">
@@ -393,8 +424,8 @@ export default function ProductReviews({
                 </p>
 
                 <p className="mt-1 text-xs leading-5 text-green-200/70">
-                  Obrigado por compartilhar sua experiência. Ela será
-                  publicada após nossa análise.
+                  Obrigado por compartilhar sua experiência. Ela ficou
+                  pendente e será publicada somente após nossa análise.
                 </p>
               </div>
             </div>
@@ -436,10 +467,20 @@ export default function ProductReviews({
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex min-w-0 items-center gap-3">
-                    <FaUserCircle
-                      className="shrink-0 text-zinc-600"
-                      size={34}
-                    />
+                    {avaliacao.foto_autorizada && avaliacao.foto_url ? (
+                      <img
+                        src={avaliacao.foto_url}
+                        alt={`Foto autorizada de ${avaliacao.nome_cliente}`}
+                        className="h-[34px] w-[34px] shrink-0 rounded-full object-cover"
+                        loading="lazy"
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <FaUserCircle
+                        className="shrink-0 text-zinc-600"
+                        size={34}
+                      />
+                    )}
 
                     <div className="min-w-0">
                       <p className="truncate text-sm font-bold text-white">
@@ -448,6 +489,10 @@ export default function ProductReviews({
 
                       <p className="mt-1 text-[10px] text-zinc-600">
                         {formatarData(avaliacao.criado_em)}
+                      </p>
+
+                      <p className="mt-1 truncate text-[10px] font-semibold text-zinc-500">
+                        Produto: {avaliacao.produto_nome || produtoNome}
                       </p>
                     </div>
                   </div>
@@ -463,7 +508,13 @@ export default function ProductReviews({
                 {avaliacao.compra_verificada && (
                   <div className="mt-4 flex items-center gap-2 text-xs font-bold text-green-400">
                     <FaCheckCircle />
-                    Compra confirmada
+                    Compra verificada
+                  </div>
+                )}
+
+                {!avaliacao.compra_verificada && (
+                  <div className="mt-4 text-xs font-bold text-zinc-500">
+                    Avaliação aberta da comunidade
                   </div>
                 )}
 
@@ -525,4 +576,15 @@ function formatarData(data: string) {
     month: "long",
     year: "numeric",
   }).format(new Date(data));
+}
+
+function obterVisitorId() {
+  const chave = "boldparfum-review-visitor";
+  const existente = window.localStorage.getItem(chave);
+
+  if (existente) return existente;
+
+  const novoId = window.crypto.randomUUID();
+  window.localStorage.setItem(chave, novoId);
+  return novoId;
 }

@@ -47,16 +47,14 @@ export default function ProductSummary({
       : criarMotivosPadrao(produto);
 
   const disponibilidade =
-    produto.disponibilidade ?? "Sob consulta";
+    produto.disponibilidade ?? "Disponível";
 
   const corDisponibilidade =
-    disponibilidade === "Em estoque"
-      ? "border-green-300 bg-green-50 text-green-700"
-      : disponibilidade === "Poucas unidades"
-        ? "border-orange-300 bg-orange-50 text-orange-700"
-        : disponibilidade === "Indisponível"
-          ? "border-red-300 bg-red-50 text-red-700"
-          : "border-zinc-300 bg-zinc-100 text-zinc-700";
+    disponibilidade === "Últimas unidades"
+      ? "border-zinc-950 bg-zinc-950 text-white"
+      : disponibilidade === "Sob encomenda"
+        ? "border-zinc-400 bg-zinc-100 text-zinc-800"
+        : "border-zinc-300 bg-white text-zinc-950";
 
   const mensagemConsultoria =
     `Olá! Gostaria de uma consultoria da Bold Parfum sobre este perfume:

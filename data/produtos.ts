@@ -17,6 +17,7 @@ type ProdutoObrigatorio = Pick<
 ): Product {
   return {
     selo: "Original",
+    disponibilidade: "Disponível",
     avaliacao: 4.8,
     avaliacoes: 0,
 

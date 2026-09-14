@@ -17,11 +17,12 @@ export interface ProductPerfil {
   publico: string;
   impressao?: string;
 }
+
 export type ProductAvailability =
-  | "Em estoque"
-  | "Poucas unidades"
-  | "Sob consulta"
-  | "Indisponível";
+  | "Disponível"
+  | "Últimas unidades"
+  | "Sob encomenda";
+
 export interface Product {
   id: number;
   slug: string;
@@ -58,27 +59,17 @@ export interface Product {
   notasCoracao: string[];
   notasBase: string[];
 
-  /**
-   * Avaliação de 1 a 5.
-   */
+  /** Avaliação de 1 a 5. */
   fixacao: number;
   projecao: number;
 
-  /**
-   * Exemplo: "6 a 8 horas".
-   */
+  /** Exemplo: "6 a 8 horas". */
   duracao?: string;
 
-  /**
-   * Exemplo: "Moderado a marcante".
-   */
+  /** Exemplo: "Moderado a marcante". */
   rastro?: string;
 
   ocasioes: string[];
-
-  /**
-   * Estações indicadas para utilização da fragrância.
-   */
   estacoes?: string[];
 
   volume: string;
@@ -87,39 +78,11 @@ export interface Product {
   origem: string;
 
   inspiradoEm?: string;
-
-  /**
-   * Resumo textual da fixação, projeção e duração.
-   */
   desempenho?: string;
-
-  /**
-   * Principais qualidades e diferenciais do perfume.
-   */
   caracteristicas?: string[];
-
-  /**
-   * Barras visuais de 1 a 5.
-   */
   performance?: ProductPerformance;
-
-  /**
-   * Estações, horários e climas recomendados.
-   */
   usoIdeal?: ProductUsoIdeal;
-
-  /**
-   * Estilo e público da fragrância.
-   */
   perfil?: ProductPerfil;
-
-  /**
-   * Texto editorial exclusivo da Bold Parfum.
-   */
   nossaAvaliacao?: string;
-
-  /**
-   * Perfumes conhecidos com perfil semelhante.
-   */
   semelhantes?: string[];
 }

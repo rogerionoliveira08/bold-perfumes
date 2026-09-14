@@ -35,7 +35,7 @@ export default function PoliticaDePrivacidadePage() {
             </p>
 
             <p className="mt-4 text-sm text-zinc-500">
-              Última atualização: 19 de agosto de 2026.
+              Última atualização: 14 de setembro de 2026.
             </p>
           </div>
         </section>
@@ -69,6 +69,18 @@ export default function PoliticaDePrivacidadePage() {
                   pedido;
                 </li>
                 <li>produtos selecionados e informações do pedido;</li>
+                <li>
+                  respostas fornecidas no questionário “Descubra seu perfume”,
+                  perfumes recomendados, produto aberto e atendente escolhido;
+                </li>
+                <li>
+                  origem do acesso, campanha e parâmetros UTM associados ao
+                  questionário;
+                </li>
+                <li>
+                  registros das autorizações concedidas para atendimento e,
+                  separadamente, para comunicações promocionais;
+                </li>
                 <li>comentários, avaliações e notas atribuídas aos produtos;</li>
                 <li>
                   dados técnicos de acesso, como navegador, dispositivo,
@@ -92,18 +104,66 @@ export default function PoliticaDePrivacidadePage() {
               <ul className="list-disc space-y-2 pl-5 marker:text-yellow-400">
                 <li>responder dúvidas e solicitações de atendimento;</li>
                 <li>prestar consultoria personalizada em perfumaria;</li>
+                <li>
+                  salvar o resultado do questionário, enviar as recomendações
+                  pelo WhatsApp e auxiliar na comparação das fragrâncias;
+                </li>
                 <li>registrar, confirmar e acompanhar pedidos;</li>
                 <li>calcular frete e organizar a entrega dos produtos;</li>
                 <li>manter o funcionamento do carrinho e dos favoritos;</li>
                 <li>receber e exibir comentários e avaliações;</li>
                 <li>prevenir fraudes, abusos e atividades ilícitas;</li>
                 <li>melhorar a segurança, o conteúdo e a experiência do site;</li>
+                <li>
+                  medir a origem e o desempenho de campanhas por meio de
+                  parâmetros de atribuição, como UTMs;
+                </li>
+                <li>
+                  enviar novidades, conteúdos e promoções pelo WhatsApp somente
+                  quando houver autorização específica e opcional para essa
+                  finalidade;
+                </li>
                 <li>cumprir obrigações legais, fiscais e regulatórias;</li>
                 <li>
                   exercer direitos em processos administrativos, judiciais ou
                   extrajudiciais.
                 </li>
               </ul>
+            </PolicySection>
+
+            <PolicySection title="3.1. Questionário, WhatsApp e marketing">
+              <p>
+                Após exibir as recomendações do questionário “Descubra seu
+                perfume”, a Bold Parfum poderá convidar o usuário a informar
+                primeiro nome e WhatsApp para salvar o resultado e solicitar
+                ajuda. O fornecimento desses dados é opcional e não impede a
+                visualização das recomendações.
+              </p>
+
+              <p>
+                Quando o usuário solicitar atendimento, poderemos utilizar os
+                dados para enviar o resultado, comparar as sugestões, confirmar
+                disponibilidade, calcular frete, orientar a escolha e auxiliar
+                na compra. As seis respostas, os três perfumes recomendados, a
+                origem, a campanha, os parâmetros UTM, o produto aberto, o
+                atendente escolhido, a data e o status comercial do contato
+                poderão ser registrados para acompanhar esse atendimento.
+              </p>
+
+              <p>
+                A autorização para receber promoções futuras é apresentada de
+                forma separada e opcional. Recusar essa autorização não impede
+                o atendimento solicitado nem o acesso às recomendações. Sem
+                essa autorização específica, o número não será utilizado para
+                o envio de campanhas promocionais.
+              </p>
+
+              <p>
+                O consentimento para comunicações promocionais poderá ser
+                revogado a qualquer momento, gratuitamente, por solicitação em
+                nossos canais de atendimento ou por mensagem enviada ao próprio
+                WhatsApp utilizado pela Bold Parfum.
+              </p>
             </PolicySection>
 
             <PolicySection title="4. Bases legais para o tratamento">
@@ -114,6 +174,15 @@ export default function PoliticaDePrivacidadePage() {
                 exercício regular de direitos, na proteção contra fraudes e no
                 legítimo interesse, sempre respeitando os direitos e as
                 liberdades do titular.
+              </p>
+
+              <p>
+                Para comunicações promocionais pelo WhatsApp, utilizamos o
+                consentimento específico do titular, registrado separadamente
+                da autorização para o atendimento solicitado. Esse
+                consentimento poderá ser recusado ou revogado sem impedir o
+                acesso às recomendações ou o atendimento relacionado ao
+                questionário.
               </p>
             </PolicySection>
 
@@ -217,6 +286,10 @@ export default function PoliticaDePrivacidadePage() {
               <ul className="list-disc space-y-2 pl-5 marker:text-yellow-400">
                 <li>hospedagem e funcionamento do site;</li>
                 <li>armazenamento e gerenciamento de avaliações;</li>
+                <li>
+                  armazenamento e gerenciamento dos resultados e contatos do
+                  questionário;
+                </li>
                 <li>processamento ou intermediação de pagamentos;</li>
                 <li>entrega, transporte e rastreamento de pedidos;</li>
                 <li>atendimento por WhatsApp e e-mail;</li>
@@ -289,6 +362,10 @@ export default function PoliticaDePrivacidadePage() {
                   ou tratados em desconformidade;
                 </li>
                 <li>revogação do consentimento, quando aplicável;</li>
+                <li>
+                  oposição ou cancelamento de comunicações promocionais pelo
+                  WhatsApp;
+                </li>
                 <li>
                   eliminação dos dados tratados com consentimento, observadas
                   as hipóteses legais de conservação;

@@ -2,15 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
   FaCheck,
   FaRedoAlt,
+  FaSpinner,
   FaWhatsapp,
 } from "react-icons/fa";
 import { produtos } from "@/data/produtos";
+import { supabase } from "@/lib/supabase";
 import type { Product } from "@/types/product";
 
 type AnswerKey =
@@ -45,10 +48,10 @@ const questions: Question[] = [
     title: "Como você quer ser percebido?",
     description: "Pense na sensação que deseja transmitir ao chegar.",
     options: [
-      "Elegante e delicada",
-      "Marcante e sedutora",
-      "Fresca e discreta",
-      "Misteriosa e sofisticada",
+      "Elegância e delicadeza",
+      "Presença marcante e sensual",
+      "Frescor e discrição",
+      "Mistério e sofisticação",
     ],
   },
   {
@@ -94,10 +97,10 @@ const questions: Question[] = [
 ];
 
 const styleKeywords: Record<string, string[]> = {
-  "Elegante e delicada": ["floral", "rosa", "almíscar", "baunilha", "elegante", "delicad", "atalcad"],
-  "Marcante e sedutora": ["oud", "âmbar", "ambar", "couro", "tabaco", "gourmand", "intens", "sedutor"],
-  "Fresca e discreta": ["cítric", "citric", "aquátic", "aquatic", "fresc", "bergamota", "lavanda", "aromátic"],
-  "Misteriosa e sofisticada": ["oriental", "amadeir", "incenso", "açafrão", "acafrao", "resina", "patchouli", "sofistic"],
+  "Elegância e delicadeza": ["floral", "rosa", "almíscar", "baunilha", "elegante", "delicad", "atalcad"],
+  "Presença marcante e sensual": ["oud", "âmbar", "ambar", "couro", "tabaco", "gourmand", "intens", "sensual", "sedutor"],
+  "Frescor e discrição": ["cítric", "citric", "aquátic", "aquatic", "fresc", "bergamota", "lavanda", "aromátic"],
+  "Mistério e sofisticação": ["oriental", "amadeir", "incenso", "açafrão", "acafrao", "resina", "patchouli", "sofistic"],
 };
 
 const aromaKeywords: Record<string, string[]> = {
@@ -114,9 +117,25 @@ const attendants = [
 ];
 
 export default function PerfumeQuiz() {
+  const searchParams = useSearchParams();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [finished, setFinished] = useState(false);
+  const [primeiroNome, setPrimeiroNome] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [enviandoLead, setEnviandoLead] = useState(false);
+  const [erroLead, setErroLead] = useState("");
+  const [autorizouContato, setAutorizouContato] = useState(false);
+  const [autorizouMarketing, setAutorizouMarketing] = useState(false);
+  const [atendenteEscolhido, setAtendenteEscolhido] = useState("Rogério");
+  const [produtoAberto, setProdutoAberto] = useState<string | null>(null);
+  const [formularioDispensado, setFormularioDispensado] = useState(false);
+
+  useEffect(() => {
+    setProdutoAberto(
+      sessionStorage.getItem("boldparfum-quiz-produto-aberto"),
+    );
+  }, []);
 
   const question = questions[step];
   const selected = answers[question.key];
@@ -144,6 +163,118 @@ export default function PerfumeQuiz() {
     setAnswers({});
     setStep(0);
     setFinished(false);
+    setPrimeiroNome("");
+    setWhatsapp("");
+    setErroLead("");
+    setAutorizouContato(false);
+    setAutorizouMarketing(false);
+    setAtendenteEscolhido("Rogério");
+    setProdutoAberto(null);
+    setFormularioDispensado(false);
+    sessionStorage.removeItem("boldparfum-quiz-produto-aberto");
+  }
+
+  function formatarWhatsapp(value: string) {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+
+    if (digits.length <= 2) return digits;
+    if (digits.length <= 6) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    }
+    if (digits.length <= 10) {
+      return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+    }
+
+    return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  }
+
+  async function salvarResultado() {
+    const attendant =
+      attendants.find((item) => item.name === atendenteEscolhido) ??
+      attendants[0];
+    const nomeLimpo = primeiroNome.trim().split(/\s+/)[0] ?? "";
+    const whatsappNumeros = whatsapp.replace(/\D/g, "");
+
+    setErroLead("");
+
+    if (nomeLimpo.length < 2) {
+      setErroLead("Digite seu primeiro nome.");
+      return;
+    }
+
+    if (whatsappNumeros.length < 10 || whatsappNumeros.length > 11) {
+      setErroLead("Digite um WhatsApp válido com DDD.");
+      return;
+    }
+
+    if (!autorizouContato) {
+      setErroLead(
+        "Autorize o contato pelo WhatsApp para receber suas recomendações.",
+      );
+      return;
+    }
+
+    const whatsappWindow = window.open("about:blank", "_blank");
+
+    if (whatsappWindow) {
+      whatsappWindow.opener = null;
+    }
+
+    setEnviandoLead(true);
+
+    const recomendacoes = recommendations.map((product, index) => ({
+      posicao: index + 1,
+      id: product.id,
+      slug: product.slug,
+      nome: product.nome,
+      marca: product.marca,
+      preco: product.preco,
+    }));
+
+    const { error } = await supabase.from("leads_quiz").insert({
+      primeiro_nome: nomeLimpo,
+      whatsapp: whatsappNumeros,
+      respostas: answers,
+      recomendacoes,
+      atendente: attendant.name,
+      origem: "descubra-seu-perfume",
+      campanha:
+        searchParams.get("campanha") ?? searchParams.get("utm_campaign"),
+      utm_source: searchParams.get("utm_source"),
+      utm_medium: searchParams.get("utm_medium"),
+      utm_campaign: searchParams.get("utm_campaign"),
+      utm_content: searchParams.get("utm_content"),
+      utm_term: searchParams.get("utm_term"),
+      produto_aberto: produtoAberto,
+      status_comercial: "novo",
+      autorizou_contato: autorizouContato,
+      autorizou_marketing: autorizouMarketing,
+    });
+
+    setEnviandoLead(false);
+
+    if (error) {
+      whatsappWindow?.close();
+      console.error("Erro ao salvar resultado do quiz:", error);
+      setErroLead(
+        "Não foi possível salvar seu resultado agora. Tente novamente em instantes.",
+      );
+      return;
+    }
+
+    const whatsappLink = buildWhatsAppLink(
+      attendant.phone,
+      answers,
+      recommendations,
+      nomeLimpo,
+      whatsappNumeros,
+    );
+
+    if (whatsappWindow) {
+      whatsappWindow.location.href = whatsappLink;
+    } else {
+      window.location.href = whatsappLink;
+    }
   }
 
   if (finished) {
@@ -167,33 +298,171 @@ export default function PerfumeQuiz() {
               key={product.id}
               product={product}
               position={index + 1}
-              reason={buildReason(answers)}
+              reason={buildReason(answers, product)}
             />
           ))}
         </div>
 
         <div className="border-t border-zinc-200 bg-zinc-50 p-5 sm:p-7">
-          <h3 className="text-lg font-black text-zinc-950">
-            Quer ajuda para decidir?
-          </h3>
-          <p className="mt-1 text-sm text-zinc-600">
-            Envie seu resultado e receba atendimento personalizado.
-          </p>
-
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            {attendants.map((attendant) => (
-              <a
-                key={attendant.name}
-                href={buildWhatsAppLink(attendant.phone, answers, recommendations)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-black text-white transition hover:bg-[#20ba5a]"
+          {formularioDispensado ? (
+            <div className="text-center">
+              <p className="text-sm text-zinc-600">
+                Tudo bem. Suas três recomendações continuam disponíveis acima.
+              </p>
+              <button
+                type="button"
+                onClick={() => setFormularioDispensado(false)}
+                className="mt-3 text-sm font-black text-zinc-950 underline underline-offset-4"
               >
-                <FaWhatsapp size={18} />
-                Falar com {attendant.name}
-              </a>
-            ))}
-          </div>
+                Quero salvar minhas recomendações
+              </button>
+            </div>
+          ) : (
+            <>
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-zinc-500">
+                Quer salvar suas recomendações?
+              </p>
+              <h3 className="mt-2 text-xl font-black text-zinc-950 sm:text-2xl">
+                Receba seu resultado e ajuda para escolher
+              </h3>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-600">
+                Informe seu nome e WhatsApp. A equipe da Bold pode ajudar a
+                comparar as sugestões, confirmar disponibilidade e orientar a
+                compra.
+              </p>
+
+              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                <label className="block">
+                  <span className="text-xs font-black uppercase tracking-[0.12em] text-zinc-700">
+                    Primeiro nome
+                  </span>
+                  <input
+                    type="text"
+                    value={primeiroNome}
+                    onChange={(event) => setPrimeiroNome(event.target.value)}
+                    autoComplete="given-name"
+                    maxLength={40}
+                    placeholder="Como podemos chamar você?"
+                    className="mt-2 min-h-12 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-950 focus:ring-2 focus:ring-zinc-950/10"
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="text-xs font-black uppercase tracking-[0.12em] text-zinc-700">
+                    WhatsApp com DDD
+                  </span>
+                  <input
+                    type="tel"
+                    inputMode="numeric"
+                    value={whatsapp}
+                    onChange={(event) =>
+                      setWhatsapp(formatarWhatsapp(event.target.value))
+                    }
+                    autoComplete="tel"
+                    maxLength={15}
+                    placeholder="(22) 99999-9999"
+                    className="mt-2 min-h-12 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-950 focus:ring-2 focus:ring-zinc-950/10"
+                  />
+                </label>
+              </div>
+
+              <div className="mt-5 space-y-3">
+                <label className="flex cursor-pointer items-start gap-3 text-sm leading-5 text-zinc-700">
+                  <input
+                    type="checkbox"
+                    checked={autorizouContato}
+                    onChange={(event) =>
+                      setAutorizouContato(event.target.checked)
+                    }
+                    className="mt-0.5 h-4 w-4 accent-black"
+                  />
+                  <span>
+                    Autorizo a Bold Parfum a entrar em contato pelo WhatsApp
+                    sobre minhas recomendações.
+                  </span>
+                </label>
+
+                <label className="flex cursor-pointer items-start gap-3 text-sm leading-5 text-zinc-700">
+                  <input
+                    type="checkbox"
+                    checked={autorizouMarketing}
+                    onChange={(event) =>
+                      setAutorizouMarketing(event.target.checked)
+                    }
+                    className="mt-0.5 h-4 w-4 accent-black"
+                  />
+                  <span>
+                    Quero receber novidades, conteúdos e promoções futuras da
+                    Bold Parfum pelo WhatsApp. <strong>(Opcional)</strong>
+                  </span>
+                </label>
+              </div>
+
+              <fieldset className="mt-5">
+                <legend className="text-xs font-black uppercase tracking-[0.12em] text-zinc-700">
+                  Escolha o atendimento
+                </legend>
+                <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                  {attendants.map((attendant) => (
+                    <label
+                      key={attendant.name}
+                      className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm font-bold transition ${
+                        atendenteEscolhido === attendant.name
+                          ? "border-zinc-950 bg-zinc-950 text-white"
+                          : "border-zinc-300 bg-white text-zinc-800"
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="atendente-quiz"
+                        value={attendant.name}
+                        checked={atendenteEscolhido === attendant.name}
+                        onChange={() => setAtendenteEscolhido(attendant.name)}
+                        className="accent-black"
+                      />
+                      Falar com {attendant.name}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+
+              {erroLead ? (
+                <p role="alert" className="mt-3 text-sm font-bold text-red-600">
+                  {erroLead}
+                </p>
+              ) : null}
+
+              <button
+                type="button"
+                onClick={salvarResultado}
+                disabled={enviandoLead}
+                className="mt-5 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3 text-sm font-black uppercase text-white transition hover:bg-[#20ba5a] disabled:cursor-wait disabled:opacity-70"
+              >
+                {enviandoLead ? (
+                  <FaSpinner className="animate-spin" size={17} />
+                ) : (
+                  <FaWhatsapp size={18} />
+                )}
+                Receber minhas recomendações no WhatsApp
+              </button>
+
+              <div className="mt-4 flex flex-col items-center gap-3 text-center">
+                <button
+                  type="button"
+                  onClick={() => setFormularioDispensado(true)}
+                  className="text-sm font-bold text-zinc-600 underline underline-offset-4 hover:text-zinc-950"
+                >
+                  Continuar sem informar meus dados
+                </button>
+                <Link
+                  href="/politica-de-privacidade"
+                  className="text-xs font-bold text-zinc-600 underline underline-offset-4 hover:text-zinc-950"
+                >
+                  Abrir Política de Privacidade
+                </Link>
+              </div>
+            </>
+          )}
 
           <button
             type="button"
@@ -342,6 +611,12 @@ function ResultCard({
 
         <Link
           href={`/produto/${product.slug}`}
+          onClick={() =>
+            sessionStorage.setItem(
+              "boldparfum-quiz-produto-aberto",
+              product.slug,
+            )
+          }
           className="mt-4 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-zinc-950 px-4 py-3 text-sm font-black text-white transition hover:bg-zinc-800"
         >
           Conhecer fragrância
@@ -384,18 +659,71 @@ function keywordScore(text: string, keywords: string[] = []) {
   );
 }
 
-function recommendProducts(answers: Answers) {
-  const withinBudget = (product: Product) => {
-    if (answers.orcamento === "Até R$ 300") return product.preco <= 300;
-    if (answers.orcamento === "De R$ 301 a R$ 400") {
-      return product.preco > 300 && product.preco <= 400;
-    }
-    if (answers.orcamento === "Acima de R$ 400") return product.preco > 400;
-    return true;
-  };
+function matchesBudget(product: Product, budget?: string) {
+  if (budget === "Até R$ 300") return product.preco <= 300;
+  if (budget === "De R$ 301 a R$ 400") {
+    return product.preco > 300 && product.preco <= 400;
+  }
+  if (budget === "Acima de R$ 400") return product.preco > 400;
+  return true;
+}
 
-  const budgetPool = produtos.filter(withinBudget);
-  const pool = budgetPool.length >= 3 ? budgetPool : produtos;
+function matchesGender(product: Product, gender?: string) {
+  if (!gender) return true;
+
+  const productGender = normalize(product.genero);
+  const selectedGender = normalize(gender);
+
+  return (
+    productGender.includes(selectedGender) ||
+    productGender.includes("unissex")
+  );
+}
+
+function occasionKeywords(occasion?: string) {
+  switch (occasion) {
+    case "Trabalho":
+      return ["trabalho", "dia a dia", "escritorio"];
+    case "Dia a dia":
+      return ["dia a dia", "trabalho", "diurno"];
+    case "Encontros":
+      return ["encontro", "jantar", "noite"];
+    case "Festas e eventos":
+      return ["festa", "evento", "balada"];
+    case "Ocasiões especiais":
+      return ["especial", "evento", "jantar"];
+    default:
+      return [];
+  }
+}
+
+function matchesOccasion(product: Product, occasion?: string) {
+  const keywords = occasionKeywords(occasion);
+  if (!keywords.length) return true;
+
+  const occasions = normalize((product.ocasioes ?? []).join(" "));
+  return keywords.some((keyword) => occasions.includes(normalize(keyword)));
+}
+
+function recommendProducts(answers: Answers) {
+  const genderPool = produtos.filter((product) =>
+    matchesGender(product, answers.genero),
+  );
+  const budgetAndGenderPool = genderPool.filter((product) =>
+    matchesBudget(product, answers.orcamento),
+  );
+  const primaryPool = budgetAndGenderPool.filter((product) =>
+    matchesOccasion(product, answers.ocasiao),
+  );
+
+  const pool =
+    primaryPool.length >= 3
+      ? primaryPool
+      : budgetAndGenderPool.length >= 3
+        ? budgetAndGenderPool
+        : genderPool.length >= 3
+          ? genderPool
+          : produtos;
 
   return pool
     .map((product) => {
@@ -403,28 +731,27 @@ function recommendProducts(answers: Answers) {
       let score = 0;
 
       if (answers.genero) {
-        const gender = normalize(answers.genero);
-        if (normalize(product.genero).includes(gender)) score += 7;
-        if (normalize(product.genero).includes("unissex")) score += 3;
+        const productGender = normalize(product.genero);
+        const selectedGender = normalize(answers.genero);
+
+        if (productGender.includes(selectedGender)) score += 40;
+        else if (productGender.includes("unissex")) score += 24;
+        else score -= 60;
       }
 
-      score += keywordScore(text, styleKeywords[answers.estilo ?? ""]);
-      score += keywordScore(text, aromaKeywords[answers.aroma ?? ""]);
+      score += keywordScore(text, styleKeywords[answers.estilo ?? ""]) * 2;
+      score += keywordScore(text, aromaKeywords[answers.aroma ?? ""]) * 2;
 
-      if (answers.ocasiao) {
-        const occasion = normalize(answers.ocasiao)
-          .replace("festas e eventos", "evento")
-          .replace("ocasioes especiais", "especial");
-        if (text.includes(occasion)) score += 6;
-        if (occasion.includes("encontro") && text.includes("noite")) score += 2;
-      }
+      if (matchesOccasion(product, answers.ocasiao)) score += 32;
+      else score -= answers.ocasiao === "Trabalho" ? 32 : 20;
 
       const performance = (Number(product.fixacao) + Number(product.projecao)) / 2;
-      if (answers.intensidade === "Suave" && performance <= 3) score += 5;
-      if (answers.intensidade === "Equilibrada" && performance > 3 && performance < 4.5) score += 5;
-      if (answers.intensidade === "Intensa" && performance >= 4) score += 5;
+      if (answers.intensidade === "Suave" && performance <= 3) score += 10;
+      if (answers.intensidade === "Equilibrada" && performance > 3 && performance < 4.5) score += 10;
+      if (answers.intensidade === "Intensa" && performance >= 4) score += 10;
 
-      if (withinBudget(product)) score += 8;
+      if (matchesBudget(product, answers.orcamento)) score += 35;
+      else score -= 35;
       return { product, score };
     })
     .sort((a, b) => b.score - a.score || a.product.preco - b.product.preco)
@@ -432,20 +759,46 @@ function recommendProducts(answers: Answers) {
     .map(({ product }) => product);
 }
 
-function buildReason(answers: Answers) {
-  return `Combina com quem busca uma presença ${normalize(
-    answers.estilo,
-  )}, aromas ${normalize(answers.aroma)} e bom desempenho em ${normalize(
-    answers.ocasiao,
-  )}.`;
+function buildReason(answers: Answers, product: Product) {
+  const alternatives: string[] = [];
+
+  if (!matchesGender(product, answers.genero)) {
+    alternatives.push(`é uma alternativa de gênero ${product.genero}`);
+  }
+
+  if (!matchesOccasion(product, answers.ocasiao)) {
+    const bestOccasion = product.ocasioes?.[0];
+    alternatives.push(
+      bestOccasion
+        ? `funciona melhor em ${bestOccasion.toLowerCase()} do que em ${answers.ocasiao?.toLowerCase()}`
+        : `não tem ${answers.ocasiao?.toLowerCase()} como ocasião principal`,
+    );
+  }
+
+  if (!matchesBudget(product, answers.orcamento)) {
+    alternatives.push("fica fora da faixa de orçamento escolhida");
+  }
+
+  if (alternatives.length) {
+    return `Alternativa ao perfil principal: ${alternatives.join(
+      "; ",
+    )}. Foi incluída pela proximidade com sua preferência por ${answers.estilo?.toLowerCase()} e aromas ${answers.aroma?.toLowerCase()}.`;
+  }
+
+  return `Boa correspondência para ${answers.genero?.toLowerCase()}, com foco em ${answers.ocasiao?.toLowerCase()}, dentro do orçamento escolhido e alinhada à preferência por ${answers.estilo?.toLowerCase()} e aromas ${answers.aroma?.toLowerCase()}.`;
 }
 
 function buildWhatsAppLink(
   phone: string,
   answers: Answers,
   recommendations: Product[],
+  primeiroNome: string,
+  whatsapp: string,
 ) {
   const message = `Olá! Fiz o quiz no site da Bold Parfum e gostaria de ajuda para escolher meu perfume.
+
+Nome: ${primeiroNome}
+Meu WhatsApp: ${whatsapp}
 
 Meu perfil:
 • Para: ${answers.genero}
