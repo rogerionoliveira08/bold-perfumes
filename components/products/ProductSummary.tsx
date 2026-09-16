@@ -1,3 +1,5 @@
+"use client";
+
 import {
   FaBolt,
   FaCheck,
@@ -9,7 +11,9 @@ import {
   FaShippingFast,
   FaTag,
   FaWhatsapp,
+  FaChevronDown,
 } from "react-icons/fa";
+import { useState } from "react";
 import type { Product } from "@/types/product";
 import ProductActions from "@/components/products/ProductActions";
 import ProductFavorite from "@/components/products/ProductFavorite";
@@ -183,129 +187,91 @@ Quero entender se essa fragrância combina com meu estilo, minha rotina e as oca
 
       <ProductActions produto={produto} />
 
-      <section className="mt-5 border border-zinc-200 bg-white p-4 sm:p-5">
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-black text-white">
-            <FaGem size={15} />
+      <div className="mt-6 space-y-3">
+        <AccordionItem title="Por que escolher este perfume?">
+          <div className="grid gap-2.5 sm:grid-cols-2">
+            {motivosParaEscolher.map((motivo) => (
+              <div
+                key={motivo}
+                className="flex min-w-0 items-start gap-2.5 border border-zinc-200 bg-zinc-50 px-3 py-2.5"
+              >
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black text-[8px] text-white">
+                  <FaCheck />
+                </span>
+
+                <span className="text-[11px] font-semibold leading-5 text-zinc-700 sm:text-xs">
+                  {motivo}
+                </span>
+              </div>
+            ))}
+          </div>
+        </AccordionItem>
+
+        <AccordionItem title="Características e Especificações">
+          <div className="grid grid-cols-2 gap-2.5">
+            <ProductDetail
+              label="Família olfativa"
+              value={produto.familiaOlfativa}
+            />
+            <ProductDetail
+              label="Concentração"
+              value={produto.concentracao}
+            />
+            <ProductDetail
+              label="Volume"
+              value={produto.volume}
+            />
+            <ProductDetail
+              label="Gênero"
+              value={produto.genero}
+            />
+            {produto.duracao && (
+              <ProductDetail
+                label="Duração"
+                value={produto.duracao}
+              />
+            )}
+            {produto.rastro && (
+              <ProductDetail
+                label="Rastro"
+                value={produto.rastro}
+              />
+            )}
+            <ProductDetail
+              label="Origem"
+              value={produto.origem}
+              fullWidth
+            />
+          </div>
+        </AccordionItem>
+
+        <AccordionItem title="Desempenho da Fragrância (Fixação e Projeção)">
+          <div className="space-y-4">
+            <InfoBar
+              label="Fixação"
+              value={produto.fixacao}
+            />
+            <InfoBar
+              label="Projeção"
+              value={produto.projecao}
+            />
           </div>
 
-          <div>
-            <p className="text-[9px] font-black uppercase tracking-[0.18em] text-zinc-500 sm:text-[10px]">
-              Escolha com confiança
+          {produto.desempenho ? (
+            <p className="mt-4 border-t border-zinc-200 pt-4 text-[11px] leading-5 text-zinc-600 sm:text-xs sm:leading-6">
+              {produto.desempenho}
             </p>
-
-            <h2 className="mt-0.5 text-base font-black text-zinc-950 sm:text-lg">
-              Por que escolher este perfume?
-            </h2>
-          </div>
-        </div>
-
-        <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
-          {motivosParaEscolher.map((motivo) => (
-            <div
-              key={motivo}
-              className="flex min-w-0 items-start gap-2.5 border border-zinc-200 bg-zinc-50 px-3 py-2.5"
-            >
-              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black text-[8px] text-white">
-                <FaCheck />
-              </span>
-
-              <span className="text-[11px] font-semibold leading-5 text-zinc-700 sm:text-xs">
-                {motivo}
-              </span>
+          ) : produto.duracao ? (
+            <div className="mt-4 flex items-center gap-2 border-t border-zinc-200 pt-4 text-xs text-zinc-600">
+              <FaClock className="text-zinc-950" />
+              Duração estimada:{" "}
+              <strong className="text-zinc-950">
+                {produto.duracao}
+              </strong>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section
-        aria-label="Informações principais do produto"
-        className="mt-5 grid grid-cols-2 gap-2.5"
-      >
-        <ProductDetail
-          label="Família olfativa"
-          value={produto.familiaOlfativa}
-        />
-
-        <ProductDetail
-          label="Concentração"
-          value={produto.concentracao}
-        />
-
-        <ProductDetail
-          label="Volume"
-          value={produto.volume}
-        />
-
-        <ProductDetail
-          label="Gênero"
-          value={produto.genero}
-        />
-
-        {produto.duracao && (
-          <ProductDetail
-            label="Duração"
-            value={produto.duracao}
-          />
-        )}
-
-        {produto.rastro && (
-          <ProductDetail
-            label="Rastro"
-            value={produto.rastro}
-          />
-        )}
-
-        <ProductDetail
-          label="Origem"
-          value={produto.origem}
-          fullWidth
-        />
-      </section>
-
-      <section className="mt-5 border border-zinc-200 bg-zinc-50 p-4 sm:p-5">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-[9px] font-black uppercase tracking-[0.16em] text-zinc-500 sm:text-[10px]">
-              Desempenho estimado
-            </p>
-
-            <h2 className="mt-1 text-base font-black text-zinc-950 sm:text-lg">
-              Presença da fragrância
-            </h2>
-          </div>
-
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-black text-white">
-            <FaBolt size={14} />
-          </div>
-        </div>
-
-        <div className="mt-5 space-y-4">
-          <InfoBar
-            label="Fixação"
-            value={produto.fixacao}
-          />
-
-          <InfoBar
-            label="Projeção"
-            value={produto.projecao}
-          />
-        </div>
-
-        {produto.desempenho ? (
-          <p className="mt-4 border-t border-zinc-200 pt-4 text-[11px] leading-5 text-zinc-600 sm:text-xs sm:leading-6">
-            {produto.desempenho}
-          </p>
-        ) : produto.duracao ? (
-          <div className="mt-4 flex items-center gap-2 border-t border-zinc-200 pt-4 text-xs text-zinc-600">
-            <FaClock className="text-zinc-950" />
-            Duração estimada:{" "}
-            <strong className="text-zinc-950">
-              {produto.duracao}
-            </strong>
-          </div>
-        ) : null}
-      </section>
+          ) : null}
+        </AccordionItem>
+      </div>
 
       <section className="mt-4 border border-green-200 bg-green-50 p-4">
         <div className="flex items-center gap-2">
@@ -341,6 +307,40 @@ Quero entender se essa fragrância combina com meu estilo, minha rotina e as oca
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function AccordionItem({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border border-zinc-200 bg-white">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between p-4 text-left font-black text-zinc-950 transition hover:bg-zinc-50 sm:p-5"
+      >
+        <span className="text-xs uppercase tracking-[0.12em] sm:text-sm">
+          {title}
+        </span>
+        <FaChevronDown
+          size={12}
+          className={`transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      {isOpen && (
+        <div className="border-t border-zinc-200 p-4 sm:p-5">
+          {children}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import TopBar from "@/components/layout/TopBar";
@@ -48,7 +49,9 @@ export default function DescubraSeuPerfumePage() {
               </div>
             </div>
 
-            <PerfumeQuiz />
+            <Suspense fallback={<div className="p-10 text-center text-sm text-zinc-500">Carregando quiz...</div>}>
+              <PerfumeQuiz />
+            </Suspense>
           </div>
         </section>
       </main>

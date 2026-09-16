@@ -19,8 +19,8 @@ const atendentes = [
   },
   {
     nome: "Thainá",
-    numeroExibido: "(22) 99288-5658",
-    telefone: "5522992885658",
+    numeroExibido: "(22) 9992-8565",
+    telefone: "55229928565",
   },
 ];
 
@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer
       id="contato"
-      className="border-t border-zinc-800 bg-black text-white"
+      className="border-t border-zinc-200 bg-black text-white"
     >
       <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 sm:py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr]">
@@ -47,7 +47,7 @@ export default function Footer() {
               href="https://www.instagram.com/bold.parfum/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-200 transition hover:border-white hover:bg-white hover:text-black"
+              className="mt-5 inline-flex items-center gap-2 border border-zinc-800 bg-zinc-950 px-4 py-2.5 text-xs font-black text-zinc-300 transition hover:border-pink-500 hover:text-pink-400"
             >
               <FaInstagram size={16} />
               Instagram
@@ -143,7 +143,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/termos-de-uso"
+                  href="/termos"
                   className="transition hover:text-white"
                 >
                   Termos de uso
@@ -175,7 +175,7 @@ export default function Footer() {
               Atendimento
             </h3>
 
-            <p className="mt-4 text-xs leading-5 text-zinc-400">
+            <p className="mt-4 text-xs leading-5 text-zinc-500">
               Escolha com quem deseja falar:
             </p>
 
@@ -230,10 +230,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-zinc-800 pt-6">
+        <div className="mt-10 border-t border-zinc-900 pt-6">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-400">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-zinc-500">
                 Formas de pagamento
               </p>
 
@@ -245,7 +245,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="text-xs leading-5 text-zinc-500 sm:text-right">
+            <p className="text-xs leading-5 text-zinc-600 sm:text-right">
               © 2026 Bold Parfum. Todos os direitos reservados.
               <br />
               Sua assinatura olfativa.
@@ -267,7 +267,7 @@ function EmailLink({
   return (
     <div className="flex items-start gap-3">
       <FaEnvelope
-        className="mt-0.5 shrink-0 text-white"
+        className="mt-0.5 shrink-0 text-zinc-400"
         size={15}
       />
 
@@ -297,14 +297,14 @@ function InfoCard({
   text: string;
 }) {
   return (
-    <div className="flex items-start gap-3 border border-zinc-800 bg-zinc-950 p-3 transition hover:border-zinc-600">
-      <span className="mt-0.5 shrink-0 text-white">
+    <div className="flex items-start gap-3 border border-zinc-800 bg-zinc-950 p-3">
+      <span className="mt-0.5 shrink-0 text-zinc-300">
         {icon}
       </span>
 
       <div>
         <p className="text-sm font-black text-white">{title}</p>
-        <p className="mt-0.5 text-xs text-zinc-400">{text}</p>
+        <p className="mt-0.5 text-xs text-zinc-500">{text}</p>
       </div>
     </div>
   );
@@ -312,7 +312,7 @@ function InfoCard({
 
 function PaymentBadge({ text }: { text: string }) {
   return (
-    <span className="border border-zinc-700 bg-zinc-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-zinc-300 transition hover:border-white hover:bg-white hover:text-black">
+    <span className="border border-zinc-800 bg-zinc-950 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.08em] text-zinc-300">
       {text}
     </span>
   );

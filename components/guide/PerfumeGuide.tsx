@@ -1,17 +1,21 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import {
   FaBookOpen,
   FaChevronDown,
   FaSearch,
   FaTimes,
+  FaShoppingBag,
+  FaWhatsapp,
 } from "react-icons/fa";
 import {
   categoriasGuia,
   termosGuia,
   type CategoriaGuia,
 } from "@/data/guiaPerfumaria";
+import { produtos } from "@/data/produtos";
 
 type FiltroCategoria = "Todos" | CategoriaGuia;
 
@@ -74,6 +78,31 @@ export default function PerfumeGuide() {
 
   function abrirTermo(id: string) {
     setTermoAberto((atual) => (atual === id ? null : id));
+  }
+
+  // Função para encontrar produtos relacionados ao termo do guia
+  function obterProdutosRelacionados(termoObj: (typeof termosGuia)[0]) {
+    const palavras = [
+      termoObj.termo,
+      ...termoObj.palavrasChave,
+      termoObj.categoria,
+    ].map((p) => normalizarTexto(p));
+
+    return produtos.filter((prod) => {
+      const textoProd = normalizarTexto(
+        [
+          prod.nome,
+          prod.familiaOlfativa,
+          prod.descricao,
+          prod.notasTopo.join(" "),
+          prod.notasCoracao.join(" "),
+          prod.notasBase.join(" "),
+          prod.caracteristicas?.join(" ") ?? "",
+        ].join(" "),
+      );
+
+      return palavras.some((palavra) => palavra.length > 2 && textoProd.includes(palavra));
+    }).slice(0, 3);
   }
 
   return (
@@ -268,6 +297,11 @@ export default function PerfumeGuide() {
             <div className="mt-6 grid items-start gap-4 lg:grid-cols-2">
               {termosFiltrados.map((item) => {
                 const aberto = termoAberto === item.id;
+                const relacionados = obterProdutosRelacionados(item);
+
+                const mensagemWhatsApp = encodeURIComponent(
+                  `Olá! Li no Guia da Perfumaria sobre "${item.termo}" e gostaria de recomendações de perfumes com essa característica.`
+                );
 
                 return (
                   <article
@@ -343,6 +377,65 @@ export default function PerfumeGuide() {
                             </p>
                           </div>
                         )}
+
+                        {/* Conexão comercial: Produtos relacionados e WhatsApp */}
+                        <div className="mt-6 border-t border-zinc-800 pt-5">
+                          <div className="flex items-center justify-between">
+                            <p className="text-xs font-black uppercase tracking-wider text-yellow-400">
+                              Sugestões no catálogo
+                            </p>
+                            <Link
+                              href={`/produtos?busca=${encodeURIComponent(item.termo)}`}
+                              className="text-xs font-bold text-zinc-300 transition hover:text-yellow-400"
+                            >
+                              Ver todos com esta característica →
+                            </Link>
+                          </div>
+
+                          {relacionados.length > 0 ? (
+                            <div className="mt-3 grid gap-2.5 sm:grid-cols-3">
+                              {relacionados.map((prod) => (
+                                <Link
+                                  key={prod.id}
+                                  href={`/produto/${prod.slug}`}
+                                  className="flex items-center gap-2.5 rounded-xl border border-zinc-800 bg-zinc-950 p-2.5 transition hover:border-yellow-400/50"
+                                >
+                                  <div className="h-10 w-10 shrink-0 overflow-hidden bg-zinc-900 rounded-lg">
+                                    <img
+                                      src={prod.imagem}
+                                      alt={prod.nome}
+                                      className="h-full w-full object-cover"
+                                    />
+                                  </div>
+                                  <div className="min-w-0">
+                                    <p className="truncate text-xs font-bold text-white">
+                                      {prod.nome}
+                                    </p>
+                                    <p className="text-[10px] text-zinc-400">
+                                      {prod.marca}
+                                    </p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          ) : (
+                            <p className="mt-3 text-xs text-zinc-500">
+                              Explore nosso catálogo completo para encontrar fragrâncias com essa nota.
+                            </p>
+                          )}
+
+                          <div className="mt-4">
+                            <a
+                              href={`https://wa.me/5522999281815?text=${mensagemWhatsApp}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-center gap-2 rounded-xl bg-green-600 px-4 py-3 text-xs font-bold text-white transition hover:bg-green-500"
+                            >
+                              <FaWhatsapp size={15} />
+                              Receber recomendação no WhatsApp sobre {item.termo}
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </article>

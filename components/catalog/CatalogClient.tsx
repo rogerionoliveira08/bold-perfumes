@@ -64,10 +64,7 @@ export default function CatalogClient() {
   const filtroInicial = searchParams.get("filtro") ?? "";
 
   const [busca, setBusca] = useState(buscaInicial);
-  const [marca, setMarca] = useState("");
-  const [categoria, setCategoria] = useState(categoriaInicial);
-  const [genero, setGenero] = useState("");
-  const [familia, setFamilia] = useState("");
+  const [familia, setFamilia] = useState<string[]>([]);
   const [precoMaximo, setPrecoMaximo] = useState("");
   const [filtroEspecial, setFiltroEspecial] =
     useState(filtroInicial);
@@ -83,7 +80,6 @@ export default function CatalogClient() {
 
   useEffect(() => {
     setBusca(buscaInicial);
-    setCategoria(categoriaInicial);
     setFiltroEspecial(filtroInicial);
 
     if (filtroInicial === "mais-vendidos") {
@@ -95,9 +91,6 @@ export default function CatalogClient() {
     setQuantidadeVisivel(QUANTIDADE_INICIAL);
   }, [
     busca,
-    marca,
-    categoria,
-    genero,
     familia,
     precoMaximo,
     filtroEspecial,
@@ -112,24 +105,28 @@ export default function CatalogClient() {
         termo === "" ||
         criarTextoPesquisa(produto).includes(termo);
 
-      const marcaOk =
-        marca === "" || produto.marca === marca;
-
-      const categoriaOk =
-        categoria === "" ||
-        produto.categoria === categoria ||
-        produto.genero === categoria;
-
-      const generoOk =
-        genero === "" || produto.genero === genero;
-
+      // Filtro simplificado de famílias olfativas (frescos, doces, amadeirados, florais, intensos)
+      const familiaLower = normalizarTexto(produto.familiaOlfativa);
       const familiaOk =
-        familia === "" ||
-        produto.familiaOlfativa === familia;
+        familia.length === 0 ||
+        familia.some((f) => {
+          if (f === "frescos") return familiaLower.includes("fresc") || familiaLower.includes("citric") || familiaLower.includes("aqu");
+          if (f === "doces") return familiaLower.includes("doc") || familiaLower.includes("gourmand") || familiaLower.includes("vanil");
+          if (f === "amadeirados") return familiaLower.includes("amad") || familiaLower.includes("wood");
+          if (f === "florais") return familiaLower.includes("floral") || familiaLower.includes("flor");
+          if (f === "intensos") return familiaLower.includes("orient") || familiaLower.includes("especiad") || familiaLower.includes("intens") || familiaLower.includes("couro");
+          return false;
+        });
 
-      const precoOk =
-        precoMaximo === "" ||
-        produto.preco <= Number(precoMaximo);
+      // Faixas de preço exclusivas
+      let precoOk = true;
+      if (precoMaximo === "250") {
+        precoOk = produto.preco <= 250;
+      } else if (precoMaximo === "350") {
+        precoOk = produto.preco > 250 && produto.preco <= 350;
+      } else if (precoMaximo === "mais") {
+        precoOk = produto.preco > 350;
+      }
 
       const seloNormalizado = normalizarTexto(
         produto.selo ?? "",
@@ -142,9 +139,6 @@ export default function CatalogClient() {
 
       return (
         buscaOk &&
-        marcaOk &&
-        categoriaOk &&
-        generoOk &&
         familiaOk &&
         precoOk &&
         filtroEspecialOk
@@ -194,9 +188,6 @@ export default function CatalogClient() {
     });
   }, [
     busca,
-    marca,
-    categoria,
-    genero,
     familia,
     precoMaximo,
     filtroEspecial,
@@ -213,28 +204,16 @@ export default function CatalogClient() {
 
   const filtrosAtivos =
     busca !== "" ||
-    marca !== "" ||
-    categoria !== "" ||
-    genero !== "" ||
-    familia !== "" ||
+    familia.length > 0 ||
     precoMaximo !== "" ||
     filtroEspecial !== "";
 
-  const quantidadeFiltrosAtivos = [
-    marca,
-    categoria,
-    genero,
-    familia,
-    precoMaximo,
-    filtroEspecial,
-  ].filter(Boolean).length;
+  const quantidadeFiltrosAtivos =
+    familia.length + (precoMaximo !== "" ? 1 : 0) + (filtroEspecial !== "" ? 1 : 0);
 
   function limparFiltros() {
     setBusca("");
-    setMarca("");
-    setCategoria("");
-    setGenero("");
-    setFamilia("");
+    setFamilia([]);
     setPrecoMaximo("");
     setFiltroEspecial("");
     setOrdenacao("relevancia");
@@ -243,15 +222,9 @@ export default function CatalogClient() {
   return (
     <div className="grid items-start gap-7 lg:grid-cols-[260px_minmax(0,1fr)]">
       <Filters
-        marca={marca}
-        categoria={categoria}
-        genero={genero}
         familia={familia}
         precoMaximo={precoMaximo}
         abertoMobile={filtrosMobileAbertos}
-        setMarca={setMarca}
-        setCategoria={setCategoria}
-        setGenero={setGenero}
         setFamilia={setFamilia}
         setPrecoMaximo={setPrecoMaximo}
         fecharMobile={() => setFiltrosMobileAbertos(false)}
@@ -380,37 +353,25 @@ export default function CatalogClient() {
               />
             )}
 
-            {marca && (
+            {familia.map((f) => (
               <FilterChip
-                label={`Marca: ${marca}`}
-                onRemove={() => setMarca("")}
+                key={f}
+                label={`Estilo: ${f}`}
+                onRemove={() =>
+                  setFamilia(familia.filter((item) => item !== f))
+                }
               />
-            )}
-
-            {genero && (
-              <FilterChip
-                label={`Gênero: ${genero}`}
-                onRemove={() => setGenero("")}
-              />
-            )}
-
-            {categoria && (
-              <FilterChip
-                label={`Categoria: ${categoria}`}
-                onRemove={() => setCategoria("")}
-              />
-            )}
-
-            {familia && (
-              <FilterChip
-                label={`Família: ${familia}`}
-                onRemove={() => setFamilia("")}
-              />
-            )}
+            ))}
 
             {precoMaximo && (
               <FilterChip
-                label={`Até R$ ${precoMaximo}`}
+                label={`Preço: ${
+                  precoMaximo === "250"
+                    ? "Até R$ 250"
+                    : precoMaximo === "350"
+                    ? "R$ 251 a R$ 350"
+                    : "Acima de R$ 350"
+                }`}
                 onRemove={() => setPrecoMaximo("")}
               />
             )}
@@ -444,7 +405,8 @@ export default function CatalogClient() {
 
         {produtosFiltrados.length > 0 ? (
           <>
-            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+            {/* Grid ajustado: 1 coluna em mobile estreito, 2 colunas em tablets pequenos, 3 a 4 colunas em telas maiores */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-4">
               {produtosVisiveis.map((produto) => (
                 <ProductCard
                   key={produto.id}

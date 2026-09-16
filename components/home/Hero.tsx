@@ -4,10 +4,16 @@ import {
   FaCheck,
   FaInstagram,
   FaWhatsapp,
+  FaBolt,
+  FaCrown,
+  FaStar,
 } from "react-icons/fa";
 import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
+import { produtos } from "@/data/produtos";
 
 export default function Hero() {
+  const produtosDestaque = produtos.slice(0, 2);
+
   return (
     <section className="border-b border-zinc-200 bg-white text-zinc-950">
       <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-9">
@@ -61,22 +67,77 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="order-1 p-3 sm:p-5 lg:order-2">
-            <div className="relative flex h-[300px] items-center justify-center overflow-hidden bg-transparent sm:h-[390px] lg:h-[470px]">
+          <div className="order-1 flex flex-col justify-between p-4 sm:p-6 lg:order-2">
+            <div className="relative flex h-[240px] items-center justify-center overflow-hidden sm:h-[280px]">
               <Image
                 src="/emblema-bold-preto-branco.png"
                 alt="Emblema da Bold Parfum"
-                width={800}
-                height={1200}
+                width={700}
+                height={1000}
                 priority
                 sizes="(max-width: 1024px) 70vw, 35vw"
-                className="h-[72%] w-auto object-contain mix-blend-multiply sm:h-[78%]"
+                className="h-[80%] w-auto object-contain mix-blend-multiply"
               />
+            </div>
+
+            <div className="mt-4 grid grid-cols-2 gap-3 border-t border-zinc-200 pt-4">
+              {produtosDestaque.map((produto) => (
+                <Link
+                  key={produto.id}
+                  href={`/produto/${produto.slug}`}
+                  className="group flex items-center gap-3 border border-zinc-200 bg-white p-2.5 transition hover:border-zinc-950"
+                >
+                  <div className="h-14 w-14 shrink-0 overflow-hidden bg-zinc-100">
+                    <img
+                      src={produto.imagem}
+                      alt={produto.nome}
+                      className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-zinc-500">
+                      {produto.marca}
+                    </span>
+                    <p className="truncate text-xs font-bold text-zinc-950">
+                      {produto.nome}
+                    </p>
+                    <p className="mt-0.5 text-xs font-black text-black">
+                      {produto.preco.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      })}
+                    </p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="grid border-x border-b border-zinc-200 bg-white sm:grid-cols-3">
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <CampaignCard
+            href="/produtos?filtro=promocoes"
+            icon={<FaBolt className="text-yellow-500" size={16} />}
+            title="Oferta da semana"
+            subtitle="Seleção especial com condições imperdíveis"
+          />
+
+          <CampaignCard
+            href="/produtos?categoria=Arabe"
+            icon={<FaCrown className="text-amber-600" size={16} />}
+            title="Queridinhos árabes"
+            subtitle="As fragrâncias mais marcantes e desejadas"
+          />
+
+          <CampaignCard
+            href="/descubra-seu-perfume"
+            icon={<FaStar className="text-zinc-950" size={16} />}
+            title="Encontrar meu perfume"
+            subtitle="Faça nosso quiz e descubra sua essência"
+          />
+        </div>
+
+        <div className="mt-6 grid border-x border-b border-zinc-200 bg-white sm:grid-cols-3">
           <Information
             title="Compra segura"
             text="Atendimento durante toda a compra"
@@ -105,9 +166,37 @@ function Benefit({ text }: { text: string }) {
       <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-black text-white">
         <FaCheck size={7} />
       </span>
-
       <span>{text}</span>
     </div>
+  );
+}
+
+function CampaignCard({
+  href,
+  icon,
+  title,
+  subtitle,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex items-start gap-4 border border-zinc-200 bg-zinc-50 p-5 transition hover:border-zinc-950 hover:bg-white"
+    >
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-zinc-200 bg-white shadow-sm transition group-hover:border-zinc-950">
+        {icon}
+      </div>
+      <div>
+        <h3 className="text-sm font-black text-zinc-950 transition group-hover:underline">
+          {title}
+        </h3>
+        <p className="mt-1 text-xs leading-5 text-zinc-600">{subtitle}</p>
+      </div>
+    </Link>
   );
 }
 
@@ -131,10 +220,9 @@ function Information({
       <p className="text-xs font-semibold text-black sm:text-sm">
         {title}
       </p>
-
       <p className="mt-1 text-[10px] font-normal leading-5 text-zinc-500 sm:text-xs">
         {text}
       </p>
     </div>
   );
-} 
+}
