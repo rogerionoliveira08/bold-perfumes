@@ -19,8 +19,8 @@ const atendentes = [
   },
   {
     nome: "Thainá",
-    numeroExibido: "(22) 9992-8565",
-    telefone: "555522992365387565",
+    numeroExibido: "(22) 99236-5387",
+    telefone:"5522992365387",
   },
 ];
 
