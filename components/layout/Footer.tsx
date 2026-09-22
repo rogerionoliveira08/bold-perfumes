@@ -20,7 +20,7 @@ const atendentes = [
   {
     nome: "Thainá",
     numeroExibido: "(22) 9992-8565",
-    telefone: "55229928565",
+    telefone: "555522992365387565",
   },
 ];
 

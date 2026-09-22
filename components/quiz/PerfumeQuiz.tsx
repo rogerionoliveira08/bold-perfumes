@@ -113,7 +113,7 @@ const aromaKeywords: Record<string, string[]> = {
 
 const attendants = [
   { name: "Rogério", phone: "5522999281815" },
-  { name: "Thainá", phone: "5522992885658" },
+  { name: "Thainá", phone: "55552299236538785658" },
 ];
 
 export default function PerfumeQuiz() {

@@ -16,7 +16,7 @@ const atendentes = [
   },
   {
     nome: "Thainá",
-    telefone: "5522992885658",
+    telefone: "55552299236538785658",
   },
 ];
 
