@@ -109,7 +109,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
 
         <div className="grid gap-3 sm:grid-cols-2">
           <a
-            href={`https://wa.me/5522999281815?text=${mensagem}`}
+            href={`https://wa.me/5522998771598?text=${mensagem}`}
             onClick={rastrearCompraWhatsapp}
             target="_blank"
             rel="noopener noreferrer"
@@ -170,7 +170,7 @@ Gostaria de confirmar a disponibilidade e receber as orientações para finaliza
 
           <div className="flex items-center gap-2">
             <a
-              href={`https://wa.me/5522999281815?text=${mensagem}`}
+              href={`https://wa.me/5522998771598?text=${mensagem}`}
               onClick={rastrearCompraWhatsapp}
               target="_blank"
               rel="noopener noreferrer"

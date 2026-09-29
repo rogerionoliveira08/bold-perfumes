@@ -12,7 +12,7 @@ const mensagemConsultoria =
 const atendentes = [
   {
     nome: "Rogério",
-    telefone: "5522999281815",
+    telefone: "5522998771598",
   },
   {
     nome: "Thainá",

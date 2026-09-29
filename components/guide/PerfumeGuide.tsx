@@ -426,7 +426,7 @@ export default function PerfumeGuide() {
 
                           <div className="mt-4">
                             <a
-                              href={`https://wa.me/5522999281815?text=${mensagemWhatsApp}`}
+                              href={`https://wa.me/5522998771598?text=${mensagemWhatsApp}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="flex items-center justify-center gap-2 rounded-xl bg-green-600 px-4 py-3 text-xs font-bold text-white transition hover:bg-green-500"
