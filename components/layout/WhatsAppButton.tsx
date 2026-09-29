@@ -9,7 +9,7 @@ const mensagem =
 const atendentes = [
   {
     nome: "Rogério",
-    numeroExibido: "(22) 99928-1815",
+    numeroExibido: "(22) 99877-1598",
     telefone: "5522998771598",
   },
   {
