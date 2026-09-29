@@ -146,7 +146,7 @@ Quero entender se essa fragrância combina com meu estilo, minha rotina e as oca
           </p>
 
           <span className="mb-1 bg-black px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.08em] text-white">
-            Em até 10x
+            Em até 4x
           </span>
         </div>
 
@@ -157,7 +157,7 @@ Quero entender se essa fragrância combina com meu estilo, minha rotina e as oca
           />
 
           <p>
-            10x de{" "}
+            4x de{" "}
             <strong className="font-black text-zinc-950">
               {formatarPreco(valorParcela)}
             </strong>{" "}

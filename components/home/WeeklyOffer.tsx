@@ -96,7 +96,7 @@ export default function WeeklyOffer() {
               </p>
 
               <p className="mt-1 text-xs font-bold uppercase text-zinc-400">
-                Ou 10x de {parcelaFormatada} sem juros
+                Ou 4x de {parcelaFormatada} sem juros
               </p>
             </div>
 

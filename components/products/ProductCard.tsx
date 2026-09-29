@@ -194,7 +194,7 @@ export default function ProductCard({
           </p>
 
           <p className="mt-1 truncate text-[9px] font-extrabold uppercase leading-none tracking-[-0.01em] text-zinc-700 sm:text-[13px]">
-            Ou 10x de {parcelaFormatada} sem juros
+            Ou 4x de {parcelaFormatada} sem juros
           </p>
         </div>
 
