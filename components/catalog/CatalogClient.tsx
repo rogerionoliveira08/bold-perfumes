@@ -162,11 +162,12 @@ export default function CatalogClient() {
         case "nome":
           return a.nome.localeCompare(b.nome, "pt-BR");
 
-        case "relevancia":
-        default: {
-          if (!termo) {
-            return b.avaliacoes - a.avaliacoes;
-          }
+        
+         case "relevancia":
+default: {
+  if (!termo) {
+    return b.avaliacoes - a.avaliacoes;
+  }
 
           const nomeA = normalizarTexto(a.nome);
           const nomeB = normalizarTexto(b.nome);
