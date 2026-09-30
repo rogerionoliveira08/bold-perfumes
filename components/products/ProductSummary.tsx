@@ -42,7 +42,7 @@ export default function ProductSummary({
       currency: "BRL",
     });
 
-  const valorParcela = produto.preco / 10;
+  const valorParcela = produto.preco / 4;
 
   const motivosParaEscolher =
     produto.caracteristicas &&

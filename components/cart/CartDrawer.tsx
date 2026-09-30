@@ -267,7 +267,7 @@ Aguardo o atendimento.`;
                 <p className="mt-1 text-[11px] font-semibold text-zinc-400 sm:text-xs">
   ou 4x de{" "}
   <strong className="text-zinc-200">
-    {formatarPreco(total / 10)}
+    {formatarPreco(total / 4)}
   </strong>{" "}
   sem juros
 </p>

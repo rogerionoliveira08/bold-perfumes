@@ -21,7 +21,7 @@ export default function WeeklyOffer() {
     currency: "BRL",
   });
 
-  const parcelaFormatada = (produto.preco / 10).toLocaleString(
+  const parcelaFormatada = (produto.preco / 4).toLocaleString(
     "pt-BR",
     {
       style: "currency",

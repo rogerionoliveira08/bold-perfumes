@@ -48,7 +48,7 @@ export default function ProductCard({
     currency: "BRL",
   });
 
-  const parcelaFormatada = (preco / 10).toLocaleString("pt-BR", {
+  const parcelaFormatada = (preco / 4).toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
