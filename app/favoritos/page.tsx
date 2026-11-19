@@ -92,12 +92,16 @@ export default function FavoritesPage() {
                   className="relative block aspect-square overflow-hidden bg-black"
                 >
                   <Image
-                    src={produto.imagem}
-                    alt={produto.nome}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 25vw"
-                    className="object-cover object-center transition duration-300 hover:scale-[1.03]"
-                  />
+  src={produto.imagem}
+  alt={produto.nome}
+  fill
+  sizes="(max-width: 640px) 50vw, 25vw"
+  className={`transition duration-300 hover:scale-[1.03] ${
+    produto.slug === "liquid-brun"
+  ? "object-contain object-center p-20"
+  : "object-cover object-center"
+  }`}
+/>
                 </Link>
 
                 <div className="flex flex-1 flex-col p-3 sm:p-4">

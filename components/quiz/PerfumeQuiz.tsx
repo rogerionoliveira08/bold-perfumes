@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -38,20 +38,20 @@ const questions: Question[] = [
   {
     key: "genero",
     eyebrow: "Seu perfil",
-    title: "Para quem é o perfume?",
-    description: "Escolha a opção que mais representa quem vai usar.",
+    title: "Para quem Ã© o perfume?",
+    description: "Escolha a opÃ§Ã£o que mais representa quem vai usar.",
     options: ["Masculino", "Feminino", "Unissex"],
   },
   {
     key: "estilo",
-    eyebrow: "Sua presença",
-    title: "Como você quer ser percebido?",
-    description: "Pense na sensação que deseja transmitir ao chegar.",
+    eyebrow: "Sua presenÃ§a",
+    title: "Como vocÃª quer ser percebido?",
+    description: "Pense na sensaÃ§Ã£o que deseja transmitir ao chegar.",
     options: [
-      "Elegância e delicadeza",
-      "Presença marcante e sensual",
-      "Frescor e discrição",
-      "Mistério e sofisticação",
+      "ElegÃ¢ncia e delicadeza",
+      "PresenÃ§a marcante e sensual",
+      "Frescor e discriÃ§Ã£o",
+      "MistÃ©rio e sofisticaÃ§Ã£o",
     ],
   },
   {
@@ -64,23 +64,23 @@ const questions: Question[] = [
       "Trabalho",
       "Encontros",
       "Festas e eventos",
-      "Ocasiões especiais",
+      "OcasiÃµes especiais",
     ],
   },
   {
     key: "intensidade",
     eyebrow: "Performance",
-    title: "Qual intensidade você prefere?",
-    description: "Escolha o nível de presença que mais combina com você.",
+    title: "Qual intensidade vocÃª prefere?",
+    description: "Escolha o nÃ­vel de presenÃ§a que mais combina com vocÃª.",
     options: ["Suave", "Equilibrada", "Intensa"],
   },
   {
     key: "aroma",
-    eyebrow: "Preferência olfativa",
-    title: "Quais aromas mais atraem você?",
-    description: "Não precisa conhecer perfumaria: escolha pela sensação.",
+    eyebrow: "PreferÃªncia olfativa",
+    title: "Quais aromas mais atraem vocÃª?",
+    description: "NÃ£o precisa conhecer perfumaria: escolha pela sensaÃ§Ã£o.",
     options: [
-      "Frescos e cítricos",
+      "Frescos e cÃ­tricos",
       "Doces e cremosos",
       "Florais",
       "Amadeirados",
@@ -90,30 +90,30 @@ const questions: Question[] = [
   {
     key: "orcamento",
     eyebrow: "Investimento",
-    title: "Qual faixa de preço prefere?",
-    description: "Usaremos esse valor para deixar as sugestões mais úteis.",
-    options: ["Até R$ 300", "De R$ 301 a R$ 400", "Acima de R$ 400", "Todas"],
+    title: "Qual faixa de preÃ§o prefere?",
+    description: "Usaremos esse valor para deixar as sugestÃµes mais Ãºteis.",
+    options: ["AtÃ© R$ 300", "De R$ 301 a R$ 400", "Acima de R$ 400", "Todas"],
   },
 ];
 
 const styleKeywords: Record<string, string[]> = {
-  "Elegância e delicadeza": ["floral", "rosa", "almíscar", "baunilha", "elegante", "delicad", "atalcad"],
-  "Presença marcante e sensual": ["oud", "âmbar", "ambar", "couro", "tabaco", "gourmand", "intens", "sensual", "sedutor"],
-  "Frescor e discrição": ["cítric", "citric", "aquátic", "aquatic", "fresc", "bergamota", "lavanda", "aromátic"],
-  "Mistério e sofisticação": ["oriental", "amadeir", "incenso", "açafrão", "acafrao", "resina", "patchouli", "sofistic"],
+  "ElegÃ¢ncia e delicadeza": ["floral", "rosa", "almÃ­scar", "baunilha", "elegante", "delicad", "atalcad"],
+  "PresenÃ§a marcante e sensual": ["oud", "Ã¢mbar", "ambar", "couro", "tabaco", "gourmand", "intens", "sensual", "sedutor"],
+  "Frescor e discriÃ§Ã£o": ["cÃ­tric", "citric", "aquÃ¡tic", "aquatic", "fresc", "bergamota", "lavanda", "aromÃ¡tic"],
+  "MistÃ©rio e sofisticaÃ§Ã£o": ["oriental", "amadeir", "incenso", "aÃ§afrÃ£o", "acafrao", "resina", "patchouli", "sofistic"],
 };
 
 const aromaKeywords: Record<string, string[]> = {
-  "Frescos e cítricos": ["cítric", "citric", "bergamota", "limão", "limao", "aquátic", "aquatic", "fresc"],
-  "Doces e cremosos": ["baunilha", "caramelo", "mel", "gourmand", "doce", "cremos", "pralinê", "praline"],
-  Florais: ["floral", "rosa", "jasmim", "flor", "tuberosa", "íris", "iris"],
-  Amadeirados: ["amadeir", "cedro", "sândalo", "sandalo", "vetiver", "patchouli"],
-  "Especiados e orientais": ["oriental", "especiad", "canela", "pimenta", "açafrão", "acafrao", "oud", "âmbar", "ambar"],
+  "Frescos e cÃ­tricos": ["cÃ­tric", "citric", "bergamota", "limÃ£o", "limao", "aquÃ¡tic", "aquatic", "fresc"],
+  "Doces e cremosos": ["baunilha", "caramelo", "mel", "gourmand", "doce", "cremos", "pralinÃª", "praline"],
+  Florais: ["floral", "rosa", "jasmim", "flor", "tuberosa", "Ã­ris", "iris"],
+  Amadeirados: ["amadeir", "cedro", "sÃ¢ndalo", "sandalo", "vetiver", "patchouli"],
+  "Especiados e orientais": ["oriental", "especiad", "canela", "pimenta", "aÃ§afrÃ£o", "acafrao", "oud", "Ã¢mbar", "ambar"],
 };
 
 const attendants = [
-  { name: "Rogério", phone: "5522999281815" },
-  { name: "Thainá", phone: "5522992365387" },
+  { name: "RogÃ©rio", phone: "5522998771598" },
+  { name: "ThainÃ¡", phone: "5522992365387" },
 ];
 
 export default function PerfumeQuiz() {
@@ -127,7 +127,7 @@ export default function PerfumeQuiz() {
   const [erroLead, setErroLead] = useState("");
   const [autorizouContato, setAutorizouContato] = useState(false);
   const [autorizouMarketing, setAutorizouMarketing] = useState(false);
-  const [atendenteEscolhido, setAtendenteEscolhido] = useState("Rogério");
+  const [atendenteEscolhido, setAtendenteEscolhido] = useState("RogÃ©rio");
   const [produtoAberto, setProdutoAberto] = useState<string | null>(null);
   const [formularioDispensado, setFormularioDispensado] = useState(false);
 
@@ -168,7 +168,7 @@ export default function PerfumeQuiz() {
     setErroLead("");
     setAutorizouContato(false);
     setAutorizouMarketing(false);
-    setAtendenteEscolhido("Rogério");
+    setAtendenteEscolhido("RogÃ©rio");
     setProdutoAberto(null);
     setFormularioDispensado(false);
     sessionStorage.removeItem("boldparfum-quiz-produto-aberto");
@@ -203,13 +203,13 @@ export default function PerfumeQuiz() {
     }
 
     if (whatsappNumeros.length < 10 || whatsappNumeros.length > 11) {
-      setErroLead("Digite um WhatsApp válido com DDD.");
+      setErroLead("Digite um WhatsApp vÃ¡lido com DDD.");
       return;
     }
 
     if (!autorizouContato) {
       setErroLead(
-        "Autorize o contato pelo WhatsApp para receber suas recomendações.",
+        "Autorize o contato pelo WhatsApp para receber suas recomendaÃ§Ãµes.",
       );
       return;
     }
@@ -257,7 +257,7 @@ export default function PerfumeQuiz() {
       whatsappWindow?.close();
       console.error("Erro ao salvar resultado do quiz:", error);
       setErroLead(
-        "Não foi possível salvar seu resultado agora. Tente novamente em instantes.",
+        "NÃ£o foi possÃ­vel salvar seu resultado agora. Tente novamente em instantes.",
       );
       return;
     }
@@ -282,13 +282,13 @@ export default function PerfumeQuiz() {
       <section className="overflow-hidden rounded-[28px] border border-zinc-200 bg-white shadow-[0_24px_70px_rgba(0,0,0,0.08)]">
         <div className="border-b border-zinc-200 bg-zinc-950 p-6 text-white sm:p-8">
           <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-zinc-400">
-            Sua seleção personalizada
+            Sua seleÃ§Ã£o personalizada
           </p>
           <h2 className="mt-2 text-2xl font-black sm:text-3xl">
-            Encontramos fragrâncias para o seu perfil
+            Encontramos fragrÃ¢ncias para o seu perfil
           </h2>
           <p className="mt-3 text-sm leading-6 text-zinc-400">
-            Compare as sugestões e abra o perfume que mais chamou sua atenção.
+            Compare as sugestÃµes e abra o perfume que mais chamou sua atenÃ§Ã£o.
           </p>
         </div>
 
@@ -307,27 +307,27 @@ export default function PerfumeQuiz() {
           {formularioDispensado ? (
             <div className="text-center">
               <p className="text-sm text-zinc-600">
-                Tudo bem. Suas três recomendações continuam disponíveis acima.
+                Tudo bem. Suas trÃªs recomendaÃ§Ãµes continuam disponÃ­veis acima.
               </p>
               <button
                 type="button"
                 onClick={() => setFormularioDispensado(false)}
                 className="mt-3 text-sm font-black text-zinc-950 underline underline-offset-4"
               >
-                Quero salvar minhas recomendações
+                Quero salvar minhas recomendaÃ§Ãµes
               </button>
             </div>
           ) : (
             <>
               <p className="text-xs font-black uppercase tracking-[0.18em] text-zinc-500">
-                Quer salvar suas recomendações?
+                Quer salvar suas recomendaÃ§Ãµes?
               </p>
               <h3 className="mt-2 text-xl font-black text-zinc-950 sm:text-2xl">
                 Receba seu resultado e ajuda para escolher
               </h3>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-zinc-600">
                 Informe seu nome e WhatsApp. A equipe da Bold pode ajudar a
-                comparar as sugestões, confirmar disponibilidade e orientar a
+                comparar as sugestÃµes, confirmar disponibilidade e orientar a
                 compra.
               </p>
 
@@ -342,7 +342,7 @@ export default function PerfumeQuiz() {
                     onChange={(event) => setPrimeiroNome(event.target.value)}
                     autoComplete="given-name"
                     maxLength={40}
-                    placeholder="Como podemos chamar você?"
+                    placeholder="Como podemos chamar vocÃª?"
                     className="mt-2 min-h-12 w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 text-sm text-zinc-950 outline-none transition placeholder:text-zinc-400 focus:border-zinc-950 focus:ring-2 focus:ring-zinc-950/10"
                   />
                 </label>
@@ -378,7 +378,7 @@ export default function PerfumeQuiz() {
                   />
                   <span>
                     Autorizo a Bold Parfum a entrar em contato pelo WhatsApp
-                    sobre minhas recomendações.
+                    sobre minhas recomendaÃ§Ãµes.
                   </span>
                 </label>
 
@@ -392,7 +392,7 @@ export default function PerfumeQuiz() {
                     className="mt-0.5 h-4 w-4 accent-black"
                   />
                   <span>
-                    Quero receber novidades, conteúdos e promoções futuras da
+                    Quero receber novidades, conteÃºdos e promoÃ§Ãµes futuras da
                     Bold Parfum pelo WhatsApp. <strong>(Opcional)</strong>
                   </span>
                 </label>
@@ -443,7 +443,7 @@ export default function PerfumeQuiz() {
                 ) : (
                   <FaWhatsapp size={18} />
                 )}
-                Receber minhas recomendações no WhatsApp
+                Receber minhas recomendaÃ§Ãµes no WhatsApp
               </button>
 
               <div className="mt-4 flex flex-col items-center gap-3 text-center">
@@ -458,7 +458,7 @@ export default function PerfumeQuiz() {
                   href="/politica-de-privacidade"
                   className="text-xs font-bold text-zinc-600 underline underline-offset-4 hover:text-zinc-950"
                 >
-                  Abrir Política de Privacidade
+                  Abrir PolÃ­tica de Privacidade
                 </Link>
               </div>
             </>
@@ -552,7 +552,7 @@ export default function PerfumeQuiz() {
             disabled={!selected}
             className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-zinc-950 px-5 py-3 text-sm font-black text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-30"
           >
-            {step === questions.length - 1 ? "Ver minhas sugestões" : "Continuar"}
+            {step === questions.length - 1 ? "Ver minhas sugestÃµes" : "Continuar"}
             <FaArrowRight size={11} />
           </button>
         </div>
@@ -586,7 +586,7 @@ function ResultCard({
           className="object-contain p-4"
         />
         <span className="absolute left-3 top-3 rounded-full bg-black px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-white">
-          Sugestão {position}
+          SugestÃ£o {position}
         </span>
       </div>
 
@@ -619,7 +619,7 @@ function ResultCard({
           }
           className="mt-4 flex min-h-11 items-center justify-center gap-2 rounded-xl bg-zinc-950 px-4 py-3 text-sm font-black text-white transition hover:bg-zinc-800"
         >
-          Conhecer fragrância
+          Conhecer fragrÃ¢ncia
           <FaArrowRight size={10} />
         </Link>
       </div>
@@ -660,7 +660,7 @@ function keywordScore(text: string, keywords: string[] = []) {
 }
 
 function matchesBudget(product: Product, budget?: string) {
-  if (budget === "Até R$ 300") return product.preco <= 300;
+  if (budget === "AtÃ© R$ 300") return product.preco <= 300;
   if (budget === "De R$ 301 a R$ 400") {
     return product.preco > 300 && product.preco <= 400;
   }
@@ -690,7 +690,7 @@ function occasionKeywords(occasion?: string) {
       return ["encontro", "jantar", "noite"];
     case "Festas e eventos":
       return ["festa", "evento", "balada"];
-    case "Ocasiões especiais":
+    case "OcasiÃµes especiais":
       return ["especial", "evento", "jantar"];
     default:
       return [];
@@ -763,7 +763,7 @@ function buildReason(answers: Answers, product: Product) {
   const alternatives: string[] = [];
 
   if (!matchesGender(product, answers.genero)) {
-    alternatives.push(`é uma alternativa de gênero ${product.genero}`);
+    alternatives.push(`Ã© uma alternativa de gÃªnero ${product.genero}`);
   }
 
   if (!matchesOccasion(product, answers.ocasiao)) {
@@ -771,21 +771,21 @@ function buildReason(answers: Answers, product: Product) {
     alternatives.push(
       bestOccasion
         ? `funciona melhor em ${bestOccasion.toLowerCase()} do que em ${answers.ocasiao?.toLowerCase()}`
-        : `não tem ${answers.ocasiao?.toLowerCase()} como ocasião principal`,
+        : `nÃ£o tem ${answers.ocasiao?.toLowerCase()} como ocasiÃ£o principal`,
     );
   }
 
   if (!matchesBudget(product, answers.orcamento)) {
-    alternatives.push("fica fora da faixa de orçamento escolhida");
+    alternatives.push("fica fora da faixa de orÃ§amento escolhida");
   }
 
   if (alternatives.length) {
     return `Alternativa ao perfil principal: ${alternatives.join(
       "; ",
-    )}. Foi incluída pela proximidade com sua preferência por ${answers.estilo?.toLowerCase()} e aromas ${answers.aroma?.toLowerCase()}.`;
+    )}. Foi incluÃ­da pela proximidade com sua preferÃªncia por ${answers.estilo?.toLowerCase()} e aromas ${answers.aroma?.toLowerCase()}.`;
   }
 
-  return `Boa correspondência para ${answers.genero?.toLowerCase()}, com foco em ${answers.ocasiao?.toLowerCase()}, dentro do orçamento escolhido e alinhada à preferência por ${answers.estilo?.toLowerCase()} e aromas ${answers.aroma?.toLowerCase()}.`;
+  return `Boa correspondÃªncia para ${answers.genero?.toLowerCase()}, com foco em ${answers.ocasiao?.toLowerCase()}, dentro do orÃ§amento escolhido e alinhada Ã  preferÃªncia por ${answers.estilo?.toLowerCase()} e aromas ${answers.aroma?.toLowerCase()}.`;
 }
 
 function buildWhatsAppLink(
@@ -795,20 +795,20 @@ function buildWhatsAppLink(
   primeiroNome: string,
   whatsapp: string,
 ) {
-  const message = `Olá! Fiz o quiz no site da Bold Parfum e gostaria de ajuda para escolher meu perfume.
+  const message = `OlÃ¡! Fiz o quiz no site da Bold Parfum e gostaria de ajuda para escolher meu perfume.
 
 Nome: ${primeiroNome}
 Meu WhatsApp: ${whatsapp}
 
 Meu perfil:
-• Para: ${answers.genero}
-• Estilo: ${answers.estilo}
-• Ocasião: ${answers.ocasiao}
-• Intensidade: ${answers.intensidade}
-• Aromas: ${answers.aroma}
-• Orçamento: ${answers.orcamento}
+â€¢ Para: ${answers.genero}
+â€¢ Estilo: ${answers.estilo}
+â€¢ OcasiÃ£o: ${answers.ocasiao}
+â€¢ Intensidade: ${answers.intensidade}
+â€¢ Aromas: ${answers.aroma}
+â€¢ OrÃ§amento: ${answers.orcamento}
 
-Sugestões encontradas: ${recommendations.map((item) => item.nome).join(", ")}.`;
+SugestÃµes encontradas: ${recommendations.map((item) => item.nome).join(", ")}.`;
 
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }

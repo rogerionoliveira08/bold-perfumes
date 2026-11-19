@@ -58,7 +58,12 @@ export default function ProductReviews({
       .order("criado_em", { ascending: false });
 
     if (error) {
-      console.error("Erro ao carregar avaliações:", error);
+     console.error("Erro ao carregar avaliações:", {
+  mensagem: error.message,
+  codigo: error.code,
+  detalhes: error.details,
+  sugestao: error.hint,
+});
       setErro("Não foi possível carregar as avaliações agora.");
       setCarregando(false);
       return;
