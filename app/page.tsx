@@ -17,6 +17,7 @@ import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ProductCard from "@/components/products/ProductCard";
 import { produtos } from "@/data/produtos";
 import type { Product } from "@/types/product";
+import BlackFridaySection from "@/components/home/BlackFridaySection";
 
 export default function HomePage() {
   const lancamentos = produtos
@@ -40,9 +41,8 @@ export default function HomePage() {
 
       <main className="min-h-screen overflow-x-hidden bg-white text-zinc-950">
         <Hero />
-
-        <BenefitsSection />
-
+<BlackFridaySection />
+<BenefitsSection />
         <CategorySection />
 
         <ProductCarousel

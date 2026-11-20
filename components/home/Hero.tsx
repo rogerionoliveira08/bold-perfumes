@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import {
   FaCheck,
@@ -7,6 +7,7 @@ import {
   FaBolt,
   FaCrown,
   FaStar,
+  FaArrowRight,
 } from "react-icons/fa";
 import WhatsAppChoiceButton from "@/components/WhatsAppChoiceButton";
 import { produtos } from "@/data/produtos";
@@ -68,16 +69,43 @@ export default function Hero() {
           </div>
 
           <div className="order-1 flex flex-col justify-between p-4 sm:p-6 lg:order-2">
-            <div className="relative flex h-[240px] items-center justify-center overflow-hidden sm:h-[280px]">
-              <Image
-                src="/emblema-bold-preto-branco.png"
-                alt="Emblema da Bold Parfum"
-                width={700}
-                height={1000}
-                priority
-                sizes="(max-width: 1024px) 70vw, 35vw"
-                className="h-[80%] w-auto object-contain mix-blend-multiply"
-              />
+            {/* ANÚNCIO BLACK FRIDAY */}
+            <div className="relative flex h-[300px] items-center justify-center overflow-hidden bg-zinc-950 px-5 py-6 sm:h-[360px] lg:h-[380px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-red-950 via-black to-zinc-950" />
+
+              <div className="absolute -right-12 -top-16 h-48 w-48 rounded-full border border-red-500/20" />
+              <div className="absolute -bottom-24 -left-12 h-56 w-56 rounded-full border border-red-500/20" />
+
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <FaCrown className="mb-3 text-amber-400" size={29} />
+
+                <span className="border border-red-500/70 px-4 py-1 text-[9px] font-bold uppercase tracking-[0.35em] text-red-400 sm:text-[10px]">
+                  Ofertas especiais
+                </span>
+
+                <h2 className="mt-4 text-4xl font-black uppercase leading-none tracking-tight text-white sm:text-5xl">
+                  Black Friday
+                </h2>
+
+                <p className="mt-2 text-lg font-black uppercase tracking-[0.28em] text-red-500 sm:text-xl">
+                  Bold Parfum
+                </p>
+
+                <div className="my-3 h-px w-24 bg-gradient-to-r from-transparent via-red-500 to-transparent" />
+
+                <p className="max-w-xs text-xs leading-5 text-zinc-300 sm:text-sm">
+                  Perfumes selecionados com preços especiais.
+                  Aproveite enquanto durarem as ofertas!
+                </p>
+
+                <Link
+                  href="/produtos"
+                  className="mt-4 inline-flex items-center gap-2 bg-red-600 px-5 py-2.5 text-[10px] font-black uppercase tracking-wider text-white transition hover:bg-red-700 sm:text-xs"
+                >
+                  Confira as ofertas
+                  <FaArrowRight size={11} />
+                </Link>
+              </div>
             </div>
 
             <div className="mt-4 grid grid-cols-2 gap-3 border-t border-zinc-200 pt-4">

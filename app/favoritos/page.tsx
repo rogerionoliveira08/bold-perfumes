@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -7,6 +8,7 @@ import {
   FaShoppingCart,
   FaTrash,
 } from "react-icons/fa";
+
 import { useFavorites } from "@/context/FavoritesContext";
 import { useCart } from "@/context/CartContext";
 
@@ -89,55 +91,57 @@ export default function FavoritesPage() {
               >
                 <Link
                   href={`/produto/${produto.slug}`}
-                  className="relative block aspect-square overflow-hidden bg-black"
+                  className="block"
                 >
-                  <Image
-  src={produto.imagem}
-  alt={produto.nome}
-  fill
-  sizes="(max-width: 640px) 50vw, 25vw"
-  className={`transition duration-300 hover:scale-[1.03] ${
-    produto.slug === "liquid-brun"
-  ? "object-contain object-center p-20"
-  : "object-cover object-center"
-  }`}
-/>
-                </Link>
+                  <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden bg-white">
+                    <Image
+                      src={produto.imagem}
+                      alt={produto.nome}
+                      width={500}
+                      height={500}
+                      sizes="(max-width: 640px) 50vw, 25vw"
+                      className={`transition duration-300 hover:scale-[1.03] ${
+                        produto.slug === "liquid-brun"
+                          ? "h-auto w-[65%] object-contain"
+                          : "h-full w-full object-contain"
+                      }`}
+                    />
+                  </div>
 
-                <div className="flex flex-1 flex-col p-3 sm:p-4">
-                  <p className="truncate text-[10px] font-bold uppercase tracking-wide text-zinc-500 sm:text-xs">
-                    {produto.marca}
-                  </p>
-
-                  <Link href={`/produto/${produto.slug}`}>
-                    <h2 className="mt-1 line-clamp-2 min-h-10 text-sm font-black transition hover:text-yellow-400 sm:text-lg">
+                  <div className="p-3">
+                    <h2 className="text-sm font-bold text-white sm:text-base">
                       {produto.nome}
                     </h2>
-                  </Link>
 
-                  <p className="mt-3 text-lg font-black text-yellow-400 sm:text-xl">
-                    {formatarPreco(produto.preco)}
-                  </p>
+                    <p className="mt-1 text-xs text-zinc-400">
+                      {produto.marca}
+                    </p>
 
-                  <div className="mt-auto grid gap-2 pt-4">
-                    <button
-                      type="button"
-                      onClick={() => adicionarAoCarrinho(produto)}
-                      className="flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-3 py-2.5 text-xs font-bold text-black transition hover:bg-yellow-300 sm:text-sm"
-                    >
-                      <FaShoppingCart size={13} />
-                      Adicionar
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => removerFavorito(produto.id)}
-                      className="flex items-center justify-center gap-2 rounded-xl border border-zinc-800 px-3 py-2.5 text-xs font-semibold text-zinc-400 transition hover:border-red-500 hover:text-red-500"
-                    >
-                      <FaTrash size={12} />
-                      Remover
-                    </button>
+                    <p className="mt-3 text-base font-black text-yellow-400">
+                      {formatarPreco(produto.preco)}
+                    </p>
                   </div>
+                </Link>
+
+                <div className="mt-auto flex gap-2 p-3 pt-0">
+                  <button
+                    type="button"
+                    onClick={() => adicionarAoCarrinho(produto)}
+                    className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-yellow-400 px-2 py-3 text-xs font-bold text-black transition hover:bg-yellow-300 sm:text-sm"
+                  >
+                    <FaShoppingCart size={14} />
+                    <span>Adicionar</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => removerFavorito(produto.id)}
+                    aria-label={`Remover ${produto.nome} dos favoritos`}
+                    title="Remover dos favoritos"
+                    className="flex items-center justify-center rounded-lg border border-zinc-700 px-3 text-zinc-400 transition hover:border-red-500 hover:text-red-500"
+                  >
+                    <FaTrash size={14} />
+                  </button>
                 </div>
               </article>
             ))}
